@@ -28,15 +28,19 @@ def state_dir() -> Path:
 
 def validate_repo(repo: str) -> str:
     """owner/name with safe characters; rejects path traversal such as ../x."""
-    if not REPO_RE.match(repo or "") or any(part.strip(".") == "" for part in repo.split("/")):
+    if not REPO_RE.fullmatch(repo or "") or any(part.strip(".") == "" for part in repo.split("/")):
         raise ValueError(f"invalid repo {repo!r}: expected owner/name")
     return repo
 
 
 class State:
     def __init__(self, directory: Path | None = None, ttl_days: int = 7):
+        os.umask(0o077)
         self.dir = directory or state_dir()
-        (self.dir / "logs").mkdir(parents=True, exist_ok=True)
+        self.dir.mkdir(parents=True, exist_ok=True)
+        os.chmod(self.dir, 0o700)
+        (self.dir / "logs").mkdir(exist_ok=True)
+        os.chmod(self.dir / "logs", 0o700)
         self.db = sqlite3.connect(self.dir / "state.db", timeout=5)
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA busy_timeout=5000")
@@ -93,20 +97,24 @@ class State:
 
     def cache_log(self, job_id: int, text: str) -> Path:
         p = self.log_path(job_id)
-        p.write_text(text)
-        os.chmod(p, 0o600)
+        fd = os.open(p, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)  # private from creation; bytes keep '\r' intact
+        with os.fdopen(fd, "wb") as f:
+            f.write(text.encode("utf-8", "replace"))
         return p
 
     def cached_log(self, job_id: int) -> str | None:
         p = self.log_path(job_id)
-        return p.read_text() if p.exists() else None
+        return p.read_bytes().decode("utf-8", "replace") if p.exists() else None
 
     def purge_logs(self, ttl_days: int) -> int:
         cutoff, n = time.time() - ttl_days * 86400, 0
         for p in (self.dir / "logs").glob("*.log"):
-            if p.stat().st_mtime < cutoff:
-                p.unlink()
-                n += 1
+            try:
+                if p.stat().st_mtime < cutoff:
+                    p.unlink()
+                    n += 1
+            except FileNotFoundError:
+                continue  # another server instance purged it first
         return n
 
     def close(self) -> None:

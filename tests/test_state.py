@@ -52,3 +52,25 @@ def test_log_cache_ttl_purges_old_files(sdir):
     s.cache_log(2, "new")
     assert s.purge_logs(7) == 1 and s.cached_log(1) is None and s.cached_log(2) == "new"
     s.close()
+
+
+def test_existing_world_readable_dir_is_tightened_and_pragmas_set(tmp_path):
+    d = tmp_path / "open"
+    d.mkdir(mode=0o755)
+    os.chmod(d, 0o755)
+    s = State(d)
+    s.save("a/b#1@1", "a/b", 1, 1, {})
+    assert stat.S_IMODE(os.stat(d).st_mode) == 0o700 and stat.S_IMODE(os.stat(d / "logs").st_mode) == 0o700
+    assert stat.S_IMODE(os.stat(d / "state.db-shm").st_mode) == 0o600
+    assert s.db.execute("PRAGMA journal_mode").fetchone()[0] == "wal" and s.db.execute("PRAGMA busy_timeout").fetchone()[0] == 5000
+    assert stat.S_IMODE(os.stat(s.cache_log(5, "x")).st_mode) == 0o600
+    s.close()
+
+
+def test_cache_preserves_carriage_returns_and_rejects_newline_repo(sdir):
+    s = State(sdir)
+    s.cache_log(3, "a\rb\r\nc")
+    assert s.cached_log(3) == "a\rb\r\nc"
+    with pytest.raises(ValueError):
+        validate_repo("a/b\n")
+    s.close()

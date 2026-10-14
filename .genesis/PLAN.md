@@ -50,7 +50,7 @@
 
 ### T5-investigation — Investigation lifecycle: target resolution with candidate_runs and in-progress errors, startup_failure handling, bounded concurrent downloads with progress, clustering by signature, cost-0 channels with attempts weights, gather actions with level-1 signatures, outcome recording with ordered derived labels, output budgets, not-found errors.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-1, FR-2, FR-7, FR-9, FR-10, FR-14, FR-15, FR-20, NFR-3, NFR-4, AC-5, AC-8, AC-11, AC-16
 - scope: not bounded
 - gates: test-investigation: .venv/bin/python -m pytest tests/test_investigation.py -q
@@ -58,7 +58,7 @@
 
 ### T6-server — MCPServer with five tools and one prompt, markdown plus structured content, output schemas requiring the FR-17 keys, stderr-only logging, actionable errors, analyze_log with 20 MB cap, stdout purity and determinism tests.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-16, FR-17, FR-18, NFR-5, AC-6, AC-15
 - scope: not bounded
 - gates: test-server: .venv/bin/python -m pytest tests/test_server.py -q
