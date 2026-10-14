@@ -14,7 +14,7 @@ from ci_diagnosis_mcp import server as srv
 from ci_diagnosis_mcp.github.client import GitHub
 from tests.fake_github import mk_job, mk_run
 
-FIX = pathlib.Path(__file__).parent / "fixtures"
+FIX = pathlib.Path(__file__).parent / "data"
 TOKEN = "ghp_VERYSECRET_TOKEN_12345"
 START_KEYS = {"investigation_id", "run", "clusters", "jobs_not_downloaded", "mode", "mode_confidence", "mode_runner_up", "mode_margin", "origin", "origin_confidence", "margin", "channels_observed",
               "suggested_actions", "next_actions", "unavailable_actions", "recommendation", "stop_reason", "evidence_added", "calibration"}

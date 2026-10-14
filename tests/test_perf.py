@@ -42,7 +42,7 @@ from ci_diagnosis_mcp import investigation as inv
 from ci_diagnosis_mcp.state import State
 from tests.fake_github import mk_run
 
-FIX = pathlib.Path(__file__).parent / "fixtures" / "jest-assert"
+FIX = pathlib.Path(__file__).parent / "data" / "jest-assert"
 
 
 def padded_log(target_mb: int) -> str:

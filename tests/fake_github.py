@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-FIX = pathlib.Path(__file__).parent / "fixtures"
+FIX = pathlib.Path(__file__).parent / "data"
 T0 = "2026-10-15T10:00:"
 
 
