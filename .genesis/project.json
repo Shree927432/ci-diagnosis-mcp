@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T20:00:36.235Z"
+    "updated_at": "2026-10-14T20:05:03.156Z"
   },
   "policy": {
     "ponytail": "full",
@@ -253,6 +253,16 @@
       "status": "accepted",
       "source": "reviewer: claude-sonnet-5-5 subagent, 2026-10-15; commit 831638d",
       "recorded_at": "2026-10-14T19:56:06.486Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-5964325b",
+      "title": "Smoke-test findings: matrix evidence scoped to job family; logs analysed one at a time",
+      "text": "Live run pallets/flask#37633292268 showed two defects. (1) A lone 'typing' job failing beside twelve unrelated green jobs produced '1 of 13 matrix jobs failed' evidence (environment strong), which is wrong: matrix evidence now counts only jobs sharing the failed job's name prefix, so heterogeneous job sets add no matrix evidence. (2) mypy --pretty wraps messages onto indented continuation lines; the mypy parser now joins up to three continuation lines and takes the [code] from the last one. Separately, NFR-3 measurement showed download() held all logs in memory; it now streams each log into the disk cache and start() analyses one log at a time (peak RSS 432 MB for 8x20 MB in a fresh process, 499 MB when contaminated by earlier tests, hence the perf test runs in a subprocess).",
+      "status": "accepted",
+      "source": "smoke run 2026-10-15; tests/test_perf.py; tests/test_investigation.py",
+      "recorded_at": "2026-10-14T20:05:03.151Z",
       "paths": [],
       "tags": []
     }
