@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T20:15:29.110Z"
+    "updated_at": "2026-10-14T20:15:29.950Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "T7-verify-release",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Run the task pre-flight."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -1498,7 +1498,7 @@
     {
       "id": "T7-verify-release",
       "outcome": "Full suite green, timing test with dense candidate lines, live smoke against a public failed run recorded as evidence, README with install, token scopes and agent configuration, agent contract connected, checkpoint.",
-      "state": "active",
+      "state": "done",
       "risk": "low",
       "owner": null,
       "scope": [],
@@ -1534,7 +1534,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-14T19:27:38.337Z",
-      "updated_at": "2026-10-14T19:27:38.337Z",
+      "updated_at": "2026-10-14T20:15:29.580Z",
       "base_manifest": {
         ".gitignore": "3cc18789745204720dcad9a9d844b7dfb07afa7d8edc95a93ee567b4eac9071a",
         "DESIGN.md": "3dc0d8434d6a87eec7a6b34e7e6c73247fd6b4ab121d11bc67033ed87c3be0d7",
@@ -1963,14 +1963,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T20:05:24.018Z",
+    "at": "2026-10-14T20:15:29.900Z",
     "revision": {
-      "commit": "40bde07c4a41faf15f4b09220489aa766ab0c7d6",
-      "dirty": false,
-      "source_hash": "c6b02ceaf03034382b0a2c3b21a113934d1e7bd8fee98e9faf6d7191b848c8ac"
+      "commit": "23121351dcc93fd06c167ea6c99358ba02fb24ea",
+      "dirty": true,
+      "source_hash": "62e546a9bd02021bacfcafb119374c4bd52d07a9f2fec0b66b8fbdeb4e03211b"
     },
-    "active_task": "T7-verify-release",
-    "next_action": "Run the task pre-flight."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }

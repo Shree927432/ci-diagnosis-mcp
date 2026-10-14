@@ -5,7 +5,6 @@ from ci_diagnosis_mcp.github.client import GitHubError
 from ci_diagnosis_mcp.state import State
 from tests.fake_github import FakeGitHub, mk_job, mk_run
 
-pytestmark = pytest.mark.asyncio
 
 
 @pytest.fixture
