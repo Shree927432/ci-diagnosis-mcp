@@ -36,6 +36,7 @@ def validate_repo(repo: str) -> str:
 class State:
     def __init__(self, directory: Path | None = None, ttl_days: int = 7):
         self.dir = directory or state_dir()
+        (self.dir / "logs").mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.dir / "state.db", timeout=5)
         self.db.execute("PRAGMA journal_mode=WAL")
         self.db.execute("PRAGMA busy_timeout=5000")
