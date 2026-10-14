@@ -4,10 +4,10 @@ from __future__ import annotations
 import re
 
 from ..types import ExtractedError, FailedTest, LogLine
-from ._util import ParseContext, dedupe_errors, dedupe_tests, find_all, find_last, following, obs, plural, pos_of, trunc
+from ._util import ParseContext, dedupe_errors, dedupe_tests, find_all, find_first, find_last, following, obs, plural, pos_of, trunc
 
 NAME = "pytest"
-GATE = re.compile(r"""^(?:FAILED|ERROR)\s+\S+\.py|^=+\s|^_{3,}\s|ERROR collecting|during collection|^(?:FAIL|ERROR):\s+\w+\s+\(|^FAILED \(""", re.M)
+GATE = re.compile(r"""^(?:FAILED|ERROR)\s+\S+\.py|^=+\s|^_{3,}\s|ERROR collecting|during collection|^(?:FAIL|ERROR):\s+\w+\s+\(|^FAILED \(|ImportError while loading conftest""", re.M)
 _SHORT = re.compile(r"^(FAILED|ERROR)\s+(\S+?\.py)(?:::(\S+))?(?:\s+-\s+(.*))?$")
 _SUMMARY = re.compile(r"^=+\s.*\b(\d+) (?:failed|error)s?\b.*=+$")
 _HEADER = re.compile(r"^_{3,}\s+(.+?)\s+_{3,}$")
@@ -17,12 +17,20 @@ _COLLECT = re.compile(r"ERROR collecting (\S+)|error during collection|errors? d
 _UT_FAIL = re.compile(r"^(FAIL|ERROR):\s+(\w+)\s+\(([\w.]+)\)")
 _UT_SUMMARY = re.compile(r"^FAILED \((?:failures=(\d+))?(?:,\s*)?(?:errors=(\d+))?\)")
 _FILE_LINE = re.compile(r'File "([^"]+)", line (\d+)')
+_EXC_LINE = re.compile(r"^[\w.]+(?:Error|Exception|Warning)\b")
+_CONFTEST = re.compile(r"^ImportError while loading conftest '([^']+)'")
 
 
 def parse(lines: list[LogLine], ctx: ParseContext) -> list:
     shorts, headers = find_all(lines, _SHORT), find_all(lines, _HEADER)
     summary, collect = find_last(lines, _SUMMARY), find_all(lines, _COLLECT)
     ut_fails, ut_summary = find_all(lines, _UT_FAIL), find_last(lines, _UT_SUMMARY)
+    conftest = find_first(lines, _CONFTEST)
+    if conftest and not shorts and not headers and not ut_fails:
+        l, m = conftest
+        detail = next((t for t in following(lines, pos_of(lines, l.index), 12) if t.startswith("E   ")), "")
+        return [obs("test_load", "decisive", NAME, "pytest: conftest.py failed to import, no tests ran", [l], errors=[ExtractedError(trunc(f"{l.text.strip()} {detail}".strip()), l.index + 1, m.group(1))],
+                    signals=[trunc(l.text.strip(), 160)], hint="conftest.py raised during import; fix that error first, nothing else was collected.")]
     if not shorts and not headers and not ut_fails and not collect:
         return []
     tests, errors, hits = [], [], []
@@ -42,11 +50,12 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
                 break
             e = _E.match(x.text)
             if e:
-                elines.append(e.group(1))
+                elines.append(e.group(1).strip())  # E lines inside nested source blocks carry the block's indentation
             pl = _LOC.match(x.text)
             if pl and "site-packages" not in pl.group(1):
                 loc = pl
-        msg = trunc(" | ".join(t for t in elines if t.strip())[:300])
+        raised = [t for t in reversed(elines) if _EXC_LINE.match(t)]  # the exception actually raised, last first
+        msg = trunc(" | ".join(t for t in raised + [t for t in elines if t not in raised] if t.strip())[:300])
         existing = next((t for t in tests if t.name.endswith("::" + name) or name in t.name), None)
         if existing:
             existing.message = existing.message or (msg or None)

@@ -4,31 +4,33 @@ from __future__ import annotations
 import re
 
 from ..types import ExtractedError, LogLine
-from ._util import ParseContext, find_all, obs, pos_of, trunc
+from ._util import ParseContext, obs, pos_of, trunc
 
 NAME = "traceback"
-GATE = re.compile(r"""^Traceback \(most recent call last\):""", re.M)
+GATE = re.compile(r"""^(?:INTERNALERROR> )?Traceback \(most recent call last\):""", re.M)
 _START = re.compile(r"^Traceback \(most recent call last\):")
 _FRAME = re.compile(r'^\s+File "([^"]+)", line (\d+), in (.+)$')
 _EXC = re.compile(r"^([A-Za-z_][\w.]*(?:Error|Exception|Exit|Interrupt|Warning)):\s*(.*)$")
 _LIB = re.compile(r"site-packages|dist-packages|/lib/python|<frozen|importlib")
+_PFX = re.compile(r"^INTERNALERROR> ")  # pytest prints its own crashes as prefixed tracebacks
 
 
 def parse(lines: list[LogLine], ctx: ParseContext) -> list:
-    starts = find_all(lines, _START)
+    T = lambda x: _PFX.sub("", x.text)  # noqa: E731
+    starts = [l for l in lines if _START.match(T(l))]
     if not starts:
         return []
-    start = starts[-1][0]  # the last traceback is the one that killed the process
+    start = starts[-1]  # the last traceback is the one that killed the process
     pos = pos_of(lines, start.index)
     frame = user = exc = None
     for x in lines[pos + 1: pos + 200]:
-        f = _FRAME.match(x.text)
+        f = _FRAME.match(T(x))
         if f:
             frame = f
             if not _LIB.search(f.group(1)):
                 user = f
             continue
-        e = _EXC.match(x.text)
+        e = _EXC.match(T(x))
         if e:
             exc = (e, x)
             break
@@ -41,7 +43,7 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
     # SyntaxError reports its own location on the line after the frame list.
     if is_syntax:
         for x in lines[pos + 1: pos + 200]:
-            sm = re.match(r'^\s+File "([^"]+)", line (\d+)$', x.text)
+            sm = re.match(r'^\s+File "([^"]+)", line (\d+)$', T(x))
             if sm:
                 err.file, err.line = sm.group(1), int(sm.group(2))
     mode = "dependency" if is_import else "compile" if is_syntax else "runtime"

@@ -7,7 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, find_first, obs, pos_of, trunc
 
 NAME = "node"
-GATE = re.compile(r"""^npm (?:ERR!|error)|ERR_PNPM_|Cannot find module|Module not found|Failed to resolve import|ERR_REQUIRE_ESM|ERR_MODULE_NOT_FOUND|ERR_PACKAGE_PATH_NOT_EXPORTED|ERR_UNSUPPORTED_DIR_IMPORT|^(?:Uncaught\s+)?(?:TypeError|ReferenceError|SyntaxError|RangeError|AssertionError)(?: \[\w+\])?: |Missing script:|EBADENGINE|engine \"node\" is incompatible""", re.M)
+GATE = re.compile(r"""^npm (?:ERR!|error)|ERR_PNPM_|Cannot find module|Module not found|Failed to resolve import|ERR_REQUIRE_ESM|ERR_MODULE_NOT_FOUND|ERR_PACKAGE_PATH_NOT_EXPORTED|ERR_UNSUPPORTED_DIR_IMPORT|^(?:Uncaught\s+)?(?:TypeError|ReferenceError|SyntaxError|RangeError|AssertionError)(?: \[\w+\])?: |Missing script:|EBADENGINE|engine \"node\" is incompatible|Failed to resolve entry for package|^Error: E[A-Z]{3,}: """, re.M)
 _NPM_CODE = re.compile(r"^npm (?:ERR!|error) code (\w+)")
 _NPM_LINE = re.compile(r"^npm (?:ERR!|error)\s?(.*)$")
 _PNPM = re.compile(r"\bERR_PNPM_(\w+)\b")
@@ -19,6 +19,9 @@ _RUNTIME = re.compile(r"^(?:Uncaught\s+)?(TypeError|ReferenceError|SyntaxError|R
 _STACK = re.compile(r"^\s+at\s+(?:.*?\()?((?:file://)?(?:\.{0,2}/)?[\w./@:-]+\.(?:[cm]?[jt]sx?)):(\d+):(\d+)\)?")
 _MISSING_SCRIPT = re.compile(r"Missing script: \"?([^\"\s]+)\"?")
 _ENGINE = re.compile(r"EBADENGINE|The engine \"node\" is incompatible")
+_RESOLVE_ENTRY = re.compile(r'Failed to resolve entry for package "([^"]+)"')
+_ERRNO = re.compile(r"^(?:Uncaught\s+)?Error: (E[A-Z]{3,}): (.*)$")
+_PNPM_WRAPPERS = {"RECURSIVE_RUN_FIRST_FAIL", "RECURSIVE_FAIL", "PIPELINE_FAIL", "RECURSIVE_EXEC_FIRST_FAIL"}  # pnpm -r wrappers: the real error is in the script output
 _DEP_CODES = {"ERESOLVE", "ETARGET", "E404", "ENOTFOUND", "EINTEGRITY", "ENOVERSIONS", "E401", "E403", "EUNSUPPORTEDPROTOCOL", "EBADPLATFORM"}
 
 
@@ -50,13 +53,18 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
                 "EINTEGRITY": "Lockfile integrity mismatch: regenerate package-lock.json.", "ENOENT": "A file npm expected is missing (often package.json in the working-directory)."}.get(c, "npm failed; see the npm error lines.")
         out.append(obs("dependency" if c in _DEP_CODES else "config" if c == "ENOENT" else "compile", "decisive" if c in _DEP_CODES else "strong", NAME, f"npm {c}: {trunc(detail[0] if detail else 'install failed', 120)}",
                        [l] + [x for x in lines[pos: pos + 25] if _NPM_LINE.match(x.text)], anchor=l.index, errors=[ExtractedError(trunc(" | ".join(detail)), l.index + 1, "package.json" if c in _DEP_CODES else None, code=c)], signals=[l.text.strip()], hint=hint))
-    pn = find_first(lines, _PNPM)
+    pn = next(((l, m) for l, m in find_all(lines, _PNPM) if m.group(1) not in _PNPM_WRAPPERS), None)
     if pn:
         l, m = pn
         c = m.group(1)
         dep = bool(re.search(r"LOCKFILE|NO_MATCHING_VERSION|FETCH|PEER_DEP|META_FETCH", c))
         out.append(obs("dependency" if dep else "compile", "decisive" if dep else "strong", NAME, f"pnpm ERR_PNPM_{c}", [l], errors=[ExtractedError(trunc(l.text.strip()), l.index + 1, "pnpm-lock.yaml" if "LOCKFILE" in c else None, code=f"ERR_PNPM_{c}")],
                        hint="pnpm-lock.yaml is out of sync with package.json: run `pnpm install` locally and commit the lockfile." if "OUTDATED_LOCKFILE" in c else "pnpm failed; see the error line."))
+    entry = find_first(lines, _RESOLVE_ENTRY)
+    if entry:
+        l, m = entry
+        out.append(obs("dependency", "decisive", NAME, f"Cannot resolve the entry point of package '{m.group(1)}'", [l], errors=[ExtractedError(trunc(l.text.strip()), l.index + 1, "package.json")],
+                       hint="The package is installed but its entry cannot be resolved: a workspace package that is not built yet, or an exports map that does not match the import."))
     cannot = find_first(lines, _CANNOT) or find_first(lines, _WEBPACK) or find_first(lines, _VITE)
     if cannot:
         l, m = cannot
@@ -77,4 +85,9 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
         e = ExtractedError(trunc(f"{m.group(1)}: {m.group(3)}"), l.index + 1, fr.group(1).replace("file://", "") if fr else None, int(fr.group(2)) if fr else None, int(fr.group(3)) if fr else None, m.group(2) or m.group(1))
         out.append(obs("compile" if m.group(1) == "SyntaxError" else "runtime", "strong" if fr else "medium", NAME, f"Node {m.group(1)}: {trunc(m.group(3), 120)}", [l], errors=[e], signals=[l.text.strip()],
                        hint=f"Unhandled {m.group(1)} thrown from {e.file}:{e.line}." if fr else f"Unhandled {m.group(1)}; the stack is in the excerpt."))
+    en = find_first(lines, _ERRNO)
+    if en and not cannot and not rt:
+        l, m = en
+        out.append(obs("runtime", "medium", NAME, f"Node {m.group(1)}: {trunc(m.group(2), 120)}", [l], errors=[ExtractedError(trunc(f"{m.group(1)}: {m.group(2)}"), l.index + 1, code=m.group(1))], signals=[trunc(l.text.strip(), 160)],
+                       hint="An unhandled filesystem or network error; the path or address in the message is what was missing or unreachable."))
     return out
