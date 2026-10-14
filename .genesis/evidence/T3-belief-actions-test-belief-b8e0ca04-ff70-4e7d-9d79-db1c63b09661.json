@@ -1,0 +1,30 @@
+{
+  "task": "T3-belief-actions",
+  "gate": "test-belief",
+  "kind": "command",
+  "attempt": "b8e0ca04-ff70-4e7d-9d79-db1c63b09661",
+  "command": ".venv/bin/python -m pytest tests/test_origin.py tests/test_actions.py -q",
+  "started_at": "2026-10-14T19:44:10.233Z",
+  "observed_at": "2026-10-14T19:44:10.907Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "...........                                                              [100%]\n11 passed in 0.02s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "45925d3b72fbf080cd0f50e8d4be79e9577ecff6",
+    "dirty": true
+  },
+  "source_hash": "7a04493dabf9506a87b71a1a27f1ed75854cadcc77e6974e4253245f8d2c8759",
+  "before_hash": "7a04493dabf9506a87b71a1a27f1ed75854cadcc77e6974e4253245f8d2c8759",
+  "config_hash": "a0e7643584689adbf06c89dc0e76b7b8d0fbcff414f298e4de3f419db6d95322",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "451738d6ab5dd6978af46f639397487890ae2b9f3fabd1db6a6783465770d0ef"
+}

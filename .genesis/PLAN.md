@@ -26,7 +26,7 @@
 
 ### T2b-parsers — Parser modules per FR-5 with weight classes, claimed ranges, errors, failed tests, anchors; mode aggregation with line ownership, step_context prior, bands, runner-up and margin; corpus accuracy test.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-5, FR-6, NFR-9, AC-2
 - scope: not bounded
 - gates: test-parsers: .venv/bin/python -m pytest tests/test_parsers.py tests/test_corpus.py -q
@@ -34,7 +34,7 @@
 
 ### T3-belief-actions — Origin posterior per FR-8 with global prior, fix matrix, VOI ranking with availability rule, overrides, stop precedence and action-equivalence shortcut.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-8, FR-11, FR-13
 - scope: not bounded
 - gates: test-belief: .venv/bin/python -m pytest tests/test_origin.py tests/test_actions.py -q
