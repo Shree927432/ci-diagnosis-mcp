@@ -89,23 +89,20 @@ def prioritize(failed: list[dict], max_jobs: int) -> tuple[list[dict], list[dict
     return chosen, [j for j in failed if j["id"] not in chosen_ids]
 
 
-async def download(gh: GitHub, state: State, owner: str, name: str, jobs: list[dict], progress: Progress | None) -> dict[int, str]:
-    sem, out, done = asyncio.Semaphore(4), {}, 0
+async def download(gh: GitHub, state: State, owner: str, name: str, jobs: list[dict], progress: Progress | None) -> None:
+    """Download up to 4 logs concurrently straight into the disk cache; nothing is kept in memory (NFR-3)."""
+    sem, done = asyncio.Semaphore(4), 0
 
     async def one(j: dict) -> None:
         nonlocal done
         async with sem:
-            text = state.cached_log(j["id"])
-            if text is None:
-                text = await gh.job_log(owner, name, j["id"])
-                state.cache_log(j["id"], text)
-            out[j["id"]] = text
+            if state.cached_log(j["id"]) is None:
+                state.cache_log(j["id"], await gh.job_log(owner, name, j["id"]))
         done += 1
         if progress:
             await progress(done, len(jobs), f"downloaded log for {j['name']}")
 
     await asyncio.gather(*(one(j) for j in jobs))
-    return out
 
 
 # ---------------------------------------------------------------------------
@@ -207,8 +204,8 @@ async def start(gh: GitHub, state: State, repo: str, *, run_id=None, job_id=None
         inv.update(clusters=[], jobs_not_downloaded=[], mode="unknown", mode_confidence="low", mode_runner_up=None, mode_margin=1.0, slice={"window": "whole_log", "mismatch": False}, summary="Run failed but no job has a failed conclusion", root_cause_hint="")
     else:
         chosen, rest = prioritize(failed, max_jobs)
-        logs = await download(gh, state, owner, name, chosen, progress)
-        analysed = [(j, analyze(logs[j["id"]], j, max_excerpt_chars=max_excerpt_chars)) for j in chosen]
+        await download(gh, state, owner, name, chosen, progress)
+        analysed = [(j, analyze(state.cached_log(j["id"]) or "", j, max_excerpt_chars=max_excerpt_chars)) for j in chosen]  # one log in memory at a time
         clusters = cluster(analysed)
         best = clusters[0]
         a = next(x for j, x in analysed if j["id"] == best["representative_job"]["job_id"])
@@ -217,9 +214,12 @@ async def start(gh: GitHub, state: State, repo: str, *, run_id=None, job_id=None
                    referenced_files=sorted({f["path"] for c in clusters for f in c["representative_job"]["files"]}),
                    failing_test_files=sorted({t["file"] for c in clusters for t in c["representative_job"]["failed_tests"] if t.get("file")}))
         inv["level1_signatures"] = sorted({level1(j) for j in failed})
-        # cost-0 channels
-        total, nfail = len(jobs), len(failed)
-        axis = any(_prefix(f["name"]) == _prefix(j["name"]) for f in failed for j in jobs if j.get("conclusion") == "success")
+        # cost-0 channels. Matrix evidence only compares a failed job with its own family (same name prefix):
+        # a lone "typing" job failing next to twelve unrelated green jobs says nothing about flakiness.
+        families = {_prefix(f["name"]) for f in failed}
+        family_jobs = [j for j in jobs if _prefix(j["name"]) in families]
+        total, nfail = len(family_jobs), len(failed)
+        axis = any(j.get("conclusion") == "success" for j in family_jobs)
         for e in matrix_evidence(total, nfail, len(clusters) == 1, axis):
             state.add_evidence(inv_id, e.channel, e.observation, e.weights)
             inv["evidence_added"].append(asdict(e))

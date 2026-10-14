@@ -132,3 +132,18 @@ async def test_record_outcome_rules(state):
     assert o["derived_origin"] is None and o["outcomes_recorded"] == 5
     with pytest.raises(inv.NotFound):
         inv.get(state, "acme/app#1@1")
+
+
+async def test_matrix_evidence_only_within_the_failed_jobs_family(state):
+    # heterogeneous jobs: one 'typing' failure beside unrelated green jobs -> no matrix evidence
+    run = mk_run(300, prs=(), event="push")
+    typing, log = mk_job(3000, "typing", "mypy-errors", 300)
+    others = [mk_job(3100 + i, name, None, 300, conclusion="success")[0] for i, name in enumerate(("Mac", "3.12", "3.13", "Windows"))]
+    gh = FakeGitHub(runs=[run], jobs={(300, 1): [typing] + others}, logs={3000: log})
+    r = await inv.start(gh, state, "acme/app", run_id=300)
+    assert r["mode"] == "compile" and r["channels_observed"] == [] and r["evidence_added"] == []
+    # true matrix: one of three 'test (…)' shards fails -> environment/flaky evidence
+    run2, jobs, logs = matrix_run(301, failed=("jest-assert",), passed=2, prs=(), event="push")
+    gh2 = FakeGitHub(runs=[run2], jobs={(301, 1): jobs}, logs=logs)
+    r2 = await inv.start(gh2, state, "acme/app", run_id=301)
+    assert r2["channels_observed"] == ["matrix_pattern"] and r2["evidence_added"][0]["weights"]["environment"] == "strong"

@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 
 from ..types import ExtractedError, LogLine
-from ._util import ParseContext, dedupe_errors, find_all, find_last, obs, plural, trunc
+from ._util import ParseContext, dedupe_errors, find_all, find_last, obs, plural, pos_of, trunc
 
 NAME = "py_lint"
 GATE = re.compile(r"""\.pyi?:\d+(?::\d+)?:\s*(?:error:|[A-Z]{1,4}\d{2,4}\b)|\.py:\d+:\d+\s+-\s+error:|^Found \d+ errors?""", re.M)
@@ -22,7 +22,19 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
     mypy, pyright = find_all(lines, _MYPY), find_all(lines, _PYRIGHT)
     if mypy or pyright:
         hits, tool = (mypy, "mypy") if mypy else (pyright, "pyright")
-        errors = [ExtractedError(trunc(m.group(4)), l.index + 1, m.group(1), int(m.group(2)), int(m.group(3)) if m.group(3) else None, m.group(5)) for l, m in hits]
+        errors = []
+        for l, m in hits:
+            msg, code = m.group(4), m.group(5)
+            # mypy --pretty wraps long messages onto indented continuation lines; join them.
+            for nxt in lines[pos_of(lines, l.index) + 1: pos_of(lines, l.index) + 4]:
+                if not nxt.text.startswith(" ") or _MYPY.match(nxt.text) or not nxt.text.strip():
+                    break
+                piece = nxt.text.strip()
+                tail = re.search(r"\s+\[([\w-]+)\]\s*$", piece)
+                if tail:
+                    code, piece = tail.group(1), piece[: tail.start()]
+                msg = f"{msg} {piece}"
+            errors.append(ExtractedError(trunc(msg), l.index + 1, m.group(1), int(m.group(2)), int(m.group(3)) if m.group(3) else None, code))
         found = find_last(lines, _MYPY_FOUND if mypy else _PYRIGHT_SUMMARY)
         errors = dedupe_errors(errors)
         n = int(found[1].group(1)) if found else len(errors)

@@ -59,9 +59,9 @@ def analyze(raw: str, job: dict | None = None, *, max_excerpt_chars: int = 6000,
     anchor = w.anchor if w else (sl.lines[-1].index if sl.lines else 0)
     errors = list(w.errors) if w else []
     flagged = {e.log_line - 1 for e in errors} | {l.index for l in sl.lines if parse_workflow_command(l.text) and parse_workflow_command(l.text).kind == "error"}
-    region = [l for l in lines if anchor - 20 <= l.index <= anchor + 60]
+    region = [l for l in lines if anchor - 10 <= l.index <= anchor + 60]
     code = next((c for c in (exit_code(l.text) for l in reversed(sl.lines)) if c is not None), None)
     cmd = next((m.group(1) for l in reversed(lines) if l.index <= anchor for m in [_RUN.match(l.text)] if m), None)
     return Analysis(res.mode, res.confidence, res.runner_up, res.margin, w.summary if w else "No failure signature found", w.root_cause_hint if w else "", w.parser if w else None,
                     sl.window, mismatch, sl.failed_step.name if sl.failed_step else None, cmd, code, errors[:30], list(w.failed_tests)[:50] if w else [],
-                    collect_file_refs(region, errors), excerpt(lines, anchor, flagged, max_chars=max_excerpt_chars), list(w.signals) if w else [], truncated, len(lines), res)
+                    collect_file_refs(region, errors), excerpt(lines, anchor, flagged, before=10, max_chars=max_excerpt_chars), list(w.signals) if w else [], truncated, len(lines), res)

@@ -37,3 +37,10 @@ def test_pytest_merges_short_summary_and_failure_section():
     o = pyt.parse(parse_lines(log), ParseContext())[0]
     assert o.mode == "test_assertion" and len(o.failed_tests) == 1 and o.failed_tests[0].message == "assert 1 == 2"
     assert any(e.file == "tests/test_m.py" and e.line == 7 for e in o.errors)
+
+
+def test_mypy_pretty_continuation_lines_are_joined():
+    from ci_diagnosis_mcp.analysis.parsers import py_lint
+    log = 'src/app.py:206: error: Incompatible types in assignment (expression has\n    type "dict[str, Any]", variable has type "str")  [assignment]\nFound 1 error in 1 file (checked 3 source files)'
+    o = py_lint.parse(parse_lines(log), ParseContext())[0]
+    assert o.errors[0].message.endswith('variable has type "str")') and o.errors[0].code == "assignment"

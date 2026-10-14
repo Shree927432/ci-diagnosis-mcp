@@ -65,7 +65,8 @@ class FakeGitHub:
     async def job_log(self, owner, repo, job_id, max_bytes=0):
         self.calls += 2  # API call + blob redirect, as the real client counts
         self.log_requests.append(job_id)
-        return self._logs[job_id]
+        log = self._logs[job_id]
+        return log() if callable(log) else log  # callables let perf tests generate big logs lazily
 
     async def annotations(self, owner, repo, check_run_id):
         self.calls += 1

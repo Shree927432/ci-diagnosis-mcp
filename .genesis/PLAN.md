@@ -58,7 +58,7 @@
 
 ### T6-server — MCPServer with five tools and one prompt, markdown plus structured content, output schemas requiring the FR-17 keys, stderr-only logging, actionable errors, analyze_log with 20 MB cap, stdout purity and determinism tests.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-16, FR-17, FR-18, NFR-5, AC-6, AC-15
 - scope: not bounded
 - gates: test-server: .venv/bin/python -m pytest tests/test_server.py -q
@@ -66,7 +66,7 @@
 
 ### T7-verify-release — Full suite green, timing test with dense candidate lines, live smoke against a public failed run recorded as evidence, README with install, token scopes and agent configuration, agent contract connected, checkpoint.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: NFR-1, NFR-2, AC-7, AC-10
 - scope: not bounded
 - gates: test-all: .venv/bin/python -m pytest -q
