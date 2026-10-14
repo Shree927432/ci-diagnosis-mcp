@@ -41,6 +41,25 @@ CANDIDATE = re.compile(
 )
 
 
+_TS_CACHE: dict[str, datetime | None] = {}
+
+
+def _ts(sec: str, frac: str | None) -> datetime | None:
+    """Parse '2026-10-15T10:00:00' (+ optional fraction). Cached per second: logs have many lines per second."""
+    base = _TS_CACHE.get(sec)
+    if base is None and sec not in _TS_CACHE:
+        try:
+            base = datetime(int(sec[0:4]), int(sec[5:7]), int(sec[8:10]), int(sec[11:13]), int(sec[14:16]), int(sec[17:19]), tzinfo=timezone.utc)
+        except ValueError:
+            base = None
+        if len(_TS_CACHE) > 100_000:
+            _TS_CACHE.clear()
+        _TS_CACHE[sec] = base
+    if base is None or not frac:
+        return base
+    return base.replace(microsecond=int(frac[:6].ljust(6, "0")))
+
+
 def strip_ansi(s: str) -> str:
     return _ANSI.sub("", s)
 
@@ -57,15 +76,11 @@ def parse_lines(raw: str) -> list[LogLine]:
         if len(line) > MAX_LINE:
             line = line[:MAX_LINE]
         ts = None
-        m = _TS.match(line)
+        m = _TS.match(line) if line[:1].isdigit() else None
         if m:
-            try:
-                micro = int((m.group(2) or "0")[:6].ljust(6, "0"))
-                ts = datetime.strptime(m.group(1), "%Y-%m-%dT%H:%M:%S").replace(microsecond=micro, tzinfo=timezone.utc)
-            except ValueError:
-                ts = None
+            ts = _ts(m.group(1), m.group(2))
             line = line[m.end():]
-        out.append(LogLine(i, ts, strip_ansi(line).rstrip()))
+        out.append(LogLine(i, ts, (strip_ansi(line) if "\x1b" in line else line).rstrip()))
     return out
 
 
@@ -117,13 +132,29 @@ def is_candidate(text: str) -> bool:
     return bool(CANDIDATE.search(text))
 
 
-def candidate_lines(lines: list[LogLine], window: int = 6) -> list[LogLine]:
-    """Lines that match the pre-filter plus `window` lines around each; order preserved, no duplicates."""
-    keep = set()
+def candidate_lines(lines: list[LogLine], window: int = 4) -> list[LogLine]:
+    """Lines that match the pre-filter plus `window` lines around each; order preserved, no duplicates.
+
+    One regex pass over the joined text, then match offsets are mapped back to line numbers with bisect:
+    far cheaper than a Python-level regex call per line.
+    """
+    import bisect
     n = len(lines)
-    for i, l in enumerate(lines):
-        if is_candidate(l.text):
-            keep.update(range(max(0, i - window), min(n, i + window + 1)))
+    if n == 0:
+        return []
+    blob = "\n".join(l.text for l in lines)
+    starts, pos = [], 0
+    for l in lines:
+        starts.append(pos)
+        pos += len(l.text) + 1
+    keep: set[int] = set()
+    last = -1
+    for m in CANDIDATE.finditer(blob):
+        i = bisect.bisect_right(starts, m.start()) - 1
+        if i == last:
+            continue
+        last = i
+        keep.update(range(max(0, i - window), min(n, i + window + 1)))
     return [lines[i] for i in sorted(keep)]
 
 

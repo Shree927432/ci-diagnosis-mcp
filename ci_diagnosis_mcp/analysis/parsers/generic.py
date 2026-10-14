@@ -8,6 +8,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_last, obs, trunc
 
 NAME = "generic"
+GATE = re.compile(r""".""", re.M)
 _ERRORISH = re.compile(r"^\s*(?:\[ERROR\]|ERROR|Error|error|FAILED|FAIL|fatal|FATAL|Exception|Uncaught)\b[:\]]?\s*(.+)$")
 _EXIT = re.compile(r"Process completed with exit code (\d+)")
 

@@ -7,6 +7,7 @@ from ..types import ExtractedError, FailedTest, LogLine
 from ._util import ParseContext, dedupe_tests, find_all, find_first, find_last, following, obs, plural, pos_of, trunc
 
 NAME = "js_tests"
+GATE = re.compile(r"""^Tests:\s|^Test Suites:|^\s*FAIL\s|^\s*Tests\s+\d+ failed|\bvitest\b|RUN\s+v\d|\d+ failing""", re.M)
 _FAIL_FILE = re.compile(r"^\s*FAIL\s+(\S+\.(?:[cm]?[jt]sx?))(?:\s|$)")
 _BULLET = re.compile(r"^\s*●\s+(.+)$")
 _JEST_SUMMARY = re.compile(r"^Tests:\s+(\d+) failed")

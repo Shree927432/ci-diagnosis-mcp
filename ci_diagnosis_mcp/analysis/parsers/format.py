@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, find_first, obs, plural
 
 NAME = "format"
+GATE = re.compile(r"""^\[warn\]|would reformat|Would reformat|would be reformatted|Oh no!|Imports are incorrectly sorted|^Diff in |gofmt|not formatted""", re.M)
 RULES = [
     ("prettier", r"^\[warn\]\s+(\S+\.\w+)\s*$", r"Code style issues found|Run Prettier with --write", "npx prettier --write <files>"),
     ("black", r"^would reformat\s+(\S+)", r"would be reformatted|Oh no!", "black <files>"),

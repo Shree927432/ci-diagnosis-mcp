@@ -7,6 +7,7 @@ from ..types import ExtractedError, FailedTest, LogLine
 from ._util import ParseContext, dedupe_errors, dedupe_tests, find_all, find_last, following, obs, plural, pos_of, trunc
 
 NAME = "pytest"
+GATE = re.compile(r"""^(?:FAILED|ERROR)\s+\S+\.py|^=+\s|^_{3,}\s|ERROR collecting|during collection|^(?:FAIL|ERROR):\s+\w+\s+\(|^FAILED \(""", re.M)
 _SHORT = re.compile(r"^(FAILED|ERROR)\s+(\S+?\.py)(?:::(\S+))?(?:\s+-\s+(.*))?$")
 _SUMMARY = re.compile(r"^=+\s.*\b(\d+) (?:failed|error)s?\b.*=+$")
 _HEADER = re.compile(r"^_{3,}\s+(.+?)\s+_{3,}$")

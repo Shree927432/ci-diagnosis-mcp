@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, obs, pos_of, trunc
 
 NAME = "traceback"
+GATE = re.compile(r"""^Traceback \(most recent call last\):""", re.M)
 _START = re.compile(r"^Traceback \(most recent call last\):")
 _FRAME = re.compile(r'^\s+File "([^"]+)", line (\d+), in (.+)$')
 _EXC = re.compile(r"^([A-Za-z_][\w.]*(?:Error|Exception|Exit|Interrupt|Warning)):\s*(.*)$")

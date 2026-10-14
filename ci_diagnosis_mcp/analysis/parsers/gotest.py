@@ -7,6 +7,7 @@ from ..types import ExtractedError, FailedTest, LogLine
 from ._util import ParseContext, dedupe_errors, dedupe_tests, find_all, find_first, obs, plural, pos_of, trunc
 
 NAME = "gotest"
+GATE = re.compile(r"""^\s*--- FAIL|^FAIL\s|^panic:|^(?:ok|\?)\s+\S+\s+[\d.]+s|^go: |^# \S+|^=== RUN|\.go:\d+:""", re.M)
 _FAIL_TEST = re.compile(r"^\s*--- FAIL: (\S+) \(([\d.]+)s\)")
 _FAIL_PKG = re.compile(r"^FAIL\s+(\S+)\s+(?:[\d.]+s|\[build failed\]|\[setup failed\])")
 _LOC = re.compile(r"^\s*((?:[\w./-]+/)?[\w.-]+\.go):(\d+):(?:(\d+):)?\s*(.*)$")

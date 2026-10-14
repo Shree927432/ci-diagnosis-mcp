@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_first, following, obs, pos_of, trunc
 
 NAME = "pip"
+GATE = re.compile(r"""Could not find a version|No matching distribution|ResolutionImpossible|conflict is caused by|subprocess-exited-with-error|Failed building wheel|metadata-generation-failed|SolverProblemError|version solving failed|poetry\.lock|No solution found|uv\.lock|Pipfile\.lock""", re.M)
 RULES = [
     (r"ERROR: Could not find a version that satisfies the requirement (\S+)", "dependency", "decisive", "pip: no version satisfies requirement {0}", "The pinned version does not exist for this Python version/platform, or the name is misspelled.", "pip"),
     (r"ERROR: No matching distribution found for (\S+)", "dependency", "decisive", "pip: no matching distribution for {0}", "No wheel/sdist matches this Python version or platform; loosen the pin or change the interpreter version.", "pip"),

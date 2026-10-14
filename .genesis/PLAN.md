@@ -34,7 +34,7 @@
 
 ### T3-belief-actions — Origin posterior per FR-8 with global prior, fix matrix, VOI ranking with availability rule, overrides, stop precedence and action-equivalence shortcut.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-8, FR-11, FR-13
 - scope: not bounded
 - gates: test-belief: .venv/bin/python -m pytest tests/test_origin.py tests/test_actions.py -q
@@ -42,7 +42,7 @@
 
 ### T4-github-state — Async httpx GitHub client: token resolution order, GHES base URL, Authorization only to the API host, runs/jobs/attempts/logs/annotations/PR files/PR runs/base runs, call counting, actionable errors; SQLite state with umask 077, 0700 dir, WAL, TTL log cache named by job id, repo validation; token never in outputs or cache.
 
-- state/risk: queued / medium
+- state/risk: active / medium
 - requirements: FR-19, NFR-6, NFR-7, AC-12, AC-14
 - scope: not bounded
 - gates: test-github: .venv/bin/python -m pytest tests/test_github_client.py tests/test_state.py -q, independent-review: pending

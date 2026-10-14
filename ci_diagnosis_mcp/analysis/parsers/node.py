@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, find_first, obs, pos_of, trunc
 
 NAME = "node"
+GATE = re.compile(r"""^npm (?:ERR!|error)|ERR_PNPM_|Cannot find module|Module not found|Failed to resolve import|ERR_REQUIRE_ESM|ERR_MODULE_NOT_FOUND|ERR_PACKAGE_PATH_NOT_EXPORTED|ERR_UNSUPPORTED_DIR_IMPORT|^(?:Uncaught\s+)?(?:TypeError|ReferenceError|SyntaxError|RangeError|AssertionError)(?: \[\w+\])?: |Missing script:|EBADENGINE|engine \"node\" is incompatible""", re.M)
 _NPM_CODE = re.compile(r"^npm (?:ERR!|error) code (\w+)")
 _NPM_LINE = re.compile(r"^npm (?:ERR!|error)\s?(.*)$")
 _PNPM = re.compile(r"\bERR_PNPM_(\w+)\b")

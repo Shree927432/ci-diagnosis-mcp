@@ -47,9 +47,12 @@ def run_parsers(lines: list[LogLine], ctx: ParseContext) -> list[Observation]:
     global _PARSERS
     if _PARSERS is None:
         _PARSERS = discover()
+    blob = "\n".join(l.text for l in lines)
     out: list[Observation] = []
     for m in _PARSERS:
-        out.extend(m.parse(lines, ctx))
+        gate = getattr(m, "GATE", None)
+        if gate is None or gate.search(blob):
+            out.extend(m.parse(lines, ctx))
     return out
 
 

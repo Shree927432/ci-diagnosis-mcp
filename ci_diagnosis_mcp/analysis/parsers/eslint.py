@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, dedupe_errors, find_last, obs, plural, trunc
 
 NAME = "eslint"
+GATE = re.compile(r"""^✖ \d+ problems?|^\s+\d+:\d+\s+(?:error|warning)\s|lint/[\w/]+""", re.M)
 _FILE = re.compile(r"^((?:/|\.{0,2}/)?[\w./@-]+\.(?:[cm]?[jt]sx?|vue|svelte|astro))$")
 _ROW = re.compile(r"^\s+(\d+):(\d+)\s+(error|warning)\s+(.*?)\s{2,}(\S+)\s*$")
 _SUMMARY = re.compile(r"^✖ (\d+) problems? \((\d+) errors?, (\d+) warnings?\)")

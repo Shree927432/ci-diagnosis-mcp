@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, find_first, find_last, obs, trunc
 
 NAME = "gha"
+GATE = re.compile(r"""lost communication|shutdown signal|maximum execution time|has timed out after|was canceled|operation was canceled|heap out of memory|FATAL ERROR|OOMKilled|Out of memory|Cannot allocate memory|OutOfMemoryError|MemoryError|exit code 137|^Killed$|No space left|ENOSPC|toomanyrequests|rate limit|Too Many Requests|Unable to resolve action|Input required|Resource not accessible|could not read Username|Authentication failed|Repository not found|Unable to locate executable|command not found|: not found$|lock file is not found|not found for platform|Unable to find (?:Node|Python|Go|Java)|template is not valid|Unrecognized named-value|ENOTFOUND|EAI_AGAIN|ECONNRESET|ETIMEDOUT|ECONNREFUSED|Could not resolve host|name resolution|TLS handshake|Connection (?:timed out|reset)""", re.M)
 
 # (pattern, mode, weight, summary, hint). Summary may use {0} for group 1.
 RULES = [

@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, dedupe_errors, find_all, find_last, obs, plural, trunc
 
 NAME = "py_lint"
+GATE = re.compile(r"""\.pyi?:\d+(?::\d+)?:\s*(?:error:|[A-Z]{1,4}\d{2,4}\b)|\.py:\d+:\d+\s+-\s+error:|^Found \d+ errors?""", re.M)
 _MYPY = re.compile(r"^((?:\.{0,2}/)?[\w./-]+\.pyi?):(\d+)(?::(\d+))?:\s*error:\s*(.*?)(?:\s+\[([\w-]+)\])?\s*$")
 _MYPY_FOUND = re.compile(r"^Found (\d+) errors? in (\d+) files?")
 _PYRIGHT = re.compile(r"^\s*((?:\.{0,2}/)?[\w./-]+\.pyi?):(\d+):(\d+)\s+-\s+error:\s*(.*?)(?:\s+\((report\w+)\))?\s*$")

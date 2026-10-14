@@ -7,6 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, dedupe_errors, find_all, find_last, obs, plural, trunc
 
 NAME = "tsc"
+GATE = re.compile(r"""error TS\d{4}""", re.M)
 _ERR = re.compile(r"^(?:##\[error\])?\s*((?:\.{0,2}/)?[\w./@-]+\.(?:[cm]?[jt]sx?|vue|svelte))(?:\((\d+),(\d+)\)|:(\d+):(\d+))\s*[-:]?\s*error\s+(TS\d{4,5}):\s*(.*)$")
 _FOUND = re.compile(r"^Found (\d+) errors?")
 

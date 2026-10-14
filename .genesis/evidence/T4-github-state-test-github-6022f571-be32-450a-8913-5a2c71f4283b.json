@@ -1,0 +1,30 @@
+{
+  "task": "T4-github-state",
+  "gate": "test-github",
+  "kind": "command",
+  "attempt": "6022f571-be32-450a-8913-5a2c71f4283b",
+  "command": ".venv/bin/python -m pytest tests/test_github_client.py tests/test_state.py -q",
+  "started_at": "2026-10-14T19:50:32.476Z",
+  "observed_at": "2026-10-14T19:50:33.579Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "............                                                             [100%]\n12 passed in 0.11s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "2b1612833fd8b639649f7ea43df59469ce04fb67",
+    "dirty": true
+  },
+  "source_hash": "273d7cbc4595de275c9eb0e9d133a24bd241482ac93985a1ef3a6ea16694fec6",
+  "before_hash": "273d7cbc4595de275c9eb0e9d133a24bd241482ac93985a1ef3a6ea16694fec6",
+  "config_hash": "ebe42496682f640cc93c287e3d028d94d4e982d76784375cc80c4b86cb873f6d",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "44e2fb259c0d29e4044cf9b584646a8d9c487c60bdb864f6a74978e59376be9d"
+}
