@@ -1,0 +1,30 @@
+{
+  "task": "T8-real-corpus",
+  "gate": "test-real-corpus",
+  "kind": "command",
+  "attempt": "7c3d190d-de39-41c8-bbd0-443dd699eb1a",
+  "command": ".venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q",
+  "started_at": "2026-10-14T21:13:50.420Z",
+  "observed_at": "2026-10-14T21:13:53.137Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": ".................F..................................                     [100%]\n=================================== FAILURES ===================================\n________________ test_case_details[real-eslint-problem-matcher] ________________\n\nd = PosixPath('/Users/shrikantpawade/CI_Daignosis_MCP_Server/.claude/worktrees/real-log-corpus-efc6c2/tests/fixtures/real-eslint-problem-matcher')\n\n    @pytest.mark.parametrize(\"d\", CASES, ids=[d.name for d in CASES])\n    def test_case_details(d):\n        a, e = run(d)\n        assert a.slice_window == e[\"slice\"][\"window\"], (a.slice_window, e[\"slice\"])\n        assert a.slice_mismatch == e[\"slice\"][\"mismatch\"]\n        if a.mode == e[\"mode\"]:\n            assert a.parser == e[\"parser\"], (a.parser, a.summary)\n            blob = \" | \".join(x.message for x in a.errors) + \" | \" + \" | \".join(a.signals) + \" | \" + a.summary\n            for s in e[\"errors_contain\"]:\n                assert s in blob, (s, blob[:300])\n            for t in e[\"tests_contain\"]:\n                assert any(t in ft.name for ft in a.failed_tests), ([ft.name for ft in a.failed_tests], t)\n            for f in e[\"files_contain\"]:\n>               assert any(f == r.path for r in a.files), ([r.path for r in a.files], f)\nE               AssertionError: (['packages/jest-transform/src/__tests__/ScriptTransformer.test.ts', 'packages/jest-environment/src/index.ts', 'packag...s/diff-sequences/src/index.ts', 'packages/jest-types/src/Global.ts', ...], 'packages/test-utils/src/normalizeIcons.ts')\nE               assert False\nE                +  where False = any(<generator object test_case_details.<locals>.<genexpr> at 0x107bce340>)\n\ntests/test_corpus.py:31: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_corpus.py::test_case_details[real-eslint-problem-matcher]\n1 failed, 51 passed in 1.84s\n",
+  "stderr": "",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "5dd9a1b47981c42995f78da1fab3f3aae126e392",
+    "dirty": true
+  },
+  "source_hash": "97b37e074bbc1a2612b74d90d16b72383d515987d1037546a493424ab990dab5",
+  "before_hash": "97b37e074bbc1a2612b74d90d16b72383d515987d1037546a493424ab990dab5",
+  "config_hash": "66def81fd958d081713ce8a941a1d02dc39f2b7b33ef169a8d89c81f5e11de71",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "cf67f64d9d74e53478f185d76a09787c1e9532e247722a3fec8fcf5727f4f06c"
+}

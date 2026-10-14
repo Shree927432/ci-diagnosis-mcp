@@ -121,6 +121,7 @@ digraph genesis {
   "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:pos_of" [label="pos_of",class="symbol"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:trunc" [label="trunc",class="symbol"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/eslint.py#function:parse" [label="parse",class="symbol"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" [label="_precommit",class="symbol"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" [label="parse",class="symbol"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/generic.py#function:parse" [label="parse",class="symbol"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/gha.py#function:parse" [label="parse",class="symbol"];
@@ -426,10 +427,16 @@ digraph genesis {
   "symbol:ci_diagnosis_mcp/analysis/parsers/eslint.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:plural" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/eslint.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:trunc" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/eslint.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/types.py#class:ExtractedError" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_first" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:obs" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:plural" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" -> "symbol:ci_diagnosis_mcp/analysis/types.py#class:ExtractedError" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_first" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:obs" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:plural" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/types.py#class:ExtractedError" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/generic.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:exit_code" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/generic.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_workflow_command" [label="calls"];
@@ -514,6 +521,7 @@ digraph genesis {
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:dedupe_errors" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:dedupe_tests" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all" [label="calls"];
+  "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_first" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_last" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:following" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:obs" [label="calls"];
@@ -522,7 +530,6 @@ digraph genesis {
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:trunc" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/types.py#class:ExtractedError" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/types.py#class:FailedTest" [label="calls"];
-  "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:obs" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:pos_of" [label="calls"];
   "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:trunc" [label="calls"];
@@ -1063,6 +1070,7 @@ digraph genesis {
   "file:ci_diagnosis_mcp/analysis/parsers/_util.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:pos_of" [label="defines"];
   "file:ci_diagnosis_mcp/analysis/parsers/_util.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:trunc" [label="defines"];
   "file:ci_diagnosis_mcp/analysis/parsers/eslint.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/eslint.py#function:parse" [label="defines"];
+  "file:ci_diagnosis_mcp/analysis/parsers/format.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit" [label="defines"];
   "file:ci_diagnosis_mcp/analysis/parsers/format.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse" [label="defines"];
   "file:ci_diagnosis_mcp/analysis/parsers/generic.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/generic.py#function:parse" [label="defines"];
   "file:ci_diagnosis_mcp/analysis/parsers/gha.py" -> "symbol:ci_diagnosis_mcp/analysis/parsers/gha.py#function:parse" [label="defines"];

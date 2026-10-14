@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "project": "CI_Daignosis_MCP_Server",
-  "revision": "02c0d34a7dd051c7f8d77de2efbd713e2943b8d8",
-  "sourceHash": "606a4cdd67c601ed9e373f6aa79de5e542fc6c558ddb56442d5f8423f6edbf87",
+  "project": "real-log-corpus-efc6c2",
+  "revision": "5dd9a1b47981c42995f78da1fab3f3aae126e392",
+  "sourceHash": "acfcf02abb43a8b8c1e2cfe86c60d4d0730b6d98956b43ad5520735cad516cf6",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -67,7 +67,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "6c4456bc0b43387e98bfaac107996db78446c927965a492317d95d27dbe2c41b"
+      "contentHash": "52ef47382b05bd7207d3567b638afd9f67ef60e49e27efd83148b0e5f0bce757"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/__init__.py",
@@ -97,7 +97,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "d3aad3edfa7789ffb34d5fc3686a7a8044493da9b9669e8d779bfaa649aa63e1"
+      "contentHash": "ba7cb27c68ff414ace30d01b084c4bfe5a20fc022ab44ca497a442a7009054af"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/format.py",
@@ -107,7 +107,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "9b04aba9cf4b7a722481cc3e76b6bc51794e70b79fa8ab7cb5d5f119796a20e7"
+      "contentHash": "842b03f923e7712ffed5304dcaa9ad1a2f3c547e9d8684e6029970785def421f"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/generic.py",
@@ -127,7 +127,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "e9d9240ac874a78a21864f544de01ae42e957883b4e8516c6aeb3ef16137cdde"
+      "contentHash": "77addb3e9a6ca49430b76974cd58ed72e1b0422ad2ea44aa56a1d5183ec2d40f"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/gotest.py",
@@ -147,7 +147,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "f84a8ad51698e521873457626305b493c049f771ddf5810888f01c29c0938670"
+      "contentHash": "96869c48c4db3704b655870e660f3b22dbb59e351ab91ba37a431c19c026297d"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/node.py",
@@ -157,7 +157,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "5bacd29dd63736b99b08d39e0258baf82cf1366ce1bee32520577c49abbdd740"
+      "contentHash": "63f4b9a51c8d718047e6622b504545296b783836d840529ab2a856c92435a043"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/pip.py",
@@ -187,7 +187,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "72e9a53b812460a3b5e2042b3f92ca912ef1c779cddd678e61779c7ed1a91a44"
+      "contentHash": "67736c05479b947020c05d0a26d1bf5793ab9ddb5228344b533dfda7d2a4d70b"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/traceback.py",
@@ -197,7 +197,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "6c7d44643d82e305855d7dee962df7fcff6ef71f7b70c9aed1cbb35235037a33"
+      "contentHash": "4655525862801e66ca82aec0924644e228c35457752420178cd2a3b1105117ea"
     },
     {
       "id": "file:ci_diagnosis_mcp/analysis/parsers/tsc.py",
@@ -367,7 +367,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "18964d5f18e738b5e5b718788bfdcaf390948d17bd7c93fc2e84f205931f232e"
+      "contentHash": "39c2bc526d57344e6f0bf54451b1c5933a6c5c5b8612706f96399f8b495e83ee"
     },
     {
       "id": "file:tests/fixtures/generate_fixtures.py",
@@ -477,7 +477,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "1486e9d363d272fdceff665f9bf765ed2ad6c660e6ee3d78ad2a2018be5b8897"
+      "contentHash": "62232e6c018154dc827035424664752016e777f405d2e930e03dcd08c43a1cf3"
     },
     {
       "id": "file:tests/test_server.py",
@@ -487,7 +487,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "0efaaade1965a47d7b680172e9fb01cad480d640fcf4e72d21cd17b6a6f191fd"
+      "contentHash": "2cef0981fb56e043f281dbd73d69a73103e3dea5ae5b0a165da482eba0caf882"
     },
     {
       "id": "file:tests/test_slicing.py",
@@ -927,7 +927,7 @@
       "name": "WorkflowCommand",
       "label": "WorkflowCommand",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 88,
+      "line": 90,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "97013b2259b8535d70b6f599b4e8eca18d458162ae1457f5153c7fe9c5781785"
@@ -939,7 +939,7 @@
       "name": "_ts",
       "label": "_ts",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 47,
+      "line": 49,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "777a9f08d4350f9e312bee669a2d2249e52db27577965c044a9c325a3f33c655"
@@ -951,7 +951,7 @@
       "name": "candidate_lines",
       "label": "candidate_lines",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 135,
+      "line": 137,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "f9d8ab1048fa4f33fcf07e135d24ace4854b21d6a61ba6aadad710a28d5c67ad"
@@ -963,7 +963,7 @@
       "name": "clamp",
       "label": "clamp",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 187,
+      "line": 189,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9cf53a76dcb4b91a4629779896d31c815e1ba4d2a135a62f8f8729fe2f5db3f6"
@@ -975,7 +975,7 @@
       "name": "excerpt",
       "label": "excerpt",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 218,
+      "line": 220,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "c817c51136b960f87f0c4060c61a676824903f999de212a9bc3997764ff8da37"
@@ -987,7 +987,7 @@
       "name": "exit_code",
       "label": "exit_code",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 116,
+      "line": 118,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8698d4d940d9a7af408dd018727f5ade2096a131c602703558b9ec7e967a0fce"
@@ -999,7 +999,7 @@
       "name": "fence",
       "label": "fence",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 211,
+      "line": 213,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "347f326a01bbccd74841406ecb317ef9abdfebe6637cd32451dce11e4a934f0f"
@@ -1011,7 +1011,7 @@
       "name": "is_candidate",
       "label": "is_candidate",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 131,
+      "line": 133,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "44a4740fbcf3c37c30a29a753b85b275bd310049510dcb6504ba920e43fe29e8"
@@ -1023,7 +1023,7 @@
       "name": "is_error_line",
       "label": "is_error_line",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 121,
+      "line": 123,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "3a080093052268afe3b12a483bc210a4498f90e5e6992b23fb5a2fbd29ddce3b"
@@ -1035,7 +1035,7 @@
       "name": "is_noise",
       "label": "is_noise",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 127,
+      "line": 129,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "5a7babbc957194f83cc9fb28bd294e14b65114f6341021b8364f4fde24ee86ab"
@@ -1047,7 +1047,7 @@
       "name": "parse_lines",
       "label": "parse_lines",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 67,
+      "line": 69,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a22798fac6535b1a32dd283d119d67b3a051454df348d9b8027c26d1129513f8"
@@ -1059,7 +1059,7 @@
       "name": "parse_workflow_command",
       "label": "parse_workflow_command",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 96,
+      "line": 98,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "76e4db5e099258d179ef5049867f7964e64a1179351b7ca0a1fb028d32413d69"
@@ -1071,7 +1071,7 @@
       "name": "render",
       "label": "render",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 161,
+      "line": 163,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "174a1f232b8296668ef9fbb8e608a36828a57c9c4b976870773f1410a1809667"
@@ -1083,7 +1083,7 @@
       "name": "strip_ansi",
       "label": "strip_ansi",
       "path": "ci_diagnosis_mcp/analysis/normalize.py",
-      "line": 63,
+      "line": 65,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "649477d5a32e0b31b228addbcfa34779d9b07af6765f8c921b002914b789b448"
@@ -1245,13 +1245,25 @@
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
     },
     {
+      "id": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "type": "symbol",
+      "kind": "function",
+      "name": "_precommit",
+      "label": "_precommit",
+      "path": "ci_diagnosis_mcp/analysis/parsers/format.py",
+      "line": 25,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast",
+      "contentHash": "0849825546c52a38e55d97166ec2f40163d918ed74f189c20e416efaee8e30e4"
+    },
+    {
       "id": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse",
       "type": "symbol",
       "kind": "function",
       "name": "parse",
       "label": "parse",
       "path": "ci_diagnosis_mcp/analysis/parsers/format.py",
-      "line": 22,
+      "line": 39,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
@@ -1275,7 +1287,7 @@
       "name": "parse",
       "label": "parse",
       "path": "ci_diagnosis_mcp/analysis/parsers/gha.py",
-      "line": 40,
+      "line": 45,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
@@ -1359,7 +1371,7 @@
       "name": "_frame",
       "label": "_frame",
       "path": "ci_diagnosis_mcp/analysis/parsers/node.py",
-      "line": 25,
+      "line": 28,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "85918208fbb43c7fdca8e7b629b4072e318f87cf3a3a4851ef511556c7eadaa7"
@@ -1371,7 +1383,7 @@
       "name": "parse",
       "label": "parse",
       "path": "ci_diagnosis_mcp/analysis/parsers/node.py",
-      "line": 33,
+      "line": 36,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
@@ -1407,7 +1419,7 @@
       "name": "parse",
       "label": "parse",
       "path": "ci_diagnosis_mcp/analysis/parsers/pytest.py",
-      "line": 22,
+      "line": 24,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
@@ -1419,7 +1431,7 @@
       "name": "parse",
       "label": "parse",
       "path": "ci_diagnosis_mcp/analysis/parsers/traceback.py",
-      "line": 17,
+      "line": 18,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8a45a6fb75068dba2943ecf9f5e211c9b83a7e6aa1265af875d84af3ff1da95e"
@@ -4832,6 +4844,51 @@
     },
     {
       "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_first",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:obs",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:plural",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "target": "symbol:ci_diagnosis_mcp/analysis/types.py#class:ExtractedError",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
       "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all",
       "tier": "proven",
@@ -4864,6 +4921,15 @@
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 1,
       "extractor": "python-stdlib-ast-calls"
     },
     {
@@ -5633,6 +5699,15 @@
     {
       "type": "calls",
       "source": "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_first",
+      "tier": "proven",
+      "resolved": true,
+      "confidence": 0.7,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_last",
       "tier": "proven",
       "resolved": true,
@@ -5697,15 +5772,6 @@
       "type": "calls",
       "source": "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse",
       "target": "symbol:ci_diagnosis_mcp/analysis/types.py#class:FailedTest",
-      "tier": "proven",
-      "resolved": true,
-      "confidence": 0.7,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse",
-      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#function:find_all",
       "tier": "proven",
       "resolved": true,
       "confidence": 0.7,
@@ -10896,7 +10962,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#class:WorkflowCommand",
-      "line": 88,
+      "line": 90,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10905,7 +10971,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:_ts",
-      "line": 47,
+      "line": 49,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10914,7 +10980,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:candidate_lines",
-      "line": 135,
+      "line": 137,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10923,7 +10989,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:clamp",
-      "line": 187,
+      "line": 189,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10932,7 +10998,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:excerpt",
-      "line": 218,
+      "line": 220,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10941,7 +11007,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:exit_code",
-      "line": 116,
+      "line": 118,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10950,7 +11016,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:fence",
-      "line": 211,
+      "line": 213,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10959,7 +11025,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:is_candidate",
-      "line": 131,
+      "line": 133,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10968,7 +11034,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:is_error_line",
-      "line": 121,
+      "line": 123,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10977,7 +11043,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:is_noise",
-      "line": 127,
+      "line": 129,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10986,7 +11052,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines",
-      "line": 67,
+      "line": 69,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -10995,7 +11061,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_workflow_command",
-      "line": 96,
+      "line": 98,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11004,7 +11070,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:render",
-      "line": 161,
+      "line": 163,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11013,7 +11079,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:strip_ansi",
-      "line": 63,
+      "line": 65,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11138,8 +11204,17 @@
     {
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/format.py",
+      "target": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:_precommit",
+      "line": 25,
+      "resolved": true,
+      "confidence": 1,
+      "extractor": "python-stdlib-ast"
+    },
+    {
+      "type": "defines",
+      "source": "file:ci_diagnosis_mcp/analysis/parsers/format.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/format.py#function:parse",
-      "line": 22,
+      "line": 39,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11157,7 +11232,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/gha.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/gha.py#function:parse",
-      "line": 40,
+      "line": 45,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11220,7 +11295,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/node.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/node.py#function:_frame",
-      "line": 25,
+      "line": 28,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11229,7 +11304,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/node.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/node.py#function:parse",
-      "line": 33,
+      "line": 36,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11256,7 +11331,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/pytest.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/pytest.py#function:parse",
-      "line": 22,
+      "line": 24,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -11265,7 +11340,7 @@
       "type": "defines",
       "source": "file:ci_diagnosis_mcp/analysis/parsers/traceback.py",
       "target": "symbol:ci_diagnosis_mcp/analysis/parsers/traceback.py#function:parse",
-      "line": 17,
+      "line": 18,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13747,7 +13822,7 @@
       "source": "file:ci_diagnosis_mcp/analysis/normalize.py",
       "target": "runtime:python:bisect",
       "specifier": "bisect",
-      "line": 141,
+      "line": 143,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -15844,6 +15919,6 @@
   ],
   "warnings": [],
   "stats": {
-    "unresolvedCalls": 781
+    "unresolvedCalls": 793
   }
 }
