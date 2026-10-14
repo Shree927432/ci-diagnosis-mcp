@@ -88,5 +88,5 @@ def recommendation(ctx: Context, ranked: list[dict]) -> tuple[str, str]:
         if not ranked:
             return "stop", "no_actions_available"
     if not ranked:
-        return "gather", "no_actions_available_but_mode_uncertain"
+        return "stop", "no_actions_available"
     return "gather", ranked[0]["action"]

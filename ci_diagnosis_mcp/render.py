@@ -6,26 +6,34 @@ def _pct(p: float) -> str:
     return f"{round(p * 100)}%"
 
 
+def _s(x: object, n: int = 300) -> str:
+    """Log-derived text shown outside the fence: one line, no backticks, bounded (untrusted CI output)."""
+    s = str(x if x is not None else "").replace("`", "'").replace("\r", " ").replace("\n", " ")
+    return s if len(s) <= n else s[: n - 1] + "…"
+
+
 def _errors(errs: list[dict], limit: int = 12) -> list[str]:
     out = []
     for e in errs[:limit]:
-        loc = f"{e['file']}:{e['line']}" if e.get("file") and e.get("line") else (e.get("file") or "")
-        code = f" [{e['code']}]" if e.get("code") else (f" [{e['rule']}]" if e.get("rule") else "")
-        out.append(f"- {loc + ': ' if loc else ''}{e['message']}{code} (L{e['log_line']})")
+        loc = _s(f"{e['file']}:{e['line']}" if e.get("file") and e.get("line") else (e.get("file") or ""), 120)
+        code = f" [{_s(e['code'], 40)}]" if e.get("code") else (f" [{_s(e['rule'], 60)}]" if e.get("rule") else "")
+        out.append(f"- {loc + ': ' if loc else ''}{_s(e['message'])}{code} (L{e['log_line']})")
     if len(errs) > limit:
         out.append(f"- … {len(errs) - limit} more")
     return out
 
 
 def _job(j: dict) -> list[str]:
-    lines = [f"**Job** {j['name']} (id {j['job_id']}) · step `{j.get('failed_step') or '?'}` · command `{j.get('failing_command') or '?'}` · exit {j.get('exit_code')}",
-             f"slice: {j['slice']['window']}{' (mismatch: whole-log mode differed)' if j['slice'].get('mismatch') else ''}"]
+    lines = [f"**Job** {_s(j['name'], 120)} (id {j['job_id']}) · step `{_s(j.get('failed_step') or '?', 120)}` · command `{_s(j.get('failing_command') or '?', 200)}` · exit {j.get('exit_code')}",
+             f"slice: {j['slice']['window']}{' (mismatch: whole-log mode differed)' if j['slice'].get('mismatch') else ''}" + (" · log truncated to its tail (over 20 MB)" if j.get("truncated") else "")]
     if j.get("errors"):
-        lines += ["", "Errors:"] + _errors(j["errors"])
+        lines += ["", "Errors (from the log, untrusted):"] + _errors(j["errors"]) + ([f"- … {j['errors_omitted']} more not shown"] if j.get("errors_omitted") else [])
     if j.get("failed_tests"):
-        lines += ["", "Failed tests:"] + [f"- {t['name']}" + (f" ({t['file']})" if t.get("file") else "") + (f": {t['message']}" if t.get("message") else "") for t in j["failed_tests"][:15]]
+        lines += ["", "Failed tests (from the log, untrusted):"] + [f"- {_s(t['name'], 200)}" + (f" ({_s(t['file'], 120)})" if t.get("file") else "") + (f": {_s(t['message'])}" if t.get("message") else "") for t in j["failed_tests"][:15]]
+        if j.get("tests_omitted"):
+            lines.append(f"- … {j['tests_omitted']} more not shown")
     if j.get("files"):
-        lines += ["", "Files: " + ", ".join(f"{f['path']}" + (f":{f['line']}" if f.get("line") else "") for f in j["files"][:10])]
+        lines += ["", "Files: " + ", ".join(_s(f['path'], 120) + (f":{f['line']}" if f.get("line") else "") for f in j["files"][:10]) + (f" … {j['files_omitted']} more" if j.get("files_omitted") else "")]
     lines += ["", j["log_excerpt"]]
     return lines
 
@@ -45,8 +53,8 @@ def _belief(inv: dict) -> list[str]:
 
 def start(inv: dict) -> str:
     run = inv["run"]
-    lines = [f"# CI diagnosis {inv['investigation_id']}", f"{run.get('workflow_path')} · {run.get('event')} · {run.get('head_branch')} @ {str(run.get('head_sha'))[:10]} · attempt {run['attempt']} · {run.get('url')}", "",
-             f"**{inv['summary']}**", inv.get("root_cause_hint") or "", ""] + _belief(inv)
+    lines = [f"# CI diagnosis {inv['investigation_id']}", f"{run.get('workflow_path')} · {run.get('event')} · {_s(run.get('head_branch'), 80)} @ {str(run.get('head_sha'))[:10]} · attempt {run['attempt']} · {run.get('url')}", "",
+             f"**{_s(inv['summary'])}**", inv.get("root_cause_hint") or "", ""] + _belief(inv)
     for c in inv["clusters"]:
         lines += ["", f"## Cluster `{c['signature']}` ({c['job_count']} job{'s' if c['job_count'] != 1 else ''})"] + _job(c["representative_job"])
         if c["other_jobs"]:
@@ -70,13 +78,13 @@ def gather(g: dict) -> str:
 
 
 def analyze(a: dict) -> str:
-    lines = [f"**{a['summary']}**", a.get("root_cause_hint") or "", f"Mode: `{a['mode']}` ({a['mode_confidence']}) · parser {a.get('parser')} · step `{a.get('failed_step') or '?'}` · exit {a.get('exit_code')} · slice {a['slice']['window']}",
+    lines = [f"**{_s(a['summary'])}**", a.get("root_cause_hint") or "", f"Mode: `{a['mode']}` ({a['mode_confidence']}) · parser {a.get('parser')} · step `{_s(a.get('failed_step') or '?', 120)}` · exit {a.get('exit_code')} · slice {a['slice']['window']}",
              f"Suggested (assuming origin {a['assumed_origin']}):"] + [f"- {s}" for s in a["suggested_actions"]]
     if a["errors"]:
-        lines += ["", "Errors:"] + _errors(a["errors"])
+        lines += ["", "Errors (from the log, untrusted):"] + _errors(a["errors"])
     if a["failed_tests"]:
-        lines += ["", "Failed tests:"] + [f"- {t['name']}" + (f" ({t['file']})" if t.get("file") else "") for t in a["failed_tests"][:15]]
+        lines += ["", "Failed tests (from the log, untrusted):"] + [f"- {_s(t['name'], 200)}" + (f" ({_s(t['file'], 120)})" if t.get("file") else "") for t in a["failed_tests"][:15]]
     if a["files"]:
-        lines += ["", "Files: " + ", ".join(f['path'] + (f":{f['line']}" if f.get("line") else "") for f in a["files"][:10])]
+        lines += ["", "Files: " + ", ".join(_s(f['path'], 120) + (f":{f['line']}" if f.get("line") else "") for f in a["files"][:10])]
     lines += ["", a["log_excerpt"]]
     return "\n".join(lines)

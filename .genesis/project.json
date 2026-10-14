@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T20:05:03.156Z"
+    "updated_at": "2026-10-14T20:15:29.110Z"
   },
   "policy": {
     "ponytail": "full",
@@ -263,6 +263,16 @@
       "status": "accepted",
       "source": "smoke run 2026-10-15; tests/test_perf.py; tests/test_investigation.py",
       "recorded_at": "2026-10-14T20:05:03.151Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-c2aff99f",
+      "title": "T5/T6 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition",
+      "text": "Reviewer: Claude Sonnet 5.5, fresh context, read-only, reproduced 8 of 15 findings with scratch scripts. Accepted and fixed: (1 high) branch target now filters runs to the newest head SHA; (2) fork PRs: has_pr depends on a resolved PR number (from the pr_number target or run.pull_requests), base ref is fetched when needed; (3) truncated, errors_omitted, tests_omitted, files_omitted, root_cause_hint and level1_signature exposed on JobView and rendered, computed from pre-cap totals; (4) error results no longer carry structured_content that violates the output schema; candidate runs are listed in the text; (5) an attempt counts as passed when no job failed, timed out or was cancelled, in-progress attempts are skipped, the three nearest attempts are compared; (6) pr_history only considers runs created before the investigated run and records only signature-checked pushes; (7) base_history filters to push runs older than the investigated run and counts only level-1 signature matches among the latest three failed base runs; (8) downloads use return_exceptions, failed logs are listed in jobs_not_downloaded with the reason, an error is raised only when every download fails; (9) fetch_full_step_log without clusters asks for job_id; (10) max_jobs clamped to 15 to keep NFR-4; (11) log-derived strings outside the fence are sanitised (no backticks or newlines) and sections are labelled as from the log; (12) httpx logger set to WARNING so signed blob URLs are not logged; (13) ValueError/KeyError return a generic actionable message and log the detail; (14) fetch_sibling_jobs is marked taken only when the run has more than one job; (15) mode unknown with no actions left now returns stop. Rejected: deleting mark_channel('annotations'), because the trail should record that annotations were fetched even though they carry no origin weight. Test gaps 1, 2, 3, 5, 6 addressed with new tests; gap 4 (AC-11 counts the fake's calls rather than respx) accepted as a known limitation because the fake mirrors the client's accounting and is exercised by the respx-backed server test.",
+      "status": "accepted",
+      "source": "reviewer: claude-sonnet-5-5 subagent, 2026-10-15; commits 029c5a8, 11b0911, 0eadebf",
+      "recorded_at": "2026-10-14T20:13:00.529Z",
       "paths": [],
       "tags": []
     }
@@ -1508,8 +1518,14 @@
           "kind": "command",
           "command": ".venv/bin/python -m pytest -q",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T7-verify-release-test-all-c5c843ac-8b2a-4bb5-9d73-6e07f87897f2.json",
+            "hash": "5a38b050d0fa6210bd13950cde831e0b9889cba4757f86d7902626617587485f",
+            "source_hash": "62e546a9bd02021bacfcafb119374c4bd52d07a9f2fec0b66b8fbdeb4e03211b",
+            "config_hash": "4c1f4c10da40a525fac4d852ee8dfcb623a79d2fc637150dab6948851266da1c",
+            "observed_at": "2026-10-14T20:15:29.069Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -1916,12 +1932,45 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-14T19:58:55.757Z"
+    },
+    {
+      "id": "c5c843ac-8b2a-4bb5-9d73-6e07f87897f2",
+      "task": "T7-verify-release",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 27534,
+      "child_pid": 27728,
+      "started_at": "2026-10-14T20:15:15.749Z",
+      "status": "passed",
+      "before_hash": "62e546a9bd02021bacfcafb119374c4bd52d07a9f2fec0b66b8fbdeb4e03211b",
+      "config_hash": "4c1f4c10da40a525fac4d852ee8dfcb623a79d2fc637150dab6948851266da1c",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T20:15:29.069Z"
     }
   ],
   "authorizations": [],
   "experiments": [],
   "incidents": [],
   "discovery": null,
-  "checkpoint": null,
+  "checkpoint": {
+    "at": "2026-10-14T20:05:24.018Z",
+    "revision": {
+      "commit": "40bde07c4a41faf15f4b09220489aa766ab0c7d6",
+      "dirty": false,
+      "source_hash": "c6b02ceaf03034382b0a2c3b21a113934d1e7bd8fee98e9faf6d7191b848c8ac"
+    },
+    "active_task": "T7-verify-release",
+    "next_action": "Run the task pre-flight."
+  },
   "legacy": null
 }

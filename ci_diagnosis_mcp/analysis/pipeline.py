@@ -38,6 +38,9 @@ class Analysis:
     signals: list[str]
     truncated: bool = False
     total_lines: int = 0
+    errors_total: int = 0
+    tests_total: int = 0
+    files_total: int = 0
     result: ModeResult = field(default_factory=ModeResult, repr=False)
 
 
@@ -62,6 +65,8 @@ def analyze(raw: str, job: dict | None = None, *, max_excerpt_chars: int = 6000,
     region = [l for l in lines if anchor - 10 <= l.index <= anchor + 60]
     code = next((c for c in (exit_code(l.text) for l in reversed(sl.lines)) if c is not None), None)
     cmd = next((m.group(1) for l in reversed(lines) if l.index <= anchor for m in [_RUN.match(l.text)] if m), None)
+    tests = list(w.failed_tests) if w else []
+    files = collect_file_refs(region, errors, limit=10_000)
     return Analysis(res.mode, res.confidence, res.runner_up, res.margin, w.summary if w else "No failure signature found", w.root_cause_hint if w else "", w.parser if w else None,
-                    sl.window, mismatch, sl.failed_step.name if sl.failed_step else None, cmd, code, errors[:30], list(w.failed_tests)[:50] if w else [],
-                    collect_file_refs(region, errors), excerpt(lines, anchor, flagged, before=10, max_chars=max_excerpt_chars), list(w.signals) if w else [], truncated, len(lines), res)
+                    sl.window, mismatch, sl.failed_step.name if sl.failed_step else None, cmd, code, errors[:30], tests[:50],
+                    files[:25], excerpt(lines, anchor, flagged, before=10, max_chars=max_excerpt_chars), list(w.signals) if w else [], truncated, len(lines), len(errors), len(tests), len(files), res)

@@ -66,6 +66,8 @@ class FakeGitHub:
         self.calls += 2  # API call + blob redirect, as the real client counts
         self.log_requests.append(job_id)
         log = self._logs[job_id]
+        if isinstance(log, Exception):
+            raise log
         return log() if callable(log) else log  # callables let perf tests generate big logs lazily
 
     async def annotations(self, owner, repo, check_run_id):
@@ -85,7 +87,7 @@ class FakeGitHub:
         return []
 
 
-def mk_run(run_id: int, *, attempt=1, conclusion="failure", status="completed", sha="abc123", branch="feature", event="pull_request", prs=(7,), workflow_id=11, created="2026-10-15T10:00:00Z", name="CI") -> dict:
+def mk_run(run_id: int, *, attempt=1, conclusion="failure", status="completed", sha="abc123", branch="feature", event="pull_request", prs=(7,), workflow_id=11, created="2026-10-15T10:00:00Z", name="CI") -> dict:  # noqa: E501
     return {"id": run_id, "name": name, "path": ".github/workflows/ci.yml", "workflow_id": workflow_id, "run_attempt": attempt, "status": status, "conclusion": conclusion, "head_sha": sha, "head_branch": branch,
             "event": event, "html_url": f"https://github.com/acme/app/actions/runs/{run_id}", "created_at": created, "pull_requests": [{"number": n} for n in prs]}
 

@@ -109,7 +109,7 @@ async def test_gather_base_history_and_full_log(state):
     bj, bl = mk_job(900, "test (node 18)", "pytest-assert", 90)
     gh = FakeGitHub(runs=[run, base_fail], jobs={(100, 1): jobs, (90, 1): [bj]}, logs={**logs, 900: bl})
     r = await inv.start(gh, state, "acme/app", run_id=100)
-    assert {u["action"] for u in r["unavailable_actions"]} >= {"fetch_pr_diff", "fetch_pr_history"} and "fetch_sibling_jobs" in r["taken"]
+    assert {u["action"] for u in r["unavailable_actions"]} >= {"fetch_pr_diff", "fetch_pr_history", "fetch_sibling_jobs"} and "fetch_sibling_jobs" not in r["taken"]
     g = await inv.gather(gh, state, r["investigation_id"], "fetch_base_history")
     assert any(e["channel"] == "base_history" and "same signature" in e["observation"] for e in g["evidence_added"])
     assert g["origin_after"]["pre_existing"] > g["origin_before"]["pre_existing"]
@@ -147,3 +147,68 @@ async def test_matrix_evidence_only_within_the_failed_jobs_family(state):
     gh2 = FakeGitHub(runs=[run2], jobs={(301, 1): jobs}, logs=logs)
     r2 = await inv.start(gh2, state, "acme/app", run_id=301)
     assert r2["channels_observed"] == ["matrix_pattern"] and r2["evidence_added"][0]["weights"]["environment"] == "strong"
+
+
+async def test_branch_target_uses_only_the_head_commit(state):
+    old_fail, oj, ol = matrix_run(90, failed=("jest-assert",), passed=0, prs=(), event="push")
+    old_fail["head_sha"], old_fail["created_at"] = "old111", "2026-10-14T10:00:00Z"
+    head_fail, hj, hl = matrix_run(91, failed=("tsc-errors",), passed=0, prs=(), event="push")
+    head_fail["head_sha"], head_fail["created_at"] = "head22", "2026-10-15T10:00:00Z"
+    gh = FakeGitHub(runs=[head_fail, old_fail], jobs={(90, 1): oj, (91, 1): hj}, logs={**ol, **hl})
+    r = await inv.start(gh, state, "acme/app", branch="feature")
+    assert r["investigation_id"] == "acme/app#91@1" and r["mode"] == "compile"
+
+
+async def test_fork_pr_without_pr_number_has_no_pr_actions(state):
+    run, jobs, logs = matrix_run(120, failed=("jest-assert",), passed=0, prs=(), event="pull_request")
+    gh = FakeGitHub(runs=[run], jobs={(120, 1): jobs}, logs=logs)
+    r = await inv.start(gh, state, "acme/app", run_id=120)
+    assert r["has_pr"] is False and {u["action"] for u in r["unavailable_actions"]} >= {"fetch_pr_diff", "fetch_pr_history"}
+    assert all(a["action"] not in ("fetch_pr_diff", "fetch_pr_history") for a in r["next_actions"])
+
+
+async def test_attempt_with_skipped_job_counts_as_passed_and_partial_download_failure_is_listed(state):
+    run, jobs, logs = matrix_run(130, failed=("jest-assert", "jest-assert"), passed=0, attempt=2)
+    prev_ok = [mk_job(1300, "test (node 18)", None, 130, conclusion="success")[0], mk_job(1301, "test (node 20)", None, 130, conclusion="skipped")[0]]
+    logs[1001] = GitHubError("GitHub 410 on job 1001 logs: Gone", 410, "the log has expired")
+    gh = FakeGitHub(runs=[run], jobs={(130, 2): jobs, (130, 1): prev_ok}, logs=logs)
+    r = await inv.start(gh, state, "acme/app", run_id=130)
+    assert any(e["observation"].endswith("passed") and e["weights"]["flaky"] == "strong" for e in r["evidence_added"])
+    assert [j["job_id"] for j in r["jobs_not_downloaded"]] == [1001] and "410" in r["jobs_not_downloaded"][0]["reason"]
+    jobs2 = [{**j, "id": 1500 + i, "run_id": 131} for i, j in enumerate(jobs)]
+    gh2 = FakeGitHub(runs=[mk_run(131, attempt=1)], jobs={(131, 1): jobs2}, logs={j["id"]: GitHubError("gone", 410) for j in jobs2})
+    with pytest.raises(GitHubError, match="could not download any"):
+        await inv.start(gh2, state, "acme/app", run_id=131)
+
+
+async def test_pr_history_ignores_newer_runs_and_checks_signatures(state):
+    run, jobs, logs = matrix_run(140, failed=("jest-assert",), passed=0)
+    run["created_at"] = "2026-10-15T12:00:00Z"
+    older, oj, ol = matrix_run(141, failed=("jest-assert",), passed=0)
+    older["head_sha"], older["created_at"] = "older1", "2026-10-15T11:00:00Z"
+    newer, nj, nl = matrix_run(142, failed=("tsc-errors",), passed=0)
+    newer["head_sha"], newer["created_at"] = "newer1", "2026-10-15T13:00:00Z"
+    pulls = {7: {"number": 7, "head": {"sha": "abc123", "ref": "feature"}, "base": {"ref": "main"}}}
+    gh = FakeGitHub(runs=[newer, run, older], jobs={(140, 1): jobs, (141, 1): oj, (142, 1): nj}, logs={**logs, **ol, **nl}, pulls=pulls)
+    r = await inv.start(gh, state, "acme/app", run_id=140)
+    g = await inv.gather(gh, state, r["investigation_id"], "fetch_pr_history")
+    assert [p["sha"] for p in g["pr_runs"]] == ["older1"] and g["pr_runs"][0]["same_signature"] is True
+    assert g["evidence_added"][0]["weights"]["this_change"] == "strong"
+
+
+async def test_full_step_log_without_clusters_asks_for_job_id(state):
+    gh = FakeGitHub(runs=[mk_run(6, conclusion="startup_failure")], jobs={})
+    r = await inv.start(gh, state, "acme/app", run_id=6)
+    with pytest.raises(GitHubError, match="job_id"):
+        await inv.gather(gh, state, r["investigation_id"], "fetch_full_step_log")
+
+
+def test_job_view_reports_remainders_and_truncation():
+    from ci_diagnosis_mcp.analysis.pipeline import analyze
+    from ci_diagnosis_mcp.investigation import _job_view
+    log = "\n".join(f"src/m{i}.ts(1,1): error TS2322: bad {i}" for i in range(40)) + "\nFound 40 errors.\n"
+    a = analyze(log)
+    view = _job_view({"id": 1, "name": "x", "steps": []}, a)
+    assert len(view["errors"]) == 30 and view["errors_omitted"] == 10 and view["files_omitted"] == 15 and view["truncated"] is False
+    a2 = analyze("x" * (21 * 1024 * 1024) + "\n##[error]boom\n")
+    assert _job_view({"id": 2, "name": "y", "steps": []}, a2)["truncated"] is True

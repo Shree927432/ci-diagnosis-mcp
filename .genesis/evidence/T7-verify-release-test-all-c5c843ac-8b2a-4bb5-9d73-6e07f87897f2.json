@@ -1,0 +1,30 @@
+{
+  "task": "T7-verify-release",
+  "gate": "test-all",
+  "kind": "command",
+  "attempt": "c5c843ac-8b2a-4bb5-9d73-6e07f87897f2",
+  "command": ".venv/bin/python -m pytest -q",
+  "started_at": "2026-10-14T20:15:15.749Z",
+  "observed_at": "2026-10-14T20:15:29.069Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "........................................................................ [ 57%]\n......................................................                   [100%]\n=============================== warnings summary ===============================\ntests/test_investigation.py::test_job_view_reports_remainders_and_truncation\n  tests/test_investigation.py:206: PytestWarning: The test <Function test_job_view_reports_remainders_and_truncation> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_job_view_reports_remainders_and_truncation():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n126 passed, 1 warning in 12.36s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "40bde07c4a41faf15f4b09220489aa766ab0c7d6",
+    "dirty": true
+  },
+  "source_hash": "62e546a9bd02021bacfcafb119374c4bd52d07a9f2fec0b66b8fbdeb4e03211b",
+  "before_hash": "62e546a9bd02021bacfcafb119374c4bd52d07a9f2fec0b66b8fbdeb4e03211b",
+  "config_hash": "4c1f4c10da40a525fac4d852ee8dfcb623a79d2fc637150dab6948851266da1c",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "5a38b050d0fa6210bd13950cde831e0b9889cba4757f86d7902626617587485f"
+}

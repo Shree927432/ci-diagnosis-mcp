@@ -22,7 +22,8 @@ ANALYZE_KEYS = {"mode", "mode_confidence", "errors", "failed_tests", "files", "l
 
 
 @pytest.fixture(autouse=True)
-def isolated_state(tmp_path, monkeypatch):
+def isolated_state(tmp_path, monkeypatch, caplog):
+    caplog.set_level("INFO")
     monkeypatch.setenv("CI_DIAGNOSIS_STATE", str(tmp_path / "state"))
     monkeypatch.setattr(srv, "_state", None)
     yield tmp_path / "state"
@@ -73,7 +74,7 @@ def _mock_github(m: respx.MockRouter, run: dict, jobs: list[dict], logs: dict[in
     m.get(f"{base}/repos/acme/app/pulls/7/files").respond(200, json=[{"filename": "src/cart.ts", "status": "modified", "changes": 3}])
 
 
-async def test_full_flow_over_mcp_never_exposes_token_and_reports_progress(monkeypatch, isolated_state, capfd):
+async def test_full_flow_over_mcp_never_exposes_token_and_reports_progress(monkeypatch, isolated_state, caplog):
     monkeypatch.setenv("GITHUB_TOKEN", TOKEN)
     monkeypatch.setattr(srv, "_gh", lambda: _real_client())
     run = mk_run(100)
@@ -97,7 +98,9 @@ async def test_full_flow_over_mcp_never_exposes_token_and_reports_progress(monke
     assert not g.is_error and "diff_overlap" in g.structured_content["channels_observed"]
     assert not i.is_error and i.structured_content["evidence_trail"] and not o.is_error and o.structured_content["derived_origin"] == "this_change"
     assert blob_auth and all(a is None for a in blob_auth)
-    err = capfd.readouterr().err
+    err = caplog.text  # pytest routes the stderr handler's records here; production logging goes to stderr (see the stdio test)
+    assert "start_investigation repo=acme/app" in err  # capture is live, so the token check below is not vacuous
+    assert "blob.example.com" not in err  # httpx request logging (signed URLs) is off
     everything = "\n".join(json.dumps(r.structured_content) + "".join(x.text for x in r.content) for r in (s, g, i, o)) + err
     assert TOKEN not in everything
     for p in isolated_state.rglob("*"):
@@ -118,7 +121,7 @@ async def test_candidate_runs_is_an_error_with_structured_candidates(monkeypatch
         m.get("https://api.github.com/repos/acme/app/actions/runs").respond(200, json={"workflow_runs": [r1, r2]})
         async with Client(srv.server) as c:
             r = await c.call_tool("start_investigation", {"repo": "acme/app", "pr_number": 7})
-    assert r.is_error and [c["run_id"] for c in r.structured_content["candidate_runs"]] == [100, 101] and "run_id" in r.content[0].text
+    assert r.is_error and r.structured_content is None and "run_id 100" in r.content[0].text and "run_id 101" in r.content[0].text
 
 
 def test_stdio_stdout_contains_only_jsonrpc_frames(tmp_path):

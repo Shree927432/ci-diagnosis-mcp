@@ -52,3 +52,8 @@ def test_stop_precedence():
     # mode low: never stop on equivalence
     c = ctx(mode="unknown", mode_confidence="low")
     assert recommendation(c, rank(c)[0])[0] == "gather"
+
+
+def test_unknown_mode_with_nothing_left_stops_instead_of_looping():
+    c = ctx(mode="unknown", mode_confidence="low", has_pr=False, job_count=1, attempt_count=1, taken={"fetch_annotations", "fetch_full_step_log", "fetch_base_history"})
+    assert recommendation(c, rank(c)[0]) == ("stop", "no_actions_available")

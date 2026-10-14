@@ -17,6 +17,7 @@ from .github.client import GitHub, GitHubError, resolve_token
 from .state import State
 
 logging.basicConfig(stream=sys.stderr, level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")  # NFR-5: never stdout
+logging.getLogger("httpx").setLevel(logging.WARNING)  # request logs would include signed blob URLs
 log = logging.getLogger("ci-diagnosis-mcp")
 
 INSTRUCTIONS = (
@@ -55,7 +56,13 @@ class JobView(BaseModel):
     log_excerpt: str
     slice: Slice
     summary: str = ""
+    root_cause_hint: str = ""
     parser: str | None = None
+    truncated: bool = False  # FR-2: log over 20 MB, only the tail was analysed
+    errors_omitted: int = 0  # FR-20 remainder counts
+    tests_omitted: int = 0
+    files_omitted: int = 0
+    level1_signature: str | None = None
 
 
 class Cluster(BaseModel):
@@ -168,8 +175,14 @@ def _ok(model: BaseModel, text: str) -> CallToolResult:
     return CallToolResult(content=[TextContent(type="text", text=text)], structured_content=model.model_dump(mode="json"))
 
 
-def _err(message: str, extra: dict[str, Any] | None = None) -> CallToolResult:
-    return CallToolResult(content=[TextContent(type="text", text=message)], structured_content=extra, is_error=True)
+def _err(message: str) -> CallToolResult:
+    # No structured_content on errors: it would not match the tool's output schema and strict clients may drop it.
+    return CallToolResult(content=[TextContent(type="text", text=message)], is_error=True)
+
+
+def _internal(e: Exception) -> CallToolResult:
+    log.exception("internal error")
+    return _err(f"internal error ({type(e).__name__}); the investigation state may be incomplete, call start_investigation again")
 
 
 async def _gh() -> GitHub:
@@ -187,18 +200,20 @@ async def start_investigation(repo: str, ctx: Context, run_id: int | None = None
         gh = await _gh()
     except GitHubError as e:
         return _err(str(e))
+    log.info("start_investigation repo=%s run_id=%s job_id=%s pr=%s branch=%s sha=%s", repo, run_id, job_id, pr_number, branch, sha)
     try:
         r = await inv.start(gh, state(), repo, run_id=run_id, job_id=job_id, pr_number=pr_number, branch=branch, sha=sha, run_attempt=run_attempt,
-                            max_jobs=max(1, min(max_jobs, 20)), max_excerpt_chars=max(500, min(max_excerpt_chars, 20000)), progress=progress)
-    except (GitHubError, inv.NotFound, ValueError) as e:
+                            max_jobs=max(1, min(max_jobs, inv.MAX_JOBS)), max_excerpt_chars=max(500, min(max_excerpt_chars, 20000)), progress=progress)
+    except (GitHubError, inv.NotFound) as e:
         return _err(str(e))
+    except (ValueError, KeyError) as e:
+        return _internal(e)
     finally:
         await gh.aclose()
     if "candidate_runs" in r:
-        text = "Several failed runs match; call start_investigation again with one run_id:\n" + "\n".join(f"- {c['run_id']}: {c['workflow']} ({c['conclusion']}) {c['url']}" for c in r["candidate_runs"])
-        return _err(text, r)
+        return _err("Several failed runs match; call start_investigation again with one run_id:\n" + "\n".join(f"- run_id {c['run_id']}: {c['workflow']} ({c['conclusion']}) {c['url']}" for c in r["candidate_runs"]))
     if "error" in r:
-        return _err(r["error"] + ("\nLatest runs:\n" + "\n".join(f"- {c['run_id']}: {c['workflow']} {c['status']}/{c['conclusion']}" for c in r["latest_runs"]) if r.get("latest_runs") else ""), r)
+        return _err(r["error"] + ("\nLatest runs:\n" + "\n".join(f"- run_id {c['run_id']}: {c['workflow']} {c['status']}/{c['conclusion']}" for c in r["latest_runs"]) if r.get("latest_runs") else ""))
     return _ok(StartResult.model_validate(r), render.start(r))
 
 
@@ -210,8 +225,10 @@ async def gather_evidence(investigation_id: str, action: str, job_id: int | None
         return _err(str(e))
     try:
         g = await inv.gather(gh, state(), investigation_id, action, job_id)
-    except (GitHubError, inv.NotFound, ValueError, KeyError) as e:
+    except (GitHubError, inv.NotFound) as e:
         return _err(str(e))
+    except (ValueError, KeyError, IndexError) as e:
+        return _internal(e)
     finally:
         await gh.aclose()
     return _ok(GatherResult.model_validate(g), render.gather(g))
