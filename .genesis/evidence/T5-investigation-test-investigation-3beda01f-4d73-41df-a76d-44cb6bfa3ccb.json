@@ -1,0 +1,30 @@
+{
+  "task": "T5-investigation",
+  "gate": "test-investigation",
+  "kind": "command",
+  "attempt": "3beda01f-4d73-41df-a76d-44cb6bfa3ccb",
+  "command": ".venv/bin/python -m pytest tests/test_investigation.py -q",
+  "started_at": "2026-10-14T19:54:25.548Z",
+  "observed_at": "2026-10-14T19:54:26.474Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": ".......                                                                  [100%]\n7 passed in 0.12s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "41c0125abb3be2ef4dc30fe6641419f969547f2e",
+    "dirty": true
+  },
+  "source_hash": "cf15ddef57d3ccbfb102876f3f744d6e3f690e4381567b9f7c09dc35d1c4a237",
+  "before_hash": "cf15ddef57d3ccbfb102876f3f744d6e3f690e4381567b9f7c09dc35d1c4a237",
+  "config_hash": "a87ca9d13d962073bb738e31fdfc34540defe27d63cd6266bf45ed2e490e48e9",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "b6749bac1fd45012898997cff192989de613a81413c287a0406c79634ecc0483"
+}

@@ -60,7 +60,7 @@ async def test_budget_12_failed_jobs(state):
 
 async def test_api_budget_with_8_failed_jobs_attempt_2(state):
     run, jobs, logs = matrix_run(failed=("pytest-assert",) * 8, passed=0, attempt=2)
-    prev, _ = mk_job(999, "pytest (node 18)", "pytest-assert", 100)
+    prev, _ = mk_job(999, "test (node 18)", "pytest-assert", 100)
     gh = FakeGitHub(runs=[run], jobs={(100, 2): jobs, (100, 1): [prev]}, logs=logs)
     r = await inv.start(gh, state, "acme/app", run_id=100)
     assert gh.calls <= 40, gh.calls
@@ -106,7 +106,7 @@ async def test_gather_pr_diff_then_stop(state):
 async def test_gather_base_history_and_full_log(state):
     run, jobs, logs = matrix_run(failed=("pytest-assert",), passed=0, prs=(), event="push")
     base_fail = mk_run(90, sha="base1", branch="feature", event="push", prs=(), created="2026-10-14T10:00:00Z")
-    bj, bl = mk_job(900, "pytest (node 18)", "pytest-assert", 90)
+    bj, bl = mk_job(900, "test (node 18)", "pytest-assert", 90)
     gh = FakeGitHub(runs=[run, base_fail], jobs={(100, 1): jobs, (90, 1): [bj]}, logs={**logs, 900: bl})
     r = await inv.start(gh, state, "acme/app", run_id=100)
     assert {u["action"] for u in r["unavailable_actions"]} >= {"fetch_pr_diff", "fetch_pr_history"} and "fetch_sibling_jobs" in r["taken"]

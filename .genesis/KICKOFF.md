@@ -4,11 +4,11 @@
 
 - objective: Build a Python MCP server (mcp SDK 2.x, stdio) that diagnoses failed GitHub Actions runs for coding agents: it collects log and metadata evidence, keeps a mode and origin belief, ranks the next evidence to gather, and returns structured, agent-native diagnoses as specified in DESIGN.md v2.
 - phase/status: build/active
-- active task: T4-github-state — Async httpx GitHub client: token resolution order, GHES base URL, Authorization only to the API host, runs/jobs/attempts/logs/annotations/PR files/PR runs/base runs, call counting, actionable errors; SQLite state with umask 077, 0700 dir, WAL, TTL log cache named by job id, repo validation; token never in outputs or cache.
+- active task: T5-investigation — Investigation lifecycle: target resolution with candidate_runs and in-progress errors, startup_failure handling, bounded concurrent downloads with progress, clustering by signature, cost-0 channels with attempts weights, gather actions with level-1 signatures, outcome recording with ordered derived labels, output budgets, not-found errors.
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: test-github:pass, independent-review:pending
+- gates: test-investigation:pass
 - recent failures: none
 
 ## Resume
@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 631e9e64e78e2d35c15e988ec12bd46cc1fc451d46f651e5621605cb1e3d44a8. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 3a9ce35c9fec4cf1e42e2d7ed94dec1709fc0421e01cd00dcd53f4b395a6c67e. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-6af94eab: Spec review (Opus 5.5): APPROVE_WITH_CHANGES; disposition of each item
 - DECISION-902d3096: Plan review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
 - DECISION-bc861978: Belief is two variables: mode and origin
