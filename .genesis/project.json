@@ -1,0 +1,603 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "ci-diagnosis-mcp",
+    "mode": "init",
+    "profile": "prototype",
+    "objective": "Build a Python MCP server (mcp SDK 2.x, stdio) that diagnoses failed GitHub Actions runs for coding agents: it collects log and metadata evidence, keeps a mode and origin belief, ranks the next evidence to gather, and returns structured, agent-native diagnoses as specified in DESIGN.md v2.",
+    "constraints": [],
+    "non_goals": [],
+    "trust_boundary": "local repository",
+    "created_at": "2026-10-14T19:17:11.827Z",
+    "updated_at": "2026-10-14T19:29:16.868Z"
+  },
+  "policy": {
+    "ponytail": "full",
+    "autonomy": "human-in-the-loop",
+    "learned_rule_promotion": "human-required",
+    "cleanup": "propose-only",
+    "traces": {
+      "storage": "local",
+      "commit_raw": false,
+      "redact_secrets": true
+    }
+  },
+  "lifecycle": {
+    "phase": "build",
+    "status": "active",
+    "active_task": "T1-analysis-core",
+    "blocker": null,
+    "next_action": "Run the task pre-flight."
+  },
+  "commands": {},
+  "workflow": {
+    "type": "new-product",
+    "started_at": "2026-10-14T19:17:11.832Z",
+    "spec_check": {
+      "at": "2026-10-14T19:25:56.724Z",
+      "source_hash": "a527ace8ec0b4a8b6357c23cb813b29cb741db3681bd8cb445f158f47ab09a62",
+      "requirements": [
+        "AC-1",
+        "AC-10",
+        "AC-11",
+        "AC-12",
+        "AC-13",
+        "AC-14",
+        "AC-15",
+        "AC-16",
+        "AC-2",
+        "AC-3",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-19",
+        "FR-2",
+        "FR-20",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-10",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7",
+        "NFR-8",
+        "NFR-9"
+      ]
+    },
+    "plan_check": {
+      "at": "2026-10-14T19:27:38.430Z",
+      "source_hash": "18525025b46ed6772c803cb3f61fb742e7abe6303a5a44b012466b786c974309"
+    },
+    "plan_approval": {
+      "human": "Shrikant Pawade",
+      "reason": "Owner in chat 2026-10-15: 'I approve the implementation plan in .genesis/PLAN.md. Commit after each task. Start building.'",
+      "at": "2026-10-14T19:29:16.852Z",
+      "source_hash": "18525025b46ed6772c803cb3f61fb742e7abe6303a5a44b012466b786c974309"
+    }
+  },
+  "artifacts": [
+    {
+      "id": "SPEC-1",
+      "type": "specification",
+      "path": "SPEC.md",
+      "status": "approved",
+      "requirements": [
+        "AC-1",
+        "AC-10",
+        "AC-11",
+        "AC-12",
+        "AC-13",
+        "AC-14",
+        "AC-15",
+        "AC-16",
+        "AC-2",
+        "AC-3",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-13",
+        "FR-14",
+        "FR-15",
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "FR-19",
+        "FR-2",
+        "FR-20",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-10",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6",
+        "NFR-7",
+        "NFR-8",
+        "NFR-9"
+      ],
+      "source_hash": "a527ace8ec0b4a8b6357c23cb813b29cb741db3681bd8cb445f158f47ab09a62",
+      "approval": {
+        "human": "Shrikant Pawade",
+        "reason": "Owner in chat 2026-10-15: 'I approve SPEC.md v2 as the binding v0.1 specification. Record my approval and create the tasks.'",
+        "at": "2026-10-14T19:27:37.560Z",
+        "source_hash": "a527ace8ec0b4a8b6357c23cb813b29cb741db3681bd8cb445f158f47ab09a62"
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASSUMPTION-1c32306a",
+      "text": "The repository owner (Shrikant Pawade) is the only human approver; approvals are recorded from explicit chat statements quoting the owner's words.",
+      "status": "open",
+      "source": "chat 2026-10-15",
+      "recorded_at": "2026-10-14T19:17:44.389Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "invariants": [],
+  "decisions": [
+    {
+      "id": "DECISION-7844116d",
+      "title": "Language and SDK: Python with mcp 2.x",
+      "text": "Server is Python using the official mcp SDK 2.x (MCPServer, formerly FastMCP) over stdio. Chosen because the maintainer reads Python, not TypeScript; the SDK is official and installable with uvx/pip. TypeScript scaffold from the first attempt was discarded.",
+      "status": "accepted",
+      "source": "chat 2026-10-15; DESIGN.md §16",
+      "recorded_at": "2026-10-14T19:17:43.841Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-bc861978",
+      "title": "Belief is two variables: mode and origin",
+      "text": "A single root-cause label mixed what failed with why. Mode (what the log shows) is set by parsers with decisive weights; origin (this_change, pre_existing, flaky, environment, external) is a Bayesian posterior fed by diff, history, matrix, attempts and rerun channels. Adopted after an independent design review found overlapping hypotheses, under-confidence on easy cases, and double counting in the single-variable design.",
+      "status": "accepted",
+      "source": "DESIGN.md §2-4; review 2026-10-15",
+      "recorded_at": "2026-10-14T19:17:43.918Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-7fa1af0a",
+      "title": "No model call inside the server",
+      "text": "The server does deterministic extraction and Bayesian updating only; the calling agent is the reasoner. Avoids a second model's cost, latency, API key, and non-determinism, and keeps the engine unit-testable.",
+      "status": "accepted",
+      "source": "DESIGN.md §1",
+      "recorded_at": "2026-10-14T19:17:43.994Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-78abc940",
+      "title": "GitHub Actions first, stdio only, no rerun side effect in v1",
+      "text": "First provider is GitHub Actions; analysis layer stays provider-agnostic. Transport is stdio (local agents). rerun_job is excluded from v1 because it needs actions:write and agents already have gh run rerun; rerun results still enter as evidence via attempt linking.",
+      "status": "accepted",
+      "source": "DESIGN.md §1, §6, §18",
+      "recorded_at": "2026-10-14T19:17:44.072Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-bedf012d",
+      "title": "Within-channel combination and tempering",
+      "text": "Per channel: max of supporting weights times min of opposing weights per origin; channels multiply; tempering T from {0.5,0.7,1.0} chosen on the fixture corpus, default 0.7; no per-channel cap (nothing sums). Fixes the review finding that max-only silently discarded opposing evidence and that the cap was unreachable.",
+      "status": "accepted",
+      "source": "DESIGN.md §8",
+      "recorded_at": "2026-10-14T19:17:44.147Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-861bc9de",
+      "title": "Process: Genesis with minimal human gates and model reviewers",
+      "text": "Owner wants automation and a 2-3 hour build. Human approvals are limited to the two Genesis-mandated gates (spec, plan), each given once. Tasks are classified honestly; model reviews (Opus 5.5 for design, Sonnet 5.5 for code) are run in fresh contexts and recorded as decisions with reasons, not as blocking gates, except where Genesis auto-adds independent-review for medium risk, which the owner approves in one batch. Approver name: Shrikant Pawade. Builder: Fable 5.1 in this session; no ultracode fan-out because the parts are sequentially dependent.",
+      "status": "accepted",
+      "source": "chat 2026-10-15",
+      "recorded_at": "2026-10-14T19:17:44.227Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-6af94eab",
+      "title": "Spec review (Opus 5.5): APPROVE_WITH_CHANGES; disposition of each item",
+      "text": "Reviewer: Claude Opus 5.5, fresh context, read-only, given SPEC.md and DESIGN.md. Verdict APPROVE_WITH_CHANGES. Builder disposition: MUST_FIX 1 accepted: whole-log check always runs on pre-filtered lines; slice{window,mismatch} exposed; AC-3 asserts exact values; DESIGN s13/s19 aligned. MUST_FIX 2 accepted: attempts observations defined relative to the attempt under investigation with weights; run_attempt input added. MUST_FIX 3 accepted: availability rule with unavailable_actions[], observed means at least one observation, equivalence stop requires mode confidence not low and overrides the two-channel rule. MUST_FIX 4 accepted: required output keys bound in FR-17 and asserted by AC-6. MUST_FIX 5 accepted: ordered derivation rules, test-path globs, null label, mixed case in AC-8. MUST_FIX 6 accepted: excerpts fenced with longer backtick runs and labelled untrusted; lines capped at 2000 chars before matching; new AC-13. MUST_FIX 7 accepted: umask 077, dir 0700, repo regex, cache files by job id; new AC-14. MUST_FIX 8 accepted: Authorization only to the API host; AC-12 scans content, errors, stderr and cache; unprovable clause dropped. MUST_FIX 9 accepted: fixtures and expected.json committed before parser code as a separate task with a ledger trace; three adversarial unknown cases; unknown-rate definition fixed. MUST_FIX 10 accepted as cut: AC-4 replay moved out of v0.1; ranking formula unit-tested instead. MUST_FIX 11 accepted: mcp>=2,<3; NFR-7 says direct dependencies. SHOULD_FIX 1-9 all accepted (failed conclusions, startup_failure, repo-relative paths, 20 MB log_text cap, 410/in-progress/scope errors, cheap ACs for stdout purity, determinism, candidate_runs, token order, AC-7 content density, AC-11 redirect counting, smoothing pseudo-count 1, progress notifications, mode runner-up and step_context kept). CUT_IF_LATE applied now to protect the 2-3 hour budget: cut 1 (AC-4), cut 2 (add_evidence/retract_evidence removed from v0.1; agent can reason without them), cut 3 (level-2 extra-log downloads removed; level-1 signatures only), cut 4 (per-repo prior updates removed; outcomes stored, global prior used), cut 5 partially (gradle/maven, docker, cargo deferred; formatters kept because their regexes are trivial), cut 6 (rebuild-from-GitHub and AC-9 replaced by a not-found error), cut 7 (over-20 MB logs use a plain tail cap of 20000 lines). Reason for accepting cuts: reviewer and builder agree the parser list and GitHub-backed actions would not fit the budget; every cut is additive later and none touches FR-4 or the generic fallback, which guard the top risk.",
+      "status": "accepted",
+      "source": "reviewer: claude-opus-5-5 subagent, 2026-10-15; SPEC.md v1 hash from spec check",
+      "recorded_at": "2026-10-14T19:24:32.612Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "KNOWLEDGE-446d08ec",
+      "title": "mcp SDK 2.x API facts",
+      "text": "mcp 2.3.0: FastMCP renamed to MCPServer (from mcp.server.mcpserver import MCPServer). @server.tool() auto-detects structured output from the return annotation. A tool may return mcp.types.CallToolResult directly with custom content plus structured_content; the SDK validates structured_content against the output model derived from the return annotation. run(transport='stdio'). Local venv resolved to Python 3.10, the declared minimum.",
+      "source": "inspect.signature and func_metadata.convert_result in .venv, 2026-10-15",
+      "tags": [],
+      "recorded_at": "2026-10-14T19:17:44.302Z",
+      "paths": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SPEC-1",
+      "outcome": "Produce an approved, implementation-ready product specification",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "SPEC.md"
+      ],
+      "dependencies": [],
+      "requirements": [],
+      "gates": [
+        {
+          "id": "independent-review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "human": "Shrikant Pawade",
+            "reason": "Owner in chat 2026-10-15: 'I approve SPEC.md v2 as the binding v0.1 specification. Record my approval and create the tasks.'",
+            "source_hash": "9f0dc8db29ed28bf25d30e3a0fb362f7c7a84f2d541ff1ac4aca12a3b3549605",
+            "observed_at": "2026-10-14T19:27:37.560Z"
+          },
+          "kind": "review"
+        }
+      ],
+      "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:17:11.832Z",
+      "updated_at": "2026-10-14T19:27:37.560Z"
+    },
+    {
+      "id": "T1-analysis-core",
+      "outcome": "Log normalisation with 2000-char line cap, step slicing with verification, widening and whole-log cross-check exposing slice{window,mismatch}, repo-relative file references, excerpt rendering with original line numbers inside an unclosable labelled fence, generic fallback parser.",
+      "state": "active",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-3",
+        "FR-4",
+        "NFR-8",
+        "NFR-10",
+        "AC-3",
+        "AC-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-core",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:37.675Z",
+      "updated_at": "2026-10-14T19:27:37.675Z",
+      "base_manifest": {
+        ".gitignore": "b9029a775f47e2cf97fba9ace0d01f94b7adacc07cd9d3e7cdd799790d77a545",
+        "DESIGN.md": "3dc0d8434d6a87eec7a6b34e7e6c73247fd6b4ab121d11bc67033ed87c3be0d7",
+        "README.md": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "SPEC.md": "588f23cc635cf3fc2f516a09b0d5944efdf683821224139c4390c03b1e1047d7",
+        "pyproject.toml": "4b620eafc93ebd6c0c87337405e4d6840cb49fd37bca55672284a6d9a3484b72"
+      }
+    },
+    {
+      "id": "T2a-fixtures",
+      "outcome": "Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-fixtures",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_fixture_layout.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:37.771Z",
+      "updated_at": "2026-10-14T19:27:37.772Z"
+    },
+    {
+      "id": "T2b-parsers",
+      "outcome": "Parser modules per FR-5 with weight classes, claimed ranges, errors, failed tests, anchors; mode aggregation with line ownership, step_context prior, bands, runner-up and margin; corpus accuracy test.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-5",
+        "FR-6",
+        "NFR-9",
+        "AC-2"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-parsers",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_parsers.py tests/test_corpus.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:37.867Z",
+      "updated_at": "2026-10-14T19:27:37.867Z"
+    },
+    {
+      "id": "T3-belief-actions",
+      "outcome": "Origin posterior per FR-8 with global prior, fix matrix, VOI ranking with availability rule, overrides, stop precedence and action-equivalence shortcut.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-8",
+        "FR-11",
+        "FR-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-belief",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_origin.py tests/test_actions.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:37.962Z",
+      "updated_at": "2026-10-14T19:27:37.962Z"
+    },
+    {
+      "id": "T4-github-state",
+      "outcome": "Async httpx GitHub client: token resolution order, GHES base URL, Authorization only to the API host, runs/jobs/attempts/logs/annotations/PR files/PR runs/base runs, call counting, actionable errors; SQLite state with umask 077, 0700 dir, WAL, TTL log cache named by job id, repo validation; token never in outputs or cache.",
+      "state": "queued",
+      "risk": "medium",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-19",
+        "NFR-6",
+        "NFR-7",
+        "AC-12",
+        "AC-14"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-github",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_github_client.py tests/test_state.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:38.058Z",
+      "updated_at": "2026-10-14T19:27:38.059Z"
+    },
+    {
+      "id": "T5-investigation",
+      "outcome": "Investigation lifecycle: target resolution with candidate_runs and in-progress errors, startup_failure handling, bounded concurrent downloads with progress, clustering by signature, cost-0 channels with attempts weights, gather actions with level-1 signatures, outcome recording with ordered derived labels, output budgets, not-found errors.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-1",
+        "FR-2",
+        "FR-7",
+        "FR-9",
+        "FR-10",
+        "FR-14",
+        "FR-15",
+        "FR-20",
+        "NFR-3",
+        "NFR-4",
+        "AC-5",
+        "AC-8",
+        "AC-11",
+        "AC-16"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-investigation",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_investigation.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:38.152Z",
+      "updated_at": "2026-10-14T19:27:38.153Z"
+    },
+    {
+      "id": "T6-server",
+      "outcome": "MCPServer with five tools and one prompt, markdown plus structured content, output schemas requiring the FR-17 keys, stderr-only logging, actionable errors, analyze_log with 20 MB cap, stdout purity and determinism tests.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "FR-16",
+        "FR-17",
+        "FR-18",
+        "NFR-5",
+        "AC-6",
+        "AC-15"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-server",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest tests/test_server.py -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:38.244Z",
+      "updated_at": "2026-10-14T19:27:38.245Z"
+    },
+    {
+      "id": "T7-verify-release",
+      "outcome": "Full suite green, timing test with dense candidate lines, live smoke against a public failed run recorded as evidence, README with install, token scopes and agent configuration, agent contract connected, checkpoint.",
+      "state": "queued",
+      "risk": "low",
+      "owner": null,
+      "scope": [],
+      "dependencies": [],
+      "requirements": [
+        "NFR-1",
+        "NFR-2",
+        "AC-7",
+        "AC-10"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "test-all",
+          "kind": "command",
+          "command": ".venv/bin/python -m pytest -q",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-14T19:27:38.337Z",
+      "updated_at": "2026-10-14T19:27:38.337Z"
+    }
+  ],
+  "learning_proposals": [],
+  "cleanup_proposals": [],
+  "controls": [],
+  "attempts": [],
+  "authorizations": [],
+  "experiments": [],
+  "incidents": [],
+  "discovery": null,
+  "checkpoint": null,
+  "legacy": null
+}
