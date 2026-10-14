@@ -1,0 +1,132 @@
+{
+ "id": 115758056730,
+ "run_id": 38535590133,
+ "workflow_name": "Prod",
+ "head_branch": "fix-markdown-code-fence-at-line-start",
+ "run_url": "https://api.github.com/repos/prettier/prettier/actions/runs/38535590133",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOBHn_e88AAAAa87fFGg",
+ "head_sha": "5c02d6ee782bdffb9ccd9799136aaa522518e68e",
+ "url": "https://api.github.com/repos/prettier/prettier/actions/jobs/115758056730",
+ "html_url": "https://github.com/prettier/prettier/actions/runs/38535590133/job/115758056730",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-14T08:31:42Z",
+ "started_at": "2026-10-14T08:31:45Z",
+ "completed_at": "2026-10-14T08:32:59Z",
+ "name": "Browser(firefox) on Windows",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T08:31:46Z",
+   "completed_at": "2026-10-14T08:31:48Z"
+  },
+  {
+   "name": "Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T08:31:48Z",
+   "completed_at": "2026-10-14T08:31:57Z"
+  },
+  {
+   "name": "Setup Node.js",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T08:31:57Z",
+   "completed_at": "2026-10-14T08:32:10Z"
+  },
+  {
+   "name": "Puppeteer cache",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-14T08:32:10Z",
+   "completed_at": "2026-10-14T08:32:16Z"
+  },
+  {
+   "name": "Run echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 5,
+   "started_at": "2026-10-14T08:32:16Z",
+   "completed_at": "2026-10-14T08:32:16Z"
+  },
+  {
+   "name": "Install Dependencies",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-14T08:32:16Z",
+   "completed_at": "2026-10-14T08:32:41Z"
+  },
+  {
+   "name": "Download Artifact",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 7,
+   "started_at": "2026-10-14T08:32:41Z",
+   "completed_at": "2026-10-14T08:32:43Z"
+  },
+  {
+   "name": "Run Tests (ESM)",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 8,
+   "started_at": "2026-10-14T08:32:43Z",
+   "completed_at": "2026-10-14T08:32:55Z"
+  },
+  {
+   "name": "Run Tests (UMD)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 9,
+   "started_at": "2026-10-14T08:32:55Z",
+   "completed_at": "2026-10-14T08:32:55Z"
+  },
+  {
+   "name": "Post Puppeteer cache",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 16,
+   "started_at": "2026-10-14T08:32:55Z",
+   "completed_at": "2026-10-14T08:32:55Z"
+  },
+  {
+   "name": "Post Setup Node.js",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 17,
+   "started_at": "2026-10-14T08:32:55Z",
+   "completed_at": "2026-10-14T08:32:55Z"
+  },
+  {
+   "name": "Post Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 18,
+   "started_at": "2026-10-14T08:32:55Z",
+   "completed_at": "2026-10-14T08:32:57Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 19,
+   "started_at": "2026-10-14T08:32:57Z",
+   "completed_at": "2026-10-14T08:32:57Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/prettier/prettier/check-runs/115758056730",
+ "labels": [
+  "windows-latest"
+ ],
+ "runner_id": 1000280759,
+ "runner_name": "GitHub Actions 1000280759",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

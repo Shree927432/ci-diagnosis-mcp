@@ -1,0 +1,15 @@
+{
+ "mode": "test_load",
+ "parser": "js_tests",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "SIGSEGV"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "packages/jest-circus/src/__tests__/utils.test.ts"
+ ]
+}

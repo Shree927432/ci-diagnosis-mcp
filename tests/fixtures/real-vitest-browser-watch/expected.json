@@ -1,0 +1,17 @@
+{
+ "mode": "test_assertion",
+ "parser": "js_tests",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Timeout when waiting for error"
+ ],
+ "tests_contain": [
+  "screenshots match across non-UI and UI mode"
+ ],
+ "files_contain": [
+  "specs/to-match-screenshot.test.ts"
+ ]
+}

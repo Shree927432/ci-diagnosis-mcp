@@ -1,0 +1,116 @@
+{
+ "id": 116088507754,
+ "run_id": 38632017529,
+ "workflow_name": "CI",
+ "head_branch": "charlie/ty-simple-keyword-parameters",
+ "run_url": "https://api.github.com/repos/astral-sh/ruff/actions/runs/38632017529",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOHy0Bzc8AAAAbB2oNag",
+ "head_sha": "ed8fcd6e09351bf511f293a4bf56fd0e5da2308e",
+ "url": "https://api.github.com/repos/astral-sh/ruff/actions/jobs/116088507754",
+ "html_url": "https://github.com/astral-sh/ruff/actions/runs/38632017529/job/116088507754",
+ "status": "completed",
+ "conclusion": "cancelled",
+ "created_at": "2026-10-14T20:31:44Z",
+ "started_at": "2026-10-14T20:31:46Z",
+ "completed_at": "2026-10-14T20:52:43Z",
+ "name": "benchmarks instrumented ty (simulation: micro-m-z)",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T20:32:15Z",
+   "completed_at": "2026-10-14T20:32:18Z"
+  },
+  {
+   "name": "Checkout Branch",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T20:32:18Z",
+   "completed_at": "2026-10-14T20:32:27Z"
+  },
+  {
+   "name": "Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T20:32:27Z",
+   "completed_at": "2026-10-14T20:32:28Z"
+  },
+  {
+   "name": "Download benchmark binary",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-14T20:32:28Z",
+   "completed_at": "2026-10-14T20:32:36Z"
+  },
+  {
+   "name": "Restore binary permissions",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-14T20:32:36Z",
+   "completed_at": "2026-10-14T20:32:36Z"
+  },
+  {
+   "name": "Configure apt mirror fallback",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-14T20:32:36Z",
+   "completed_at": "2026-10-14T20:32:36Z"
+  },
+  {
+   "name": "Run benchmarks",
+   "status": "completed",
+   "conclusion": "cancelled",
+   "number": 7,
+   "started_at": "2026-10-14T20:32:36Z",
+   "completed_at": "2026-10-14T20:52:41Z"
+  },
+  {
+   "name": "Post Run benchmarks",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 12,
+   "started_at": "2026-10-14T20:52:41Z",
+   "completed_at": "2026-10-14T20:52:41Z"
+  },
+  {
+   "name": "Post Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 13,
+   "started_at": "2026-10-14T20:52:41Z",
+   "completed_at": "2026-10-14T20:52:41Z"
+  },
+  {
+   "name": "Post Checkout Branch",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 14,
+   "started_at": "2026-10-14T20:52:41Z",
+   "completed_at": "2026-10-14T20:52:41Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 15,
+   "started_at": "2026-10-14T20:52:41Z",
+   "completed_at": "2026-10-14T20:52:42Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/astral-sh/ruff/check-runs/116088507754",
+ "labels": [
+  "depot-ubuntu-24.04"
+ ],
+ "runner_id": 2645018,
+ "runner_name": "depot-6ng5c53kf9",
+ "runner_group_id": 1,
+ "runner_group_name": "default"
+}

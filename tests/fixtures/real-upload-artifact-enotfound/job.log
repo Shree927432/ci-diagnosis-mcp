@@ -1,0 +1,1518 @@
+﻿2026-10-14T17:56:34.5947863Z Current runner version: '2.337.0'
+2026-10-14T17:56:34.5986842Z ##[group]Runner Image Provisioner
+2026-10-14T17:56:34.5988570Z Hosted Compute Agent
+2026-10-14T17:56:34.5990311Z Version: 20261002.596
+2026-10-14T17:56:34.5991564Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-14T17:56:34.5992962Z Build Date: 2026-10-02T22:28:27Z
+2026-10-14T17:56:34.5994349Z Worker ID: {386fb78a-7dd4-47ea-b633-8f9d84079e06}
+2026-10-14T17:56:34.5995708Z Region: westus2
+2026-10-14T17:56:34.5996695Z Cloud: Azure
+2026-10-14T17:56:34.5998090Z ##[endgroup]
+2026-10-14T17:56:34.6001022Z ##[group]Operating System
+2026-10-14T17:56:34.6002261Z Ubuntu
+2026-10-14T17:56:34.6003263Z 24.04.5
+2026-10-14T17:56:34.6004252Z LTS
+2026-10-14T17:56:34.6005424Z ##[endgroup]
+2026-10-14T17:56:34.6006521Z ##[group]Runner Image
+2026-10-14T17:56:34.6007967Z Image: ubuntu-24.04
+2026-10-14T17:56:34.6009095Z Version: 20261004.327.1
+2026-10-14T17:56:34.6011484Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-14T17:56:34.6014476Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-14T17:56:34.6016380Z ##[endgroup]
+2026-10-14T17:56:34.6018877Z ##[group]GITHUB_TOKEN Permissions
+2026-10-14T17:56:34.6021883Z Attestations: write
+2026-10-14T17:56:34.6023026Z Contents: read
+2026-10-14T17:56:34.6024117Z Metadata: read
+2026-10-14T17:56:34.6025269Z ##[endgroup]
+2026-10-14T17:56:34.6028876Z Secret source: Actions
+2026-10-14T17:56:34.6030732Z Cache mode: write
+2026-10-14T17:56:34.6032141Z Prepare workflow directory
+2026-10-14T17:56:34.6649455Z Prepare all required actions
+2026-10-14T17:56:34.6725694Z Getting action download info
+2026-10-14T17:56:35.2158123Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-14T17:56:35.3512578Z Download action repository 'astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7' (SHA:c18668ad3cf93ea998bef934396af7bb5c839dc7)
+2026-10-14T17:56:35.8428635Z Download action repository 'dtolnay/rust-toolchain@fa04a1451ff1842e2626ccb99004d0195b455a88' (SHA:fa04a1451ff1842e2626ccb99004d0195b455a88)
+2026-10-14T17:56:36.1341845Z Download action repository 'actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6' (SHA:1e69f48acb82d1966a394da916b4c1698aa569d6)
+2026-10-14T17:56:36.5192903Z Download action repository 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+2026-10-14T17:56:36.9479540Z Complete job name: core / Build PGO-optimized on linux / 3.15
+2026-10-14T17:56:37.0903787Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-14T17:56:37.0906880Z with:
+2026-10-14T17:56:37.0908459Z   persist-credentials: false
+2026-10-14T17:56:37.0910347Z   repository: pydantic/pydantic
+2026-10-14T17:56:37.0923993Z   token: ***
+2026-10-14T17:56:37.0925623Z   ssh-strict: true
+2026-10-14T17:56:37.0927626Z   ssh-user: git
+2026-10-14T17:56:37.0929294Z   clean: true
+2026-10-14T17:56:37.0931046Z   sparse-checkout-cone-mode: true
+2026-10-14T17:56:37.0933245Z   fetch-depth: 1
+2026-10-14T17:56:37.0934824Z   fetch-tags: false
+2026-10-14T17:56:37.0936538Z   show-progress: true
+2026-10-14T17:56:37.0938291Z   lfs: false
+2026-10-14T17:56:37.0939820Z   submodules: false
+2026-10-14T17:56:37.0941519Z   set-safe-directory: true
+2026-10-14T17:56:37.0943302Z   allow-unsafe-pr-checkout: false
+2026-10-14T17:56:37.0945561Z env:
+2026-10-14T17:56:37.0947169Z   COLUMNS: 150
+2026-10-14T17:56:37.0948799Z   UV_FROZEN: true
+2026-10-14T17:56:37.0950643Z   FORCE_COLOR: 1
+2026-10-14T17:56:37.0952470Z ##[endgroup]
+2026-10-14T17:56:37.2771947Z Syncing repository: pydantic/pydantic
+2026-10-14T17:56:37.2776117Z ##[group]Getting Git version info
+2026-10-14T17:56:37.2778626Z Working directory is '/home/runner/work/pydantic/pydantic'
+2026-10-14T17:56:37.2782090Z [command]/usr/bin/git version
+2026-10-14T17:56:37.2947735Z git version 2.55.0
+2026-10-14T17:56:37.3000329Z ##[endgroup]
+2026-10-14T17:56:37.3026137Z Temporarily overriding HOME='/home/runner/work/_temp/972c422f-30bf-4b04-8f6a-d4fb8cef8db2' before making global git config changes
+2026-10-14T17:56:37.3031749Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T17:56:37.3042379Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pydantic/pydantic
+2026-10-14T17:56:37.3102580Z Deleting the contents of '/home/runner/work/pydantic/pydantic'
+2026-10-14T17:56:37.3106703Z ##[group]Determining repository object format
+2026-10-14T17:56:37.3110311Z ##[endgroup]
+2026-10-14T17:56:37.3113055Z ##[group]Initializing the repository
+2026-10-14T17:56:37.3117770Z [command]/usr/bin/git init /home/runner/work/pydantic/pydantic
+2026-10-14T17:56:37.3273617Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-14T17:56:37.3278033Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-14T17:56:37.3296061Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-14T17:56:37.3307627Z hint: call:
+2026-10-14T17:56:37.3310240Z hint:
+2026-10-14T17:56:37.3312172Z hint: 	git config --global init.defaultBranch <name>
+2026-10-14T17:56:37.3314172Z hint:
+2026-10-14T17:56:37.3316003Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-14T17:56:37.3323471Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-14T17:56:37.3327046Z hint:
+2026-10-14T17:56:37.3329764Z hint: 	git branch -m <name>
+2026-10-14T17:56:37.3331952Z hint:
+2026-10-14T17:56:37.3334481Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-14T17:56:37.3339171Z Initialized empty Git repository in /home/runner/work/pydantic/pydantic/.git/
+2026-10-14T17:56:37.3347037Z [command]/usr/bin/git remote add origin https://github.com/pydantic/pydantic
+2026-10-14T17:56:37.3378088Z ##[endgroup]
+2026-10-14T17:56:37.3382755Z ##[group]Disabling automatic garbage collection
+2026-10-14T17:56:37.3387157Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-14T17:56:37.3434132Z ##[endgroup]
+2026-10-14T17:56:37.3436133Z ##[group]Setting up auth
+2026-10-14T17:56:37.3438104Z Removing SSH command configuration
+2026-10-14T17:56:37.3442235Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T17:56:37.3488773Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T17:56:37.4111069Z Removing HTTP extra header
+2026-10-14T17:56:37.4115639Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T17:56:37.4196012Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T17:56:37.4500386Z Removing includeIf entries pointing to credentials config files
+2026-10-14T17:56:37.4505686Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T17:56:37.4568764Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T17:56:37.4955385Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-14T17:56:37.5006075Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pydantic/pydantic/.git.path /home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:37.5057332Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:37.5107197Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:37.5149952Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:37.5189490Z ##[endgroup]
+2026-10-14T17:56:37.5192550Z ##[group]Fetching the repository
+2026-10-14T17:56:37.5199816Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e0fb2cead13b1f604505ecb3621c5d6781e9307a:refs/remotes/origin/main
+2026-10-14T17:56:38.2028081Z From https://github.com/pydantic/pydantic
+2026-10-14T17:56:38.2031395Z  * [new ref]         e0fb2cead13b1f604505ecb3621c5d6781e9307a -> origin/main
+2026-10-14T17:56:38.2048300Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-14T17:56:38.2089133Z   origin/main
+2026-10-14T17:56:38.2113399Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-14T17:56:38.2138349Z e0fb2cead13b1f604505ecb3621c5d6781e9307a
+2026-10-14T17:56:38.2146141Z ##[endgroup]
+2026-10-14T17:56:38.2149435Z ##[group]Determining the checkout info
+2026-10-14T17:56:38.2152665Z ##[endgroup]
+2026-10-14T17:56:38.2154795Z [command]/usr/bin/git sparse-checkout disable
+2026-10-14T17:56:38.2245882Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-14T17:56:38.2300707Z ##[group]Checking out the ref
+2026-10-14T17:56:38.2306539Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-14T17:56:38.3387857Z Switched to a new branch 'main'
+2026-10-14T17:56:38.3397992Z branch 'main' set up to track 'origin/main'.
+2026-10-14T17:56:38.3407629Z ##[endgroup]
+2026-10-14T17:56:38.3476535Z [command]/usr/bin/git log -1 --format=%H
+2026-10-14T17:56:38.3518244Z e0fb2cead13b1f604505ecb3621c5d6781e9307a
+2026-10-14T17:56:38.3527342Z ##[group]Removing auth
+2026-10-14T17:56:38.3532259Z Removing SSH command configuration
+2026-10-14T17:56:38.3534719Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T17:56:38.3598393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T17:56:38.4049457Z Removing HTTP extra header
+2026-10-14T17:56:38.4060912Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T17:56:38.4112784Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T17:56:38.4480998Z Removing includeIf entries pointing to credentials config files
+2026-10-14T17:56:38.4486203Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T17:56:38.4531012Z includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path
+2026-10-14T17:56:38.4551021Z includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path
+2026-10-14T17:56:38.4560826Z includeif.gitdir:/github/workspace/.git.path
+2026-10-14T17:56:38.4563656Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T17:56:38.4569412Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path
+2026-10-14T17:56:38.4591850Z /home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:38.4612213Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-ce2f6fcd\-b0a6\-4bd0\-9183\-7fa2c3e6413b\.config
+2026-10-14T17:56:38.4672550Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path
+2026-10-14T17:56:38.4733555Z /home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:38.4749570Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-ce2f6fcd\-b0a6\-4bd0\-9183\-7fa2c3e6413b\.config
+2026-10-14T17:56:38.4799737Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-14T17:56:38.4849291Z /github/runner_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:38.4934407Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-ce2f6fcd\-b0a6\-4bd0\-9183\-7fa2c3e6413b\.config
+2026-10-14T17:56:38.5058974Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T17:56:38.5091078Z /github/runner_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config
+2026-10-14T17:56:38.5102792Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-ce2f6fcd\-b0a6\-4bd0\-9183\-7fa2c3e6413b\.config
+2026-10-14T17:56:38.5163786Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T17:56:38.5520434Z Removing credentials config '/home/runner/work/_temp/git-credentials-ce2f6fcd-b0a6-4bd0-9183-7fa2c3e6413b.config'
+2026-10-14T17:56:38.5537940Z ##[endgroup]
+2026-10-14T17:56:38.6128640Z ##[group]Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+2026-10-14T17:56:38.6131051Z with:
+2026-10-14T17:56:38.6132191Z   python-version: 3.15
+2026-10-14T17:56:38.6133565Z   enable-cache: false
+2026-10-14T17:56:38.6135163Z   activate-environment: false
+2026-10-14T17:56:38.6136737Z   no-project: false
+2026-10-14T17:56:38.6138680Z   working-directory: /home/runner/work/pydantic/pydantic
+2026-10-14T17:56:38.6151954Z   github-token: ***
+2026-10-14T17:56:38.6155074Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-14T17:56:38.6159142Z   restore-cache: true
+2026-10-14T17:56:38.6160634Z   save-cache: auto
+2026-10-14T17:56:38.6162113Z   prune-cache: false
+2026-10-14T17:56:38.6163624Z   cache-python: false
+2026-10-14T17:56:38.6165204Z   ignore-nothing-to-cache: false
+2026-10-14T17:56:38.6167062Z   ignore-empty-workdir: false
+2026-10-14T17:56:38.6168952Z   download-from-astral-mirror: true
+2026-10-14T17:56:38.6170233Z   add-problem-matchers: true
+2026-10-14T17:56:38.6171886Z   quiet: false
+2026-10-14T17:56:38.6173375Z   resolution-strategy: highest
+2026-10-14T17:56:38.6175012Z env:
+2026-10-14T17:56:38.6176146Z   COLUMNS: 150
+2026-10-14T17:56:38.6177611Z   UV_FROZEN: true
+2026-10-14T17:56:38.6178655Z   FORCE_COLOR: 1
+2026-10-14T17:56:38.6179818Z ##[endgroup]
+2026-10-14T17:56:38.9258233Z Trying to find version for uv in: /home/runner/work/pydantic/pydantic/uv.toml
+2026-10-14T17:56:38.9289179Z Could not find file: /home/runner/work/pydantic/pydantic/uv.toml
+2026-10-14T17:56:38.9310173Z Trying to find version for uv in: /home/runner/work/pydantic/pydantic/pyproject.toml
+2026-10-14T17:56:38.9329844Z Found version for uv in /home/runner/work/pydantic/pydantic/pyproject.toml: >=0.13.0
+2026-10-14T17:56:38.9352540Z Found minimum version specifier, using latest version
+2026-10-14T17:56:38.9355279Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-14T17:56:39.2240349Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.1/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-14T17:56:39.7208312Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c4784af0-caff-4426-a9d0-8f7bfac4d99a -f /home/runner/work/_temp/7a5116a6-3b2b-4cc9-981e-3c109daf3f8d
+2026-10-14T17:56:40.1780971Z Added /home/runner/.local/bin to the path
+2026-10-14T17:56:40.1790827Z Added /opt/hostedtoolcache/uv/0.13.1/x86_64 to the path
+2026-10-14T17:56:40.1792828Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:40.1795015Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-14T17:56:40.1805506Z Set UV_PYTHON to 3.15
+2026-10-14T17:56:40.1833413Z Successfully installed uv version 0.13.1
+2026-10-14T17:56:40.3037617Z ##[group]Run uv python install
+2026-10-14T17:56:40.3038348Z [36;1muv python install[0m
+2026-10-14T17:56:40.3428912Z shell: /usr/bin/bash -e {0}
+2026-10-14T17:56:40.3429515Z env:
+2026-10-14T17:56:40.3429958Z   COLUMNS: 150
+2026-10-14T17:56:40.3430402Z   UV_FROZEN: true
+2026-10-14T17:56:40.3430883Z   FORCE_COLOR: 1
+2026-10-14T17:56:40.3431526Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:40.3432250Z   UV_PYTHON: 3.15
+2026-10-14T17:56:40.3432794Z ##[endgroup]
+2026-10-14T17:56:40.7170958Z [36m[1mDownloading[0m[39m cpython-3.15.0-linux-x86_64-gnu (download) [2m(35.9MiB)[0m
+2026-10-14T17:56:41.8069051Z  [36m[1mDownloaded[0m[39m cpython-3.15.0-linux-x86_64-gnu (download)
+2026-10-14T17:56:41.8125765Z [2mInstalled [1mPython 3.15.0[0m [2min 1.44s[0m[0m
+2026-10-14T17:56:41.8127121Z  [32m+[39m [1mcpython-3.15.0-linux-x86_64-gnu[0m (python3.15)
+2026-10-14T17:56:41.8487598Z ##[group]Run dtolnay/rust-toolchain@fa04a1451ff1842e2626ccb99004d0195b455a88
+2026-10-14T17:56:41.8488383Z with:
+2026-10-14T17:56:41.8488795Z   components: llvm-tools
+2026-10-14T17:56:41.8489227Z   toolchain: stable
+2026-10-14T17:56:41.8489618Z env:
+2026-10-14T17:56:41.8489962Z   COLUMNS: 150
+2026-10-14T17:56:41.8490315Z   UV_FROZEN: true
+2026-10-14T17:56:41.8490774Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.8491288Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.8491959Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.8492394Z ##[endgroup]
+2026-10-14T17:56:41.8639172Z ##[start-action display=Run : parse toolchain version;id=rust-toolchain.parse]
+2026-10-14T17:56:41.8681506Z ##[group]Run : parse toolchain version
+2026-10-14T17:56:41.8682056Z [36;1m: parse toolchain version[0m
+2026-10-14T17:56:41.8682335Z [36;1mif [[ -z $toolchain ]]; then[0m
+2026-10-14T17:56:41.8683014Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2026-10-14T17:56:41.8683817Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2026-10-14T17:56:41.8684237Z [36;1m  exit 1[0m
+2026-10-14T17:56:41.8684768Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2026-10-14T17:56:41.8685244Z [36;1m  if [[ Linux == macOS ]]; then[0m
+2026-10-14T17:56:41.8686020Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.8686683Z [36;1m  else[0m
+2026-10-14T17:56:41.8687514Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.8688384Z [36;1m  fi[0m
+2026-10-14T17:56:41.8688945Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2026-10-14T17:56:41.8689936Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.8690985Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2026-10-14T17:56:41.8691975Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.8692985Z [36;1melse[0m
+2026-10-14T17:56:41.8693442Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.8694014Z [36;1mfi[0m
+2026-10-14T17:56:41.8783808Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:41.8784344Z env:
+2026-10-14T17:56:41.8784710Z   COLUMNS: 150
+2026-10-14T17:56:41.8784924Z   UV_FROZEN: true
+2026-10-14T17:56:41.8785210Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.8785582Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.8786336Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.8786666Z   toolchain: stable
+2026-10-14T17:56:41.8786960Z ##[endgroup]
+2026-10-14T17:56:41.8958588Z ##[end-action id=rust-toolchain.parse;outcome=success;conclusion=success;duration_ms=31]
+2026-10-14T17:56:41.8983425Z ##[start-action display=Run : construct rustup command line;id=rust-toolchain.flags]
+2026-10-14T17:56:41.9033417Z ##[group]Run : construct rustup command line
+2026-10-14T17:56:41.9033771Z [36;1m: construct rustup command line[0m
+2026-10-14T17:56:41.9034222Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.9034870Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.9035352Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:41.9148747Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:41.9149352Z env:
+2026-10-14T17:56:41.9149698Z   COLUMNS: 150
+2026-10-14T17:56:41.9150089Z   UV_FROZEN: true
+2026-10-14T17:56:41.9150455Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.9150968Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.9151913Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.9152288Z   targets: 
+2026-10-14T17:56:41.9152648Z   components: llvm-tools
+2026-10-14T17:56:41.9152901Z ##[endgroup]
+2026-10-14T17:56:41.9304194Z ##[end-action id=rust-toolchain.flags;outcome=success;conclusion=success;duration_ms=31]
+2026-10-14T17:56:41.9310196Z ##[start-action display=Run : set $CARGO_HOME;id=rust-toolchain.__run]
+2026-10-14T17:56:41.9339114Z ##[group]Run : set $CARGO_HOME
+2026-10-14T17:56:41.9339511Z [36;1m: set $CARGO_HOME[0m
+2026-10-14T17:56:41.9340069Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2026-10-14T17:56:41.9429059Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:41.9429609Z env:
+2026-10-14T17:56:41.9429918Z   COLUMNS: 150
+2026-10-14T17:56:41.9430261Z   UV_FROZEN: true
+2026-10-14T17:56:41.9430622Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.9431085Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.9431690Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.9432025Z ##[endgroup]
+2026-10-14T17:56:41.9573341Z ##[end-action id=rust-toolchain.__run;outcome=success;conclusion=success;duration_ms=26]
+2026-10-14T17:56:41.9578058Z ##[start-action display=Run : install rustup if needed;id=rust-toolchain.__run_2]
+2026-10-14T17:56:41.9619272Z ##[group]Run : install rustup if needed
+2026-10-14T17:56:41.9619762Z [36;1m: install rustup if needed[0m
+2026-10-14T17:56:41.9620319Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2026-10-14T17:56:41.9621340Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2026-10-14T17:56:41.9622660Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2026-10-14T17:56:41.9623169Z [36;1mfi[0m
+2026-10-14T17:56:41.9708176Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:41.9708798Z env:
+2026-10-14T17:56:41.9709147Z   COLUMNS: 150
+2026-10-14T17:56:41.9709499Z   UV_FROZEN: true
+2026-10-14T17:56:41.9709753Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.9710169Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.9710845Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.9711194Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:41.9711687Z ##[endgroup]
+2026-10-14T17:56:41.9846243Z ##[end-action id=rust-toolchain.__run_2;outcome=success;conclusion=success;duration_ms=26]
+2026-10-14T17:56:41.9852771Z ##[start-action display=Run : install rustup if needed on windows;id=rust-toolchain.__run_3]
+2026-10-14T17:56:41.9863617Z ##[end-action id=rust-toolchain.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-14T17:56:41.9868898Z ##[start-action display=rustup toolchain install stable;id=rust-toolchain.__run_4]
+2026-10-14T17:56:41.9899083Z ##[group]Run rustup toolchain install stable --component llvm-tools --profile minimal --no-self-update
+2026-10-14T17:56:41.9900316Z [36;1mrustup toolchain install stable --component llvm-tools --profile minimal --no-self-update[0m
+2026-10-14T17:56:41.9982094Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:41.9982542Z env:
+2026-10-14T17:56:41.9982901Z   COLUMNS: 150
+2026-10-14T17:56:41.9983258Z   UV_FROZEN: true
+2026-10-14T17:56:41.9983667Z   FORCE_COLOR: 1
+2026-10-14T17:56:41.9984102Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:41.9984728Z   UV_PYTHON: 3.15
+2026-10-14T17:56:41.9985097Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:41.9985361Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2026-10-14T17:56:41.9985601Z ##[endgroup]
+2026-10-14T17:56:42.3543876Z info: syncing channel updates for stable-x86_64-unknown-linux-gnu
+2026-10-14T17:56:43.0615575Z info: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:56:43.0868636Z info: downloading component llvm-tools
+2026-10-14T17:56:47.1313754Z 
+2026-10-14T17:56:47.1426070Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.99.0 (b940084d7 2026-09-28) (from rustc 1.99.0 (b940084d7 2026-09-28))
+2026-10-14T17:56:47.1427623Z 
+2026-10-14T17:56:47.1477966Z ##[end-action id=rust-toolchain.__run_4;outcome=success;conclusion=success;duration_ms=5160]
+2026-10-14T17:56:47.1485604Z ##[start-action display=Run rustup default stable;id=rust-toolchain.__run_5]
+2026-10-14T17:56:47.1514050Z ##[group]Run rustup default stable
+2026-10-14T17:56:47.1514353Z [36;1mrustup default stable[0m
+2026-10-14T17:56:47.1601432Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.1602040Z env:
+2026-10-14T17:56:47.1602382Z   COLUMNS: 150
+2026-10-14T17:56:47.1602742Z   UV_FROZEN: true
+2026-10-14T17:56:47.1603102Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.1603618Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.1604127Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.1604467Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.1604907Z ##[endgroup]
+2026-10-14T17:56:47.1795177Z info: using existing install for stable-x86_64-unknown-linux-gnu
+2026-10-14T17:56:47.1813326Z 
+2026-10-14T17:56:47.1815357Z info: default toolchain set to stable-x86_64-unknown-linux-gnu
+2026-10-14T17:56:47.1924376Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:56:47.1927732Z 
+2026-10-14T17:56:47.1948240Z ##[end-action id=rust-toolchain.__run_5;outcome=success;conclusion=success;duration_ms=46]
+2026-10-14T17:56:47.1956014Z ##[start-action display=Run : create cachekey;id=rust-toolchain.rustc-version]
+2026-10-14T17:56:47.1997666Z ##[group]Run : create cachekey
+2026-10-14T17:56:47.1998195Z [36;1m: create cachekey[0m
+2026-10-14T17:56:47.1999123Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2026-10-14T17:56:47.2000328Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2026-10-14T17:56:47.2001274Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2026-10-14T17:56:47.2095426Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.2096032Z env:
+2026-10-14T17:56:47.2096381Z   COLUMNS: 150
+2026-10-14T17:56:47.2096741Z   UV_FROZEN: true
+2026-10-14T17:56:47.2097117Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.2097810Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.2098408Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.2098802Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.2099246Z ##[endgroup]
+2026-10-14T17:56:47.2764326Z ##[end-action id=rust-toolchain.rustc-version;outcome=success;conclusion=success;duration_ms=80]
+2026-10-14T17:56:47.2768137Z ##[start-action display=Run : disable incremental compilation;id=rust-toolchain.__run_6]
+2026-10-14T17:56:47.2796669Z ##[group]Run : disable incremental compilation
+2026-10-14T17:56:47.2797634Z [36;1m: disable incremental compilation[0m
+2026-10-14T17:56:47.2798737Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2026-10-14T17:56:47.2799450Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2026-10-14T17:56:47.2800078Z [36;1mfi[0m
+2026-10-14T17:56:47.2886758Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.2887880Z env:
+2026-10-14T17:56:47.2888430Z   COLUMNS: 150
+2026-10-14T17:56:47.2889037Z   UV_FROZEN: true
+2026-10-14T17:56:47.2889614Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.2890256Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.2914482Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.2914787Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.2915188Z ##[endgroup]
+2026-10-14T17:56:47.3045277Z ##[end-action id=rust-toolchain.__run_6;outcome=success;conclusion=success;duration_ms=27]
+2026-10-14T17:56:47.3048824Z ##[start-action display=Run : enable colors in Cargo output;id=rust-toolchain.__run_7]
+2026-10-14T17:56:47.3094766Z ##[group]Run : enable colors in Cargo output
+2026-10-14T17:56:47.3095248Z [36;1m: enable colors in Cargo output[0m
+2026-10-14T17:56:47.3095785Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2026-10-14T17:56:47.3096317Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2026-10-14T17:56:47.3097111Z [36;1mfi[0m
+2026-10-14T17:56:47.3188631Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.3189190Z env:
+2026-10-14T17:56:47.3189498Z   COLUMNS: 150
+2026-10-14T17:56:47.3189832Z   UV_FROZEN: true
+2026-10-14T17:56:47.3190165Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.3190647Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.3191229Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.3191614Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.3192082Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:47.3192474Z ##[endgroup]
+2026-10-14T17:56:47.3316145Z ##[end-action id=rust-toolchain.__run_7;outcome=success;conclusion=success;duration_ms=26]
+2026-10-14T17:56:47.3331092Z ##[start-action display=Run : enable Cargo sparse registry;id=rust-toolchain.__run_8]
+2026-10-14T17:56:47.3359996Z ##[group]Run : enable Cargo sparse registry
+2026-10-14T17:56:47.3360585Z [36;1m: enable Cargo sparse registry[0m
+2026-10-14T17:56:47.3361296Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2026-10-14T17:56:47.3362558Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2026-10-14T17:56:47.3363881Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2026-10-14T17:56:47.3364904Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-10-14T17:56:47.3365909Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2026-10-14T17:56:47.3366809Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2026-10-14T17:56:47.3368035Z [36;1m    touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-10-14T17:56:47.3369012Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2026-10-14T17:56:47.3369663Z [36;1m  fi[0m
+2026-10-14T17:56:47.3370198Z [36;1mfi[0m
+2026-10-14T17:56:47.3456183Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.3456796Z env:
+2026-10-14T17:56:47.3457146Z   COLUMNS: 150
+2026-10-14T17:56:47.3457736Z   UV_FROZEN: true
+2026-10-14T17:56:47.3458096Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.3458600Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.3459234Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.3459610Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.3460067Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:47.3460457Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:47.3460870Z ##[endgroup]
+2026-10-14T17:56:47.3953159Z ##[end-action id=rust-toolchain.__run_8;outcome=success;conclusion=success;duration_ms=62]
+2026-10-14T17:56:47.3961759Z ##[start-action display=Run : work around spurious network errors in curl 8.0;id=rust-toolchain.__run_9]
+2026-10-14T17:56:47.4011891Z ##[group]Run : work around spurious network errors in curl 8.0
+2026-10-14T17:56:47.4012668Z [36;1m: work around spurious network errors in curl 8.0[0m
+2026-10-14T17:56:47.4013681Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2026-10-14T17:56:47.4014833Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2026-10-14T17:56:47.4029401Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2026-10-14T17:56:47.4030189Z [36;1mfi[0m
+2026-10-14T17:56:47.4137091Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.4138956Z env:
+2026-10-14T17:56:47.4139265Z   COLUMNS: 150
+2026-10-14T17:56:47.4139689Z   UV_FROZEN: true
+2026-10-14T17:56:47.4140060Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.4140578Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.4146223Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.4146667Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.4148710Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:47.4149300Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:47.4149695Z ##[endgroup]
+2026-10-14T17:56:47.4582358Z ##[end-action id=rust-toolchain.__run_9;outcome=success;conclusion=success;duration_ms=61]
+2026-10-14T17:56:47.4588338Z ##[start-action display=Run rustc +stable --version --verbose;id=rust-toolchain.__run_10]
+2026-10-14T17:56:47.4620179Z ##[group]Run rustc +stable --version --verbose
+2026-10-14T17:56:47.4620809Z [36;1mrustc +stable --version --verbose[0m
+2026-10-14T17:56:47.4731209Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:47.4731824Z env:
+2026-10-14T17:56:47.4732168Z   COLUMNS: 150
+2026-10-14T17:56:47.4732528Z   UV_FROZEN: true
+2026-10-14T17:56:47.4732886Z   FORCE_COLOR: 1
+2026-10-14T17:56:47.4733420Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:47.4734044Z   UV_PYTHON: 3.15
+2026-10-14T17:56:47.4734460Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:47.4734915Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:47.4735317Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:47.4735731Z ##[endgroup]
+2026-10-14T17:56:47.5065149Z rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:56:47.5067001Z binary: rustc
+2026-10-14T17:56:47.5070842Z commit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+2026-10-14T17:56:47.5071876Z commit-date: 2026-09-28
+2026-10-14T17:56:47.5078015Z host: x86_64-unknown-linux-gnu
+2026-10-14T17:56:47.5078520Z release: 1.99.0
+2026-10-14T17:56:47.5079166Z LLVM version: 23.1.1
+2026-10-14T17:56:47.5090684Z ##[end-action id=rust-toolchain.__run_10;outcome=success;conclusion=success;duration_ms=50]
+2026-10-14T17:56:47.5213626Z Prepare all required actions
+2026-10-14T17:56:47.5214617Z Getting action download info
+2026-10-14T17:56:47.6511375Z Download action repository 'PyO3/maturin-action@e83996d129638aa358a18fbd1dfb82f0b0fb5d3b' (SHA:e83996d129638aa358a18fbd1dfb82f0b0fb5d3b)
+2026-10-14T17:56:48.0386281Z ##[group]Run ./.github/actions/core-build-pgo-wheel
+2026-10-14T17:56:48.0386852Z with:
+2026-10-14T17:56:48.0387463Z   working-directory: pydantic-core
+2026-10-14T17:56:48.0387974Z   interpreter: 3.15
+2026-10-14T17:56:48.0388346Z   rust-toolchain: stable
+2026-10-14T17:56:48.0388689Z env:
+2026-10-14T17:56:48.0388960Z   COLUMNS: 150
+2026-10-14T17:56:48.0389258Z   UV_FROZEN: true
+2026-10-14T17:56:48.0389540Z   FORCE_COLOR: 1
+2026-10-14T17:56:48.0389954Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:48.0390486Z   UV_PYTHON: 3.15
+2026-10-14T17:56:48.0390818Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:48.0391212Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:48.0391601Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:48.0391963Z ##[endgroup]
+2026-10-14T17:56:48.0399830Z ##[start-action display=Get uv installer;id=pgo-wheel.__run]
+2026-10-14T17:56:48.0429046Z ##[group]Run curl -LsSf https://astral.sh/uv/install.sh -o uv-installer.sh
+2026-10-14T17:56:48.0430067Z [36;1mcurl -LsSf https://astral.sh/uv/install.sh -o uv-installer.sh[0m
+2026-10-14T17:56:48.0430989Z [36;1mgh attestation verify uv-installer.sh \[0m
+2026-10-14T17:56:48.0431515Z [36;1m  --repo astral-sh/uv \[0m
+2026-10-14T17:56:48.0432112Z [36;1m  --signer-workflow astral-sh/uv/.github/workflows/release.yml \[0m
+2026-10-14T17:56:48.0432803Z [36;1m  --deny-self-hosted-runners[0m
+2026-10-14T17:56:48.0520363Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T17:56:48.0520836Z env:
+2026-10-14T17:56:48.0521176Z   COLUMNS: 150
+2026-10-14T17:56:48.0521561Z   UV_FROZEN: true
+2026-10-14T17:56:48.0521872Z   FORCE_COLOR: 1
+2026-10-14T17:56:48.0522370Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:48.0522956Z   UV_PYTHON: 3.15
+2026-10-14T17:56:48.0523272Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:48.0523706Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:48.0524132Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:48.0528500Z   GH_TOKEN: ***
+2026-10-14T17:56:48.0528910Z ##[endgroup]
+2026-10-14T17:56:53.6382691Z ##[end-action id=pgo-wheel.__run;outcome=success;conclusion=success;duration_ms=5598]
+2026-10-14T17:56:53.6386592Z ##[start-action display=Build PGO-optimized wheel;id=pgo-wheel.__PyO3_maturin-action]
+2026-10-14T17:56:53.6495722Z ##[group]Run PyO3/maturin-action@e83996d129638aa358a18fbd1dfb82f0b0fb5d3b
+2026-10-14T17:56:53.6496429Z with:
+2026-10-14T17:56:53.6496828Z   working-directory: pydantic-core
+2026-10-14T17:56:53.6497517Z   maturin-version: v1.15.0
+2026-10-14T17:56:53.6497950Z   manylinux: auto
+2026-10-14T17:56:53.6498588Z   before-script-linux: env UV_UNMANAGED_INSTALL=/usr/local/bin sh uv-installer.sh
+
+2026-10-14T17:56:53.6499550Z   args: --release --locked --pgo --out dist --interpreter 3.15
+
+2026-10-14T17:56:53.6500272Z   rust-toolchain: stable
+2026-10-14T17:56:53.6500720Z   docker-options: -e CI -e UV_PYTHON
+2026-10-14T17:56:53.6505670Z   token: ***
+2026-10-14T17:56:53.6506055Z   command: build
+2026-10-14T17:56:53.6506412Z   sccache: false
+2026-10-14T17:56:53.6506786Z env:
+2026-10-14T17:56:53.6507101Z   COLUMNS: 150
+2026-10-14T17:56:53.6507715Z   UV_FROZEN: true
+2026-10-14T17:56:53.6508072Z   FORCE_COLOR: 1
+2026-10-14T17:56:53.6508564Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T17:56:53.6509201Z   UV_PYTHON: 3.15
+2026-10-14T17:56:53.6509603Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T17:56:53.6510075Z   CARGO_INCREMENTAL: 0
+2026-10-14T17:56:53.6510482Z   CARGO_TERM_COLOR: always
+2026-10-14T17:56:53.6510906Z ##[endgroup]
+2026-10-14T17:56:53.9539243Z ##[group]Pull Docker image
+2026-10-14T17:56:53.9559084Z Using quay.io/pypa/manylinux2014_x86_64:latest Docker image
+2026-10-14T17:56:53.9589183Z [command]/usr/bin/docker pull quay.io/pypa/manylinux2014_x86_64:latest
+2026-10-14T17:56:56.1866950Z latest: Pulling from pypa/manylinux2014_x86_64
+2026-10-14T17:56:56.1868147Z c9c763983040: Pulling fs layer
+2026-10-14T17:56:56.1869454Z ec7e347fb214: Pulling fs layer
+2026-10-14T17:56:56.1870553Z fb7bd0013101: Pulling fs layer
+2026-10-14T17:56:56.1884429Z 4f4fb700ef54: Pulling fs layer
+2026-10-14T17:56:56.1885174Z 48c7c6116662: Pulling fs layer
+2026-10-14T17:56:56.1885906Z 56c7655f357c: Pulling fs layer
+2026-10-14T17:56:56.1886498Z ea23b12eb6cb: Pulling fs layer
+2026-10-14T17:56:56.1887095Z 668c40ddb712: Pulling fs layer
+2026-10-14T17:56:56.1888020Z 723b6d20fb86: Pulling fs layer
+2026-10-14T17:56:56.1888642Z 00e553e8d6f6: Pulling fs layer
+2026-10-14T17:56:56.1889236Z 0e2a747ccebe: Pulling fs layer
+2026-10-14T17:56:56.1889811Z 77a019c9b3f7: Pulling fs layer
+2026-10-14T17:56:56.1890425Z 0c9cdae2ff67: Pulling fs layer
+2026-10-14T17:56:56.1891031Z 13d86a9ea33f: Pulling fs layer
+2026-10-14T17:56:56.1891614Z 1576e5f68234: Pulling fs layer
+2026-10-14T17:56:56.1892219Z 8550fceb852c: Pulling fs layer
+2026-10-14T17:56:56.1892825Z 5785595cab19: Pulling fs layer
+2026-10-14T17:56:56.1893428Z e022a04b6de7: Pulling fs layer
+2026-10-14T17:56:56.1893982Z 5fb5091b04b7: Pulling fs layer
+2026-10-14T17:56:56.1894566Z a31c5ab821ee: Pulling fs layer
+2026-10-14T17:56:56.1895185Z 1b5bcc03c56e: Pulling fs layer
+2026-10-14T17:56:56.1896386Z fcc83b69b8a1: Pulling fs layer
+2026-10-14T17:56:56.1899337Z 9e079e10678b: Pulling fs layer
+2026-10-14T17:56:56.1899997Z 0c9cdae2ff67: Waiting
+2026-10-14T17:56:56.1900808Z 13d86a9ea33f: Waiting
+2026-10-14T17:56:56.1901376Z 1576e5f68234: Waiting
+2026-10-14T17:56:56.1901997Z 8550fceb852c: Waiting
+2026-10-14T17:56:56.1902543Z 5785595cab19: Waiting
+2026-10-14T17:56:56.1903078Z e022a04b6de7: Waiting
+2026-10-14T17:56:56.1903698Z 5fb5091b04b7: Waiting
+2026-10-14T17:56:56.1904269Z a31c5ab821ee: Waiting
+2026-10-14T17:56:56.1904657Z 1b5bcc03c56e: Waiting
+2026-10-14T17:56:56.1905288Z fcc83b69b8a1: Waiting
+2026-10-14T17:56:56.1905651Z 9e079e10678b: Waiting
+2026-10-14T17:56:56.1906157Z 4f4fb700ef54: Waiting
+2026-10-14T17:56:56.1906546Z 48c7c6116662: Waiting
+2026-10-14T17:56:56.1906940Z 723b6d20fb86: Waiting
+2026-10-14T17:56:56.1907521Z 00e553e8d6f6: Waiting
+2026-10-14T17:56:56.1907911Z 56c7655f357c: Waiting
+2026-10-14T17:56:56.1908310Z ea23b12eb6cb: Waiting
+2026-10-14T17:56:56.1908722Z 0e2a747ccebe: Waiting
+2026-10-14T17:56:56.1909115Z 668c40ddb712: Waiting
+2026-10-14T17:56:56.1909483Z 77a019c9b3f7: Waiting
+2026-10-14T17:56:56.8179946Z fb7bd0013101: Verifying Checksum
+2026-10-14T17:56:56.8180547Z fb7bd0013101: Download complete
+2026-10-14T17:56:56.8245166Z ec7e347fb214: Verifying Checksum
+2026-10-14T17:56:56.8246492Z ec7e347fb214: Download complete
+2026-10-14T17:56:57.4281218Z 4f4fb700ef54: Verifying Checksum
+2026-10-14T17:56:57.4288698Z 4f4fb700ef54: Download complete
+2026-10-14T17:56:57.4289681Z 48c7c6116662: Download complete
+2026-10-14T17:56:58.0318658Z 56c7655f357c: Verifying Checksum
+2026-10-14T17:56:58.0319253Z 56c7655f357c: Download complete
+2026-10-14T17:56:58.0698098Z ea23b12eb6cb: Verifying Checksum
+2026-10-14T17:56:58.0699904Z ea23b12eb6cb: Download complete
+2026-10-14T17:56:58.6308554Z 668c40ddb712: Verifying Checksum
+2026-10-14T17:56:58.6309145Z 668c40ddb712: Download complete
+2026-10-14T17:56:58.6621056Z 723b6d20fb86: Verifying Checksum
+2026-10-14T17:56:58.6622411Z 723b6d20fb86: Download complete
+2026-10-14T17:56:59.1055041Z c9c763983040: Verifying Checksum
+2026-10-14T17:56:59.1072839Z c9c763983040: Download complete
+2026-10-14T17:56:59.2381790Z 00e553e8d6f6: Verifying Checksum
+2026-10-14T17:56:59.2384700Z 00e553e8d6f6: Download complete
+2026-10-14T17:56:59.2625439Z 0e2a747ccebe: Verifying Checksum
+2026-10-14T17:56:59.2630246Z 0e2a747ccebe: Download complete
+2026-10-14T17:56:59.7122646Z 77a019c9b3f7: Verifying Checksum
+2026-10-14T17:56:59.7128428Z 77a019c9b3f7: Download complete
+2026-10-14T17:56:59.7227468Z 13d86a9ea33f: Verifying Checksum
+2026-10-14T17:56:59.7228056Z 13d86a9ea33f: Download complete
+2026-10-14T17:56:59.8256549Z 0c9cdae2ff67: Download complete
+2026-10-14T17:57:00.3203431Z 5785595cab19: Verifying Checksum
+2026-10-14T17:57:00.3204363Z 1576e5f68234: Verifying Checksum
+2026-10-14T17:57:00.3204829Z 1576e5f68234: Download complete
+2026-10-14T17:57:00.3205258Z 5785595cab19: Download complete
+2026-10-14T17:57:00.3835671Z 8550fceb852c: Verifying Checksum
+2026-10-14T17:57:00.3839919Z 8550fceb852c: Download complete
+2026-10-14T17:57:00.9678996Z e022a04b6de7: Verifying Checksum
+2026-10-14T17:57:00.9681886Z e022a04b6de7: Download complete
+2026-10-14T17:57:01.0996387Z 5fb5091b04b7: Verifying Checksum
+2026-10-14T17:57:01.1002784Z 5fb5091b04b7: Download complete
+2026-10-14T17:57:01.1540180Z a31c5ab821ee: Download complete
+2026-10-14T17:57:01.6107910Z 9e079e10678b: Verifying Checksum
+2026-10-14T17:57:01.6111688Z 9e079e10678b: Download complete
+2026-10-14T17:57:01.6290895Z 1b5bcc03c56e: Verifying Checksum
+2026-10-14T17:57:01.6294230Z 1b5bcc03c56e: Download complete
+2026-10-14T17:57:08.0613294Z fcc83b69b8a1: Verifying Checksum
+2026-10-14T17:57:08.0614003Z fcc83b69b8a1: Download complete
+2026-10-14T17:57:09.2199158Z c9c763983040: Pull complete
+2026-10-14T17:57:09.4022933Z ec7e347fb214: Pull complete
+2026-10-14T17:57:10.6300026Z fb7bd0013101: Pull complete
+2026-10-14T17:57:10.6435205Z 4f4fb700ef54: Pull complete
+2026-10-14T17:57:10.6624878Z 48c7c6116662: Pull complete
+2026-10-14T17:57:10.6791055Z 56c7655f357c: Pull complete
+2026-10-14T17:57:10.7648543Z ea23b12eb6cb: Pull complete
+2026-10-14T17:57:10.7800586Z 668c40ddb712: Pull complete
+2026-10-14T17:57:10.8418548Z 723b6d20fb86: Pull complete
+2026-10-14T17:57:10.8580203Z 00e553e8d6f6: Pull complete
+2026-10-14T17:57:10.9393747Z 0e2a747ccebe: Pull complete
+2026-10-14T17:57:10.9506247Z 77a019c9b3f7: Pull complete
+2026-10-14T17:57:11.0131842Z 0c9cdae2ff67: Pull complete
+2026-10-14T17:57:11.0242959Z 13d86a9ea33f: Pull complete
+2026-10-14T17:57:11.0615979Z 1576e5f68234: Pull complete
+2026-10-14T17:57:11.6996555Z 8550fceb852c: Pull complete
+2026-10-14T17:57:11.7231902Z 5785595cab19: Pull complete
+2026-10-14T17:57:11.7466007Z e022a04b6de7: Pull complete
+2026-10-14T17:57:11.8295555Z 5fb5091b04b7: Pull complete
+2026-10-14T17:57:12.1931122Z a31c5ab821ee: Pull complete
+2026-10-14T17:57:12.2296143Z 1b5bcc03c56e: Pull complete
+2026-10-14T17:57:30.9558622Z fcc83b69b8a1: Pull complete
+2026-10-14T17:57:30.9784196Z 9e079e10678b: Pull complete
+2026-10-14T17:57:30.9830442Z Digest: sha256:f6a6f153c9cf45470507ebbc27013e5db14ce21331b62fd2c540561f25e5f0a5
+2026-10-14T17:57:30.9843099Z Status: Downloaded newer image for quay.io/pypa/manylinux2014_x86_64:latest
+2026-10-14T17:57:30.9859973Z quay.io/pypa/manylinux2014_x86_64:latest
+2026-10-14T17:57:30.9883173Z ##[endgroup]
+2026-10-14T17:57:30.9890806Z ##[group]Cleanup build scripts artifact directory
+2026-10-14T17:57:30.9896176Z ##[endgroup]
+2026-10-14T17:57:30.9954089Z [command]/usr/bin/docker run --rm --workdir /home/runner/work/pydantic/pydantic/pydantic-core -e DEBIAN_FRONTEND=noninteractive -e ARCHFLAGS -e _PYTHON_SYSCONFIGDATA_NAME -e GITHUB_ACTIONS -e ACTIONS_RUNNER_RETURN_JOB_RESULT_FOR_HOSTED -e ACTIONS_RUNNER_ACTION_ARCHIVE_CACHE -e CARGO_INCREMENTAL -e CARGO_TERM_COLOR -e GITHUB_JOB -e GITHUB_REF -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_REPOSITORY_OWNER -e GITHUB_REPOSITORY_OWNER_ID -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RETENTION_DAYS -e GITHUB_RUN_ATTEMPT -e GITHUB_ACTOR_ID -e GITHUB_ACTOR -e GITHUB_WORKFLOW -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GITHUB_EVENT_NAME -e GITHUB_SERVER_URL -e GITHUB_API_URL -e GITHUB_GRAPHQL_URL -e GITHUB_REF_NAME -e GITHUB_REF_PROTECTED -e GITHUB_REF_TYPE -e GITHUB_WORKFLOW_REF -e GITHUB_WORKFLOW_SHA -e GITHUB_REPOSITORY_ID -e GITHUB_TRIGGERING_ACTOR -e GITHUB_WORKSPACE -e GITHUB_ACTION -e GITHUB_EVENT_PATH -e GITHUB_ACTION_REPOSITORY -e GITHUB_ACTION_REF -e GITHUB_PATH -e GITHUB_ENV -e GITHUB_STEP_SUMMARY -e GITHUB_STATE -e GITHUB_OUTPUT -e GITHUB_ARTIFACTS -e GITHUB_ARTIFACTS_LIST -e GITHUB_ACTION_PATH -e ACTIONS_RUNTIME_URL -e ACTIONS_RUNTIME_TOKEN -e ACTIONS_CACHE_URL -e ACTIONS_ID_TOKEN_REQUEST_URL -e ACTIONS_ID_TOKEN_REQUEST_TOKEN -e ACTIONS_RESULTS_URL -e ACTIONS_CACHE_SERVICE_V2 -e ACTIONS_CACHE_MODE -e ACTIONS_ORCHESTRATION_ID -v /home/runner/work/_temp/run-maturin-action.sh:/home/runner/work/_temp/run-maturin-action.sh -v /home/runner/work/pydantic/pydantic:/home/runner/work/pydantic/pydantic -e CI -e UV_PYTHON quay.io/pypa/manylinux2014_x86_64:latest /home/runner/work/_temp/run-maturin-action.sh
+2026-10-14T17:57:31.7024511Z ##[group]Install Rust
+2026-10-14T17:57:32.0613544Z info: downloading installer
+2026-10-14T17:57:32.1185683Z warn: Not enforcing strong cipher suites for TLS, this is potentially less secure
+2026-10-14T17:57:32.7336868Z info: profile set to minimal
+2026-10-14T17:57:32.7337975Z info: default host tuple is x86_64-unknown-linux-gnu
+2026-10-14T17:57:32.7344009Z info: syncing channel updates for stable-x86_64-unknown-linux-gnu
+2026-10-14T17:57:32.9049233Z info: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:57:32.9060254Z info: downloading 3 components
+2026-10-14T17:57:43.4611329Z info: default toolchain set to stable-x86_64-unknown-linux-gnu
+2026-10-14T17:57:43.4621662Z 
+2026-10-14T17:57:43.4728320Z   stable-x86_64-unknown-linux-gnu installed - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:57:43.4730816Z 
+2026-10-14T17:57:43.4732229Z 
+2026-10-14T17:57:43.4734798Z Rust is installed now. Great!
+2026-10-14T17:57:43.4737125Z 
+2026-10-14T17:57:43.4740087Z To get started you may need to restart your current shell.
+2026-10-14T17:57:43.4742947Z This would reload your PATH environment variable to include
+2026-10-14T17:57:43.4745509Z Cargo's bin directory ($HOME/.cargo/bin).
+2026-10-14T17:57:43.4747783Z 
+2026-10-14T17:57:43.4754336Z To configure your current shell, you need to source the
+2026-10-14T17:57:43.4756437Z corresponding env file under $HOME/.cargo.
+2026-10-14T17:57:43.4758933Z 
+2026-10-14T17:57:43.4761442Z Consider running the right command for your shell (note the leading DOT):
+2026-10-14T17:57:43.4763823Z . "$HOME/.cargo/env" # For sh/ash/dash/pdksh/bash
+2026-10-14T17:57:43.4766642Z cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-gnu
+2026-10-14T17:57:43.4769136Z CC_x86_64-unknown-linux-gnu = None
+2026-10-14T17:57:43.4774472Z cargo:rerun-if-env-changed=CC_x86_64_unknown_linux_gnu
+2026-10-14T17:57:43.4781305Z CC_x86_64_unknown_linux_gnu = None
+2026-10-14T17:57:43.4782267Z cargo:rerun-if-env-changed=HOST_CC
+2026-10-14T17:57:43.4783067Z HOST_CC = None
+2026-10-14T17:57:43.4783778Z cargo:rerun-if-env-changed=CC
+2026-10-14T17:57:43.4784443Z CC = None
+2026-10-14T17:57:43.4792759Z cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+2026-10-14T17:57:43.4959695Z cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+2026-10-14T17:57:43.4961937Z CRATE_CC_NO_DEFAULTS = None
+2026-10-14T17:57:43.4965079Z cargo:rerun-if-env-changed=CFLAGS
+2026-10-14T17:57:43.4968987Z CFLAGS = None
+2026-10-14T17:57:43.4971226Z cargo:rerun-if-env-changed=HOST_CFLAGS
+2026-10-14T17:57:43.4974039Z HOST_CFLAGS = None
+2026-10-14T17:57:43.5000948Z cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_gnu
+2026-10-14T17:57:43.5002699Z CFLAGS_x86_64_unknown_linux_gnu = None
+2026-10-14T17:57:43.5003540Z cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-gnu
+2026-10-14T17:57:43.5004358Z CFLAGS_x86_64-unknown-linux-gnu = None
+2026-10-14T17:57:43.5123337Z Install Rust toolchain stable
+2026-10-14T17:57:43.5885061Z info: syncing channel updates for stable-x86_64-unknown-linux-gnu
+2026-10-14T17:57:43.6806400Z 
+2026-10-14T17:57:43.6949835Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-14T17:57:43.6952407Z 
+2026-10-14T17:57:43.7064696Z info: override toolchain for /home/runner/work/pydantic/pydantic/pydantic-core set to stable-x86_64-unknown-linux-gnu
+2026-10-14T17:57:43.8213922Z info: downloading component llvm-tools
+2026-10-14T17:57:47.8341063Z ##[endgroup]
+2026-10-14T17:57:47.8349295Z ##[group]Install maturin
+2026-10-14T17:57:47.8426457Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-14T17:57:47.8428175Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-14T17:57:47.8428666Z 
+2026-10-14T17:57:48.1606439Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-14T17:57:48.1608081Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-14T17:57:48.3005275Z 
+2026-10-14T17:57:48.5033179Z  25 9986k   25 2581k    0     0  5641k      0  0:00:01 --:--:--  0:00:01 5641k
+2026-10-14T17:57:48.5041228Z 100 9986k  100 9986k    0     0  14.7M      0 --:--:-- --:--:-- --:--:-- 35.7M
+2026-10-14T17:57:48.5169561Z maturin 1.15.0
+2026-10-14T17:57:51.1731979Z Collecting cffi
+2026-10-14T17:57:51.2119825Z   Downloading cffi-2.0.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.6 kB)
+2026-10-14T17:57:51.2363521Z Collecting pycparser (from cffi)
+2026-10-14T17:57:51.2458446Z   Downloading pycparser-2.23-py3-none-any.whl.metadata (993 bytes)
+2026-10-14T17:57:51.2596148Z Downloading cffi-2.0.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (216 kB)
+2026-10-14T17:57:51.2909709Z Downloading pycparser-2.23-py3-none-any.whl (118 kB)
+2026-10-14T17:57:51.3261417Z Installing collected packages: pycparser, cffi
+2026-10-14T17:57:51.6906344Z 
+2026-10-14T17:57:51.6932684Z Successfully installed cffi-2.0.0 pycparser-2.23
+2026-10-14T17:57:51.6936291Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-10-14T17:57:51.9214691Z ##[endgroup]
+2026-10-14T17:57:51.9216705Z ##[group]Run before script
+2026-10-14T17:57:51.9762160Z downloading uv 0.13.1 x86_64-unknown-linux-gnu
+2026-10-14T17:57:52.7821333Z installing to /usr/local/bin
+2026-10-14T17:57:52.7930763Z   uv
+2026-10-14T17:57:52.7971423Z   uvx
+2026-10-14T17:57:52.8065861Z everything's installed!
+2026-10-14T17:57:52.8149479Z ##[endgroup]
+2026-10-14T17:57:52.8818113Z [1m[92m    Updating[0m crates.io index
+2026-10-14T17:57:53.1602529Z [1m[92m Downloading[0m crates ...
+2026-10-14T17:57:53.2490492Z [1m[92m  Downloaded[0m idna_adapter v1.2.0
+2026-10-14T17:57:53.2543376Z [1m[92m  Downloaded[0m autocfg v1.3.0
+2026-10-14T17:57:53.2589696Z [1m[92m  Downloaded[0m bitflags v2.9.1
+2026-10-14T17:57:53.2731548Z [1m[92m  Downloaded[0m yoke-derive v0.7.4
+2026-10-14T17:57:53.2758583Z [1m[92m  Downloaded[0m itoa v1.0.11
+2026-10-14T17:57:53.2800923Z [1m[92m  Downloaded[0m ahash v0.8.12
+2026-10-14T17:57:53.2850898Z [1m[92m  Downloaded[0m displaydoc v0.2.5
+2026-10-14T17:57:53.2934130Z [1m[92m  Downloaded[0m icu_locid_transform v1.5.0
+2026-10-14T17:57:53.3036223Z [1m[92m  Downloaded[0m icu_provider_macros v1.5.0
+2026-10-14T17:57:53.3064974Z [1m[92m  Downloaded[0m icu_locid_transform_data v1.5.0
+2026-10-14T17:57:53.3110325Z [1m[92m  Downloaded[0m serde_derive v1.0.229
+2026-10-14T17:57:53.3190211Z [1m[92m  Downloaded[0m icu_properties v1.5.1
+2026-10-14T17:57:53.3242480Z [1m[92m  Downloaded[0m base64 v0.23.1
+2026-10-14T17:57:53.3338247Z [1m[92m  Downloaded[0m icu_normalizer v1.5.0
+2026-10-14T17:57:53.3414076Z [1m[92m  Downloaded[0m pyo3-ffi v0.29.2
+2026-10-14T17:57:53.3618756Z [1m[92m  Downloaded[0m pyo3-macros-backend v0.29.2
+2026-10-14T17:57:53.3678820Z [1m[92m  Downloaded[0m strum v0.27.2
+2026-10-14T17:57:53.3703914Z [1m[92m  Downloaded[0m utf8_iter v1.0.4
+2026-10-14T17:57:53.3728014Z [1m[92m  Downloaded[0m synstructure v0.13.1
+2026-10-14T17:57:53.3748071Z [1m[92m  Downloaded[0m tinystr v0.7.6
+2026-10-14T17:57:53.3792842Z [1m[92m  Downloaded[0m icu_provider v1.5.0
+2026-10-14T17:57:53.3852792Z [1m[92m  Downloaded[0m percent-encoding v2.3.2
+2026-10-14T17:57:53.3882131Z [1m[92m  Downloaded[0m radium v0.7.0
+2026-10-14T17:57:53.3892522Z [1m[92m  Downloaded[0m foldhash v0.2.0
+2026-10-14T17:57:53.3922657Z [1m[92m  Downloaded[0m icu_normalizer_data v1.5.0
+2026-10-14T17:57:53.3964431Z [1m[92m  Downloaded[0m lru v0.18.5
+2026-10-14T17:57:53.3993280Z [1m[92m  Downloaded[0m wit-bindgen-rt v0.39.0
+2026-10-14T17:57:53.4019021Z [1m[92m  Downloaded[0m form_urlencoded v1.2.2
+2026-10-14T17:57:53.4036055Z [1m[92m  Downloaded[0m quote v1.0.44
+2026-10-14T17:57:53.4103317Z [1m[92m  Downloaded[0m static_assertions v1.1.0
+2026-10-14T17:57:53.4138111Z [1m[92m  Downloaded[0m tap v1.0.1
+2026-10-14T17:57:53.4160794Z [1m[92m  Downloaded[0m unicode-ident v1.0.12
+2026-10-14T17:57:53.4225687Z [1m[92m  Downloaded[0m utf16_iter v1.0.5
+2026-10-14T17:57:53.4253959Z [1m[92m  Downloaded[0m version_check v0.9.5
+2026-10-14T17:57:53.4282665Z [1m[92m  Downloaded[0m wasm-bindgen-macro v0.2.100
+2026-10-14T17:57:53.4302122Z [1m[92m  Downloaded[0m wasm-bindgen-macro-support v0.2.100
+2026-10-14T17:57:53.4322955Z [1m[92m  Downloaded[0m wasm-bindgen-shared v0.2.100
+2026-10-14T17:57:53.4344050Z [1m[92m  Downloaded[0m write16 v1.0.0
+2026-10-14T17:57:53.4364853Z [1m[92m  Downloaded[0m cfg-if v1.0.0
+2026-10-14T17:57:53.4392210Z [1m[92m  Downloaded[0m funty v2.0.0
+2026-10-14T17:57:53.4408304Z [1m[92m  Downloaded[0m heck v0.5.0
+2026-10-14T17:57:53.4440687Z [1m[92m  Downloaded[0m pyo3-macros v0.29.2
+2026-10-14T17:57:53.4459060Z [1m[92m  Downloaded[0m log v0.4.27
+2026-10-14T17:57:53.4512056Z [1m[92m  Downloaded[0m num-integer v0.1.46
+2026-10-14T17:57:53.4548930Z [1m[92m  Downloaded[0m hex v0.4.3
+2026-10-14T17:57:53.4592562Z [1m[92m  Downloaded[0m icu_locid v1.5.0
+2026-10-14T17:57:53.4704868Z [1m[92m  Downloaded[0m stable_deref_trait v1.2.0
+2026-10-14T17:57:53.4725837Z [1m[92m  Downloaded[0m enum_dispatch v0.3.13
+2026-10-14T17:57:53.4805264Z [1m[92m  Downloaded[0m litemap v0.7.3
+2026-10-14T17:57:53.4855213Z [1m[92m  Downloaded[0m pyo3-build-config v0.29.2
+2026-10-14T17:57:53.4885348Z [1m[92m  Downloaded[0m speedate v0.17.0
+2026-10-14T17:57:53.4935355Z [1m[92m  Downloaded[0m strum_macros v0.27.2
+2026-10-14T17:57:53.4994751Z [1m[92m  Downloaded[0m target-lexicon v0.13.4
+2026-10-14T17:57:53.5029104Z [1m[92m  Downloaded[0m wasm-bindgen-backend v0.2.100
+2026-10-14T17:57:53.5057848Z [1m[92m  Downloaded[0m writeable v0.5.5
+2026-10-14T17:57:53.5100064Z [1m[92m  Downloaded[0m wyz v0.5.1
+2026-10-14T17:57:53.5126652Z [1m[92m  Downloaded[0m yoke v0.7.4
+2026-10-14T17:57:53.5171436Z [1m[92m  Downloaded[0m zerofrom v0.1.4
+2026-10-14T17:57:53.5185727Z [1m[92m  Downloaded[0m zerofrom-derive v0.1.4
+2026-10-14T17:57:53.5210335Z [1m[92m  Downloaded[0m zerovec-derive v0.10.3
+2026-10-14T17:57:53.5242030Z [1m[92m  Downloaded[0m zmij v1.0.6
+2026-10-14T17:57:53.5284665Z [1m[92m  Downloaded[0m icu_collections v1.5.0
+2026-10-14T17:57:53.5440706Z [1m[92m  Downloaded[0m lexical-parse-integer v1.0.5
+2026-10-14T17:57:53.5489094Z [1m[92m  Downloaded[0m once_cell v1.21.3
+2026-10-14T17:57:53.5549277Z [1m[92m  Downloaded[0m r-efi v5.2.0
+2026-10-14T17:57:53.5688617Z [1m[92m  Downloaded[0m serde_core v1.0.229
+2026-10-14T17:57:53.5748152Z [1m[92m  Downloaded[0m smallvec v1.16.2
+2026-10-14T17:57:53.5778292Z [1m[92m  Downloaded[0m uuid v1.23.4
+2026-10-14T17:57:53.5849820Z [1m[92m  Downloaded[0m wasi v0.14.2+wasi-0.2.4
+2026-10-14T17:57:53.6015731Z [1m[92m  Downloaded[0m wasm-bindgen v0.2.100
+2026-10-14T17:57:53.6069818Z [1m[92m  Downloaded[0m aho-corasick v1.1.3
+2026-10-14T17:57:53.6183980Z [1m[92m  Downloaded[0m idna v1.1.0
+2026-10-14T17:57:53.6258388Z [1m[92m  Downloaded[0m js-sys v0.3.77
+2026-10-14T17:57:53.6281914Z [1m[92m  Downloaded[0m num-traits v0.2.19
+2026-10-14T17:57:53.6343824Z [1m[92m  Downloaded[0m zerocopy-derive v0.8.25
+2026-10-14T17:57:53.6516592Z [1m[92m  Downloaded[0m getrandom v0.3.3
+2026-10-14T17:57:53.6600854Z [1m[92m  Downloaded[0m proc-macro2 v1.0.107
+2026-10-14T17:57:53.6673715Z [1m[92m  Downloaded[0m serde v1.0.229
+2026-10-14T17:57:53.6755863Z [1m[92m  Downloaded[0m bumpalo v3.19.0
+2026-10-14T17:57:53.6809887Z [1m[92m  Downloaded[0m jiter v0.16.0
+2026-10-14T17:57:53.6906465Z [1m[92m  Downloaded[0m lexical-util v1.0.6
+2026-10-14T17:57:53.7011538Z [1m[92m  Downloaded[0m memchr v2.7.4
+2026-10-14T17:57:53.7141465Z [1m[92m  Downloaded[0m num-bigint v0.4.6
+2026-10-14T17:57:53.7255741Z [1m[92m  Downloaded[0m url v2.5.8
+2026-10-14T17:57:53.7312827Z [1m[92m  Downloaded[0m zerovec v0.10.4
+2026-10-14T17:57:53.7455499Z [1m[92m  Downloaded[0m bitvec v1.0.1
+2026-10-14T17:57:53.7918723Z [1m[92m  Downloaded[0m hashbrown v0.17.1
+2026-10-14T17:57:53.8044261Z [1m[92m  Downloaded[0m icu_properties_data v1.5.0
+2026-10-14T17:57:53.8314687Z [1m[92m  Downloaded[0m portable-atomic v1.6.0
+2026-10-14T17:57:53.8443379Z [1m[92m  Downloaded[0m regex v1.13.1
+2026-10-14T17:57:53.8570818Z [1m[92m  Downloaded[0m serde_json v1.0.151
+2026-10-14T17:57:53.8754454Z [1m[92m  Downloaded[0m lexical-parse-float v1.0.5
+2026-10-14T17:57:53.8879857Z [1m[92m  Downloaded[0m zerocopy v0.8.25
+2026-10-14T17:57:53.9729041Z [1m[92m  Downloaded[0m syn v2.0.82
+2026-10-14T17:57:53.9957868Z [1m[92m  Downloaded[0m syn v3.0.6
+2026-10-14T17:57:54.0186410Z [1m[92m  Downloaded[0m regex-syntax v0.8.11
+2026-10-14T17:57:54.0327915Z [1m[92m  Downloaded[0m regex-automata v0.4.18
+2026-10-14T17:57:54.0644105Z [1m[92m  Downloaded[0m libc v0.2.185
+2026-10-14T17:57:54.1664562Z [1m[92m  Downloaded[0m pyo3 v0.29.2
+2026-10-14T17:57:54.2809283Z 🍹 Building a mixed python/rust project
+2026-10-14T17:57:54.2995649Z ⚠️  Warning: Failed to determine python platform
+2026-10-14T17:57:54.2996621Z ⚠️  Warning: Failed to determine python platform
+2026-10-14T17:57:54.3003706Z 🐍 Found CPython 3.15
+2026-10-14T17:57:54.3011575Z 🔗 Found pyo3 bindings
+2026-10-14T17:57:54.3012611Z 📡 Using build options bindings from pyproject.toml
+2026-10-14T17:57:54.3014325Z 🚀 Starting PGO build...
+2026-10-14T17:57:54.3598257Z 📊 Phase 1/3: Building instrumented wheel...
+2026-10-14T17:57:54.5169915Z [1m[92m   Compiling[0m proc-macro2 v1.0.107
+2026-10-14T17:57:54.5179169Z [1m[92m   Compiling[0m unicode-ident v1.0.12
+2026-10-14T17:57:54.5180536Z [1m[92m   Compiling[0m quote v1.0.44
+2026-10-14T17:57:54.5181574Z [1m[92m   Compiling[0m target-lexicon v0.13.4
+2026-10-14T17:57:54.5961106Z [1m[92m   Compiling[0m stable_deref_trait v1.2.0
+2026-10-14T17:57:54.6346265Z [1m[92m   Compiling[0m litemap v0.7.3
+2026-10-14T17:57:54.8221727Z [1m[92m   Compiling[0m writeable v0.5.5
+2026-10-14T17:57:54.8800085Z [1m[92m   Compiling[0m libc v0.2.185
+2026-10-14T17:57:55.3397086Z [1m[92m   Compiling[0m heck v0.5.0
+2026-10-14T17:57:55.3443643Z [1m[92m   Compiling[0m autocfg v1.3.0
+2026-10-14T17:57:55.6699136Z [1m[92m   Compiling[0m pyo3-build-config v0.29.2
+2026-10-14T17:57:55.7219266Z [1m[92m   Compiling[0m num-traits v0.2.19
+2026-10-14T17:57:55.8550059Z [1m[92m   Compiling[0m smallvec v1.16.2
+2026-10-14T17:57:55.8755247Z [1m[92m   Compiling[0m version_check v0.9.5
+2026-10-14T17:57:56.4419383Z [1m[92m   Compiling[0m icu_locid_transform_data v1.5.0
+2026-10-14T17:57:56.4853903Z [1m[92m   Compiling[0m syn v2.0.82
+2026-10-14T17:57:56.7414465Z [1m[92m   Compiling[0m icu_properties_data v1.5.0
+2026-10-14T17:57:56.9424313Z [1m[92m   Compiling[0m static_assertions v1.1.0
+2026-10-14T17:57:57.0130922Z [1m[92m   Compiling[0m lexical-util v1.0.6
+2026-10-14T17:57:57.6523387Z [1m[92m   Compiling[0m pyo3-ffi v0.29.2
+2026-10-14T17:57:58.0295848Z [1m[92m   Compiling[0m pyo3 v0.29.2
+2026-10-14T17:57:58.2997731Z [1m[92m   Compiling[0m zerocopy v0.8.25
+2026-10-14T17:57:58.5638020Z [1m[92m   Compiling[0m icu_normalizer_data v1.5.0
+2026-10-14T17:57:58.6026308Z [1m[92m   Compiling[0m memchr v2.7.4
+2026-10-14T17:57:58.9102511Z [1m[92m   Compiling[0m getrandom v0.3.3
+2026-10-14T17:57:59.2272190Z [1m[92m   Compiling[0m serde_core v1.0.229
+2026-10-14T17:57:59.7250701Z [1m[92m   Compiling[0m write16 v1.0.0
+2026-10-14T17:57:59.7967531Z [1m[92m   Compiling[0m radium v0.7.0
+2026-10-14T17:57:59.9173309Z [1m[92m   Compiling[0m utf8_iter v1.0.4
+2026-10-14T17:58:00.0385244Z [1m[92m   Compiling[0m utf16_iter v1.0.5
+2026-10-14T17:58:00.0742088Z [1m[92m   Compiling[0m num-integer v0.1.46
+2026-10-14T17:58:00.1512248Z [1m[92m   Compiling[0m lexical-parse-integer v1.0.5
+2026-10-14T17:58:00.2143240Z [1m[92m   Compiling[0m ahash v0.8.12
+2026-10-14T17:58:00.4115656Z [1m[92m   Compiling[0m tap v1.0.1
+2026-10-14T17:58:00.4881901Z [1m[92m   Compiling[0m zmij v1.0.6
+2026-10-14T17:58:00.4921005Z [1m[92m   Compiling[0m once_cell v1.21.3
+2026-10-14T17:58:00.6340488Z [1m[92m   Compiling[0m cfg-if v1.0.0
+2026-10-14T17:58:00.7246045Z [1m[92m   Compiling[0m lexical-parse-float v1.0.5
+2026-10-14T17:58:00.7452276Z [1m[92m   Compiling[0m wyz v0.5.1
+2026-10-14T17:58:00.9746163Z [1m[92m   Compiling[0m num-bigint v0.4.6
+2026-10-14T17:58:04.7629520Z [1m[92m   Compiling[0m synstructure v0.13.1
+2026-10-14T17:58:05.6473731Z [1m[92m   Compiling[0m pyo3-macros-backend v0.29.2
+2026-10-14T17:58:06.4846542Z [1m[92m   Compiling[0m aho-corasick v1.1.3
+2026-10-14T17:58:07.6395940Z [1m[92m   Compiling[0m jiter v0.16.0
+2026-10-14T17:58:07.8368573Z [1m[92m   Compiling[0m syn v3.0.6
+2026-10-14T17:58:07.9345195Z [1m[92m   Compiling[0m zerofrom-derive v0.1.4
+2026-10-14T17:58:10.5521635Z [1m[92m   Compiling[0m zerofrom v0.1.4
+2026-10-14T17:58:10.7022221Z [1m[92m   Compiling[0m yoke-derive v0.7.4
+2026-10-14T17:58:12.8055328Z [1m[92m   Compiling[0m yoke v0.7.4
+2026-10-14T17:58:13.0607812Z [1m[92m   Compiling[0m zerovec-derive v0.10.3
+2026-10-14T17:58:13.2878361Z [1m[92m   Compiling[0m displaydoc v0.2.5
+2026-10-14T17:58:14.0469028Z [1m[92m   Compiling[0m icu_provider_macros v1.5.0
+2026-10-14T17:58:14.1469109Z [1m[92m   Compiling[0m strum_macros v0.27.2
+2026-10-14T17:58:14.7469418Z [1m[92m   Compiling[0m serde v1.0.229
+2026-10-14T17:58:15.1292403Z [1m[92m   Compiling[0m funty v2.0.0
+2026-10-14T17:58:15.7137747Z [1m[92m   Compiling[0m zerovec v0.10.4
+2026-10-14T17:58:15.7548765Z [1m[92m   Compiling[0m pyo3-macros v0.29.2
+2026-10-14T17:58:16.4632861Z [1m[92m   Compiling[0m regex-syntax v0.8.11
+2026-10-14T17:58:17.0821296Z [1m[92m   Compiling[0m serde_json v1.0.151
+2026-10-14T17:58:17.3412037Z [1m[92m   Compiling[0m percent-encoding v2.3.2
+2026-10-14T17:58:17.6827808Z [1m[92m   Compiling[0m foldhash v0.2.0
+2026-10-14T17:58:18.0015152Z [1m[92m   Compiling[0m hashbrown v0.17.1
+2026-10-14T17:58:18.5496024Z [1m[92m   Compiling[0m tinystr v0.7.6
+2026-10-14T17:58:18.7394185Z [1m[92m   Compiling[0m icu_locid v1.5.0
+2026-10-14T17:58:19.1570695Z [1m[92m   Compiling[0m icu_collections v1.5.0
+2026-10-14T17:58:19.3969538Z [1m[92m   Compiling[0m strum v0.27.2
+2026-10-14T17:58:19.5121655Z [1m[92m   Compiling[0m form_urlencoded v1.2.2
+2026-10-14T17:58:19.7885767Z [1m[92m   Compiling[0m icu_provider v1.5.0
+2026-10-14T17:58:20.7017103Z [1m[92m   Compiling[0m icu_locid_transform v1.5.0
+2026-10-14T17:58:20.7871576Z [1m[92m   Compiling[0m regex-automata v0.4.18
+2026-10-14T17:58:22.1327634Z [1m[92m   Compiling[0m icu_properties v1.5.1
+2026-10-14T17:58:24.5037790Z [1m[92m   Compiling[0m bitvec v1.0.1
+2026-10-14T17:58:25.9449726Z [1m[92m   Compiling[0m icu_normalizer v1.5.0
+2026-10-14T17:58:29.3175044Z [1m[92m   Compiling[0m idna_adapter v1.2.0
+2026-10-14T17:58:29.5204497Z [1m[92m   Compiling[0m idna v1.1.0
+2026-10-14T17:58:29.7095625Z [1m[92m   Compiling[0m serde_derive v1.0.229
+2026-10-14T17:58:33.1070833Z [1m[92m   Compiling[0m pydantic-core v2.50.0 (/home/runner/work/pydantic/pydantic/pydantic-core)
+2026-10-14T17:58:33.3938849Z [1m[92m   Compiling[0m itoa v1.0.11
+2026-10-14T17:58:34.1096410Z [1m[92m   Compiling[0m enum_dispatch v0.3.13
+2026-10-14T17:58:35.7589052Z [1m[92m   Compiling[0m url v2.5.8
+2026-10-14T17:58:37.5494247Z [1m[92m   Compiling[0m regex v1.13.1
+2026-10-14T17:58:38.3684210Z [1m[92m   Compiling[0m speedate v0.17.0
+2026-10-14T17:58:38.7248572Z [1m[92m   Compiling[0m lru v0.18.5
+2026-10-14T17:58:38.8439804Z [1m[92m   Compiling[0m base64 v0.23.1
+2026-10-14T17:58:38.9858879Z [1m[92m   Compiling[0m hex v0.4.3
+2026-10-14T17:58:39.4321530Z [1m[92m   Compiling[0m uuid v1.23.4
+2026-10-14T18:00:39.0009769Z [1m[92m    Finished[0m `release` profile [optimized] target(s) in 2m 44s
+2026-10-14T18:00:39.3542510Z 🔬 Phase 2/3: Running PGO instrumentation...
+2026-10-14T18:00:39.7946074Z Using CPython 3.15.0 interpreter at: /opt/python/cp315-cp315/bin/python
+2026-10-14T18:00:39.7946987Z Creating virtual environment at: /tmp/.tmpziObKA
+2026-10-14T18:00:39.8144476Z 📦 Installing instrumented wheel into temporary venv...
+2026-10-14T18:00:40.2545256Z Using Python 3.15.0 environment at: /tmp/.tmpziObKA
+2026-10-14T18:00:40.2580573Z Resolved 1 package in 2ms
+2026-10-14T18:00:40.2932759Z Prepared 1 package in 35ms
+2026-10-14T18:00:40.2948274Z Installed 1 package in 1ms
+2026-10-14T18:00:40.2949808Z  + pydantic-core==2.50.0 (from file:///tmp/.tmp0xd9dU/pydantic_core-2.50.0-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)
+2026-10-14T18:00:40.3104560Z Using Python 3.15.0 environment at: /tmp/.tmpziObKA
+2026-10-14T18:00:40.4275075Z Resolved 1 package in 115ms
+2026-10-14T18:00:40.4415714Z Prepared 1 package in 13ms
+2026-10-14T18:00:40.4441590Z Installed 1 package in 2ms
+2026-10-14T18:00:40.4446863Z  + typing-extensions==4.16.0
+2026-10-14T18:00:40.4479527Z 🏃 Running instrumentation command: uv export --frozen --group testing-extra --no-emit-workspace --no-emit-package numpy --no-emit-package pandas --no-header --no-annotate -o target/pgo-requirements.txt && uv pip install -r target/pgo-requirements.txt && uv run --active --no-sync pytest tests/benchmarks
+2026-10-14T18:00:40.4724395Z asttokens==2.4.1 \
+2026-10-14T18:00:40.4730933Z     --hash=sha256:051ed49c3dcae8913ea7cd08e46a606dba30b79993209636c4875bc1d637bc24 \
+2026-10-14T18:00:40.4733690Z     --hash=sha256:b03869718ba9a6eb027e134bfdf69f38a236d681c83c160d510768af11254ba0
+2026-10-14T18:00:40.4739470Z black==26.5.1 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.4745471Z     --hash=sha256:0e48b87e03bf109288e55cfceadcfa15ff5470aca2851a851950ed2926f450d7 \
+2026-10-14T18:00:40.4750301Z     --hash=sha256:1037d5ac7b7b310b2632ad867ec8d0e4c4819dcdb0b820f63135da746a24e418 \
+2026-10-14T18:00:40.4753499Z     --hash=sha256:1ef92b76f7733f282fd096ea406200b5a286c42947412b0eaff3a74e3616cefe \
+2026-10-14T18:00:40.4755794Z     --hash=sha256:1f7ea64ebfa01b50f693508fc39f875e264446d3b097088f84f203b9d09618a0 \
+2026-10-14T18:00:40.4758942Z     --hash=sha256:22f2cd76d069cc54c71f10360744ba8983fbb616903b4304a85b734915c8e1b4 \
+2026-10-14T18:00:40.4769515Z     --hash=sha256:2b36cf2ddf5566e205f6535f782a62194a184d33e175b64ae8c40b1737522be3 \
+2026-10-14T18:00:40.4771374Z     --hash=sha256:30d3c14661f2792e9142cce3eeeb1cbc175b3eb5f733be0c8eeb99651e52b0c3 \
+2026-10-14T18:00:40.4773582Z     --hash=sha256:32d5ea7f6c8bdfa6e648326ebca1f02b0764e2a029edc6f8dce2627e19d468c3 \
+2026-10-14T18:00:40.4816668Z     --hash=sha256:3915f256e75a2d7cf88d8953d37f780455dc586cc72dee059c528fe77f581217 \
+2026-10-14T18:00:40.4819299Z     --hash=sha256:4ad6fa01f941920f54f2bbb35f3df7673428a0ef98a0b0840c2eaef3b110efa8 \
+2026-10-14T18:00:40.4821549Z     --hash=sha256:4ed7f7da04046d2e488437170797d3b4a4ad83906683bcb7dfc68b673bbce5e2 \
+2026-10-14T18:00:40.4824110Z     --hash=sha256:5119fa92ae61f786e8c3662fd60aece1d0a2dd5cca5d0c79417a95e7a4272a59 \
+2026-10-14T18:00:40.4826824Z     --hash=sha256:577f21094ea469ef92ec1adaf2c9441a226d2144d01a5be2fa823cecf6543e50 \
+2026-10-14T18:00:40.4829647Z     --hash=sha256:58b4bd92cf88aacf83d88479c8f9caee044b1ec55f2451a337354a7ea2590a22 \
+2026-10-14T18:00:40.4832464Z     --hash=sha256:5c34b25da232ead53a6f335b76dbea124f4d152ad568b9080d6f944bc2b34b52 \
+2026-10-14T18:00:40.4835682Z     --hash=sha256:87ed5c6f450580a2f6790bc7cbfb016dfc73bc750249762268a3695361315eef \
+2026-10-14T18:00:40.4838289Z     --hash=sha256:89c93167a74d3a75dfaa38a5c7cca015537d5820dd7f17d63267d674a61cae90 \
+2026-10-14T18:00:40.4842390Z     --hash=sha256:96ae2c733b2aabdd9986e2c5df628ff3473676cd1c5faded1ff496cf6d74083c \
+2026-10-14T18:00:40.4845094Z     --hash=sha256:9942db8888e06943c5dde66ca0037dcff82a2a4ec1ad0ada9e0d2ee9d9823893 \
+2026-10-14T18:00:40.4848632Z     --hash=sha256:9d98d4137277c75dfb898ec8d846c4fd68ba1e9cf77f95e2865c203dc18f4c3d \
+2026-10-14T18:00:40.4851385Z     --hash=sha256:a1dca32d9f1784af512a13410ec204c6f7f0aa9797a111c42e1c03449821c264 \
+2026-10-14T18:00:40.4853517Z     --hash=sha256:dd321f668053961824bcc1be1cc1df748b2d7e4fa28086b08331e577b0100a73 \
+2026-10-14T18:00:40.4855238Z     --hash=sha256:e1a26503279b6b310669fb0b219c39e4820b77e8189fe80f522bb511f247db0a \
+2026-10-14T18:00:40.4858587Z     --hash=sha256:e88976690a64b0af98312ca958415849cb42423423c5f2ee74af4b49a97a2168 \
+2026-10-14T18:00:40.4860836Z     --hash=sha256:ea8d16dc41655aa113cd64665e7219446cd7e4ff2248d7178eaa905190c86b18 \
+2026-10-14T18:00:40.4863592Z     --hash=sha256:ecb3e624844c798144e9bd986954e0adc81d8911a1f30f375e1252fe26e8c294 \
+2026-10-14T18:00:40.4866661Z     --hash=sha256:ed1a20af114c301a0269bf01163d51dbef72737fd65f850001e7cbe7f3c7abae
+2026-10-14T18:00:40.4869430Z click==8.4.2 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.4871885Z     --hash=sha256:9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6 \
+2026-10-14T18:00:40.4874302Z     --hash=sha256:e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76
+2026-10-14T18:00:40.4876703Z colorama==0.4.6 ; sys_platform == 'win32' \
+2026-10-14T18:00:40.4878622Z     --hash=sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44 \
+2026-10-14T18:00:40.4880731Z     --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
+2026-10-14T18:00:40.4883020Z coverage==7.13.5 \
+2026-10-14T18:00:40.4884769Z     --hash=sha256:012d5319e66e9d5a218834642d6c35d265515a62f01157a45bcc036ecf947256 \
+2026-10-14T18:00:40.4888337Z     --hash=sha256:02ca0eed225b2ff301c474aeeeae27d26e2537942aa0f87491d3e147e784a82b \
+2026-10-14T18:00:40.4894656Z     --hash=sha256:03ccc709a17a1de074fb1d11f217342fb0d2b1582ed544f554fc9fc3f07e95f5 \
+2026-10-14T18:00:40.4899179Z     --hash=sha256:0428cbef5783ad91fe240f673cc1f76b25e74bbfe1a13115e4aa30d3f538162d \
+2026-10-14T18:00:40.4902549Z     --hash=sha256:04690832cbea4e4663d9149e05dba142546ca05cb1848816760e7f58285c970a \
+2026-10-14T18:00:40.4905147Z     --hash=sha256:0590e44dd2745c696a778f7bab6aa95256de2cbc8b8cff4f7db8ff09813d6969 \
+2026-10-14T18:00:40.4916402Z     --hash=sha256:0672854dc733c342fa3e957e0605256d2bf5934feeac328da9e0b5449634a642 \
+2026-10-14T18:00:40.4918392Z     --hash=sha256:084b84a8c63e8d6fc7e3931b316a9bcafca1458d753c539db82d31ed20091a87 \
+2026-10-14T18:00:40.4920222Z     --hash=sha256:0b67af5492adb31940ee418a5a655c28e48165da5afab8c7fa6fd72a142f8740 \
+2026-10-14T18:00:40.4923021Z     --hash=sha256:0cd9ed7a8b181775459296e402ca4fb27db1279740a24e93b3b41942ebe4b215 \
+2026-10-14T18:00:40.4928003Z     --hash=sha256:0cef0cdec915d11254a7f549c1170afecce708d30610c6abdded1f74e581666d \
+2026-10-14T18:00:40.4930495Z     --hash=sha256:0e223ce4b4ed47f065bfb123687686512e37629be25cc63728557ae7db261422 \
+2026-10-14T18:00:40.4933264Z     --hash=sha256:0e3c426ffc4cd952f54ee9ffbdd10345709ecc78a3ecfd796a57236bfad0b9b8 \
+2026-10-14T18:00:40.4936175Z     --hash=sha256:0ecf12ecb326fe2c339d93fc131816f3a7367d223db37817208905c89bded911 \
+2026-10-14T18:00:40.4944733Z     --hash=sha256:10a0c37f0b646eaff7cce1874c31d1f1ccb297688d4c747291f4f4c70741cc8b \
+2026-10-14T18:00:40.4946007Z     --hash=sha256:145ede53ccbafb297c1c9287f788d1bc3efd6c900da23bf6931b09eafc931587 \
+2026-10-14T18:00:40.4946726Z     --hash=sha256:1b11eef33edeae9d142f9b4358edb76273b3bfd30bc3df9a4f95d0e49caf94e8 \
+2026-10-14T18:00:40.4947920Z     --hash=sha256:1b88c69c8ef5d4b6fe7dea66d6636056a0f6a7527c440e890cf9259011f5e606 \
+2026-10-14T18:00:40.4950743Z     --hash=sha256:258354455f4e86e3e9d0d17571d522e13b4e1e19bf0f8596bcf9476d61e7d8a9 \
+2026-10-14T18:00:40.4953839Z     --hash=sha256:259b69bb83ad9894c4b25be2528139eecba9a82646ebdda2d9db1ba28424a6bf \
+2026-10-14T18:00:40.4956080Z     --hash=sha256:2aa055ae1857258f9e0045be26a6d62bdb47a72448b62d7b55f4820f361a2633 \
+2026-10-14T18:00:40.4957975Z     --hash=sha256:2d3807015f138ffea1ed9afeeb8624fd781703f2858b62a8dd8da5a0994c57b6 \
+2026-10-14T18:00:40.4960991Z     --hash=sha256:301e3b7dfefecaca37c9f1aa6f0049b7d4ab8dd933742b607765d757aca77d43 \
+2026-10-14T18:00:40.4962260Z     --hash=sha256:32ca0c0114c9834a43f045a87dcebd69d108d8ffb666957ea65aa132f50332e2 \
+2026-10-14T18:00:40.4963366Z     --hash=sha256:34b02417cf070e173989b3db962f7ed56d2f644307b2cf9d5a0f258e13084a61 \
+2026-10-14T18:00:40.4964402Z     --hash=sha256:356e76b46783a98c2a2fe81ec79df4883a1e62895ea952968fb253c114e7f930 \
+2026-10-14T18:00:40.4965409Z     --hash=sha256:35a31f2b1578185fbe6aa2e74cea1b1d0bbf4c552774247d9160d29b80ed56cc \
+2026-10-14T18:00:40.4966433Z     --hash=sha256:380e8e9084d8eb38db3a9176a1a4f3c0082c3806fa0dc882d1d87abc3c789247 \
+2026-10-14T18:00:40.4967696Z     --hash=sha256:3ad050321264c49c2fa67bb599100456fc51d004b82534f379d16445da40fb75 \
+2026-10-14T18:00:40.4968753Z     --hash=sha256:3e1bb5f6c78feeb1be3475789b14a0f0a5b47d505bfc7267126ccbd50289999e \
+2026-10-14T18:00:40.4969396Z     --hash=sha256:3f4818d065964db3c1c66dc0fbdac5ac692ecbc875555e13374fdbe7eedb4376 \
+2026-10-14T18:00:40.4970228Z     --hash=sha256:460cf0114c5016fa841214ff5564aa4864f11948da9440bc97e21ad1f4ba1e01 \
+2026-10-14T18:00:40.4970752Z     --hash=sha256:48c39bc4a04d983a54a705a6389512883d4a3b9862991b3617d547940e9f52b1 \
+2026-10-14T18:00:40.4971460Z     --hash=sha256:4b59148601efcd2bac8c4dbf1f0ad6391693ccf7a74b8205781751637076aee3 \
+2026-10-14T18:00:40.4972249Z     --hash=sha256:4d2afbc5cc54d286bfb54541aa50b64cdb07a718227168c87b9e2fb8f25e1743 \
+2026-10-14T18:00:40.4973157Z     --hash=sha256:505d7083c8b0c87a8fa8c07370c285847c1f77739b22e299ad75a6af6c32c5c9 \
+2026-10-14T18:00:40.4974002Z     --hash=sha256:52f444e86475992506b32d4e5ca55c24fc88d73bcbda0e9745095b28ef4dc0cf \
+2026-10-14T18:00:40.4974799Z     --hash=sha256:5b13955d31d1633cf9376908089b7cebe7d15ddad7aeaabcbe969a595a97e95e \
+2026-10-14T18:00:40.4975594Z     --hash=sha256:5ec4af212df513e399cf11610cc27063f1586419e814755ab362e50a85ea69c1 \
+2026-10-14T18:00:40.4976416Z     --hash=sha256:60365289c3741e4db327e7baff2a4aaacf22f788e80fa4683393891b70a89fbd \
+2026-10-14T18:00:40.4980456Z     --hash=sha256:631efb83f01569670a5e866ceb80fe483e7c159fac6f167e6571522636104a0b \
+2026-10-14T18:00:40.4981489Z     --hash=sha256:6697e29b93707167687543480a40f0db8f356e86d9f67ddf2e37e2dfd91a9dab \
+2026-10-14T18:00:40.4985965Z     --hash=sha256:66a80c616f80181f4d643b0f9e709d97bcea413ecd9631e1dedc7401c8e6695d \
+2026-10-14T18:00:40.4986647Z     --hash=sha256:67e9bc5449801fad0e5dff329499fb090ba4c5800b86805c80617b4e29809b2a \
+2026-10-14T18:00:40.4987963Z     --hash=sha256:68a4953be99b17ac3c23b6efbc8a38330d99680c9458927491d18700ef23ded0 \
+2026-10-14T18:00:40.4989204Z     --hash=sha256:6c36ddb64ed9d7e496028d1d00dfec3e428e0aabf4006583bb1839958d280510 \
+2026-10-14T18:00:40.4990126Z     --hash=sha256:6e3370441f4513c6252bf042b9c36d22491142385049243253c7e48398a15a9f \
+2026-10-14T18:00:40.4991507Z     --hash=sha256:7034b5c56a58ae5e85f23949d52c14aca2cfc6848a31764995b7de88f13a1ea0 \
+2026-10-14T18:00:40.4992630Z     --hash=sha256:704de6328e3d612a8f6c07000a878ff38181ec3263d5a11da1db294fa6a9bdf8 \
+2026-10-14T18:00:40.4994268Z     --hash=sha256:7132bed4bd7b836200c591410ae7d97bf7ae8be6fc87d160b2bd881df929e7bf \
+2026-10-14T18:00:40.4995285Z     --hash=sha256:7300c8a6d13335b29bb76d7651c66af6bd8658517c43499f110ddc6717bfc209 \
+2026-10-14T18:00:40.4995926Z     --hash=sha256:750db93a81e3e5a9831b534be7b1229df848b2e125a604fe6651e48aa070e5f9 \
+2026-10-14T18:00:40.4996454Z     --hash=sha256:777c4d1eff1b67876139d24288aaf1817f6c03d6bae9c5cc8d27b83bcfe38fe3 \
+2026-10-14T18:00:40.4997102Z     --hash=sha256:78e696e1cc714e57e8b25760b33a8b1026b7048d270140d25dafe1b0a1ee05a3 \
+2026-10-14T18:00:40.4998761Z     --hash=sha256:79060214983769c7ba3f0cee10b54c97609dca4d478fa1aa32b914480fd5738d \
+2026-10-14T18:00:40.5001049Z     --hash=sha256:7c8d4bc913dd70b93488d6c496c77f3aff5ea99a07e36a18f865bca55adef8bd \
+2026-10-14T18:00:40.5003159Z     --hash=sha256:7f2c47b36fe7709a6e83bfadf4eefb90bd25fbe4014d715224c4316f808e59a2 \
+2026-10-14T18:00:40.5003740Z     --hash=sha256:800bc829053c80d240a687ceeb927a94fd108bbdc68dfbe505d0d75ab578a882 \
+2026-10-14T18:00:40.5004486Z     --hash=sha256:843ea8643cf967d1ac7e8ecd4bb00c99135adf4816c0c0593fdcc47b597fcf09 \
+2026-10-14T18:00:40.5005019Z     --hash=sha256:8769751c10f339021e2638cd354e13adeac54004d1941119b2c96fe5276d45ea \
+2026-10-14T18:00:40.5005536Z     --hash=sha256:8dd02af98971bdb956363e4827d34425cb3df19ee550ef92855b0acb9c7ce51c \
+2026-10-14T18:00:40.5006085Z     --hash=sha256:8fdf453a942c3e4d99bd80088141c4c6960bb232c409d9c3558e2dbaa3998562 \
+2026-10-14T18:00:40.5006601Z     --hash=sha256:941617e518602e2d64942c88ec8499f7fbd49d3f6c4327d3a71d43a1973032f3 \
+2026-10-14T18:00:40.5007111Z     --hash=sha256:972a9cd27894afe4bc2b1480107054e062df08e671df7c2f18c205e805ccd806 \
+2026-10-14T18:00:40.5008918Z     --hash=sha256:9adb6688e3b53adffefd4a52d72cbd8b02602bfb8f74dcd862337182fd4d1a4e \
+2026-10-14T18:00:40.5010243Z     --hash=sha256:9b74db26dfea4f4e50d48a4602207cd1e78be33182bc9cbf22da94f332f99878 \
+2026-10-14T18:00:40.5011527Z     --hash=sha256:9bb2a28101a443669a423b665939381084412b81c3f8c0fcfbac57f4e30b5b8e \
+2026-10-14T18:00:40.5012619Z     --hash=sha256:9d44d7aa963820b1b971dbecd90bfe5fe8f81cff79787eb6cca15750bd2f79b9 \
+2026-10-14T18:00:40.5013946Z     --hash=sha256:9dacc2ad679b292709e0f5fc1ac74a6d4d5562e424058962c7bb0c658ad25e45 \
+2026-10-14T18:00:40.5014854Z     --hash=sha256:9ddb4f4a5479f2539644be484da179b653273bca1a323947d48ab107b3ed1f29 \
+2026-10-14T18:00:40.5015892Z     --hash=sha256:a1a6d79a14e1ec1832cabc833898636ad5f3754a678ef8bb4908515208bf84f4 \
+2026-10-14T18:00:40.5016437Z     --hash=sha256:a698e363641b98843c517817db75373c83254781426e94ada3197cabbc2c919c \
+2026-10-14T18:00:40.5017082Z     --hash=sha256:ad14385487393e386e2ea988b09d62dd42c397662ac2dabc3832d71253eee479 \
+2026-10-14T18:00:40.5022186Z     --hash=sha256:ad146744ca4fd09b50c482650e3c1b1f4dfa1d4792e0a04a369c7f23336f0400 \
+2026-10-14T18:00:40.5023755Z     --hash=sha256:b5db73ba3c41c7008037fa731ad5459fc3944cb7452fc0aa9f822ad3533c583c \
+2026-10-14T18:00:40.5025522Z     --hash=sha256:bd3a2fbc1c6cccb3c5106140d87cc6a8715110373ef42b63cf5aea29df8c217a \
+2026-10-14T18:00:40.5026608Z     --hash=sha256:bdba0a6b8812e8c7df002d908a9a2ea3c36e92611b5708633c50869e6d922fdf \
+2026-10-14T18:00:40.5027912Z     --hash=sha256:be3d4bbad9d4b037791794ddeedd7d64a56f5933a2c1373e18e9e568b9141686 \
+2026-10-14T18:00:40.5029807Z     --hash=sha256:bf69236a9a81bdca3bff53796237aab096cdbf8d78a66ad61e992d9dac7eb2de \
+2026-10-14T18:00:40.5030386Z     --hash=sha256:bff95879c33ec8da99fc9b6fe345ddb5be6414b41d6d1ad1c8f188d26f36e028 \
+2026-10-14T18:00:40.5031039Z     --hash=sha256:c555b48be1853fe3997c11c4bd521cdd9a9612352de01fa4508f16ec341e6fe0 \
+2026-10-14T18:00:40.5031648Z     --hash=sha256:c81f6515c4c40141f83f502b07bbfa5c240ba25bbe73da7b33f1e5b6120ff179 \
+2026-10-14T18:00:40.5032168Z     --hash=sha256:c9136ff29c3a91e25b1d1552b5308e53a1e0653a23e53b6366d7c2dcbbaf8a16 \
+2026-10-14T18:00:40.5032670Z     --hash=sha256:ce1998c0483007608c8382f4ff50164bfc5bd07a2246dd272aa4043b75e61e85 \
+2026-10-14T18:00:40.5033233Z     --hash=sha256:cec2d83125531bd153175354055cdb7a09987af08a9430bd173c937c6d0fba2a \
+2026-10-14T18:00:40.5034081Z     --hash=sha256:cff784eef7f0b8f6cb28804fbddcfa99f89efe4cc35fb5627e3ac58f91ed3ac0 \
+2026-10-14T18:00:40.5035160Z     --hash=sha256:d2c87e0c473a10bffe991502eac389220533024c8082ec1ce849f4218dded810 \
+2026-10-14T18:00:40.5036323Z     --hash=sha256:d7cfad2d6d81dd298ab6b89fe72c3b7b05ec7544bdda3b707ddaecff8d25c161 \
+2026-10-14T18:00:40.5037841Z     --hash=sha256:d8a7a2049c14f413163e2bdabd37e41179b1d1ccb10ffc6ccc4b7a718429c607 \
+2026-10-14T18:00:40.5038931Z     --hash=sha256:da305e9937617ee95c2e39d8ff9f040e0487cbf1ac174f777ed5eddd7a7c1f26 \
+2026-10-14T18:00:40.5041524Z     --hash=sha256:da86cdcf10d2519e10cabb8ac2de03da1bcb6e4853790b7fbd48523332e3a819 \
+2026-10-14T18:00:40.5042747Z     --hash=sha256:dc022073d063b25a402454e5712ef9e007113e3a676b96c5f29b2bda29352f40 \
+2026-10-14T18:00:40.5043655Z     --hash=sha256:e0723d2c96324561b9aa76fb982406e11d93cdb388a7a7da2b16e04719cf7ca5 \
+2026-10-14T18:00:40.5044495Z     --hash=sha256:e092b9499de38ae0fbfbc603a74660eb6ff3e869e507b50d85a13b6db9863e15 \
+2026-10-14T18:00:40.5045527Z     --hash=sha256:e0b216a19534b2427cc201a26c25da4a48633f29a487c61258643e89d28200c0 \
+2026-10-14T18:00:40.5046523Z     --hash=sha256:e1c85e0b6c05c592ea6d8768a66a254bfb3874b53774b12d4c89c481eb78cb90 \
+2026-10-14T18:00:40.5047754Z     --hash=sha256:e301d30dd7e95ae068671d746ba8c34e945a82682e62918e41b2679acd2051a0 \
+2026-10-14T18:00:40.5048759Z     --hash=sha256:e808af52a0513762df4d945ea164a24b37f2f518cbe97e03deaa0ee66139b4d6 \
+2026-10-14T18:00:40.5049731Z     --hash=sha256:eb07647a5738b89baab047f14edd18ded523de60f3b30e75c2acc826f79c839a \
+2026-10-14T18:00:40.5050762Z     --hash=sha256:eb7fdf1ef130660e7415e0253a01a7d5a88c9c4d158bcf75cbbd922fd65a5b58 \
+2026-10-14T18:00:40.5051836Z     --hash=sha256:ec10e2a42b41c923c2209b846126c6582db5e43a33157e9870ba9fb70dc7854b \
+2026-10-14T18:00:40.5052878Z     --hash=sha256:ee2aa19e03161671ec964004fb74b2257805d9710bf14a5c704558b9d8dbaf17 \
+2026-10-14T18:00:40.5053944Z     --hash=sha256:f08fd75c50a760c7eb068ae823777268daaf16a80b918fa58eea888f8e3919f5 \
+2026-10-14T18:00:40.5054958Z     --hash=sha256:f4cd16206ad171cbc2470dbea9103cf9a7607d5fe8c242fdf1edf36174020664 \
+2026-10-14T18:00:40.5055929Z     --hash=sha256:f70c9ab2595c56f81a89620e22899eea8b212a4041bd728ac6f4a28bf5d3ddd0 \
+2026-10-14T18:00:40.5056918Z     --hash=sha256:fbabfaceaeb587e16f7008f7795cd80d20ec548dc7f94fbb0d4ec2e038ce563f
+2026-10-14T18:00:40.5058201Z dirty-equals==0.9.0 \
+2026-10-14T18:00:40.5058862Z     --hash=sha256:17f515970b04ed7900b733c95fd8091f4f85e52f1fb5f268757f25c858eb1f7b \
+2026-10-14T18:00:40.5059883Z     --hash=sha256:ff4d027f5cfa1b69573af00f7ba9043ea652dbdce3fe5cbe828e478c7346db9c
+2026-10-14T18:00:40.5060782Z exceptiongroup==1.2.2 ; python_full_version < '3.11' \
+2026-10-14T18:00:40.5061631Z     --hash=sha256:3111b9d131c238bec2f8f516e123e14ba243563fb135d3fe885990585aa7795b \
+2026-10-14T18:00:40.5062634Z     --hash=sha256:47c2edf7c6738fafb49fd34290706d1a1a2f4d1c6df275526b62cbb4aa5393cc
+2026-10-14T18:00:40.5063388Z executing==2.2.0 \
+2026-10-14T18:00:40.5064016Z     --hash=sha256:11387150cad388d62750327a53d3339fad4888b39a6fe233c3afbb54ecffd3aa \
+2026-10-14T18:00:40.5064974Z     --hash=sha256:5d108c028108fe2551d1a7b2e8b713341e2cb4fc0aa7dcf966fa4327a5226755
+2026-10-14T18:00:40.5065706Z hypothesis==6.147.0 \
+2026-10-14T18:00:40.5066348Z     --hash=sha256:72e6004ea3bd1460bdb4640b6389df23b87ba7a4851893fd84d1375635d3e507 \
+2026-10-14T18:00:40.5068204Z     --hash=sha256:de588807b6da33550d32f47bcd42b1a86d061df85673aa73e6443680249d185e
+2026-10-14T18:00:40.5068831Z iniconfig==2.0.0 \
+2026-10-14T18:00:40.5069225Z     --hash=sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3 \
+2026-10-14T18:00:40.5069759Z     --hash=sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374
+2026-10-14T18:00:40.5070331Z inline-snapshot==0.32.2 \
+2026-10-14T18:00:40.5070695Z     --hash=sha256:62374e28c471a0de9c60ad23758586fb13355ad449d3698b7b77ab597eed7f59 \
+2026-10-14T18:00:40.5071360Z     --hash=sha256:e2866e4f268435a9b8886f63a275cdb7489d13baddb2a0aab6625bf2975c06ce
+2026-10-14T18:00:40.5071779Z markdown-it-py==3.0.0 \
+2026-10-14T18:00:40.5072135Z     --hash=sha256:355216845c60bd96232cd8d8c40e8f9765cc86f46880e43a8fd22dc1a1a8cab1 \
+2026-10-14T18:00:40.5072806Z     --hash=sha256:e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb
+2026-10-14T18:00:40.5073200Z maturin==1.15.0 \
+2026-10-14T18:00:40.5073695Z     --hash=sha256:0ebf9767892725083138e671c34482c660317a2f3d6a29fc0e0f34e9d8c99136 \
+2026-10-14T18:00:40.5074228Z     --hash=sha256:126e12e618b4db42f68c779a56d41f82a390145ba36ac3f621d057eb34f5ad9d \
+2026-10-14T18:00:40.5074970Z     --hash=sha256:4f9d33e6c3f9615c8caceecbbbd440f8eb25a3ddeb687077682cd5eca2e9ae15 \
+2026-10-14T18:00:40.5075520Z     --hash=sha256:552c2be4afd43fe8d5c9f3ec8d4c4756d973b8dcbe94c14084390301f50243e1 \
+2026-10-14T18:00:40.5076404Z     --hash=sha256:653020a63525bb224e5ab0adf02e17a2e08bc86dbea7fc1399c9a56d7529b99e \
+2026-10-14T18:00:40.5077645Z     --hash=sha256:6bf6dc62e22d4dcfd5a51244ff0d58975fa4979c48209fe84159617648956d82 \
+2026-10-14T18:00:40.5083142Z     --hash=sha256:7ab7eebffd7b8debca2265985de4eaeb332141276d24b9560b5ad484d4b3add1 \
+2026-10-14T18:00:40.5084913Z     --hash=sha256:7eb066372f541f8eb4909c79c5d9bd0b9e8125980bdf1ec9e8aba23c6c8d6c55 \
+2026-10-14T18:00:40.5086176Z     --hash=sha256:94b26cc8e8aba61a5f2099715fe640e18c5f678e9a500408b38761263954228a \
+2026-10-14T18:00:40.5090235Z     --hash=sha256:bf29beddd0c6708f112db51d5275fc28b28b9e9c9c5faae387eaef662918b176 \
+2026-10-14T18:00:40.5095438Z     --hash=sha256:c40b4eae7bf5ef1f4b1af8d623fe4105016f93578fb15b764e741d08ec3b92dd \
+2026-10-14T18:00:40.5100265Z     --hash=sha256:c7dc0c66c78d3debdd9c5aa807e861fbcbf07f3505d34b125df74c03986b0f48 \
+2026-10-14T18:00:40.5101243Z     --hash=sha256:cd35772633f489841132bc8e71d6fc7f842df30b9c05cd5cdf1ee1ddcb744cc7 \
+2026-10-14T18:00:40.5102114Z     --hash=sha256:da649988be98e87e009e51b1bf0d301b6a301bc0cecbdd60d40d8ba60748d1ca
+2026-10-14T18:00:40.5103364Z mdurl==0.1.2 \
+2026-10-14T18:00:40.5104572Z     --hash=sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8 \
+2026-10-14T18:00:40.5105894Z     --hash=sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba
+2026-10-14T18:00:40.5107889Z mypy-extensions==1.0.0 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5109259Z     --hash=sha256:4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d \
+2026-10-14T18:00:40.5111930Z     --hash=sha256:75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782
+2026-10-14T18:00:40.5112993Z packaging==26.3 \
+2026-10-14T18:00:40.5113986Z     --hash=sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79 \
+2026-10-14T18:00:40.5116862Z     --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
+2026-10-14T18:00:40.5118436Z pathspec==1.1.1 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5120022Z     --hash=sha256:17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a \
+2026-10-14T18:00:40.5121325Z     --hash=sha256:a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189
+2026-10-14T18:00:40.5122443Z platformdirs==4.3.6 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5123659Z     --hash=sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907 \
+2026-10-14T18:00:40.5124735Z     --hash=sha256:73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb
+2026-10-14T18:00:40.5125377Z pluggy==1.5.0 \
+2026-10-14T18:00:40.5126280Z     --hash=sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1 \
+2026-10-14T18:00:40.5127452Z     --hash=sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669
+2026-10-14T18:00:40.5128443Z py-cpuinfo==9.0.0 \
+2026-10-14T18:00:40.5129100Z     --hash=sha256:3cdbbf3fac90dc6f118bfd64384f309edeadd902d7c8fb17f02ffa1fc3f49690 \
+2026-10-14T18:00:40.5130342Z     --hash=sha256:859625bc251f64e21f077d099d4162689c762b5d6a4c3c97553d56241c9674d5
+2026-10-14T18:00:40.5131596Z pygments==2.20.0 \
+2026-10-14T18:00:40.5132276Z     --hash=sha256:6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f \
+2026-10-14T18:00:40.5133801Z     --hash=sha256:81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176
+2026-10-14T18:00:40.5134868Z pytest==9.1.1 \
+2026-10-14T18:00:40.5135433Z     --hash=sha256:1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313 \
+2026-10-14T18:00:40.5136251Z     --hash=sha256:37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c
+2026-10-14T18:00:40.5136677Z pytest-benchmark==5.1.0 \
+2026-10-14T18:00:40.5137449Z     --hash=sha256:922de2dfa3033c227c96da942d1878191afa135a29485fb942e85dff1c592c89 \
+2026-10-14T18:00:40.5138979Z     --hash=sha256:9ea661cdc292e8231f7cd4c10b0319e56a2118e2c09d9f50e1b3d150d2aca105
+2026-10-14T18:00:40.5140360Z pytest-examples==0.0.15 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5141717Z     --hash=sha256:2d6ced2d1f0d59863f81a4d2f193737464b8004a7670907c3bedef6306a5d660 \
+2026-10-14T18:00:40.5143036Z     --hash=sha256:6e4adc522bf2e3f93cae3b37a4add76fcc2c1ada29d8988b2ea15b236233ec0f
+2026-10-14T18:00:40.5144182Z pytest-mock==3.14.0 \
+2026-10-14T18:00:40.5145273Z     --hash=sha256:0b72c38033392a5f4621342fe11e9219ac11ec9d375f8e2a0c164539e0d70f6f \
+2026-10-14T18:00:40.5146630Z     --hash=sha256:2719255a1efeceadbc056d6bf3df3d1c5015530fb40cf347c0f9afac88410bd0
+2026-10-14T18:00:40.5147762Z pytest-pretty==1.2.0 \
+2026-10-14T18:00:40.5148666Z     --hash=sha256:105a355f128e392860ad2c478ae173ff96d2f03044692f9818ff3d49205d3a60 \
+2026-10-14T18:00:40.5150208Z     --hash=sha256:6f79122bf53864ae2951b6c9e94d7a06a87ef753476acd4588aeac018f062036
+2026-10-14T18:00:40.5151306Z pytest-run-parallel==0.7.1 \
+2026-10-14T18:00:40.5152305Z     --hash=sha256:91cf4b1760a4f1f93b5e707bb715909858c803debc2d46e4991f2805b0538292 \
+2026-10-14T18:00:40.5155167Z     --hash=sha256:ba53069f6c16147d6f5c275f5123947d1d0c31bd6ba57efc27e845a79afbe79e
+2026-10-14T18:00:40.5160427Z pytest-timeout==2.4.0 \
+2026-10-14T18:00:40.5161435Z     --hash=sha256:7e68e90b01f9eff71332b25001f85c75495fc4e3a836701876183c4bcfd0540a \
+2026-10-14T18:00:40.5163936Z     --hash=sha256:c42667e5cdadb151aeb5b26d114aff6bdf5a907f176a007a30b940d3d865b5c2
+2026-10-14T18:00:40.5166766Z python-dateutil==2.9.0.post0 \
+2026-10-14T18:00:40.5168616Z     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 \
+2026-10-14T18:00:40.5170662Z     --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
+2026-10-14T18:00:40.5172604Z pytokens==0.4.1 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5175339Z     --hash=sha256:140709331e846b728475786df8aeb27d24f48cbcf7bcd449f8de75cae7a45083 \
+2026-10-14T18:00:40.5179176Z     --hash=sha256:24afde1f53d95348b5a0eb19488661147285ca4dd7ed752bbc3e1c6242a304d1 \
+2026-10-14T18:00:40.5182674Z     --hash=sha256:26cef14744a8385f35d0e095dc8b3a7583f6c953c2e3d269c7f82484bf5ad2de \
+2026-10-14T18:00:40.5183835Z     --hash=sha256:27b83ad28825978742beef057bfe406ad6ed524b2d28c252c5de7b4a6dd48fa2 \
+2026-10-14T18:00:40.5184908Z     --hash=sha256:292052fe80923aae2260c073f822ceba21f3872ced9a68bb7953b348e561179a \
+2026-10-14T18:00:40.5185936Z     --hash=sha256:29d1d8fb1030af4d231789959f21821ab6325e463f0503a61d204343c9b355d1 \
+2026-10-14T18:00:40.5191942Z     --hash=sha256:2a44ed93ea23415c54f3face3b65ef2b844d96aeb3455b8a69b3df6beab6acc5 \
+2026-10-14T18:00:40.5193052Z     --hash=sha256:3f901fe783e06e48e8cbdc82d631fca8f118333798193e026a50ce1b3757ea68 \
+2026-10-14T18:00:40.5196518Z     --hash=sha256:4a14d5f5fc78ce85e426aa159489e2d5961acf0e47575e08f35584009178e321 \
+2026-10-14T18:00:40.5201812Z     --hash=sha256:4a58d057208cb9075c144950d789511220b07636dd2e4708d5645d24de666bdc \
+2026-10-14T18:00:40.5202465Z     --hash=sha256:4e691d7f5186bd2842c14813f79f8884bb03f5995f0575272009982c5ac6c0f7 \
+2026-10-14T18:00:40.5202994Z     --hash=sha256:5502408cab1cb18e128570f8d598981c68a50d0cbd7c61312a90507cd3a1276f \
+2026-10-14T18:00:40.5204062Z     --hash=sha256:584c80c24b078eec1e227079d56dc22ff755e0ba8654d8383b2c549107528918 \
+2026-10-14T18:00:40.5205082Z     --hash=sha256:5ad948d085ed6c16413eb5fec6b3e02fa00dc29a2534f088d3302c47eb59adf9 \
+2026-10-14T18:00:40.5206174Z     --hash=sha256:670d286910b531c7b7e3c0b453fd8156f250adb140146d234a82219459b9640c \
+2026-10-14T18:00:40.5207030Z     --hash=sha256:6d6c4268598f762bc8e91f5dbf2ab2f61f7b95bdc07953b602db879b3c8c18e1 \
+2026-10-14T18:00:40.5208319Z     --hash=sha256:79fc6b8699564e1f9b521582c35435f1bd32dd06822322ec44afdeba666d8cb3 \
+2026-10-14T18:00:40.5209664Z     --hash=sha256:8bdb9d0ce90cbf99c525e75a2fa415144fd570a1ba987380190e8b786bc6ef9b \
+2026-10-14T18:00:40.5210891Z     --hash=sha256:8fcb9ba3709ff77e77f1c7022ff11d13553f3c30299a9fe246a166903e9091eb \
+2026-10-14T18:00:40.5212734Z     --hash=sha256:967cf6e3fd4adf7de8fc73cd3043754ae79c36475c1c11d514fc72cf5490094a \
+2026-10-14T18:00:40.5214488Z     --hash=sha256:970b08dd6b86058b6dc07efe9e98414f5102974716232d10f32ff39701e841c4 \
+2026-10-14T18:00:40.5215923Z     --hash=sha256:97f50fd18543be72da51dd505e2ed20d2228c74e0464e4262e4899797803d7fa \
+2026-10-14T18:00:40.5216690Z     --hash=sha256:9bd7d7f544d362576be74f9d5901a22f317efc20046efe2034dced238cbbfe78 \
+2026-10-14T18:00:40.5217874Z     --hash=sha256:add8bf86b71a5d9fb5b89f023a80b791e04fba57960aa790cc6125f7f1d39dfe \
+2026-10-14T18:00:40.5219153Z     --hash=sha256:b35d7e5ad269804f6697727702da3c517bb8a5228afa450ab0fa787732055fc9 \
+2026-10-14T18:00:40.5220063Z     --hash=sha256:b49750419d300e2b5a3813cf229d4e5a4c728dae470bcc89867a9ad6f25a722d \
+2026-10-14T18:00:40.5221077Z     --hash=sha256:d31b97b3de0f61571a124a00ffe9a81fb9939146c122c11060725bd5aea79975 \
+2026-10-14T18:00:40.5221984Z     --hash=sha256:d70e77c55ae8380c91c0c18dea05951482e263982911fc7410b1ffd1dadd3440 \
+2026-10-14T18:00:40.5222956Z     --hash=sha256:d9907d61f15bf7261d7e775bd5d7ee4d2930e04424bab1972591918497623a16 \
+2026-10-14T18:00:40.5223968Z     --hash=sha256:dc74c035f9bfca0255c1af77ddd2d6ae8419012805453e4b0e7513e17904545d \
+2026-10-14T18:00:40.5226505Z     --hash=sha256:ee44d0f85b803321710f9239f335aafe16553b39106384cef8e6de40cb4ef2f6 \
+2026-10-14T18:00:40.5227526Z     --hash=sha256:f66a6bbe741bd431f6d741e617e0f39ec7257ca1f89089593479347cc4d13324
+2026-10-14T18:00:40.5228521Z pytz==2024.2 ; python_full_version < '3.13' and implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5229720Z     --hash=sha256:2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a \
+2026-10-14T18:00:40.5231440Z     --hash=sha256:31c7c1817eb7fae7ca4b8c7ee50c72f93aa2dd863de768e1ef4245d426aa0725
+2026-10-14T18:00:40.5232500Z rich==15.0.0 \
+2026-10-14T18:00:40.5233149Z     --hash=sha256:33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb \
+2026-10-14T18:00:40.5234481Z     --hash=sha256:edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36
+2026-10-14T18:00:40.5236015Z ruff==0.15.10 ; implementation_name == 'cpython' and platform_machine == 'x86_64' \
+2026-10-14T18:00:40.5237071Z     --hash=sha256:0744e31482f8f7d0d10a11fcbf897af272fefdfcb10f5af907b18c2813ff4d5f \
+2026-10-14T18:00:40.5238446Z     --hash=sha256:0ee3ef42dab7078bda5ff6a1bcba8539e9857deb447132ad5566a038674540d0 \
+2026-10-14T18:00:40.5239538Z     --hash=sha256:136c00ca2f47b0018b073f28cb5c1506642a830ea941a60354b0e8bc8076b151 \
+2026-10-14T18:00:40.5240511Z     --hash=sha256:28cb32d53203242d403d819fd6983152489b12e4a3ae44993543d6fe62ab42ed \
+2026-10-14T18:00:40.5241516Z     --hash=sha256:51cb8cc943e891ba99989dd92d61e29b1d231e14811db9be6440ecf25d5c1609 \
+2026-10-14T18:00:40.5242526Z     --hash=sha256:601d1610a9e1f1c2165a4f561eeaa2e2ea1e97f3287c5aa258d3dab8b57c6188 \
+2026-10-14T18:00:40.5243604Z     --hash=sha256:8154d43684e4333360fedd11aaa40b1b08a4e37d8ffa9d95fee6fa5b37b6fab1 \
+2026-10-14T18:00:40.5245118Z     --hash=sha256:83e1dd04312997c99ea6965df66a14fb4f03ba978564574ffc68b0d61fd3989e \
+2026-10-14T18:00:40.5246167Z     --hash=sha256:8ab88715f3a6deb6bde6c227f3a123410bec7b855c3ae331b4c006189e895cef \
+2026-10-14T18:00:40.5247538Z     --hash=sha256:8b80a2f3c9c8a950d6237f2ca12b206bccff626139be9fa005f14feb881a1ae8 \
+2026-10-14T18:00:40.5248590Z     --hash=sha256:93cc06a19e5155b4441dd72808fdf84290d84ad8a39ca3b0f994363ade4cebb1 \
+2026-10-14T18:00:40.5249606Z     --hash=sha256:a768ff5969b4f44c349d48edf4ab4f91eddb27fd9d77799598e130fb628aa158 \
+2026-10-14T18:00:40.5250599Z     --hash=sha256:b0c52744cf9f143a393e284125d2576140b68264a93c6716464e129a3e9adb48 \
+2026-10-14T18:00:40.5252091Z     --hash=sha256:b1e7c16ea0ff5a53b7c2df52d947e685973049be1cdfe2b59a9c43601897b22e \
+2026-10-14T18:00:40.5254044Z     --hash=sha256:d1f86e67ebfdef88e00faefa1552b5e510e1d35f3be7d423dc7e84e63788c94e \
+2026-10-14T18:00:40.5255554Z     --hash=sha256:d4272e87e801e9a27a2e8df7b21011c909d9ddd82f4f3281d269b6ba19789ca5 \
+2026-10-14T18:00:40.5256612Z     --hash=sha256:e3e53c588164dc025b671c9df2462429d60357ea91af7e92e9d56c565a9f1b07 \
+2026-10-14T18:00:40.5258333Z     --hash=sha256:e59c9bdc056a320fb9ea1700a8d591718b8faf78af065484e801258d3a76bc3f
+2026-10-14T18:00:40.5259095Z six==1.17.0 \
+2026-10-14T18:00:40.5259984Z     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
+2026-10-14T18:00:40.5261018Z     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
+2026-10-14T18:00:40.5261732Z sortedcontainers==2.4.0 \
+2026-10-14T18:00:40.5262411Z     --hash=sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88 \
+2026-10-14T18:00:40.5263402Z     --hash=sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0
+2026-10-14T18:00:40.5264190Z tomli==2.2.1 ; python_full_version < '3.11' \
+2026-10-14T18:00:40.5264974Z     --hash=sha256:023aa114dd824ade0100497eb2318602af309e5a55595f76b626d6d9f3b7b0a6 \
+2026-10-14T18:00:40.5265967Z     --hash=sha256:02abe224de6ae62c19f090f68da4e27b10af2b93213d36cf44e6e1c5abd19fdd \
+2026-10-14T18:00:40.5266966Z     --hash=sha256:286f0ca2ffeeb5b9bd4fcc8d6c330534323ec51b2f52da063b11c502da16f30c \
+2026-10-14T18:00:40.5268221Z     --hash=sha256:2d0f2fdd22b02c6d81637a3c95f8cd77f995846af7414c5c4b8d0545afa1bc4b \
+2026-10-14T18:00:40.5269239Z     --hash=sha256:33580bccab0338d00994d7f16f4c4ec25b776af3ffaac1ed74e0b3fc95e885a8 \
+2026-10-14T18:00:40.5270219Z     --hash=sha256:400e720fe168c0f8521520190686ef8ef033fb19fc493da09779e592861b78c6 \
+2026-10-14T18:00:40.5271170Z     --hash=sha256:40741994320b232529c802f8bc86da4e1aa9f413db394617b9a256ae0f9a7f77 \
+2026-10-14T18:00:40.5272103Z     --hash=sha256:465af0e0875402f1d226519c9904f37254b3045fc5084697cefb9bdde1ff99ff \
+2026-10-14T18:00:40.5273331Z     --hash=sha256:4a8f6e44de52d5e6c657c9fe83b562f5f4256d8ebbfe4ff922c495620a7f6cea \
+2026-10-14T18:00:40.5274319Z     --hash=sha256:4e340144ad7ae1533cb897d406382b4b6fede8890a03738ff1683af800d54192 \
+2026-10-14T18:00:40.5275274Z     --hash=sha256:678e4fa69e4575eb77d103de3df8a895e1591b48e740211bd1067378c69e8249 \
+2026-10-14T18:00:40.5276260Z     --hash=sha256:6972ca9c9cc9f0acaa56a8ca1ff51e7af152a9f87fb64623e31d5c83700080ee \
+2026-10-14T18:00:40.5277469Z     --hash=sha256:7fc04e92e1d624a4a63c76474610238576942d6b8950a2d7f908a340494e67e4 \
+2026-10-14T18:00:40.5278421Z     --hash=sha256:889f80ef92701b9dbb224e49ec87c645ce5df3fa2cc548664eb8a25e03127a98 \
+2026-10-14T18:00:40.5279358Z     --hash=sha256:8d57ca8095a641b8237d5b079147646153d22552f1c637fd3ba7f4b0b29167a8 \
+2026-10-14T18:00:40.5280288Z     --hash=sha256:8dd28b3e155b80f4d54beb40a441d366adcfe740969820caf156c019fb5c7ec4 \
+2026-10-14T18:00:40.5281230Z     --hash=sha256:9316dc65bed1684c9a98ee68759ceaed29d229e985297003e494aa825ebb0281 \
+2026-10-14T18:00:40.5282189Z     --hash=sha256:a198f10c4d1b1375d7687bc25294306e551bf1abfa4eace6650070a5c1ae2744 \
+2026-10-14T18:00:40.5283146Z     --hash=sha256:a38aa0308e754b0e3c67e344754dff64999ff9b513e691d0e786265c93583c69 \
+2026-10-14T18:00:40.5284082Z     --hash=sha256:a92ef1a44547e894e2a17d24e7557a5e85a9e1d0048b0b5e7541f76c5032cb13 \
+2026-10-14T18:00:40.5285015Z     --hash=sha256:ac065718db92ca818f8d6141b5f66369833d4a80a9d74435a268c52bdfa73140 \
+2026-10-14T18:00:40.5285951Z     --hash=sha256:b82ebccc8c8a36f2094e969560a1b836758481f3dc360ce9a3277c65f374285e \
+2026-10-14T18:00:40.5286896Z     --hash=sha256:c954d2250168d28797dd4e3ac5cf812a406cd5a92674ee4c8f123c889786aa8e \
+2026-10-14T18:00:40.5288051Z     --hash=sha256:cb55c73c5f4408779d0cf3eef9f762b9c9f147a77de7b258bef0a5628adc85cc \
+2026-10-14T18:00:40.5289064Z     --hash=sha256:cd45e1dc79c835ce60f7404ec8119f2eb06d38b1deba146f07ced3bbc44505ff \
+2026-10-14T18:00:40.5290577Z     --hash=sha256:d3f5614314d758649ab2ab3a62d4f2004c825922f9e370b29416484086b264ec \
+2026-10-14T18:00:40.5291624Z     --hash=sha256:d920f33822747519673ee656a4b6ac33e382eca9d331c87770faa3eef562aeb2 \
+2026-10-14T18:00:40.5292670Z     --hash=sha256:db2b95f9de79181805df90bedc5a5ab4c165e6ec3fe99f970d0e302f384ad222 \
+2026-10-14T18:00:40.5293686Z     --hash=sha256:e59e304978767a54663af13c07b3d1af22ddee3bb2fb0618ca1593e4f593a106 \
+2026-10-14T18:00:40.5294687Z     --hash=sha256:e85e99945e688e32d5a35c1ff38ed0b3f41f43fad8df0bdf79f72b2ba7bc5272 \
+2026-10-14T18:00:40.5295676Z     --hash=sha256:ece47d672db52ac607a3d9599a9d48dcb2f2f735c6c2d1f34130085bb12b112a \
+2026-10-14T18:00:40.5296896Z     --hash=sha256:f4039b9cbc3048b2416cc57ab3bda989a6fcf9b36cf8937f01a6e731b64f80d7
+2026-10-14T18:00:40.5297878Z typing-extensions==4.16.0 \
+2026-10-14T18:00:40.5298583Z     --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \
+2026-10-14T18:00:40.5299577Z     --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5
+2026-10-14T18:00:40.5300337Z typing-inspection==0.4.4 \
+2026-10-14T18:00:40.5301004Z     --hash=sha256:547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47 \
+2026-10-14T18:00:40.5301986Z     --hash=sha256:65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147
+2026-10-14T18:00:40.5302699Z tzdata==2025.1 \
+2026-10-14T18:00:40.5303299Z     --hash=sha256:24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694 \
+2026-10-14T18:00:40.5304266Z     --hash=sha256:7e127113816800496f027041c570f50bcd464a020098a3b6b199517772303639
+2026-10-14T18:00:40.5305118Z Using Python 3.15.0 environment at: /tmp/.tmpziObKA
+2026-10-14T18:00:40.8087862Z Resolved 35 packages in 304ms
+2026-10-14T18:00:40.8251539Z Downloading maturin (10.1MiB)
+2026-10-14T18:00:40.8252185Z Downloading ruff (10.7MiB)
+2026-10-14T18:00:40.8309181Z Downloading pygments (1.2MiB)
+2026-10-14T18:00:40.9878474Z  Downloaded pygments
+2026-10-14T18:00:41.0752090Z  Downloaded maturin
+2026-10-14T18:00:41.0820924Z  Downloaded ruff
+2026-10-14T18:00:41.0836027Z Prepared 34 packages in 273ms
+2026-10-14T18:00:41.1522626Z Installed 34 packages in 68ms
+2026-10-14T18:00:41.1525725Z  + asttokens==2.4.1
+2026-10-14T18:00:41.1531023Z  + black==26.5.1
+2026-10-14T18:00:41.1536020Z  + click==8.4.2
+2026-10-14T18:00:41.1540217Z  + coverage==7.13.5
+2026-10-14T18:00:41.1540851Z  + dirty-equals==0.9.0
+2026-10-14T18:00:41.1542878Z  + executing==2.2.0
+2026-10-14T18:00:41.1544238Z  + hypothesis==6.147.0
+2026-10-14T18:00:41.1550369Z  + iniconfig==2.0.0
+2026-10-14T18:00:41.1573268Z  + inline-snapshot==0.32.2
+2026-10-14T18:00:41.1573908Z  + markdown-it-py==3.0.0
+2026-10-14T18:00:41.1574479Z  + maturin==1.15.0
+2026-10-14T18:00:41.1575061Z  + mdurl==0.1.2
+2026-10-14T18:00:41.1575615Z  + mypy-extensions==1.0.0
+2026-10-14T18:00:41.1576137Z  + packaging==26.3
+2026-10-14T18:00:41.1576609Z  + pathspec==1.1.1
+2026-10-14T18:00:41.1577127Z  + platformdirs==4.3.6
+2026-10-14T18:00:41.1578213Z  + pluggy==1.5.0
+2026-10-14T18:00:41.1578582Z  + py-cpuinfo==9.0.0
+2026-10-14T18:00:41.1578960Z  + pygments==2.20.0
+2026-10-14T18:00:41.1579309Z  + pytest==9.1.1
+2026-10-14T18:00:41.1579656Z  + pytest-benchmark==5.1.0
+2026-10-14T18:00:41.1579961Z  + pytest-examples==0.0.15
+2026-10-14T18:00:41.1580334Z  + pytest-mock==3.14.0
+2026-10-14T18:00:41.1580741Z  + pytest-pretty==1.2.0
+2026-10-14T18:00:41.1581050Z  + pytest-run-parallel==0.7.1
+2026-10-14T18:00:41.1581376Z  + pytest-timeout==2.4.0
+2026-10-14T18:00:41.1581715Z  + python-dateutil==2.9.0.post0
+2026-10-14T18:00:41.1581959Z  + pytokens==0.4.1
+2026-10-14T18:00:41.1582151Z  + rich==15.0.0
+2026-10-14T18:00:41.1582335Z  + ruff==0.15.10
+2026-10-14T18:00:41.1582526Z  + six==1.17.0
+2026-10-14T18:00:41.1582726Z  + sortedcontainers==2.4.0
+2026-10-14T18:00:41.1582973Z  + typing-inspection==0.4.4
+2026-10-14T18:00:41.1583242Z  + tzdata==2025.1
+2026-10-14T18:00:41.8375585Z /tmp/.tmpziObKA/lib/python3.15/site-packages/pluggy/_callers.py:141: SyntaxWarning: 'return' in a 'finally' block
+2026-10-14T18:00:41.8376410Z   return result
+2026-10-14T18:00:41.8377174Z /tmp/.tmpziObKA/lib/python3.15/site-packages/pluggy/_callers.py:182: SyntaxWarning: 'return' in a 'finally' block
+2026-10-14T18:00:41.8378457Z   return outcome.get_result()
+2026-10-14T18:00:47.1479910Z ============================= test session starts ==============================
+2026-10-14T18:00:47.1480965Z platform linux -- Python 3.15.0, pytest-9.1.1, pluggy-1.5.0
+2026-10-14T18:00:47.1482745Z benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=True warmup_iterations=100000)
+2026-10-14T18:00:47.1486180Z rootdir: /home/runner/work/pydantic/pydantic/pydantic-core
+2026-10-14T18:00:47.1488481Z configfile: pyproject.toml
+2026-10-14T18:00:47.1495080Z plugins: hypothesis-6.147.0, benchmark-5.1.0, timeout-2.4.0, pretty-1.2.0, run-parallel-0.7.1, inline-snapshot-0.32.2, examples-0.0.15, mock-3.14.0
+2026-10-14T18:00:47.1496706Z timeout: 30.0s
+2026-10-14T18:00:47.1497668Z timeout method: signal
+2026-10-14T18:00:47.1498396Z timeout func_only: False
+2026-10-14T18:00:47.1499045Z collected 165 items
+2026-10-14T18:00:47.1499683Z Collected 0 items to run in parallel
+2026-10-14T18:00:47.1500207Z 
+2026-10-14T18:00:47.1894586Z tests/benchmarks/test_complete_benchmark.py ............                 [  7%]
+2026-10-14T18:00:47.2574450Z tests/benchmarks/test_micro_benchmarks.py .............................. [ 25%]
+2026-10-14T18:00:47.4091989Z ........................................................................ [ 69%]
+2026-10-14T18:00:47.4479338Z ...............                                                          [ 78%]
+2026-10-14T18:00:47.5356745Z tests/benchmarks/test_nested_benchmark.py ..                             [ 79%]
+2026-10-14T18:00:47.5880211Z tests/benchmarks/test_serialization_micro.py ........................... [ 95%]
+2026-10-14T18:00:47.6539668Z .......                                                                  [100%]
+2026-10-14T18:00:47.6540627Z 
+2026-10-14T18:00:47.6573038Z ═══════════════════════════════ inline-snapshot ════════════════════════════════
+2026-10-14T18:00:47.6600266Z INFO: CI run was detected because environment variable "CI" was defined. 
+2026-10-14T18:00:47.6601732Z inline-snapshot runs with --inline-snapshot=disable by default in CI. This means
+2026-10-14T18:00:47.6602949Z that tests with snapshots will continue to run, but snapshot(x) will only return
+2026-10-14T18:00:47.6604116Z x and inline-snapshot will not be able to fix snapshots or generate reports. You
+2026-10-14T18:00:47.6605266Z can change this by using --inline-snapshot=report for example.
+2026-10-14T18:00:47.6605998Z 
+2026-10-14T18:00:47.6606198Z 
+2026-10-14T18:00:47.6606527Z Results (0.77s):
+2026-10-14T18:00:47.6631095Z        165 passed
+2026-10-14T18:00:47.9235172Z ✅ PGO instrumentation completed successfully
+2026-10-14T18:00:48.0026095Z 🔗 Merging PGO profiles...
+2026-10-14T18:00:48.4710040Z ✅ Merged PGO profiles successfully
+2026-10-14T18:00:48.4711594Z ⚡ Phase 3/3: Building PGO-optimized wheel...
+2026-10-14T18:00:48.6180933Z [1m[92m   Compiling[0m proc-macro2 v1.0.107
+2026-10-14T18:00:48.6190644Z [1m[92m   Compiling[0m quote v1.0.44
+2026-10-14T18:00:48.6192687Z [1m[92m   Compiling[0m unicode-ident v1.0.12
+2026-10-14T18:00:48.6193891Z [1m[92m   Compiling[0m target-lexicon v0.13.4
+2026-10-14T18:00:48.7197074Z [1m[92m   Compiling[0m stable_deref_trait v1.2.0
+2026-10-14T18:00:48.7715627Z [1m[92m   Compiling[0m litemap v0.7.3
+2026-10-14T18:00:48.8941647Z [1m[92m   Compiling[0m writeable v0.5.5
+2026-10-14T18:00:49.0118626Z [1m[92m   Compiling[0m libc v0.2.185
+2026-10-14T18:00:49.2360916Z [1m[92m   Compiling[0m heck v0.5.0
+2026-10-14T18:00:49.3402829Z [1m[92m   Compiling[0m autocfg v1.3.0
+2026-10-14T18:00:49.7008341Z [1m[92m   Compiling[0m num-traits v0.2.19
+2026-10-14T18:00:49.8310655Z [1m[92m   Compiling[0m pyo3-build-config v0.29.2
+2026-10-14T18:00:49.9030797Z [1m[92m   Compiling[0m syn v2.0.82
+2026-10-14T18:00:49.9788894Z [1m[92m   Compiling[0m version_check v0.9.5
+2026-10-14T18:00:50.0016078Z [1m[92m   Compiling[0m smallvec v1.16.2
+2026-10-14T18:00:50.3402200Z [1m[92m   Compiling[0m icu_locid_transform_data v1.5.0
+2026-10-14T18:00:50.5423349Z [1m[92m   Compiling[0m static_assertions v1.1.0
+2026-10-14T18:00:50.6183821Z [1m[92m   Compiling[0m icu_properties_data v1.5.0
+2026-10-14T18:00:50.8594154Z [1m[92m   Compiling[0m lexical-util v1.0.6
+2026-10-14T18:00:51.8256547Z [1m[92m   Compiling[0m pyo3-ffi v0.29.2
+2026-10-14T18:00:51.9946438Z [1m[92m   Compiling[0m pyo3 v0.29.2
+2026-10-14T18:00:52.2022146Z [1m[92m   Compiling[0m icu_normalizer_data v1.5.0
+2026-10-14T18:00:52.2788709Z [1m[92m   Compiling[0m memchr v2.7.4
+2026-10-14T18:00:53.0184000Z [1m[92m   Compiling[0m serde_core v1.0.229
+2026-10-14T18:00:53.3712084Z [1m[92m   Compiling[0m write16 v1.0.0
+2026-10-14T18:00:53.4459980Z [1m[92m   Compiling[0m radium v0.7.0
+2026-10-14T18:00:53.5706644Z [1m[92m   Compiling[0m zerocopy v0.8.25
+2026-10-14T18:00:53.6185558Z [1m[92m   Compiling[0m utf8_iter v1.0.4
+2026-10-14T18:00:53.6815434Z [1m[92m   Compiling[0m getrandom v0.3.3
+2026-10-14T18:00:53.7401595Z [1m[92m   Compiling[0m utf16_iter v1.0.5
+2026-10-14T18:00:53.8152140Z [1m[92m   Compiling[0m num-integer v0.1.46
+2026-10-14T18:00:53.9566468Z [1m[92m   Compiling[0m lexical-parse-integer v1.0.5
+2026-10-14T18:00:53.9601754Z [1m[92m   Compiling[0m ahash v0.8.12
+2026-10-14T18:00:54.1902788Z [1m[92m   Compiling[0m once_cell v1.21.3
+2026-10-14T18:00:54.2276825Z [1m[92m   Compiling[0m cfg-if v1.0.0
+2026-10-14T18:00:54.2949972Z [1m[92m   Compiling[0m tap v1.0.1
+2026-10-14T18:00:54.3000767Z [1m[92m   Compiling[0m zmij v1.0.6
+2026-10-14T18:00:54.4004197Z [1m[92m   Compiling[0m wyz v0.5.1
+2026-10-14T18:00:54.5589342Z [1m[92m   Compiling[0m lexical-parse-float v1.0.5
+2026-10-14T18:00:54.5905679Z [1m[92m   Compiling[0m num-bigint v0.4.6
+2026-10-14T18:00:55.5386085Z [1m[92m   Compiling[0m synstructure v0.13.1
+2026-10-14T18:00:56.6126517Z [1m[92m   Compiling[0m pyo3-macros-backend v0.29.2
+2026-10-14T18:00:59.4514403Z [1m[92m   Compiling[0m aho-corasick v1.1.3
+2026-10-14T18:01:00.1183442Z [1m[92m   Compiling[0m zerofrom-derive v0.1.4
+2026-10-14T18:01:01.7234494Z [1m[92m   Compiling[0m yoke-derive v0.7.4
+2026-10-14T18:01:02.4402836Z [1m[92m   Compiling[0m zerofrom v0.1.4
+2026-10-14T18:01:02.5786252Z [1m[92m   Compiling[0m zerovec-derive v0.10.3
+2026-10-14T18:01:03.2633502Z [1m[92m   Compiling[0m yoke v0.7.4
+2026-10-14T18:01:03.4852830Z [1m[92m   Compiling[0m displaydoc v0.2.5
+2026-10-14T18:01:04.4157920Z [1m[92m   Compiling[0m zerovec v0.10.4
+2026-10-14T18:01:04.7900322Z [1m[92m   Compiling[0m icu_provider_macros v1.5.0
+2026-10-14T18:01:05.2754555Z [1m[92m   Compiling[0m strum_macros v0.27.2
+2026-10-14T18:01:06.2798965Z [1m[92m   Compiling[0m pyo3-macros v0.29.2
+2026-10-14T18:01:06.8352395Z [1m[92m   Compiling[0m tinystr v0.7.6
+2026-10-14T18:01:07.0471270Z [1m[92m   Compiling[0m icu_locid v1.5.0
+2026-10-14T18:01:07.0963844Z [1m[92m   Compiling[0m icu_collections v1.5.0
+2026-10-14T18:01:07.4069244Z [1m[92m   Compiling[0m jiter v0.16.0
+2026-10-14T18:01:07.5014160Z [1m[92m   Compiling[0m syn v3.0.6
+2026-10-14T18:01:08.2828397Z [1m[92m   Compiling[0m icu_provider v1.5.0
+2026-10-14T18:01:09.0233600Z [1m[92m   Compiling[0m icu_locid_transform v1.5.0
+2026-10-14T18:01:09.1977092Z [1m[92m   Compiling[0m serde v1.0.229
+2026-10-14T18:01:09.5792145Z [1m[92m   Compiling[0m regex-syntax v0.8.11
+2026-10-14T18:01:10.1600580Z [1m[92m   Compiling[0m foldhash v0.2.0
+2026-10-14T18:01:10.4681020Z [1m[92m   Compiling[0m icu_properties v1.5.1
+2026-10-14T18:01:11.5994779Z [1m[92m   Compiling[0m serde_json v1.0.151
+2026-10-14T18:01:11.6785072Z [1m[92m   Compiling[0m percent-encoding v2.3.2
+2026-10-14T18:01:11.7765957Z [1m[92m   Compiling[0m funty v2.0.0
+2026-10-14T18:01:11.9017498Z [1m[92m   Compiling[0m form_urlencoded v1.2.2
+2026-10-14T18:01:12.1980846Z [1m[92m   Compiling[0m serde_derive v1.0.229
+2026-10-14T18:01:13.0122038Z [1m[92m   Compiling[0m regex-automata v0.4.18
+2026-10-14T18:01:15.4117065Z [1m[92m   Compiling[0m icu_normalizer v1.5.0
+2026-10-14T18:01:16.5178871Z [1m[92m   Compiling[0m bitvec v1.0.1
+2026-10-14T18:01:17.5394873Z [1m[92m   Compiling[0m idna_adapter v1.2.0
+2026-10-14T18:01:17.7091084Z [1m[92m   Compiling[0m idna v1.1.0
+2026-10-14T18:01:18.2183184Z [1m[92m   Compiling[0m hashbrown v0.17.1
+2026-10-14T18:01:19.7056822Z [1m[92m   Compiling[0m strum v0.27.2
+2026-10-14T18:01:20.6284616Z [1m[92m   Compiling[0m pydantic-core v2.50.0 (/home/runner/work/pydantic/pydantic/pydantic-core)
+2026-10-14T18:01:21.2062141Z [1m[92m   Compiling[0m itoa v1.0.11
+2026-10-14T18:01:21.3246559Z [1m[92m   Compiling[0m enum_dispatch v0.3.13
+2026-10-14T18:01:22.7824106Z [1m[92m   Compiling[0m speedate v0.17.0
+2026-10-14T18:01:24.3650204Z [1m[92m   Compiling[0m lru v0.18.5
+2026-10-14T18:01:24.3821126Z [1m[92m   Compiling[0m url v2.5.8
+2026-10-14T18:01:24.6922153Z [1m[92m   Compiling[0m regex v1.13.1
+2026-10-14T18:01:25.6121132Z [1m[92m   Compiling[0m base64 v0.23.1
+2026-10-14T18:01:25.8967001Z [1m[92m   Compiling[0m hex v0.4.3
+2026-10-14T18:01:26.3297630Z [1m[92m   Compiling[0m uuid v1.23.4
+2026-10-14T18:02:56.4967098Z [1m[92m    Finished[0m `release` profile [optimized] target(s) in 2m 07s
+2026-10-14T18:02:56.7010896Z 📦 Built wheel for CPython 3.15 to dist/pydantic_core-2.50.0-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+2026-10-14T18:02:56.7013015Z 🎉 PGO build complete!
+2026-10-14T18:02:58.5376654Z ##[group]Fix file permissions
+2026-10-14T18:02:58.5377048Z Fixing file permissions for target directory: target
+2026-10-14T18:02:58.5414235Z [command]/usr/bin/sudo chown 1001:1001 -R target
+2026-10-14T18:02:58.5556970Z chown: cannot access 'target': No such file or directory
+2026-10-14T18:02:58.5573713Z ##[endgroup]
+2026-10-14T18:02:58.5696507Z ##[end-action id=pgo-wheel.__PyO3_maturin-action;outcome=success;conclusion=success;duration_ms=364930]
+2026-10-14T18:02:58.5703824Z ##[start-action display=Find built wheel;id=pgo-wheel.find_wheel]
+2026-10-14T18:02:58.5734724Z ##[group]Run echo "path=$(ls dist/*.whl)" | tee -a "$GITHUB_OUTPUT"
+2026-10-14T18:02:58.5735505Z [36;1mecho "path=$(ls dist/*.whl)" | tee -a "$GITHUB_OUTPUT"[0m
+2026-10-14T18:02:58.5824819Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T18:02:58.5825424Z env:
+2026-10-14T18:02:58.5825732Z   COLUMNS: 150
+2026-10-14T18:02:58.5826076Z   UV_FROZEN: true
+2026-10-14T18:02:58.5826423Z   FORCE_COLOR: 1
+2026-10-14T18:02:58.5826926Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T18:02:58.5827772Z   UV_PYTHON: 3.15
+2026-10-14T18:02:58.5828149Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T18:02:58.5828626Z   CARGO_INCREMENTAL: 0
+2026-10-14T18:02:58.5829013Z   CARGO_TERM_COLOR: always
+2026-10-14T18:02:58.5829412Z ##[endgroup]
+2026-10-14T18:02:58.6012951Z path=dist/pydantic_core-2.50.0-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+2026-10-14T18:02:58.6034904Z ##[end-action id=pgo-wheel.find_wheel;outcome=success;conclusion=success;duration_ms=32]
+2026-10-14T18:02:58.6110616Z ##[group]Run ls -lh dist/
+2026-10-14T18:02:58.6111095Z [36;1mls -lh dist/[0m
+2026-10-14T18:02:58.6206982Z shell: /usr/bin/bash -e {0}
+2026-10-14T18:02:58.6207704Z env:
+2026-10-14T18:02:58.6208072Z   COLUMNS: 150
+2026-10-14T18:02:58.6208434Z   UV_FROZEN: true
+2026-10-14T18:02:58.6208812Z   FORCE_COLOR: 1
+2026-10-14T18:02:58.6209320Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T18:02:58.6209949Z   UV_PYTHON: 3.15
+2026-10-14T18:02:58.6210331Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T18:02:58.6210774Z   CARGO_INCREMENTAL: 0
+2026-10-14T18:02:58.6211186Z   CARGO_TERM_COLOR: always
+2026-10-14T18:02:58.6211599Z ##[endgroup]
+2026-10-14T18:02:58.6364725Z total 2.1M
+2026-10-14T18:02:58.6370209Z -rw-r--r-- 1 root root 2.1M Oct 14 18:02 pydantic_core-2.50.0-cp315-cp315-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+2026-10-14T18:02:58.6458893Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+2026-10-14T18:02:58.6459610Z with:
+2026-10-14T18:02:58.6459963Z   name: pydantic_core_pypi_files_linux_3.15
+2026-10-14T18:02:58.6460474Z   path: pydantic-core/dist
+2026-10-14T18:02:58.6460904Z   if-no-files-found: warn
+2026-10-14T18:02:58.6461308Z   compression-level: 6
+2026-10-14T18:02:58.6461701Z   overwrite: false
+2026-10-14T18:02:58.6462067Z   include-hidden-files: false
+2026-10-14T18:02:58.6462461Z   archive: true
+2026-10-14T18:02:58.6462799Z env:
+2026-10-14T18:02:58.6463096Z   COLUMNS: 150
+2026-10-14T18:02:58.6463417Z   UV_FROZEN: true
+2026-10-14T18:02:58.6463748Z   FORCE_COLOR: 1
+2026-10-14T18:02:58.6464244Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-14T18:02:58.6464588Z   UV_PYTHON: 3.15
+2026-10-14T18:02:58.6464805Z   CARGO_HOME: /home/runner/.cargo
+2026-10-14T18:02:58.6465254Z   CARGO_INCREMENTAL: 0
+2026-10-14T18:02:58.6465655Z   CARGO_TERM_COLOR: always
+2026-10-14T18:02:58.6466092Z ##[endgroup]
+2026-10-14T18:02:58.9035746Z With the provided path, there will be 1 file uploaded
+2026-10-14T18:02:58.9061620Z Artifact name is valid!
+2026-10-14T18:02:58.9089557Z Root directory input is valid!
+2026-10-14T18:02:59.4718716Z Uploading artifact: pydantic_core_pypi_files_linux_3.15.zip
+2026-10-14T18:02:59.4777874Z Beginning upload of artifact content to blob storage
+2026-10-14T18:03:00.6849477Z Uploaded bytes 2165301
+2026-10-14T18:03:00.7751407Z Finished uploading artifact content to blob storage!
+2026-10-14T18:03:00.7752762Z SHA256 digest of uploaded artifact is 038f5819ca24e5922210d54ff07161971817bdfe64beefcda310cfc0f728964f
+2026-10-14T18:03:00.7753891Z Finalizing artifact upload
+2026-10-14T18:03:03.7853474Z ##[error]Failed to FinalizeArtifact: Unable to make request: ENOTFOUND
+If you are using self-hosted runners, please make sure your runner has access to all GitHub endpoints: https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners#communication-between-self-hosted-runners-and-github
+2026-10-14T18:03:03.8150558Z Post job cleanup.
+2026-10-14T18:03:03.9430350Z [command]/usr/bin/git version
+2026-10-14T18:03:03.9508666Z git version 2.55.0
+2026-10-14T18:03:03.9578544Z Temporarily overriding HOME='/home/runner/work/_temp/0679206e-321e-4343-bd77-508b512053da' before making global git config changes
+2026-10-14T18:03:03.9579354Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T18:03:03.9579989Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pydantic/pydantic
+2026-10-14T18:03:03.9610914Z Removing SSH command configuration
+2026-10-14T18:03:03.9615187Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T18:03:03.9663741Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T18:03:04.0030273Z Removing HTTP extra header
+2026-10-14T18:03:04.0048113Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T18:03:04.0142812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T18:03:04.0515291Z Removing includeIf entries pointing to credentials config files
+2026-10-14T18:03:04.0517692Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T18:03:04.0587944Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T18:03:04.1161906Z Cleaning up orphan processes

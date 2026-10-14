@@ -1,0 +1,535 @@
+﻿2026-10-14T11:58:31.2842541Z Current runner version: '2.337.0'
+2026-10-14T11:58:31.2867432Z ##[group]Runner Image Provisioner
+2026-10-14T11:58:31.2868359Z Hosted Compute Agent
+2026-10-14T11:58:31.2869002Z Version: 20261012.601
+2026-10-14T11:58:31.2869740Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-14T11:58:31.2870492Z Build Date: 2026-10-12T17:48:21Z
+2026-10-14T11:58:31.2871567Z Worker ID: {c0542889-dd95-447e-ab89-295bf96fc8a9}
+2026-10-14T11:58:31.2872348Z Region: westus
+2026-10-14T11:58:31.2872922Z Cloud: Azure
+2026-10-14T11:58:31.2873530Z ##[endgroup]
+2026-10-14T11:58:31.2874901Z ##[group]Operating System
+2026-10-14T11:58:31.2875515Z Ubuntu
+2026-10-14T11:58:31.2876185Z 24.04.5
+2026-10-14T11:58:31.2876768Z LTS
+2026-10-14T11:58:31.2877357Z ##[endgroup]
+2026-10-14T11:58:31.2877937Z ##[group]Runner Image
+2026-10-14T11:58:31.2878586Z Image: ubuntu-24.04
+2026-10-14T11:58:31.2879242Z Version: 20261012.334.1
+2026-10-14T11:58:31.2880514Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-14T11:58:31.2882310Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-14T11:58:31.2883317Z ##[endgroup]
+2026-10-14T11:58:31.2884543Z ##[group]GITHUB_TOKEN Permissions
+2026-10-14T11:58:31.2886399Z Contents: read
+2026-10-14T11:58:31.2887119Z Metadata: read
+2026-10-14T11:58:31.2887834Z ##[endgroup]
+2026-10-14T11:58:31.2889954Z Secret source: Actions
+2026-10-14T11:58:31.2890955Z Cache mode: write
+2026-10-14T11:58:31.2891932Z Prepare workflow directory
+2026-10-14T11:58:31.3217254Z Prepare all required actions
+2026-10-14T11:58:31.3266392Z Getting action download info
+2026-10-14T11:58:31.6834723Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-14T11:58:31.7767360Z Download action repository 'actions/setup-node@820762786026740c76f36085b0efc47a31fe5020' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+2026-10-14T11:58:32.0084302Z Complete job name: Node LTS on Ubuntu with leak detection
+2026-10-14T11:58:32.0890639Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-14T11:58:32.0891890Z with:
+2026-10-14T11:58:32.0892354Z   persist-credentials: false
+2026-10-14T11:58:32.0892880Z   repository: jestjs/jest
+2026-10-14T11:58:32.0896713Z   token: ***
+2026-10-14T11:58:32.0897149Z   ssh-strict: true
+2026-10-14T11:58:32.0897592Z   ssh-user: git
+2026-10-14T11:58:32.0898016Z   clean: true
+2026-10-14T11:58:32.0898461Z   sparse-checkout-cone-mode: true
+2026-10-14T11:58:32.0898984Z   fetch-depth: 1
+2026-10-14T11:58:32.0899412Z   fetch-tags: false
+2026-10-14T11:58:32.0899862Z   show-progress: true
+2026-10-14T11:58:32.0900307Z   lfs: false
+2026-10-14T11:58:32.0900708Z   submodules: false
+2026-10-14T11:58:32.0901289Z   set-safe-directory: true
+2026-10-14T11:58:32.0901804Z   allow-unsafe-pr-checkout: false
+2026-10-14T11:58:32.0902500Z ##[endgroup]
+2026-10-14T11:58:32.1891272Z Syncing repository: jestjs/jest
+2026-10-14T11:58:32.1893087Z ##[group]Getting Git version info
+2026-10-14T11:58:32.1893865Z Working directory is '/home/runner/work/jest/jest'
+2026-10-14T11:58:32.1894964Z [command]/usr/bin/git version
+2026-10-14T11:58:32.1936744Z git version 2.55.0
+2026-10-14T11:58:32.1955585Z ##[endgroup]
+2026-10-14T11:58:32.1966447Z Temporarily overriding HOME='/home/runner/work/_temp/482e8a8a-1e81-4014-a877-dbcd4db88580' before making global git config changes
+2026-10-14T11:58:32.1968688Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T11:58:32.1972294Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jest/jest
+2026-10-14T11:58:32.2014429Z Deleting the contents of '/home/runner/work/jest/jest'
+2026-10-14T11:58:32.2017810Z ##[group]Determining repository object format
+2026-10-14T11:58:32.2019379Z ##[endgroup]
+2026-10-14T11:58:32.2020126Z ##[group]Initializing the repository
+2026-10-14T11:58:32.2023600Z [command]/usr/bin/git init /home/runner/work/jest/jest
+2026-10-14T11:58:32.2107288Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-14T11:58:32.2108699Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-14T11:58:32.2110354Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-14T11:58:32.2112576Z hint: call:
+2026-10-14T11:58:32.2113701Z hint:
+2026-10-14T11:58:32.2115039Z hint: 	git config --global init.defaultBranch <name>
+2026-10-14T11:58:32.2115908Z hint:
+2026-10-14T11:58:32.2116526Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-14T11:58:32.2117486Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-14T11:58:32.2118236Z hint:
+2026-10-14T11:58:32.2118666Z hint: 	git branch -m <name>
+2026-10-14T11:58:32.2119150Z hint:
+2026-10-14T11:58:32.2119775Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-14T11:58:32.2121433Z Initialized empty Git repository in /home/runner/work/jest/jest/.git/
+2026-10-14T11:58:32.2123075Z [command]/usr/bin/git remote add origin https://github.com/jestjs/jest
+2026-10-14T11:58:32.2166217Z ##[endgroup]
+2026-10-14T11:58:32.2167365Z ##[group]Disabling automatic garbage collection
+2026-10-14T11:58:32.2168736Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-14T11:58:32.2199809Z ##[endgroup]
+2026-10-14T11:58:32.2201496Z ##[group]Setting up auth
+2026-10-14T11:58:32.2202206Z Removing SSH command configuration
+2026-10-14T11:58:32.2205385Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T11:58:32.2236203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T11:58:32.2554869Z Removing HTTP extra header
+2026-10-14T11:58:32.2561683Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T11:58:32.2606875Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T11:58:32.2834899Z Removing includeIf entries pointing to credentials config files
+2026-10-14T11:58:32.2839709Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T11:58:32.2870389Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T11:58:32.3103564Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-14T11:58:32.3140647Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/jest/jest/.git.path /home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:32.3171462Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/jest/jest/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:32.3204439Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:32.3237351Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:32.3265651Z ##[endgroup]
+2026-10-14T11:58:32.3266798Z ##[group]Fetching the repository
+2026-10-14T11:58:32.3273287Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fcb5767ca4cb51a3e3a01ff2eca8808ebbea0d93:refs/remotes/pull/16489/merge
+2026-10-14T11:58:34.0893721Z From https://github.com/jestjs/jest
+2026-10-14T11:58:34.0895264Z  * [new ref]         fcb5767ca4cb51a3e3a01ff2eca8808ebbea0d93 -> pull/16489/merge
+2026-10-14T11:58:34.0899519Z ##[endgroup]
+2026-10-14T11:58:34.0900788Z ##[group]Determining the checkout info
+2026-10-14T11:58:34.0902370Z ##[endgroup]
+2026-10-14T11:58:34.0903159Z [command]/usr/bin/git sparse-checkout disable
+2026-10-14T11:58:34.0932632Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-14T11:58:34.0963163Z ##[group]Checking out the ref
+2026-10-14T11:58:34.0966774Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/16489/merge
+2026-10-14T11:58:34.4015633Z Note: switching to 'refs/remotes/pull/16489/merge'.
+2026-10-14T11:58:34.4016204Z 
+2026-10-14T11:58:34.4016602Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-14T11:58:34.4017457Z changes and commit them, and you can discard any commits you make in this
+2026-10-14T11:58:34.4018300Z state without impacting any branches by switching back to a branch.
+2026-10-14T11:58:34.4018809Z 
+2026-10-14T11:58:34.4019229Z If you want to create a new branch to retain commits you create, you may
+2026-10-14T11:58:34.4020045Z do so (now or later) by using -c with the switch command. Example:
+2026-10-14T11:58:34.4020466Z 
+2026-10-14T11:58:34.4020693Z   git switch -c <new-branch-name>
+2026-10-14T11:58:34.4020997Z 
+2026-10-14T11:58:34.4021453Z Or undo this operation with:
+2026-10-14T11:58:34.4021780Z 
+2026-10-14T11:58:34.4021959Z   git switch -
+2026-10-14T11:58:34.4022237Z 
+2026-10-14T11:58:34.4022629Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-14T11:58:34.4023180Z 
+2026-10-14T11:58:34.4023717Z HEAD is now at fcb5767 Merge cf2810ef2043bd6990d82f97a7aca301e58854bc into 61050e9323e742539dc2360236671110e37329e6
+2026-10-14T11:58:34.4033220Z ##[endgroup]
+2026-10-14T11:58:34.4077955Z [command]/usr/bin/git log -1 --format=%H
+2026-10-14T11:58:34.4103078Z fcb5767ca4cb51a3e3a01ff2eca8808ebbea0d93
+2026-10-14T11:58:34.4116427Z ##[group]Removing auth
+2026-10-14T11:58:34.4116876Z Removing SSH command configuration
+2026-10-14T11:58:34.4117688Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T11:58:34.4149694Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T11:58:34.4387369Z Removing HTTP extra header
+2026-10-14T11:58:34.4390734Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T11:58:34.4423769Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T11:58:34.4664252Z Removing includeIf entries pointing to credentials config files
+2026-10-14T11:58:34.4667853Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T11:58:34.4694452Z includeif.gitdir:/home/runner/work/jest/jest/.git.path
+2026-10-14T11:58:34.4695425Z includeif.gitdir:/home/runner/work/jest/jest/.git/worktrees/*.path
+2026-10-14T11:58:34.4696184Z includeif.gitdir:/github/workspace/.git.path
+2026-10-14T11:58:34.4696862Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T11:58:34.4704178Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/jest/jest/.git.path
+2026-10-14T11:58:34.4728165Z /home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:34.4737160Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/jest/jest/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-34f515a6\-953d\-4194\-adbd\-036d4b66bb47\.config
+2026-10-14T11:58:34.4804488Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/jest/jest/.git/worktrees/*.path
+2026-10-14T11:58:34.4826688Z /home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:34.4834542Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/jest/jest/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-34f515a6\-953d\-4194\-adbd\-036d4b66bb47\.config
+2026-10-14T11:58:34.4867590Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-14T11:58:34.4889403Z /github/runner_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:34.4897916Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-34f515a6\-953d\-4194\-adbd\-036d4b66bb47\.config
+2026-10-14T11:58:34.4934348Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T11:58:34.4957004Z /github/runner_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config
+2026-10-14T11:58:34.5005621Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-34f515a6\-953d\-4194\-adbd\-036d4b66bb47\.config
+2026-10-14T11:58:34.5050907Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T11:58:34.5283959Z Removing credentials config '/home/runner/work/_temp/git-credentials-34f515a6-953d-4194-adbd-036d4b66bb47.config'
+2026-10-14T11:58:34.5292460Z ##[endgroup]
+2026-10-14T11:58:34.5619570Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-10-14T11:58:34.5620023Z with:
+2026-10-14T11:58:34.5620277Z   node-version: lts/*
+2026-10-14T11:58:34.5620547Z   cache: yarn
+2026-10-14T11:58:34.5620808Z   check-latest: false
+2026-10-14T11:58:34.5623602Z   token: ***
+2026-10-14T11:58:34.5623879Z   package-manager-cache: true
+2026-10-14T11:58:34.5624187Z ##[endgroup]
+2026-10-14T11:58:34.6832266Z Attempt to resolve LTS alias from manifest...
+2026-10-14T11:58:35.5287994Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-14T11:58:35.5293857Z ##[group]Environment details
+2026-10-14T11:58:36.1503715Z node: v24.21.0
+2026-10-14T11:58:36.1504150Z npm: 11.19.0
+2026-10-14T11:58:36.1504460Z yarn: 4.18.0
+2026-10-14T11:58:36.1505053Z ##[endgroup]
+2026-10-14T11:58:36.1523409Z [command]/usr/local/bin/yarn --version
+2026-10-14T11:58:36.5140572Z 4.18.0
+2026-10-14T11:58:36.5341443Z [command]/usr/local/bin/yarn config get cacheFolder
+2026-10-14T11:58:36.8950988Z /home/runner/.yarn/berry/cache
+2026-10-14T11:58:36.9266498Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2026-10-14T11:58:37.2856597Z [33mtrue[39m
+2026-10-14T11:58:37.5946736Z Cache hit for: node-cache-Linux-x64-yarn-b9168372d9bfd54c6ce4083f0255afcc0f9b00c52e0493df61b12be14fa5c08c
+2026-10-14T11:58:38.9031931Z Received 0 of 159608761 (0.0%), 0.0 MBs/sec
+2026-10-14T11:58:39.9152314Z Received 134217728 of 159608761 (84.1%), 63.6 MBs/sec
+2026-10-14T11:58:40.2266176Z Received 159608761 of 159608761 (100.0%), 65.6 MBs/sec
+2026-10-14T11:58:40.2291817Z Cache Size: ~152 MB (159608761 B)
+2026-10-14T11:58:40.2352733Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f6a1f968-80c9-4da1-beba-8d05d1445fb1/cache.tzst -P -C /home/runner/work/jest/jest --use-compress-program unzstd
+2026-10-14T11:58:40.5160425Z Cache restored successfully
+2026-10-14T11:58:40.5241928Z Cache restored from key: node-cache-Linux-x64-yarn-b9168372d9bfd54c6ce4083f0255afcc0f9b00c52e0493df61b12be14fa5c08c
+2026-10-14T11:58:40.5446329Z ##[group]Run yarn --immutable
+2026-10-14T11:58:40.5446662Z [36;1myarn --immutable[0m
+2026-10-14T11:58:40.5682426Z shell: /usr/bin/bash -e {0}
+2026-10-14T11:58:40.5682755Z ##[endgroup]
+2026-10-14T11:58:41.1212312Z [93m➤[39m YN0000: Yarn detected that the current workflow is executed from a public pull request. For safety the hardened mode has been enabled.
+2026-10-14T11:58:41.1214854Z [93m➤[39m YN0000: It will prevent malicious lockfile manipulations, in exchange for a slower install time. You can opt-out if necessary; check our documentation for more details.
+2026-10-14T11:58:41.1216401Z 
+2026-10-14T11:58:41.1216822Z [94m➤[39m YN0000: · Yarn 4.18.0
+2026-10-14T11:58:41.1306681Z [94m➤[39m [90mYN0000[39m: ┌ Resolution step
+2026-10-14T11:58:41.1307614Z ##[group]Resolution step
+2026-10-14T11:58:51.8985250Z ##[endgroup]
+2026-10-14T11:58:51.8990106Z [94m➤[39m [90mYN0000[39m: └ Completed in 10s 768ms
+2026-10-14T11:58:51.9006085Z [94m➤[39m [90mYN0000[39m: ┌ Post-resolution validation
+2026-10-14T11:58:51.9007120Z ##[group]Post-resolution validation
+2026-10-14T11:58:51.9010084Z [93m➤[39m YN0060: │ [38;5;166m@babel/[39m[38;5;173mcore[39m is listed by your project with version [38;5;111m7.29.7[39m ([38;5;111mpf247de[39m), which doesn't satisfy what [38;5;166m@babel/[39m[38;5;173mpreset-react[39m and other dependencies request ([91mbut they have non-overlapping ranges![39m).
+2026-10-14T11:58:51.9014246Z [93m➤[39m YN0060: │ [38;5;173mgraphql[39m is listed by your project with version [38;5;111m17.0.2[39m ([38;5;111mp1ae269[39m), which doesn't satisfy what [38;5;173mgraphql-request[39m and other dependencies request ([38;5;37m^14.0.0 || ^15.0.0 || ^16.0.0[39m).
+2026-10-14T11:58:51.9018291Z [93m➤[39m YN0060: │ [38;5;173mreact[39m is listed by your project with version [38;5;111m19.3.0[39m ([38;5;111mpbfd061[39m), which doesn't satisfy what [38;5;173mreact-test-renderer[39m and other dependencies request ([91mbut they have non-overlapping ranges![39m).
+2026-10-14T11:58:51.9022335Z [93m➤[39m YN0002: │ [38;5;166m@jest/[39m[38;5;173mdiff-sequences[39m[38;5;111m@[39m[38;5;111mworkspace:packages/diff-sequences[39m doesn't provide [38;5;166m@jest/[39m[38;5;173mglobals[39m ([38;5;111mp03fd70[39m), requested by [38;5;166m@fast-check/[39m[38;5;173mjest[39m.
+2026-10-14T11:58:51.9025971Z [93m➤[39m YN0002: │ [38;5;173mbabel-preset-jest[39m[38;5;111m@[39m[38;5;111mworkspace:packages/babel-preset-jest[39m doesn't provide [38;5;166m@babel/[39m[38;5;173mcore[39m ([38;5;111mpa5adb7[39m), requested by [38;5;173mbabel-preset-current-node-syntax[39m.
+2026-10-14T11:58:51.9029279Z [93m➤[39m YN0002: │ [38;5;173mcreate-jest[39m[38;5;111m@[39m[38;5;111mworkspace:packages/create-jest[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp9c2ade[39m), requested by [38;5;173mjest-config[39m.
+2026-10-14T11:58:51.9033191Z [93m➤[39m YN0002: │ [38;5;173mexample-react-native[39m[38;5;111m@[39m[38;5;111mworkspace:examples/react-native[39m doesn't provide [38;5;166m@types/[39m[38;5;173mreact[39m ([38;5;111mp0285ab[39m), requested by [38;5;166m@react-native/[39m[38;5;173mjest-preset[39m and other dependencies.
+2026-10-14T11:58:51.9036774Z [93m➤[39m YN0002: │ [38;5;173mexpect[39m[38;5;111m@[39m[38;5;111mworkspace:packages/expect[39m doesn't provide [38;5;166m@jest/[39m[38;5;173mglobals[39m ([38;5;111mp9fb730[39m), requested by [38;5;166m@fast-check/[39m[38;5;173mjest[39m.
+2026-10-14T11:58:51.9039920Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli [023ef][39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mpdec1f7[39m), requested by [38;5;173mjest-config[39m.
+2026-10-14T11:58:51.9043747Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli [73877][39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp6688de[39m), requested by [38;5;173mjest-config[39m.
+2026-10-14T11:58:51.9046831Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mpdd7483[39m), requested by [38;5;173mjest-config[39m.
+2026-10-14T11:58:51.9049866Z [93m➤[39m YN0002: │ [38;5;173mjest-config[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-config[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp4a73ba[39m), requested by [38;5;173mts-node[39m.
+2026-10-14T11:58:51.9053426Z [93m➤[39m YN0002: │ [38;5;173mjest-website[39m[38;5;111m@[39m[38;5;111mworkspace:website[39m doesn't provide [38;5;166m@mdx-js/[39m[38;5;173mreact[39m ([38;5;111mp1a83d4[39m), requested by [38;5;166m@docusaurus/[39m[38;5;173mcore[39m.
+2026-10-14T11:58:51.9057058Z [93m➤[39m YN0086: │ Some peer dependencies are incorrectly met by your project; run [38;5;111myarn explain peer-requirements <hash>[39m for details, where [38;5;111m<hash>[39m is the six-letter p-prefixed code.
+2026-10-14T11:58:51.9059595Z [93m➤[39m YN0086: │ Some peer dependencies are incorrectly met by dependencies; run [38;5;111myarn explain peer-requirements[39m for details.
+2026-10-14T11:58:51.9856283Z ##[endgroup]
+2026-10-14T11:58:51.9857412Z [94m➤[39m [90mYN0000[39m: └ Completed
+2026-10-14T11:58:51.9857984Z [94m➤[39m [90mYN0000[39m: ┌ Fetch step
+2026-10-14T11:58:51.9858609Z ##[group]Fetch step
+2026-10-14T11:58:52.6143465Z ##[endgroup]
+2026-10-14T11:58:52.6144604Z [94m➤[39m [90mYN0000[39m: └ Completed in 0s 629ms
+2026-10-14T11:58:52.6914132Z [94m➤[39m [90mYN0000[39m: ┌ Link step
+2026-10-14T11:58:52.6914953Z ##[group]Link step
+2026-10-14T11:59:10.8582538Z [93m➤[39m YN0004: │ [38;5;173mcore-js[39m[38;5;111m@[39m[38;5;111mnpm:3.50.0[39m lists build scripts, but all build scripts have been disabled.
+2026-10-14T11:59:11.0431971Z [94m➤[39m YN0007: │ [38;5;173munrs-resolver[39m[38;5;111m@[39m[38;5;111mnpm:1.12.2[39m must be built because it never has been before or the last one failed
+2026-10-14T11:59:11.0441919Z [94m➤[39m YN0007: │ [38;5;166m@parcel/[39m[38;5;173mwatcher[39m[38;5;111m@[39m[38;5;111mnpm:2.6.0[39m must be built because it never has been before or the last one failed
+2026-10-14T11:59:11.0444469Z [94m➤[39m YN0007: │ [38;5;173mesbuild[39m[38;5;111m@[39m[38;5;111mnpm:0.28.2[39m must be built because it never has been before or the last one failed
+2026-10-14T11:59:11.1837915Z ##[endgroup]
+2026-10-14T11:59:11.1839037Z [94m➤[39m [90mYN0000[39m: └ Completed in 18s 492ms
+2026-10-14T11:59:11.3842845Z [93m➤[39m YN0000: · Done with warnings in 30s 261ms
+2026-10-14T11:59:11.6064992Z ##[group]Run yarn build:js
+2026-10-14T11:59:11.6065285Z [36;1myarn build:js[0m
+2026-10-14T11:59:11.6136377Z shell: /usr/bin/bash -e {0}
+2026-10-14T11:59:11.6136676Z ##[endgroup]
+2026-10-14T11:59:12.3837047Z  Bundling packages 
+2026-10-14T11:59:18.2298850Z  DONE 
+2026-10-14T11:59:18.3169970Z ##[group]Run yarn test-leak
+2026-10-14T11:59:18.3170273Z [36;1myarn test-leak[0m
+2026-10-14T11:59:18.3243290Z shell: /usr/bin/bash -e {0}
+2026-10-14T11:59:18.3243580Z ##[endgroup]
+2026-10-14T11:59:21.3198549Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mindex.test.ts[22m
+2026-10-14T11:59:21.7493750Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mImmutable.test.ts[22m
+2026-10-14T11:59:22.3019864Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-diff/src/__tests__/[22m[1mdiff.test.ts[22m
+2026-10-14T11:59:22.6003445Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mprettyFormat.test.ts[22m
+2026-10-14T11:59:23.4963865Z [0m[7m[1m[31m FAIL [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mwhenCalledWith.test.ts[22m
+2026-10-14T11:59:23.4964920Z   [1m● [22mTest suite failed to run
+2026-10-14T11:59:23.4965221Z 
+2026-10-14T11:59:23.4965646Z     [31m[1mEXPERIMENTAL FEATURE![22m[39m
+2026-10-14T11:59:23.4966585Z     [31m[1m[22m[39mYour test suite is leaking memory. Please ensure all references are cleaned.
+2026-10-14T11:59:23.4967178Z 
+2026-10-14T11:59:23.4967452Z     There is a number of things that can leak memory:
+2026-10-14T11:59:23.4968143Z       - Async operations that have not finished (e.g. fs.readFile).
+2026-10-14T11:59:23.4968877Z       - Timers not properly mocked (e.g. setInterval, setTimeout).
+2026-10-14T11:59:23.4969528Z       - Keeping references to the global scope.
+2026-10-14T11:59:23.4969853Z 
+2026-10-14T11:59:23.4991829Z       [2mat onResult ([22mpackages/jest-core/build/index.js[2m:1063:18)[22m
+2026-10-14T11:59:23.4993039Z           at Array.map (<anonymous>)
+2026-10-14T11:59:23.4993349Z 
+2026-10-14T11:59:23.8953794Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mreact.test.tsx[22m
+2026-10-14T11:59:23.9139043Z   [1m● [22mConsole
+2026-10-14T11:59:23.9139281Z 
+2026-10-14T11:59:23.9139479Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9140562Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9141557Z [2m[22m
+2026-10-14T11:59:23.9143017Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9143995Z 
+2026-10-14T11:59:23.9144282Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9145338Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9146115Z [2m[22m
+2026-10-14T11:59:23.9147606Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9148224Z 
+2026-10-14T11:59:23.9148404Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9149078Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9149560Z [2m[22m
+2026-10-14T11:59:23.9150470Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9151268Z 
+2026-10-14T11:59:23.9151516Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9152494Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9153054Z [2m[22m
+2026-10-14T11:59:23.9153929Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9154508Z 
+2026-10-14T11:59:23.9154681Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9155749Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9156221Z [2m[22m
+2026-10-14T11:59:23.9157099Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9157683Z 
+2026-10-14T11:59:23.9157857Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9158493Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9158979Z [2m[22m
+2026-10-14T11:59:23.9159839Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9160413Z 
+2026-10-14T11:59:23.9160568Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9161394Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9161910Z [2m[22m
+2026-10-14T11:59:23.9162894Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9163460Z 
+2026-10-14T11:59:23.9163620Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9164232Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9164689Z [2m[22m
+2026-10-14T11:59:23.9165768Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9166659Z 
+2026-10-14T11:59:23.9167111Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9167721Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9168186Z [2m[22m
+2026-10-14T11:59:23.9169042Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9169608Z 
+2026-10-14T11:59:23.9169767Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9170360Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9170811Z [2m[22m
+2026-10-14T11:59:23.9171879Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9172448Z 
+2026-10-14T11:59:23.9172619Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9173229Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9173708Z [2m[22m
+2026-10-14T11:59:23.9174563Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9175117Z 
+2026-10-14T11:59:23.9175278Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9175876Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9176335Z [2m[22m
+2026-10-14T11:59:23.9177166Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9177995Z 
+2026-10-14T11:59:23.9178242Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9179251Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9180020Z [2m[22m
+2026-10-14T11:59:23.9181651Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9182623Z 
+2026-10-14T11:59:23.9182907Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9184221Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9185033Z [2m[22m
+2026-10-14T11:59:23.9186474Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9187101Z 
+2026-10-14T11:59:23.9187277Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9187935Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9188413Z [2m[22m
+2026-10-14T11:59:23.9189370Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9190334Z 
+2026-10-14T11:59:23.9190615Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9191858Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9192677Z [2m[22m
+2026-10-14T11:59:23.9194140Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9194854Z 
+2026-10-14T11:59:23.9195041Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9195686Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9196168Z [2m[22m
+2026-10-14T11:59:23.9197094Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9197916Z 
+2026-10-14T11:59:23.9198084Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9198701Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9199171Z [2m[22m
+2026-10-14T11:59:23.9200037Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9200762Z 
+2026-10-14T11:59:23.9201200Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9202255Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9202782Z [2m[22m
+2026-10-14T11:59:23.9203633Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9204189Z 
+2026-10-14T11:59:23.9204361Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9204967Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9205449Z [2m[22m
+2026-10-14T11:59:23.9206297Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9206850Z 
+2026-10-14T11:59:23.9207017Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9207622Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9208090Z [2m[22m
+2026-10-14T11:59:23.9208924Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9209484Z 
+2026-10-14T11:59:23.9209637Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9210229Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9210696Z [2m[22m
+2026-10-14T11:59:23.9211764Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9212573Z 
+2026-10-14T11:59:23.9212742Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9213355Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9213826Z [2m[22m
+2026-10-14T11:59:23.9240946Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9243417Z 
+2026-10-14T11:59:23.9243794Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9244933Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9245763Z [2m[22m
+2026-10-14T11:59:23.9247329Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9248344Z 
+2026-10-14T11:59:23.9248629Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9249712Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9250510Z [2m[22m
+2026-10-14T11:59:23.9252363Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9253353Z 
+2026-10-14T11:59:23.9253627Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9254706Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9255370Z [2m[22m
+2026-10-14T11:59:23.9256290Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9257386Z [2m          at Array.map (<anonymous>)[22m
+2026-10-14T11:59:23.9257611Z 
+2026-10-14T11:59:23.9257784Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9258451Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9258934Z [2m[22m
+2026-10-14T11:59:23.9259826Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9260617Z [2m          at Array.map (<anonymous>)[22m
+2026-10-14T11:59:23.9260818Z 
+2026-10-14T11:59:23.9260988Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9261884Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9262356Z [2m[22m
+2026-10-14T11:59:23.9263243Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9264002Z [2m          at Array.map (<anonymous>)[22m
+2026-10-14T11:59:23.9264193Z 
+2026-10-14T11:59:23.9264348Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9264963Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9265423Z [2m[22m
+2026-10-14T11:59:23.9266275Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9266831Z 
+2026-10-14T11:59:23.9266990Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9267589Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9268041Z [2m[22m
+2026-10-14T11:59:23.9268884Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9269433Z 
+2026-10-14T11:59:23.9269583Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9270320Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9270788Z [2m[22m
+2026-10-14T11:59:23.9272009Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9272975Z 
+2026-10-14T11:59:23.9273289Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9274333Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9275161Z [2m[22m
+2026-10-14T11:59:23.9276694Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9277558Z 
+2026-10-14T11:59:23.9277759Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9278383Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9278861Z [2m[22m
+2026-10-14T11:59:23.9279719Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9280278Z 
+2026-10-14T11:59:23.9280439Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9281205Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9281690Z [2m[22m
+2026-10-14T11:59:23.9282552Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9283561Z [2m          at Array.map (<anonymous>)[22m
+2026-10-14T11:59:23.9283760Z 
+2026-10-14T11:59:23.9283924Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9284540Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9285013Z [2m[22m
+2026-10-14T11:59:23.9285862Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9286610Z [2m          at Array.map (<anonymous>)[22m
+2026-10-14T11:59:23.9286804Z 
+2026-10-14T11:59:23.9286965Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9287559Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9288016Z [2m[22m
+2026-10-14T11:59:23.9288872Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9289431Z 
+2026-10-14T11:59:23.9289582Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9290182Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9290635Z [2m[22m
+2026-10-14T11:59:23.9291597Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9292149Z 
+2026-10-14T11:59:23.9292313Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9292900Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9293352Z [2m[22m
+2026-10-14T11:59:23.9294188Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9294745Z 
+2026-10-14T11:59:23.9294914Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:23.9295520Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:23.9295993Z [2m[22m
+2026-10-14T11:59:23.9297452Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:23.9298444Z 
+2026-10-14T11:59:25.3064437Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mDOMElement.test.ts[22m
+2026-10-14T11:59:25.6993512Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-source-map/src/__tests__/[22m[1mSourceMapCache.test.ts[22m
+2026-10-14T11:59:25.9763514Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-source-map/src/__tests__/[22m[1mSourceMapSupport.test.ts[22m
+2026-10-14T11:59:26.1703394Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mclass-mocks.test.ts[22m
+2026-10-14T11:59:26.3883469Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mAsymmetricMatcher.test.ts[22m
+2026-10-14T11:59:26.5753156Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-diff/src/__tests__/[22m[1mgetAlignedDiffs.test.ts[22m
+2026-10-14T11:59:26.7793546Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mclass-mocks-single-import.test.ts[22m
+2026-10-14T11:59:27.0323366Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mReactVersions.test.ts[22m
+2026-10-14T11:59:27.0342406Z   [1m● [22mConsole
+2026-10-14T11:59:27.0342659Z 
+2026-10-14T11:59:27.0342946Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:27.0343701Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:27.0344217Z [2m[22m
+2026-10-14T11:59:27.0345197Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer-19/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:27.0346310Z 
+2026-10-14T11:59:27.0346487Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:27.0347156Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:27.0347663Z [2m[22m
+2026-10-14T11:59:27.0348587Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer-19/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:27.0349203Z 
+2026-10-14T11:59:27.0349373Z     [2m[31mconsole.error[39m[22m
+2026-10-14T11:59:27.0350049Z [31m      react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer[39m
+2026-10-14T11:59:27.0350526Z [2m[22m
+2026-10-14T11:59:27.0351588Z [2m      [2mat Object.process.env.NODE_ENV.exports.create ([22m[2mnode_modules/react-test-renderer-19/cjs/react-test-renderer.development.js[2m:18374:17)[22m[2m[22m
+2026-10-14T11:59:27.0352219Z 
+2026-10-14T11:59:27.2023939Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-diff/src/__tests__/[22m[1mjoinAlignedDiffs.test.ts[22m
+2026-10-14T11:59:27.3933341Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-source-map/src/__tests__/[22m[1mgetCallsite.test.ts[22m
+2026-10-14T11:59:27.5794514Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mDOMCollection.test.ts[22m
+2026-10-14T11:59:27.7433633Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-diff/src/__tests__/[22m[1mescapeControlCharacters.test.ts[22m
+2026-10-14T11:59:27.9064513Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/pretty-format/src/__tests__/[22m[1mReactElement.test.ts[22m
+2026-10-14T11:59:28.0774708Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mclass-mocks-dual-import.test.ts[22m
+2026-10-14T11:59:28.2319118Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-diff/src/__tests__/[22m[1mdiffStringsRaw.test.ts[22m
+2026-10-14T11:59:28.3888086Z [0m[7m[1m[32m PASS [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mwindow-spy.test.ts[22m
+2026-10-14T11:59:28.3931780Z 
+2026-10-14T11:59:28.3932603Z [1mSummary of all failing tests[22m
+2026-10-14T11:59:28.3943298Z [0m[7m[1m[31m FAIL [39m[22m[27m[0m [2mpackages/jest-mock/src/__tests__/[22m[1mwhenCalledWith.test.ts[22m
+2026-10-14T11:59:28.3944290Z   [1m● [22mTest suite failed to run
+2026-10-14T11:59:28.3944593Z 
+2026-10-14T11:59:28.3944906Z     [31m[1mEXPERIMENTAL FEATURE![22m[39m
+2026-10-14T11:59:28.3947954Z     [31m[1m[22m[39mYour test suite is leaking memory. Please ensure all references are cleaned.
+2026-10-14T11:59:28.3948508Z 
+2026-10-14T11:59:28.3948954Z     There is a number of things that can leak memory:
+2026-10-14T11:59:28.3951970Z       - Async operations that have not finished (e.g. fs.readFile).
+2026-10-14T11:59:28.3956693Z       - Timers not properly mocked (e.g. setInterval, setTimeout).
+2026-10-14T11:59:28.3967178Z       - Keeping references to the global scope.
+2026-10-14T11:59:28.3967551Z 
+2026-10-14T11:59:28.3968126Z       [2mat onResult ([22mpackages/jest-core/build/index.js[2m:1063:18)[22m
+2026-10-14T11:59:28.3968733Z           at Array.map (<anonymous>)
+2026-10-14T11:59:28.3968940Z 
+2026-10-14T11:59:28.3968948Z 
+2026-10-14T11:59:28.3973802Z [1mTest Suites: [22m[1m[31m1 failed[39m[22m, [1m[32m21 passed[39m[22m, 22 total
+2026-10-14T11:59:28.3974631Z [1mTests:       [22m[1m[32m802 passed[39m[22m, 802 total
+2026-10-14T11:59:28.3975164Z [1mSnapshots:   [22m[1m[32m102 passed[39m[22m, 102 total
+2026-10-14T11:59:28.3975574Z [1mTime:[22m        8.385 s
+2026-10-14T11:59:28.3976220Z [2mRan all test suites[22m[2m matching [22mjest-mock|jest-diff|jest-source-map|pretty-format[2m.[22m
+2026-10-14T11:59:28.5730682Z ##[error]Process completed with exit code 1.
+2026-10-14T11:59:28.5873754Z Post job cleanup.
+2026-10-14T11:59:28.6690007Z [command]/usr/bin/git version
+2026-10-14T11:59:28.6727532Z git version 2.55.0
+2026-10-14T11:59:28.6760380Z Temporarily overriding HOME='/home/runner/work/_temp/7e81f4c1-d7b3-4706-af88-05b8a7570f36' before making global git config changes
+2026-10-14T11:59:28.6761517Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T11:59:28.6765647Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jest/jest
+2026-10-14T11:59:28.6794969Z Removing SSH command configuration
+2026-10-14T11:59:28.6800423Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T11:59:28.6833258Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T11:59:28.7069323Z Removing HTTP extra header
+2026-10-14T11:59:28.7075007Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T11:59:28.7109271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T11:59:28.7341336Z Removing includeIf entries pointing to credentials config files
+2026-10-14T11:59:28.7347355Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T11:59:28.7410448Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T11:59:28.7786258Z Cleaning up orphan processes

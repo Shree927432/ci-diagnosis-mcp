@@ -1,0 +1,15 @@
+{
+ "mode": "lint_format",
+ "parser": "eslint",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "is defined but never used"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "src/language-js/print/function-parameters.js"
+ ]
+}

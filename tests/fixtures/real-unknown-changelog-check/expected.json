@@ -1,0 +1,13 @@
+{
+ "mode": "unknown",
+ "parser": "generic",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "exit code 1"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

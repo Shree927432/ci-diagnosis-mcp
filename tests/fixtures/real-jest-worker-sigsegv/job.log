@@ -1,0 +1,626 @@
+﻿2026-10-13T14:58:21.8971670Z Current runner version: '2.337.0'
+2026-10-13T14:58:21.8990000Z ##[group]Runner Image Provisioner
+2026-10-13T14:58:21.8990820Z Hosted Compute Agent
+2026-10-13T14:58:21.8991330Z Version: 20260828.587
+2026-10-13T14:58:21.8991990Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-13T14:58:21.8992650Z Build Date: 2026-08-28T16:44:25Z
+2026-10-13T14:58:21.8993100Z Worker ID: {d9f2f005-638a-456d-82ba-13284ac967ab}
+2026-10-13T14:58:21.8993650Z Azure Region: westus
+2026-10-13T14:58:21.8994100Z ##[endgroup]
+2026-10-13T14:58:21.8995050Z ##[group]Operating System
+2026-10-13T14:58:21.8995860Z macOS
+2026-10-13T14:58:21.8996270Z 26.6.2
+2026-10-13T14:58:21.8996610Z 25G83
+2026-10-13T14:58:21.8996960Z ##[endgroup]
+2026-10-13T14:58:21.8997340Z ##[group]Runner Image
+2026-10-13T14:58:21.8997800Z Image: macos-26-arm64
+2026-10-13T14:58:21.8998250Z Version: 20260907.0351.1
+2026-10-13T14:58:21.8999260Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20260907.0351/images/macos/macos-26-arm64-Readme.md
+2026-10-13T14:58:21.9000480Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20260907.0351
+2026-10-13T14:58:21.9001260Z ##[endgroup]
+2026-10-13T14:58:21.9002220Z ##[group]GITHUB_TOKEN Permissions
+2026-10-13T14:58:21.9003670Z Contents: read
+2026-10-13T14:58:21.9004590Z Metadata: read
+2026-10-13T14:58:21.9004960Z ##[endgroup]
+2026-10-13T14:58:21.9006720Z Secret source: Actions
+2026-10-13T14:58:21.9007940Z Cache mode: write
+2026-10-13T14:58:21.9008690Z Prepare workflow directory
+2026-10-13T14:58:21.9263050Z Prepare all required actions
+2026-10-13T14:58:21.9318780Z Getting action download info
+2026-10-13T14:58:22.3687540Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-13T14:58:22.6860100Z Download action repository 'actions/setup-node@820762786026740c76f36085b0efc47a31fe5020' (SHA:820762786026740c76f36085b0efc47a31fe5020)
+2026-10-13T14:58:22.8302310Z Download action repository 'SimenB/github-actions-cpu-cores@97330871fe1b7d3529392ea000e3d2c4b357e403' (SHA:97330871fe1b7d3529392ea000e3d2c4b357e403)
+2026-10-13T14:58:23.3018840Z Download action repository 'nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60' (SHA:ad984534de44a9489a53aefd81eb77f87c70dc60)
+2026-10-13T14:58:23.9430590Z Uses: jestjs/jest/.github/workflows/test.yml@refs/pull/16485/merge (64b7b8a0bf2f035f263f0457c4f44f16e04d20cf)
+2026-10-13T14:58:23.9436460Z ##[group] Inputs
+2026-10-13T14:58:23.9437350Z   os: macos-latest
+2026-10-13T14:58:23.9438120Z   shard: 3/3
+2026-10-13T14:58:23.9439020Z ##[endgroup]
+2026-10-13T14:58:23.9439880Z Complete job name: macOS with shard 3/3 / Node v24.x
+2026-10-13T14:58:24.0490900Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-13T14:58:24.0492320Z with:
+2026-10-13T14:58:24.0492960Z   persist-credentials: false
+2026-10-13T14:58:24.0493680Z   repository: jestjs/jest
+2026-10-13T14:58:24.0512270Z   token: ***
+2026-10-13T14:58:24.0514210Z   ssh-strict: true
+2026-10-13T14:58:24.0516100Z   ssh-user: git
+2026-10-13T14:58:24.0517550Z   clean: true
+2026-10-13T14:58:24.0519340Z   sparse-checkout-cone-mode: true
+2026-10-13T14:58:24.0521100Z   fetch-depth: 1
+2026-10-13T14:58:24.0522470Z   fetch-tags: false
+2026-10-13T14:58:24.0523860Z   show-progress: true
+2026-10-13T14:58:24.0525290Z   lfs: false
+2026-10-13T14:58:24.0526580Z   submodules: false
+2026-10-13T14:58:24.0528060Z   set-safe-directory: true
+2026-10-13T14:58:24.0529670Z   allow-unsafe-pr-checkout: false
+2026-10-13T14:58:24.0533780Z ##[endgroup]
+2026-10-13T14:58:24.5759970Z Syncing repository: jestjs/jest
+2026-10-13T14:58:24.5761410Z ##[group]Getting Git version info
+2026-10-13T14:58:24.5761860Z Working directory is '/Users/runner/work/jest/jest'
+2026-10-13T14:58:24.5762450Z [command]/opt/homebrew/bin/git version
+2026-10-13T14:58:24.6265070Z git version 2.55.0
+2026-10-13T14:58:24.6277110Z ##[endgroup]
+2026-10-13T14:58:24.6283040Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/cfc4d730-4c28-46bd-815d-66466ba2f96a/.gitconfig'
+2026-10-13T14:58:24.6291930Z Temporarily overriding HOME='/Users/runner/work/_temp/cfc4d730-4c28-46bd-815d-66466ba2f96a' before making global git config changes
+2026-10-13T14:58:24.6292980Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-13T14:58:24.6296120Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/jest/jest
+2026-10-13T14:58:24.6438300Z Deleting the contents of '/Users/runner/work/jest/jest'
+2026-10-13T14:58:24.6443020Z ##[group]Determining repository object format
+2026-10-13T14:58:24.6444840Z ##[endgroup]
+2026-10-13T14:58:24.6447060Z ##[group]Initializing the repository
+2026-10-13T14:58:24.6452210Z [command]/opt/homebrew/bin/git init /Users/runner/work/jest/jest
+2026-10-13T14:58:24.6758640Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-13T14:58:24.6759720Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-13T14:58:24.6760630Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-13T14:58:24.6761380Z hint: call:
+2026-10-13T14:58:24.6761740Z hint:
+2026-10-13T14:58:24.6762250Z hint: 	git config --global init.defaultBranch <name>
+2026-10-13T14:58:24.6762730Z hint:
+2026-10-13T14:58:24.6763150Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-13T14:58:24.6763800Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-13T14:58:24.6764380Z hint:
+2026-10-13T14:58:24.6764820Z hint: 	git branch -m <name>
+2026-10-13T14:58:24.6765250Z hint:
+2026-10-13T14:58:24.6765800Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-13T14:58:24.6766420Z Initialized empty Git repository in /Users/runner/work/jest/jest/.git/
+2026-10-13T14:58:24.6773590Z [command]/opt/homebrew/bin/git remote add origin https://github.com/jestjs/jest
+2026-10-13T14:58:24.6888550Z ##[endgroup]
+2026-10-13T14:58:24.6889280Z ##[group]Disabling automatic garbage collection
+2026-10-13T14:58:24.6891470Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-13T14:58:24.6972650Z ##[endgroup]
+2026-10-13T14:58:24.6973310Z ##[group]Setting up auth
+2026-10-13T14:58:24.6973700Z Removing SSH command configuration
+2026-10-13T14:58:24.6977910Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-13T14:58:24.7102970Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-13T14:58:24.8400920Z Removing HTTP extra header
+2026-10-13T14:58:24.8405470Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-13T14:58:24.8455700Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-13T14:58:25.0250070Z Removing includeIf entries pointing to credentials config files
+2026-10-13T14:58:25.0354000Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-13T14:58:25.0667580Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-13T14:58:25.2852520Z [command]/opt/homebrew/bin/git config --file /Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-13T14:58:25.2855540Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/jest/jest/.git.path /Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:25.3101860Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/jest/jest/.git/worktrees/*.path /Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:25.3316980Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:25.3333820Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:25.3336990Z ##[endgroup]
+2026-10-13T14:58:25.3338010Z ##[group]Fetching the repository
+2026-10-13T14:58:25.3345070Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +64b7b8a0bf2f035f263f0457c4f44f16e04d20cf:refs/remotes/pull/16485/merge
+2026-10-13T14:58:26.9659520Z From https://github.com/jestjs/jest
+2026-10-13T14:58:26.9660800Z  * [new ref]         64b7b8a0bf2f035f263f0457c4f44f16e04d20cf -> pull/16485/merge
+2026-10-13T14:58:26.9666560Z ##[endgroup]
+2026-10-13T14:58:26.9667380Z ##[group]Determining the checkout info
+2026-10-13T14:58:26.9668210Z ##[endgroup]
+2026-10-13T14:58:26.9677780Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-13T14:58:26.9880380Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-13T14:58:26.9984840Z ##[group]Checking out the ref
+2026-10-13T14:58:26.9988640Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/16485/merge
+2026-10-13T14:58:27.8616930Z HEAD is now at 64b7b8a Merge accb5d50ed28b3160ca38628a720db9ffd387470 into 61050e9323e742539dc2360236671110e37329e6
+2026-10-13T14:58:27.8628280Z ##[endgroup]
+2026-10-13T14:58:27.8792170Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-13T14:58:27.8881580Z 64b7b8a0bf2f035f263f0457c4f44f16e04d20cf
+2026-10-13T14:58:27.8894370Z ##[group]Removing auth
+2026-10-13T14:58:27.8894900Z Removing SSH command configuration
+2026-10-13T14:58:27.8897920Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-13T14:58:27.8985360Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-13T14:58:28.1294590Z Removing HTTP extra header
+2026-10-13T14:58:28.1366900Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-13T14:58:28.1460440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-13T14:58:28.3260420Z Removing includeIf entries pointing to credentials config files
+2026-10-13T14:58:28.3261560Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-13T14:58:28.3296040Z includeif.gitdir:/Users/runner/work/jest/jest/.git.path
+2026-10-13T14:58:28.3304630Z includeif.gitdir:/Users/runner/work/jest/jest/.git/worktrees/*.path
+2026-10-13T14:58:28.3306230Z includeif.gitdir:/github/workspace/.git.path
+2026-10-13T14:58:28.3307250Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-13T14:58:28.3322310Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/jest/jest/.git.path
+2026-10-13T14:58:28.3438720Z /Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:28.3466740Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/jest/jest/.git.path \/Users\/runner\/work\/_temp\/git\-credentials\-730e534e\-8095\-418e\-a5c9\-49b7321a444f\.config
+2026-10-13T14:58:28.3625790Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/jest/jest/.git/worktrees/*.path
+2026-10-13T14:58:28.3702500Z /Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:28.3709200Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/jest/jest/.git/worktrees/*.path \/Users\/runner\/work\/_temp\/git\-credentials\-730e534e\-8095\-418e\-a5c9\-49b7321a444f\.config
+2026-10-13T14:58:28.3794420Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-13T14:58:28.3904930Z /github/runner_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:28.3919250Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-730e534e\-8095\-418e\-a5c9\-49b7321a444f\.config
+2026-10-13T14:58:28.4040660Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-13T14:58:28.4107300Z /github/runner_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config
+2026-10-13T14:58:28.4119040Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-730e534e\-8095\-418e\-a5c9\-49b7321a444f\.config
+2026-10-13T14:58:28.4194530Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-13T14:58:28.5319930Z Removing credentials config '/Users/runner/work/_temp/git-credentials-730e534e-8095-418e-a5c9-49b7321a444f.config'
+2026-10-13T14:58:28.5330910Z ##[endgroup]
+2026-10-13T14:58:28.5783020Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+2026-10-13T14:58:28.5783380Z with:
+2026-10-13T14:58:28.5783650Z   node-version: 24.x
+2026-10-13T14:58:28.5783870Z   cache: yarn
+2026-10-13T14:58:28.5784100Z   check-latest: false
+2026-10-13T14:58:28.5786280Z   token: ***
+2026-10-13T14:58:28.5786450Z   package-manager-cache: true
+2026-10-13T14:58:28.5786770Z ##[endgroup]
+2026-10-13T14:58:28.8959350Z Found in cache @ /Users/runner/hostedtoolcache/node/24.20.0/arm64
+2026-10-13T14:58:28.8960290Z ##[group]Environment details
+2026-10-13T14:58:30.2109140Z node: v24.20.0
+2026-10-13T14:58:30.2110760Z npm: 11.19.0
+2026-10-13T14:58:30.2112860Z yarn: 4.18.0
+2026-10-13T14:58:30.2121550Z ##[endgroup]
+2026-10-13T14:58:30.2143740Z [command]/Users/runner/.yarn/bin/yarn --version
+2026-10-13T14:58:30.8014850Z 4.18.0
+2026-10-13T14:58:30.8186610Z [command]/Users/runner/.yarn/bin/yarn config get cacheFolder
+2026-10-13T14:58:31.4963990Z /Users/runner/.yarn/berry/cache
+2026-10-13T14:58:31.5441230Z [command]/Users/runner/.yarn/bin/yarn config get enableGlobalCache
+2026-10-13T14:58:32.1638540Z [33mtrue[39m
+2026-10-13T14:58:32.5251880Z Cache hit for: node-cache-macOS-arm64-yarn-ac4a68b034651f798f499eada6639091514318c55dad11c90bf76f3bb7094364
+2026-10-13T14:58:33.8416800Z Received 0 of 159435654 (0.0%), 0.0 MBs/sec
+2026-10-13T14:58:34.8456710Z Received 67108864 of 159435654 (42.1%), 31.9 MBs/sec
+2026-10-13T14:58:35.8472290Z Received 125829120 of 159435654 (78.9%), 39.9 MBs/sec
+2026-10-13T14:58:36.8480230Z Received 134269830 of 159435654 (84.2%), 31.9 MBs/sec
+2026-10-13T14:58:37.2429430Z Received 159435654 of 159435654 (100.0%), 34.6 MBs/sec
+2026-10-13T14:58:37.2495940Z Cache Size: ~152 MB (159435654 B)
+2026-10-13T14:58:37.2541860Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/d5ed9990-5d52-490f-b597-a2e9db130741/cache.tzst -P -C /Users/runner/work/jest/jest --delay-directory-restore --use-compress-program unzstd
+2026-10-13T14:58:38.2823190Z Cache restored successfully
+2026-10-13T14:58:38.2931580Z Cache restored from key: node-cache-macOS-arm64-yarn-ac4a68b034651f798f499eada6639091514318c55dad11c90bf76f3bb7094364
+2026-10-13T14:58:38.3365530Z ##[group]Run yarn --immutable
+2026-10-13T14:58:38.3366060Z [36;1myarn --immutable[0m
+2026-10-13T14:58:38.3497630Z shell: /bin/bash -e {0}
+2026-10-13T14:58:38.3498040Z ##[endgroup]
+2026-10-13T14:58:39.1674510Z [93m➤[39m YN0000: Yarn detected that the current workflow is executed from a public pull request. For safety the hardened mode has been enabled.
+2026-10-13T14:58:39.1688320Z [93m➤[39m YN0000: It will prevent malicious lockfile manipulations, in exchange for a slower install time. You can opt-out if necessary; check our documentation for more details.
+2026-10-13T14:58:39.1689150Z 
+2026-10-13T14:58:39.1689780Z [94m➤[39m YN0000: · Yarn 4.18.0
+2026-10-13T14:58:39.1808520Z [94m➤[39m [90mYN0000[39m: ┌ Resolution step
+2026-10-13T14:58:39.1810170Z ##[group]Resolution step
+2026-10-13T14:58:51.9528710Z ##[endgroup]
+2026-10-13T14:58:51.9539000Z [94m➤[39m [90mYN0000[39m: └ Completed in 12s 771ms
+2026-10-13T14:58:51.9541130Z [94m➤[39m [90mYN0000[39m: ┌ Post-resolution validation
+2026-10-13T14:58:51.9545950Z ##[group]Post-resolution validation
+2026-10-13T14:58:51.9548310Z [93m➤[39m YN0060: │ [38;5;166m@babel/[39m[38;5;173mcore[39m is listed by your project with version [38;5;111m7.29.7[39m ([38;5;111mpf247de[39m), which doesn't satisfy what [38;5;166m@babel/[39m[38;5;173mpreset-react[39m and other dependencies request ([91mbut they have non-overlapping ranges![39m).
+2026-10-13T14:58:51.9551450Z [93m➤[39m YN0060: │ [38;5;173mgraphql[39m is listed by your project with version [38;5;111m17.0.2[39m ([38;5;111mp1ae269[39m), which doesn't satisfy what [38;5;173mgraphql-request[39m and other dependencies request ([38;5;37m^14.0.0 || ^15.0.0 || ^16.0.0[39m).
+2026-10-13T14:58:51.9553770Z [93m➤[39m YN0060: │ [38;5;173mreact[39m is listed by your project with version [38;5;111m19.3.0[39m ([38;5;111mpbfd061[39m), which doesn't satisfy what [38;5;173mreact-test-renderer[39m and other dependencies request ([91mbut they have non-overlapping ranges![39m).
+2026-10-13T14:58:51.9563190Z [93m➤[39m YN0002: │ [38;5;166m@jest/[39m[38;5;173mdiff-sequences[39m[38;5;111m@[39m[38;5;111mworkspace:packages/diff-sequences[39m doesn't provide [38;5;166m@jest/[39m[38;5;173mglobals[39m ([38;5;111mp03fd70[39m), requested by [38;5;166m@fast-check/[39m[38;5;173mjest[39m.
+2026-10-13T14:58:51.9565550Z [93m➤[39m YN0002: │ [38;5;173mbabel-preset-jest[39m[38;5;111m@[39m[38;5;111mworkspace:packages/babel-preset-jest[39m doesn't provide [38;5;166m@babel/[39m[38;5;173mcore[39m ([38;5;111mpa5adb7[39m), requested by [38;5;173mbabel-preset-current-node-syntax[39m.
+2026-10-13T14:58:51.9567750Z [93m➤[39m YN0002: │ [38;5;173mcreate-jest[39m[38;5;111m@[39m[38;5;111mworkspace:packages/create-jest[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp9c2ade[39m), requested by [38;5;173mjest-config[39m.
+2026-10-13T14:58:51.9569920Z [93m➤[39m YN0002: │ [38;5;173mexample-react-native[39m[38;5;111m@[39m[38;5;111mworkspace:examples/react-native[39m doesn't provide [38;5;166m@types/[39m[38;5;173mreact[39m ([38;5;111mp0285ab[39m), requested by [38;5;166m@react-native/[39m[38;5;173mjest-preset[39m and other dependencies.
+2026-10-13T14:58:51.9572000Z [93m➤[39m YN0002: │ [38;5;173mexpect[39m[38;5;111m@[39m[38;5;111mworkspace:packages/expect[39m doesn't provide [38;5;166m@jest/[39m[38;5;173mglobals[39m ([38;5;111mp9fb730[39m), requested by [38;5;166m@fast-check/[39m[38;5;173mjest[39m.
+2026-10-13T14:58:51.9576420Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli [023ef][39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mpdec1f7[39m), requested by [38;5;173mjest-config[39m.
+2026-10-13T14:58:51.9580490Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli [73877][39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp6688de[39m), requested by [38;5;173mjest-config[39m.
+2026-10-13T14:58:51.9582500Z [93m➤[39m YN0002: │ [38;5;173mjest-cli[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-cli[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mpdd7483[39m), requested by [38;5;173mjest-config[39m.
+2026-10-13T14:58:51.9584400Z [93m➤[39m YN0002: │ [38;5;173mjest-config[39m[38;5;111m@[39m[38;5;111mworkspace:packages/jest-config[39m doesn't provide [38;5;166m@types/[39m[38;5;173mnode[39m ([38;5;111mp4a73ba[39m), requested by [38;5;173mts-node[39m.
+2026-10-13T14:58:51.9587040Z [93m➤[39m YN0002: │ [38;5;173mjest-website[39m[38;5;111m@[39m[38;5;111mworkspace:website[39m doesn't provide [38;5;166m@mdx-js/[39m[38;5;173mreact[39m ([38;5;111mp1a83d4[39m), requested by [38;5;166m@docusaurus/[39m[38;5;173mcore[39m.
+2026-10-13T14:58:51.9589170Z [93m➤[39m YN0086: │ Some peer dependencies are incorrectly met by your project; run [38;5;111myarn explain peer-requirements <hash>[39m for details, where [38;5;111m<hash>[39m is the six-letter p-prefixed code.
+2026-10-13T14:58:51.9590540Z [93m➤[39m YN0086: │ Some peer dependencies are incorrectly met by dependencies; run [38;5;111myarn explain peer-requirements[39m for details.
+2026-10-13T14:58:52.0901970Z ##[endgroup]
+2026-10-13T14:58:52.0902780Z [94m➤[39m [90mYN0000[39m: └ Completed
+2026-10-13T14:58:52.0916830Z [94m➤[39m [90mYN0000[39m: ┌ Fetch step
+2026-10-13T14:58:52.0917520Z ##[group]Fetch step
+2026-10-13T14:58:52.9284810Z ##[endgroup]
+2026-10-13T14:58:52.9286700Z [94m➤[39m [90mYN0000[39m: └ Completed in 0s 837ms
+2026-10-13T14:58:53.0472800Z [94m➤[39m [90mYN0000[39m: ┌ Link step
+2026-10-13T14:58:53.0474660Z ##[group]Link step
+2026-10-13T14:59:23.3440890Z [93m➤[39m YN0004: │ [38;5;173mcore-js[39m[38;5;111m@[39m[38;5;111mnpm:3.50.0[39m lists build scripts, but all build scripts have been disabled.
+2026-10-13T14:59:23.5594100Z [94m➤[39m YN0007: │ [38;5;173munrs-resolver[39m[38;5;111m@[39m[38;5;111mnpm:1.12.2[39m must be built because it never has been before or the last one failed
+2026-10-13T14:59:23.5605890Z [94m➤[39m YN0007: │ [38;5;166m@parcel/[39m[38;5;173mwatcher[39m[38;5;111m@[39m[38;5;111mnpm:2.6.0[39m must be built because it never has been before or the last one failed
+2026-10-13T14:59:23.5614040Z [94m➤[39m YN0007: │ [38;5;173mesbuild[39m[38;5;111m@[39m[38;5;111mnpm:0.28.2[39m must be built because it never has been before or the last one failed
+2026-10-13T14:59:23.9306200Z ##[endgroup]
+2026-10-13T14:59:23.9307600Z [94m➤[39m [90mYN0000[39m: └ Completed in 30s 884ms
+2026-10-13T14:59:24.2400850Z [93m➤[39m YN0000: · Done with warnings in 45s 73ms
+2026-10-13T14:59:24.3847870Z ##[group]Run yarn build:js
+2026-10-13T14:59:24.3848300Z [36;1myarn build:js[0m
+2026-10-13T14:59:24.5180040Z shell: /bin/bash -e {0}
+2026-10-13T14:59:24.5180390Z ##[endgroup]
+2026-10-13T14:59:25.5387190Z  Bundling packages 
+2026-10-13T14:59:33.6555130Z  DONE 
+2026-10-13T14:59:33.7990290Z ##[group]Run SimenB/github-actions-cpu-cores@97330871fe1b7d3529392ea000e3d2c4b357e403
+2026-10-13T14:59:33.7990750Z ##[endgroup]
+2026-10-13T14:59:34.2974080Z ##[group]Run yarn workspace jest-environment-node test
+2026-10-13T14:59:34.2974600Z [36;1myarn workspace jest-environment-node test[0m
+2026-10-13T14:59:34.3051940Z shell: /bin/bash -e {0}
+2026-10-13T14:59:34.3052330Z ##[endgroup]
+2026-10-13T14:59:36.2621650Z GLOBALS_CLEANUP=off
+2026-10-13T14:59:38.5071250Z PASS packages/jest-environment-node/src/__tests__/node_environment.test.ts
+2026-10-13T14:59:38.5162100Z   ● Console
+2026-10-13T14:59:38.5162570Z 
+2026-10-13T14:59:38.5162820Z     console.warn
+2026-10-13T14:59:38.5163650Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:38.5164360Z         Current: 'off'
+2026-10-13T14:59:38.5164640Z         Given: 'on'
+2026-10-13T14:59:38.5164920Z 
+2026-10-13T14:59:38.5165320Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:38.5165750Z 
+2026-10-13T14:59:38.5165910Z     console.warn
+2026-10-13T14:59:38.5166870Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:38.5167360Z         Current: 'off'
+2026-10-13T14:59:38.5167730Z         Given: 'soft'
+2026-10-13T14:59:38.5168110Z 
+2026-10-13T14:59:38.5168520Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:38.5168820Z 
+2026-10-13T14:59:38.5461530Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_2.test.ts
+2026-10-13T14:59:38.5685880Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_1.test.ts
+2026-10-13T14:59:38.5811340Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_3.test.ts
+2026-10-13T14:59:38.5831080Z 
+2026-10-13T14:59:38.5835840Z Test Suites: 4 passed, 4 total
+2026-10-13T14:59:38.5836270Z Tests:       18 passed, 18 total
+2026-10-13T14:59:38.5838220Z Snapshots:   0 total
+2026-10-13T14:59:38.5838930Z Time:        0.852 s
+2026-10-13T14:59:38.5841760Z Ran all test suites matching packages/jest-environment-node/src/__tests__.
+2026-10-13T14:59:39.6633170Z GLOBALS_CLEANUP=soft
+2026-10-13T14:59:41.5443700Z PASS packages/jest-environment-node/src/__tests__/node_environment.test.ts
+2026-10-13T14:59:41.5541550Z   ● Console
+2026-10-13T14:59:41.5542050Z 
+2026-10-13T14:59:41.5544010Z     console.warn
+2026-10-13T14:59:41.5546020Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:41.5547730Z         Current: 'soft'
+2026-10-13T14:59:41.5549770Z         Given: 'on'
+2026-10-13T14:59:41.5552900Z 
+2026-10-13T14:59:41.5553920Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:41.5559520Z 
+2026-10-13T14:59:41.5559900Z     console.warn
+2026-10-13T14:59:41.5560790Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:41.5564790Z         Current: 'soft'
+2026-10-13T14:59:41.5570930Z         Given: 'off'
+2026-10-13T14:59:41.5571720Z 
+2026-10-13T14:59:41.5572700Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:41.5573590Z 
+2026-10-13T14:59:41.5869170Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_2.test.ts
+2026-10-13T14:59:41.6226540Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_1.test.ts
+2026-10-13T14:59:41.6509530Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_3.test.ts
+2026-10-13T14:59:41.6545850Z 
+2026-10-13T14:59:41.6552090Z Test Suites: 4 passed, 4 total
+2026-10-13T14:59:41.6552620Z Tests:       18 passed, 18 total
+2026-10-13T14:59:41.6553080Z Snapshots:   0 total
+2026-10-13T14:59:41.6553370Z Time:        1.042 s
+2026-10-13T14:59:41.6553890Z Ran all test suites matching packages/jest-environment-node/src/__tests__.
+2026-10-13T14:59:42.6924570Z GLOBALS_CLEANUP=on
+2026-10-13T14:59:44.5502990Z PASS packages/jest-environment-node/src/__tests__/node_environment.test.ts
+2026-10-13T14:59:44.5605120Z   ● Console
+2026-10-13T14:59:44.5605690Z 
+2026-10-13T14:59:44.5606040Z     console.warn
+2026-10-13T14:59:44.5607280Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:44.5610530Z         Current: 'on'
+2026-10-13T14:59:44.5611400Z         Given: 'soft'
+2026-10-13T14:59:44.5611690Z 
+2026-10-13T14:59:44.5612310Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:44.5612920Z 
+2026-10-13T14:59:44.5613320Z     console.warn
+2026-10-13T14:59:44.5614580Z       [jest-util] garbage collection deletion mode already initialized, ignoring new mode
+2026-10-13T14:59:44.5615620Z         Current: 'on'
+2026-10-13T14:59:44.5616310Z         Given: 'off'
+2026-10-13T14:59:44.5616710Z 
+2026-10-13T14:59:44.5617230Z       at warn (packages/jest-util/build/index.js:433:15)
+2026-10-13T14:59:44.5618010Z 
+2026-10-13T14:59:44.5926880Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_1.test.ts
+2026-10-13T14:59:44.6142830Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_2.test.ts
+2026-10-13T14:59:44.6312920Z PASS packages/jest-environment-node/src/__tests__/globals_cleanup_3.test.ts
+2026-10-13T14:59:44.6343650Z 
+2026-10-13T14:59:44.6350040Z Test Suites: 4 passed, 4 total
+2026-10-13T14:59:44.6354000Z Tests:       18 passed, 18 total
+2026-10-13T14:59:44.6355120Z Snapshots:   0 total
+2026-10-13T14:59:44.6356340Z Time:        1.02 s
+2026-10-13T14:59:44.6356860Z Ran all test suites matching packages/jest-environment-node/src/__tests__.
+2026-10-13T14:59:44.8496480Z ##[group]Run nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60
+2026-10-13T14:59:44.8496810Z with:
+2026-10-13T14:59:44.8497130Z   timeout_minutes: 10
+2026-10-13T14:59:44.8497290Z   max_attempts: 3
+2026-10-13T14:59:44.8497550Z   retry_on: error
+2026-10-13T14:59:44.8497940Z   command: yarn test-ci-partial:parallel --max-workers 3 --shard=3/3
+2026-10-13T14:59:44.8498290Z   retry_wait_seconds: 10
+2026-10-13T14:59:44.8498620Z   polling_interval_seconds: 1
+2026-10-13T14:59:44.8498900Z   warning_on_retry: true
+2026-10-13T14:59:44.8499080Z   continue_on_error: false
+2026-10-13T14:59:44.8499400Z ##[endgroup]
+2026-10-13T14:59:44.9738280Z ##[group]Attempt 1
+2026-10-13T14:59:47.5246110Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T14:59:47.5250510Z [33m[39m
+2026-10-13T14:59:47.5253580Z [33m  Option [1m"projects"[22m is not supported in an individual project configuration.[39m
+2026-10-13T14:59:47.5254340Z [33m  Move it to the root configuration.[39m
+2026-10-13T14:59:47.5255010Z [33m[39m
+2026-10-13T14:59:47.5255480Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T14:59:47.5256590Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T14:59:47.5257020Z [33m[39m
+2026-10-13T14:59:47.5257430Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T14:59:47.5257800Z [33m[39m
+2026-10-13T14:59:47.5258520Z [33m  Option [1m"watchPlugins"[22m is not supported in an individual project configuration.[39m
+2026-10-13T14:59:47.5259270Z [33m  Move it to the root configuration.[39m
+2026-10-13T14:59:47.5259660Z [33m[39m
+2026-10-13T14:59:47.5259980Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T14:59:47.5260410Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T14:59:47.5260720Z [33m[39m
+2026-10-13T14:59:56.2985820Z ..........react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3089590Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3189470Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3292980Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3394350Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3495970Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3569130Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3669600Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3771750Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3873760Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.3979430Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4097870Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4200770Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4303960Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4408590Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4511590Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4618700Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4723660Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4829440Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.4934850Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5034450Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5136110Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5250800Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5352780Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5455310Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5579380Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5681370Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5682390Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5784190Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5885860Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.5984460Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6086900Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6188510Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6290880Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6390760Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6492510Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6594630Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6695590Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T14:59:56.6796580Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:00:17.0508800Z ......Mercurial (hg) is not installed - skipping some tests
+2026-10-13T15:00:17.0613660Z Sapling (sl) is not installed - skipping some tests
+2026-10-13T15:00:53.1449410Z .............................
+2026-10-13T15:00:53.1567740Z /Users/runner/work/jest/jest/packages/jest-circus/src/__tests__/utils.test.ts
+2026-10-13T15:00:53.1680020Z 
+2026-10-13T15:00:53.1808750Z   [1m● [22mTest suite failed to run
+2026-10-13T15:00:53.1948520Z 
+2026-10-13T15:00:53.2037080Z     A jest worker process (pid=2406) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:00:53.2043090Z 
+2026-10-13T15:00:53.2047400Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:00:53.2051550Z 
+2026-10-13T15:02:00.2172000Z ...........................................................................[SKIP] Does not work on jest-circus
+2026-10-13T15:02:00.2490800Z .[SKIP] Does not work on jest-circus
+2026-10-13T15:02:28.0763670Z .............................................................[33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:02:28.0765830Z [33m  Current: 'on'[39m
+2026-10-13T15:02:28.0766260Z [33m  Given: 'soft'[39m
+2026-10-13T15:02:28.0767780Z [33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:02:28.0768600Z [33m  Current: 'on'[39m
+2026-10-13T15:02:28.0769000Z [33m  Given: 'off'[39m
+2026-10-13T15:02:28.8329500Z ..
+2026-10-13T15:02:28.8431890Z 
+2026-10-13T15:02:28.8462840Z 
+2026-10-13T15:02:28.8467670Z [1mSummary of all failing tests[22m
+2026-10-13T15:02:28.8498560Z [0m[7m[1m[31m FAIL [39m[22m[27m[0m [2mpackages/jest-circus/src/__tests__/[22m[1mutils.test.ts[22m
+2026-10-13T15:02:28.8509810Z   [1m● [22mTest suite failed to run
+2026-10-13T15:02:28.8512450Z 
+2026-10-13T15:02:28.8514370Z     A jest worker process (pid=2406) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:02:28.8516990Z 
+2026-10-13T15:02:28.8518110Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:02:28.8522190Z 
+2026-10-13T15:02:28.8522200Z 
+2026-10-13T15:02:28.8524440Z [1mTest Suites: [22m[1m[31m1 failed[39m[22m, [1m[33m2 skipped[39m[22m, [1m[32m181 passed[39m[22m, 182 of 184 total
+2026-10-13T15:02:28.8528430Z [1mTests:       [22m[1m[33m186 skipped[39m[22m, [1m[32m2281 passed[39m[22m, 2467 total
+2026-10-13T15:02:28.8531150Z [1mSnapshots:   [22m[1m[32m982 passed[39m[22m, 982 total
+2026-10-13T15:02:28.8532710Z [1mTime:[22m        [1m[33m160.543 s[39m[22m
+2026-10-13T15:02:28.8536520Z [2mRan all test suites[22m[2m in [22m7[2m projects[22m[2m.[22m
+2026-10-13T15:02:39.5561940Z ##[warning]Attempt 1 failed. Reason: Child_process exited with error code 1
+2026-10-13T15:02:39.5615050Z ##[endgroup]
+2026-10-13T15:02:39.5716880Z ##[group]Attempt 2
+2026-10-13T15:02:42.0808730Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T15:02:42.0810180Z [33m[39m
+2026-10-13T15:02:42.0811980Z [33m  Option [1m"projects"[22m is not supported in an individual project configuration.[39m
+2026-10-13T15:02:42.0813740Z [33m  Move it to the root configuration.[39m
+2026-10-13T15:02:42.0814730Z [33m[39m
+2026-10-13T15:02:42.0820000Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T15:02:42.0821890Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T15:02:42.0834020Z [33m[39m
+2026-10-13T15:02:42.0835560Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T15:02:42.0839560Z [33m[39m
+2026-10-13T15:02:42.0841320Z [33m  Option [1m"watchPlugins"[22m is not supported in an individual project configuration.[39m
+2026-10-13T15:02:42.0857290Z [33m  Move it to the root configuration.[39m
+2026-10-13T15:02:42.0858470Z [33m[39m
+2026-10-13T15:02:42.0860470Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T15:02:42.0861980Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T15:02:42.0863490Z [33m[39m
+2026-10-13T15:03:30.5379240Z ..........Mercurial (hg) is not installed - skipping some tests
+2026-10-13T15:03:30.5487010Z Sapling (sl) is not installed - skipping some tests
+2026-10-13T15:04:15.2448370Z ....................................................................................................react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2529450Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2534350Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2594080Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2597610Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2605900Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2611940Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2616040Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2688980Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2689970Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2690760Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2691900Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2914370Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2921130Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2921880Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2922670Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2923490Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2924480Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2925290Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2927350Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2928230Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2932420Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2933530Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2934350Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2935130Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2935890Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2936660Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2937580Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2938310Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2938990Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2941260Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2942230Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2942910Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2943670Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2944430Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2945140Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2945850Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2946610Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2947320Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:04:15.2947870Z .
+2026-10-13T15:04:15.2948560Z /Users/runner/work/jest/jest/packages/expect/src/__tests__/matchers-toStrictEqual.property.test.ts
+2026-10-13T15:04:15.2949410Z 
+2026-10-13T15:04:15.2952590Z   [1m● [22mTest suite failed to run
+2026-10-13T15:04:15.2952800Z 
+2026-10-13T15:04:15.2953470Z     A jest worker process (pid=17538) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:04:15.2954100Z 
+2026-10-13T15:04:15.2954560Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:04:15.2954950Z 
+2026-10-13T15:04:15.9885440Z .......[33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:04:15.9888070Z [33m  Current: 'on'[39m
+2026-10-13T15:04:15.9888360Z [33m  Given: 'soft'[39m
+2026-10-13T15:04:15.9889590Z [33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:04:15.9890390Z [33m  Current: 'on'[39m
+2026-10-13T15:04:15.9890700Z [33m  Given: 'off'[39m
+2026-10-13T15:04:16.7545090Z ............[SKIP] Does not work on jest-circus
+2026-10-13T15:04:19.1506550Z ......................................................[SKIP] Does not work on jest-circus
+2026-10-13T15:04:19.2962280Z 
+2026-10-13T15:04:19.2963830Z 
+2026-10-13T15:04:19.2963940Z 
+2026-10-13T15:04:19.2969050Z [1mSummary of all failing tests[22m
+2026-10-13T15:04:19.3010650Z [0m[7m[1m[31m FAIL [39m[22m[27m[0m [2mpackages/expect/src/__tests__/[22m[1mmatchers-toStrictEqual.property.test.ts[22m
+2026-10-13T15:04:19.3014400Z   [1m● [22mTest suite failed to run
+2026-10-13T15:04:19.3016930Z 
+2026-10-13T15:04:19.3019170Z     A jest worker process (pid=17538) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:04:19.3019970Z 
+2026-10-13T15:04:19.3020650Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:04:19.3021150Z 
+2026-10-13T15:04:19.3021160Z 
+2026-10-13T15:04:19.3021650Z [1mTest Suites: [22m[1m[31m1 failed[39m[22m, [1m[33m2 skipped[39m[22m, [1m[32m181 passed[39m[22m, 182 of 184 total
+2026-10-13T15:04:19.3023680Z [1mTests:       [22m[1m[33m186 skipped[39m[22m, [1m[32m2289 passed[39m[22m, 2475 total
+2026-10-13T15:04:19.3024460Z [1mSnapshots:   [22m[1m[32m982 passed[39m[22m, 982 total
+2026-10-13T15:04:19.3025040Z [1mTime:[22m        96.704 s, estimated 148 s
+2026-10-13T15:04:19.3025680Z [2mRan all test suites[22m[2m in [22m7[2m projects[22m[2m.[22m
+2026-10-13T15:04:29.9445240Z ##[warning]Attempt 2 failed. Reason: Child_process exited with error code 1
+2026-10-13T15:04:29.9512620Z ##[endgroup]
+2026-10-13T15:04:29.9612850Z ##[group]Attempt 3
+2026-10-13T15:04:31.4461490Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T15:04:31.4462060Z [33m[39m
+2026-10-13T15:04:31.4462900Z [33m  Option [1m"projects"[22m is not supported in an individual project configuration.[39m
+2026-10-13T15:04:31.4463450Z [33m  Move it to the root configuration.[39m
+2026-10-13T15:04:31.4463850Z [33m[39m
+2026-10-13T15:04:31.4464300Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T15:04:31.4464780Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T15:04:31.4465230Z [33m[39m
+2026-10-13T15:04:31.4465670Z [33m[1m[1m●[22m[1m Validation Warning[22m:[39m
+2026-10-13T15:04:31.4465980Z [33m[39m
+2026-10-13T15:04:31.4466570Z [33m  Option [1m"watchPlugins"[22m is not supported in an individual project configuration.[39m
+2026-10-13T15:04:31.4467220Z [33m  Move it to the root configuration.[39m
+2026-10-13T15:04:31.4467500Z [33m[39m
+2026-10-13T15:04:31.4468830Z [33m  [1mConfiguration Documentation:[22m[39m
+2026-10-13T15:04:31.4469540Z [33m  https://jestjs.io/docs/configuration[39m
+2026-10-13T15:04:31.4469870Z [33m[39m
+2026-10-13T15:04:56.6584250Z .......Mercurial (hg) is not installed - skipping some tests
+2026-10-13T15:04:56.6691580Z Sapling (sl) is not installed - skipping some tests
+2026-10-13T15:04:59.3480020Z .
+2026-10-13T15:04:59.3581630Z /Users/runner/work/jest/jest/packages/jest-circus/src/__tests__/utils.test.ts
+2026-10-13T15:04:59.3683100Z 
+2026-10-13T15:04:59.3800540Z   [1m● [22mTest suite failed to run
+2026-10-13T15:04:59.3902860Z 
+2026-10-13T15:04:59.4006870Z     A jest worker process (pid=32506) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:04:59.4116240Z 
+2026-10-13T15:04:59.4219400Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:04:59.4325970Z 
+2026-10-13T15:05:53.0503500Z ......................................................................................[SKIP] Does not work on jest-circus
+2026-10-13T15:05:53.7546440Z ....................[33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:05:53.7561110Z [33m  Current: 'on'[39m
+2026-10-13T15:05:53.7562610Z [33m  Given: 'soft'[39m
+2026-10-13T15:05:53.7564170Z [33m[jest-util] garbage collection deletion mode already initialized, ignoring new mode[39m
+2026-10-13T15:05:53.7565430Z [33m  Current: 'on'[39m
+2026-10-13T15:05:53.7567040Z [33m  Given: 'off'[39m
+2026-10-13T15:05:53.8759670Z ..react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8767190Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8769280Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8771010Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8771870Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8772690Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8773380Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8774210Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8774980Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8775630Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8776610Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8777360Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8778080Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8778820Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8779550Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8780240Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8781000Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8781750Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8782440Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8783210Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8783970Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8784690Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8785440Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8786160Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8786820Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8787510Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8788280Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8812890Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8813640Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8814470Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8815220Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8816120Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8818080Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8818890Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8819700Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8820470Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8821230Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8822010Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:53.8822800Z react-test-renderer is deprecated. See https://react.dev/warnings/react-test-renderer
+2026-10-13T15:05:54.3034160Z ..............[SKIP] Does not work on jest-circus
+2026-10-13T15:05:55.2091090Z ......................................................
+2026-10-13T15:05:55.2091580Z 
+2026-10-13T15:05:55.2091650Z 
+2026-10-13T15:05:55.2093100Z [1mSummary of all failing tests[22m
+2026-10-13T15:05:55.2108220Z [0m[7m[1m[31m FAIL [39m[22m[27m[0m [2mpackages/jest-circus/src/__tests__/[22m[1mutils.test.ts[22m
+2026-10-13T15:05:55.2109430Z   [1m● [22mTest suite failed to run
+2026-10-13T15:05:55.2109640Z 
+2026-10-13T15:05:55.2110250Z     A jest worker process (pid=32506) was terminated by another process: signal=SIGSEGV, exitCode=null. Operating system logs may contain more information on why this occurred.
+2026-10-13T15:05:55.2110810Z 
+2026-10-13T15:05:55.2112820Z       [2mat ChildProcessWorker._onExit ([22mpackages/jest-worker/build/index.js[2m:964:23)[22m
+2026-10-13T15:05:55.2113320Z 
+2026-10-13T15:05:55.2113320Z 
+2026-10-13T15:05:55.2115750Z [1mTest Suites: [22m[1m[31m1 failed[39m[22m, [1m[33m2 skipped[39m[22m, [1m[32m181 passed[39m[22m, 182 of 184 total
+2026-10-13T15:05:55.2119790Z [1mTests:       [22m[1m[33m186 skipped[39m[22m, [1m[32m2281 passed[39m[22m, 2467 total
+2026-10-13T15:05:55.2120840Z [1mSnapshots:   [22m[1m[32m982 passed[39m[22m, 982 total
+2026-10-13T15:05:55.2121350Z [1mTime:[22m        83.631 s, estimated 92 s
+2026-10-13T15:05:55.2121930Z [2mRan all test suites[22m[2m in [22m7[2m projects[22m[2m.[22m
+2026-10-13T15:06:06.2180710Z ##[endgroup]
+2026-10-13T15:06:06.2217390Z ##[error]Final attempt failed. Child_process exited with error code 1
+2026-10-13T15:06:06.2735940Z Post job cleanup.
+2026-10-13T15:06:06.5306010Z [command]/opt/homebrew/bin/git version
+2026-10-13T15:06:06.5539680Z git version 2.55.0
+2026-10-13T15:06:06.5567460Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/cdc39add-b1f3-4c0d-9551-26385dda038b/.gitconfig'
+2026-10-13T15:06:06.5586610Z Temporarily overriding HOME='/Users/runner/work/_temp/cdc39add-b1f3-4c0d-9551-26385dda038b' before making global git config changes
+2026-10-13T15:06:06.5589220Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-13T15:06:06.5595190Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/jest/jest
+2026-10-13T15:06:06.5738010Z Removing SSH command configuration
+2026-10-13T15:06:06.5738790Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-13T15:06:06.5857440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-13T15:06:06.8608410Z Removing HTTP extra header
+2026-10-13T15:06:06.8609300Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-13T15:06:06.8661400Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-13T15:06:07.0850080Z Removing includeIf entries pointing to credentials config files
+2026-10-13T15:06:07.0872760Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-13T15:06:07.1177790Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-13T15:06:07.2488530Z Cleaning up orphan processes

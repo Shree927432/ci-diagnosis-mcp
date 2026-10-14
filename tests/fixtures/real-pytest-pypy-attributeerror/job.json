@@ -1,0 +1,124 @@
+{
+ "id": 115955643318,
+ "run_id": 38593926991,
+ "workflow_name": "CI",
+ "head_branch": "vp/fix-gc-double-count",
+ "run_url": "https://api.github.com/repos/pydantic/pydantic/actions/runs/38593926991",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOBWBCuM8AAAAa_36ztg",
+ "head_sha": "ba3d452bd97d7d19cba1a4dcf5fa7fc2e437fda8",
+ "url": "https://api.github.com/repos/pydantic/pydantic/actions/jobs/115955643318",
+ "html_url": "https://github.com/pydantic/pydantic/actions/runs/38593926991/job/115955643318",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-14T15:57:41Z",
+ "started_at": "2026-10-14T15:57:55Z",
+ "completed_at": "2026-10-14T16:02:04Z",
+ "name": "Test macos-latest / pypy3.11",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T15:57:55Z",
+   "completed_at": "2026-10-14T15:57:57Z"
+  },
+  {
+   "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T15:57:57Z",
+   "completed_at": "2026-10-14T15:58:01Z"
+  },
+  {
+   "name": "Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T15:58:01Z",
+   "completed_at": "2026-10-14T15:58:07Z"
+  },
+  {
+   "name": "Install dependencies",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-14T15:58:07Z",
+   "completed_at": "2026-10-14T15:59:20Z"
+  },
+  {
+   "name": "Run uv run python -c \"import pydantic.version; print(pydantic.version.version_info())\"",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-14T15:59:20Z",
+   "completed_at": "2026-10-14T15:59:22Z"
+  },
+  {
+   "name": "Run mkdir coverage",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-14T15:59:22Z",
+   "completed_at": "2026-10-14T15:59:22Z"
+  },
+  {
+   "name": "Run pytest",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 7,
+   "started_at": "2026-10-14T15:59:22Z",
+   "completed_at": "2026-10-14T15:59:22Z"
+  },
+  {
+   "name": "Run pytest (no coverage)",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 8,
+   "started_at": "2026-10-14T15:59:22Z",
+   "completed_at": "2026-10-14T16:01:55Z"
+  },
+  {
+   "name": "Store coverage files",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 9,
+   "started_at": "2026-10-14T16:01:55Z",
+   "completed_at": "2026-10-14T16:01:55Z"
+  },
+  {
+   "name": "Post Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 17,
+   "started_at": "2026-10-14T16:01:55Z",
+   "completed_at": "2026-10-14T16:01:55Z"
+  },
+  {
+   "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 18,
+   "started_at": "2026-10-14T16:01:55Z",
+   "completed_at": "2026-10-14T16:01:57Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 19,
+   "started_at": "2026-10-14T16:01:57Z",
+   "completed_at": "2026-10-14T16:02:01Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/pydantic/pydantic/check-runs/115955643318",
+ "labels": [
+  "macos-latest"
+ ],
+ "runner_id": 1002827170,
+ "runner_name": "GitHub Actions 1002827170",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

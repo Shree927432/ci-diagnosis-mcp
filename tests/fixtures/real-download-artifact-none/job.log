@@ -1,0 +1,143 @@
+﻿2026-10-14T15:46:46.7858494Z Current runner version: '2.337.0'
+2026-10-14T15:46:46.7884409Z ##[group]Runner Image Provisioner
+2026-10-14T15:46:46.7885279Z Hosted Compute Agent
+2026-10-14T15:46:46.7886024Z Version: 20261002.596
+2026-10-14T15:46:46.7886744Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-14T15:46:46.7887627Z Build Date: 2026-10-02T22:28:27Z
+2026-10-14T15:46:46.7888355Z Worker ID: {857d996a-c9c7-4e07-9ddb-2a429cd41f5e}
+2026-10-14T15:46:46.7889070Z Region: westus
+2026-10-14T15:46:46.7889725Z Cloud: Azure
+2026-10-14T15:46:46.7890298Z ##[endgroup]
+2026-10-14T15:46:46.7892110Z ##[group]Operating System
+2026-10-14T15:46:46.7892779Z Ubuntu
+2026-10-14T15:46:46.7893321Z 24.04.5
+2026-10-14T15:46:46.7893943Z LTS
+2026-10-14T15:46:46.7894826Z ##[endgroup]
+2026-10-14T15:46:46.7895487Z ##[group]Runner Image
+2026-10-14T15:46:46.7896177Z Image: ubuntu-24.04
+2026-10-14T15:46:46.7896755Z Version: 20261004.327.1
+2026-10-14T15:46:46.7898140Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-14T15:46:46.7899798Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-14T15:46:46.7900821Z ##[endgroup]
+2026-10-14T15:46:46.7902028Z ##[group]GITHUB_TOKEN Permissions
+2026-10-14T15:46:46.7903933Z Metadata: read
+2026-10-14T15:46:46.7904901Z Statuses: write
+2026-10-14T15:46:46.7905521Z ##[endgroup]
+2026-10-14T15:46:46.7907558Z Secret source: Actions
+2026-10-14T15:46:46.7908645Z Cache mode: read
+2026-10-14T15:46:46.7909631Z Prepare workflow directory
+2026-10-14T15:46:46.8342913Z Prepare all required actions
+2026-10-14T15:46:46.8404002Z Getting action download info
+2026-10-14T15:46:47.2231216Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-14T15:46:47.8397476Z Download action repository 'dawidd6/action-download-artifact@d63b86af1b34672e53c440b1b83979861906bad7' (SHA:d63b86af1b34672e53c440b1b83979861906bad7)
+2026-10-14T15:46:50.4252140Z Complete job name: upload-previews
+2026-10-14T15:46:50.4969079Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-14T15:46:50.4969855Z with:
+2026-10-14T15:46:50.4970166Z   python-version: 3.10
+2026-10-14T15:46:50.4970496Z   check-latest: false
+2026-10-14T15:46:50.4973077Z   token: ***
+2026-10-14T15:46:50.4973384Z   update-environment: true
+2026-10-14T15:46:50.4973726Z   allow-prereleases: false
+2026-10-14T15:46:50.4974216Z   freethreaded: false
+2026-10-14T15:46:50.4974705Z ##[endgroup]
+2026-10-14T15:46:50.6248650Z ##[group]Installed versions
+2026-10-14T15:46:50.6293129Z Successfully set up CPython (3.10.22)
+2026-10-14T15:46:50.6294392Z ##[endgroup]
+2026-10-14T15:46:50.6515506Z ##[group]Run pip install smokeshow
+2026-10-14T15:46:50.6515974Z [36;1mpip install smokeshow[0m
+2026-10-14T15:46:50.6777294Z shell: /usr/bin/bash -e {0}
+2026-10-14T15:46:50.6777673Z env:
+2026-10-14T15:46:50.6778025Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:50.6778581Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-14T15:46:50.6779099Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:50.6779542Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:50.6779982Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:50.6780415Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-14T15:46:50.6780803Z ##[endgroup]
+2026-10-14T15:46:52.1461797Z Collecting smokeshow
+2026-10-14T15:46:52.1966129Z   Downloading smokeshow-0.5.0-py3-none-any.whl.metadata (5.6 kB)
+2026-10-14T15:46:52.2168609Z Collecting httpx>=0.24 (from smokeshow)
+2026-10-14T15:46:52.2200078Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-10-14T15:46:52.2571361Z Collecting typer>=0.8.0 (from smokeshow)
+2026-10-14T15:46:52.2612042Z   Downloading typer-0.27.3-py3-none-any.whl.metadata (16 kB)
+2026-10-14T15:46:52.2812261Z Collecting anyio (from httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.2843248Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-14T15:46:52.3031093Z Collecting certifi (from httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.3061102Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+2026-10-14T15:46:52.3228006Z Collecting httpcore==1.* (from httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.3257211Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-10-14T15:46:52.3427395Z Collecting idna (from httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.3455738Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-14T15:46:52.3564962Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.3597701Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-14T15:46:52.3723361Z Collecting shellingham>=1.3.0 (from typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.3752647Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-10-14T15:46:52.4046460Z Collecting rich>=13.8.0 (from typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.4079269Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-10-14T15:46:52.4179904Z Collecting annotated-doc>=0.0.2 (from typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.4209701Z   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+2026-10-14T15:46:52.4368862Z Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.4400573Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-14T15:46:52.4647851Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.4679101Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-10-14T15:46:52.4780747Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer>=0.8.0->smokeshow)
+2026-10-14T15:46:52.4808943Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-14T15:46:52.4938466Z Collecting exceptiongroup>=1.0.2 (from anyio->httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.4968819Z   Downloading exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+2026-10-14T15:46:52.5142499Z Collecting typing_extensions>=4.16.0 (from anyio->httpx>=0.24->smokeshow)
+2026-10-14T15:46:52.5172291Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-14T15:46:52.5268732Z Downloading smokeshow-0.5.0-py3-none-any.whl (8.4 kB)
+2026-10-14T15:46:52.5314968Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-10-14T15:46:52.5369890Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-10-14T15:46:52.5418779Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-14T15:46:52.5464365Z Downloading typer-0.27.3-py3-none-any.whl (123 kB)
+2026-10-14T15:46:52.5511025Z Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+2026-10-14T15:46:52.5558147Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-10-14T15:46:52.5625243Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-10-14T15:46:52.5714672Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 189.3 MB/s  0:00:00
+2026-10-14T15:46:52.5735001Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-14T15:46:52.5782595Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-14T15:46:52.5826257Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-10-14T15:46:52.5874404Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-14T15:46:52.5931041Z Downloading exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+2026-10-14T15:46:52.5978106Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-14T15:46:52.6032601Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-14T15:46:52.6088875Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+2026-10-14T15:46:52.7437582Z Installing collected packages: typing_extensions, shellingham, pygments, mdurl, idna, h11, certifi, annotated-doc, markdown-it-py, httpcore, exceptiongroup, rich, anyio, typer, httpx, smokeshow
+2026-10-14T15:46:54.0868744Z 
+2026-10-14T15:46:54.0893560Z Successfully installed annotated-doc-0.0.5 anyio-4.15.1 certifi-2026.7.22 exceptiongroup-1.3.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 markdown-it-py-4.2.0 mdurl-0.1.2 pygments-2.21.0 rich-15.0.0 shellingham-1.5.4 smokeshow-0.5.0 typer-0.27.3 typing_extensions-4.16.0
+2026-10-14T15:46:54.1557346Z ##[group]Run dawidd6/action-download-artifact@d63b86af1b34672e53c440b1b83979861906bad7
+2026-10-14T15:46:54.1557812Z with:
+2026-10-14T15:46:54.1558026Z   workflow: ci.yml
+2026-10-14T15:46:54.1558295Z   commit: a56de0bf60f4fa51ff9aed4391c7c921d0820169
+2026-10-14T15:46:54.1560871Z   github_token: ***
+2026-10-14T15:46:54.1561111Z   workflow_search: false
+2026-10-14T15:46:54.1561375Z   workflow_conclusion: success
+2026-10-14T15:46:54.1561644Z   repo: pydantic/pydantic
+2026-10-14T15:46:54.1561902Z   name_is_regexp: false
+2026-10-14T15:46:54.1562131Z   path: ./
+2026-10-14T15:46:54.1562332Z   allow_forks: false
+2026-10-14T15:46:54.1562556Z   check_artifacts: false
+2026-10-14T15:46:54.1562789Z   search_artifacts: false
+2026-10-14T15:46:54.1563039Z   skip_unpack: false
+2026-10-14T15:46:54.1563275Z   if_no_artifact_found: fail
+2026-10-14T15:46:54.1563514Z   use_unzip: false
+2026-10-14T15:46:54.1563730Z   merge_multiple: false
+2026-10-14T15:46:54.1563950Z env:
+2026-10-14T15:46:54.1564508Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:54.1564953Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-14T15:46:54.1565375Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:54.1565762Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:54.1566135Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-14T15:46:54.1566507Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-14T15:46:54.1566839Z ##[endgroup]
+2026-10-14T15:46:54.5465071Z ==> Repository: pydantic/pydantic
+2026-10-14T15:46:54.5465742Z ==> Artifact name: 
+2026-10-14T15:46:54.5466099Z ==> Local path: ./
+2026-10-14T15:46:54.5466575Z ==> Workflow name: ci.yml
+2026-10-14T15:46:54.5467134Z ==> Workflow conclusion: success
+2026-10-14T15:46:54.5467695Z ==> Commit: a56de0bf60f4fa51ff9aed4391c7c921d0820169
+2026-10-14T15:46:54.5468252Z ==> Allow forks: false
+2026-10-14T15:46:54.9641579Z ==> Skipping run from fork: Kropiunig/pydantic
+2026-10-14T15:46:54.9676595Z ##[error]no matching workflow run found with any artifacts?
+2026-10-14T15:46:55.0160980Z Cleaning up orphan processes

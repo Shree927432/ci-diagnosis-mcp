@@ -1,0 +1,15 @@
+{
+ "mode": "test_load",
+ "parser": "pytest",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "ImportError while loading conftest"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "tests/conftest.py"
+ ]
+}

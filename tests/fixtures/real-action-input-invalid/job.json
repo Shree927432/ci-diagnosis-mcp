@@ -1,0 +1,52 @@
+{
+ "id": 96945403587,
+ "run_id": 32539111078,
+ "workflow_name": "Lock Threads",
+ "head_branch": "main",
+ "run_url": "https://api.github.com/repos/psf/requests/actions/runs/32539111078",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOABTKOs8AAAAWkmV2ww",
+ "head_sha": "8f8b212de8c2129d7954c6cd373762880375620a",
+ "url": "https://api.github.com/repos/psf/requests/actions/jobs/96945403587",
+ "html_url": "https://github.com/psf/requests/actions/runs/32539111078/job/96945403587",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-08-22T00:04:21Z",
+ "started_at": "2026-08-22T00:04:23Z",
+ "completed_at": "2026-08-22T00:04:25Z",
+ "name": "action",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-08-22T00:04:23Z",
+   "completed_at": "2026-08-22T00:04:24Z"
+  },
+  {
+   "name": "Run dessant/lock-threads@7266a7ce5c1df01b1c6db85bf8cd86c737dadbe7",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 2,
+   "started_at": "2026-08-22T00:04:24Z",
+   "completed_at": "2026-08-22T00:04:24Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-08-22T00:04:24Z",
+   "completed_at": "2026-08-22T00:04:24Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/psf/requests/check-runs/96945403587",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1002179175,
+ "runner_name": "GitHub Actions 1002179175",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

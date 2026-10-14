@@ -1,0 +1,52 @@
+{
+ "id": 115356290024,
+ "run_id": 38414363554,
+ "workflow_name": "CI",
+ "head_branch": "fix/unbound-method-ignore-static-constructor-interfaces",
+ "run_url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/actions/runs/38414363554",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOCd3hms8AAAAa28VL6A",
+ "head_sha": "020fb5cc45c697370c04958f2a6c509fb6d351b4",
+ "url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/actions/jobs/115356290024",
+ "html_url": "https://github.com/typescript-eslint/typescript-eslint/actions/runs/38414363554/job/115356290024",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-13T14:36:29Z",
+ "started_at": "2026-10-13T14:36:32Z",
+ "completed_at": "2026-10-13T14:36:36Z",
+ "name": "Required Checks",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-13T14:36:33Z",
+   "completed_at": "2026-10-13T14:36:33Z"
+  },
+  {
+   "name": "Fail if any dependency failed or was cancelled",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 2,
+   "started_at": "2026-10-13T14:36:33Z",
+   "completed_at": "2026-10-13T14:36:34Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-13T14:36:34Z",
+   "completed_at": "2026-10-13T14:36:34Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/check-runs/115356290024",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000314476,
+ "runner_name": "GitHub Actions 1000314476",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

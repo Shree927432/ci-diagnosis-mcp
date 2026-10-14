@@ -1,0 +1,132 @@
+{
+ "id": 114171663746,
+ "run_id": 38037725187,
+ "workflow_name": "test",
+ "head_branch": "fix-5675-showlocals-dedupe",
+ "run_url": "https://api.github.com/repos/pytest-dev/pytest/actions/runs/38037725187",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOAjwLdc8AAAAalSlVgg",
+ "head_sha": "33803099f6ecb795bb8f3a74df918cd0111bd461",
+ "url": "https://api.github.com/repos/pytest-dev/pytest/actions/jobs/114171663746",
+ "html_url": "https://github.com/pytest-dev/pytest/actions/runs/38037725187/job/114171663746",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-10T08:24:22Z",
+ "started_at": "2026-10-10T08:24:23Z",
+ "completed_at": "2026-10-10T08:32:54Z",
+ "name": "build (windows-py313)",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-10T08:24:24Z",
+   "completed_at": "2026-10-10T08:24:27Z"
+  },
+  {
+   "name": "Run actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-10T08:24:27Z",
+   "completed_at": "2026-10-10T08:24:38Z"
+  },
+  {
+   "name": "Download Package",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-10T08:24:38Z",
+   "completed_at": "2026-10-10T08:24:38Z"
+  },
+  {
+   "name": "Set up Python 3.13",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-10T08:24:38Z",
+   "completed_at": "2026-10-10T08:25:40Z"
+  },
+  {
+   "name": "Set up tox",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-10T08:25:40Z",
+   "completed_at": "2026-10-10T08:25:45Z"
+  },
+  {
+   "name": "Test without coverage",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 6,
+   "started_at": "2026-10-10T08:25:45Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Test with coverage",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 7,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Upload coverage to Codecov",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 8,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Upload JUnit report to Codecov",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 9,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Post Set up tox",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 16,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Post Set up Python 3.13",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 17,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:51Z"
+  },
+  {
+   "name": "Post Run actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 18,
+   "started_at": "2026-10-10T08:32:51Z",
+   "completed_at": "2026-10-10T08:32:53Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 19,
+   "started_at": "2026-10-10T08:32:53Z",
+   "completed_at": "2026-10-10T08:32:53Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/pytest-dev/pytest/check-runs/114171663746",
+ "labels": [
+  "windows-latest"
+ ],
+ "runner_id": 1000408495,
+ "runner_name": "GitHub Actions 1000408495",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}
