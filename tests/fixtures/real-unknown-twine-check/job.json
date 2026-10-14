@@ -1,0 +1,116 @@
+{
+ "id": 110557896773,
+ "run_id": 36918360067,
+ "workflow_name": "Test Suite",
+ "head_branch": "version-1.0",
+ "run_url": "https://api.github.com/repos/encode/httpx/actions/runs/36918360067",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOCrLX_c8AAAAZvcOgRQ",
+ "head_sha": "ee446e6cac2db143dcffaf51c581082fb78562a5",
+ "url": "https://api.github.com/repos/encode/httpx/actions/jobs/110557896773",
+ "html_url": "https://github.com/encode/httpx/actions/runs/36918360067/job/110557896773",
+ "status": "completed",
+ "conclusion": "cancelled",
+ "created_at": "2026-10-01T19:59:58Z",
+ "started_at": "2026-10-01T20:00:01Z",
+ "completed_at": "2026-10-01T20:00:42Z",
+ "name": "Python 3.12",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-01T20:00:01Z",
+   "completed_at": "2026-10-01T20:00:02Z"
+  },
+  {
+   "name": "Run actions/checkout@v4",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-01T20:00:02Z",
+   "completed_at": "2026-10-01T20:00:03Z"
+  },
+  {
+   "name": "Run actions/setup-python@v6",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-01T20:00:03Z",
+   "completed_at": "2026-10-01T20:00:03Z"
+  },
+  {
+   "name": "Install dependencies",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-01T20:00:03Z",
+   "completed_at": "2026-10-01T20:00:23Z"
+  },
+  {
+   "name": "Run linting checks",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-01T20:00:23Z",
+   "completed_at": "2026-10-01T20:00:35Z"
+  },
+  {
+   "name": "Build package & docs",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 6,
+   "started_at": "2026-10-01T20:00:35Z",
+   "completed_at": "2026-10-01T20:00:37Z"
+  },
+  {
+   "name": "Run tests",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 7,
+   "started_at": "2026-10-01T20:00:37Z",
+   "completed_at": "2026-10-01T20:00:37Z"
+  },
+  {
+   "name": "Enforce coverage",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 8,
+   "started_at": "2026-10-01T20:00:37Z",
+   "completed_at": "2026-10-01T20:00:37Z"
+  },
+  {
+   "name": "Post Run actions/setup-python@v6",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 15,
+   "started_at": "2026-10-01T20:00:37Z",
+   "completed_at": "2026-10-01T20:00:37Z"
+  },
+  {
+   "name": "Post Run actions/checkout@v4",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 16,
+   "started_at": "2026-10-01T20:00:37Z",
+   "completed_at": "2026-10-01T20:00:38Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 17,
+   "started_at": "2026-10-01T20:00:38Z",
+   "completed_at": "2026-10-01T20:00:38Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/encode/httpx/check-runs/110557896773",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000016275,
+ "runner_name": "GitHub Actions 1000016275",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

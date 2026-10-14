@@ -1,0 +1,116 @@
+{
+ "id": 115901438251,
+ "run_id": 38578325236,
+ "workflow_name": "Dev",
+ "head_branch": "html-break",
+ "run_url": "https://api.github.com/repos/prettier/prettier/actions/runs/38578325236",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOBHn_e88AAAAa_EOZKw",
+ "head_sha": "84fa5b7dac9061084fc1271fa7afd17cb5b6e158",
+ "url": "https://api.github.com/repos/prettier/prettier/actions/jobs/115901438251",
+ "html_url": "https://github.com/prettier/prettier/actions/runs/38578325236/job/115901438251",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-14T14:12:05Z",
+ "started_at": "2026-10-14T14:12:07Z",
+ "completed_at": "2026-10-14T14:12:56Z",
+ "name": "Node.js 26 on Windows",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T14:12:09Z",
+   "completed_at": "2026-10-14T14:12:11Z"
+  },
+  {
+   "name": "Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T14:12:11Z",
+   "completed_at": "2026-10-14T14:12:25Z"
+  },
+  {
+   "name": "Setup Node.js",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T14:12:25Z",
+   "completed_at": "2026-10-14T14:12:44Z"
+  },
+  {
+   "name": "Install Dependencies",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 4,
+   "started_at": "2026-10-14T14:12:44Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "Run Tests",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 5,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "Run Tests (coverage)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 6,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "Upload Coverage",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 7,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "`--debug-benchmark` flag",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 8,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "Post Setup Node.js",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 15,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:52Z"
+  },
+  {
+   "name": "Post Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 16,
+   "started_at": "2026-10-14T14:12:52Z",
+   "completed_at": "2026-10-14T14:12:55Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 17,
+   "started_at": "2026-10-14T14:12:55Z",
+   "completed_at": "2026-10-14T14:12:55Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/prettier/prettier/check-runs/115901438251",
+ "labels": [
+  "windows-latest"
+ ],
+ "runner_id": 1000280861,
+ "runner_name": "GitHub Actions 1000280861",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

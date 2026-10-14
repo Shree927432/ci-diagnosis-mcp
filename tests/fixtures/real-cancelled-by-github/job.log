@@ -1,0 +1,696 @@
+﻿2026-10-14T20:32:15.8138362Z Current runner version: '2.337.0'
+2026-10-14T20:32:15.8361818Z Runner name: 'depot-6ng5c53kf9'
+2026-10-14T20:32:15.8363781Z Runner group name: 'default'
+2026-10-14T20:32:15.8365629Z Machine name: 'depot-machine'
+2026-10-14T20:32:15.8369421Z ##[group]GITHUB_TOKEN Permissions
+2026-10-14T20:32:15.8373211Z Contents: read
+2026-10-14T20:32:15.8374746Z Metadata: read
+2026-10-14T20:32:15.8376005Z ##[endgroup]
+2026-10-14T20:32:15.8377175Z Secret source: Actions
+2026-10-14T20:32:15.8378428Z Cache mode: write
+2026-10-14T20:32:15.8382530Z Prepare workflow directory
+2026-10-14T20:32:15.9319532Z Prepare all required actions
+2026-10-14T20:32:15.9376119Z Getting action download info
+2026-10-14T20:32:16.1455814Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-14T20:32:17.6637313Z Download action repository 'astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884' (SHA:1c37ad07a6a961277cf70c0d37d6f313000f5884)
+2026-10-14T20:32:17.8459366Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-10-14T20:32:18.0050802Z Download action repository 'CodSpeedHQ/action@373d6868929f444bc08d901fd0eb0ad52a8875ea' (SHA:373d6868929f444bc08d901fd0eb0ad52a8875ea)
+2026-10-14T20:32:18.2881935Z Getting action download info
+2026-10-14T20:32:18.3683074Z Download action repository 'actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7' (SHA:668228422ae6a00e4ad889ee87cd7109ec5666a7)
+2026-10-14T20:32:18.6407872Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-10-14T20:32:18.8030606Z Complete job name: benchmarks instrumented ty (simulation: micro-m-z)
+2026-10-14T20:32:18.9184950Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-14T20:32:18.9187658Z with:
+2026-10-14T20:32:18.9188873Z   persist-credentials: false
+2026-10-14T20:32:18.9189975Z   repository: astral-sh/ruff
+2026-10-14T20:32:18.9196991Z   token: ***
+2026-10-14T20:32:18.9198076Z   ssh-strict: true
+2026-10-14T20:32:18.9199072Z   ssh-user: git
+2026-10-14T20:32:18.9200027Z   clean: true
+2026-10-14T20:32:18.9201036Z   sparse-checkout-cone-mode: true
+2026-10-14T20:32:18.9202139Z   fetch-depth: 1
+2026-10-14T20:32:18.9203110Z   fetch-tags: false
+2026-10-14T20:32:18.9204056Z   show-progress: true
+2026-10-14T20:32:18.9205059Z   lfs: false
+2026-10-14T20:32:18.9206264Z   submodules: false
+2026-10-14T20:32:18.9207320Z   set-safe-directory: true
+2026-10-14T20:32:18.9208399Z   allow-unsafe-pr-checkout: false
+2026-10-14T20:32:18.9209999Z env:
+2026-10-14T20:32:18.9211092Z   UV_LOCKED: 1
+2026-10-14T20:32:18.9212091Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:18.9213168Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:18.9214167Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:18.9215447Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:18.9216688Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:18.9217862Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:18.9218850Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:18.9219859Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:18.9220850Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:18.9221859Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:18.9222842Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:18.9223795Z ##[endgroup]
+2026-10-14T20:32:22.2127384Z Syncing repository: astral-sh/ruff
+2026-10-14T20:32:22.2131480Z ##[group]Getting Git version info
+2026-10-14T20:32:22.2132610Z Working directory is '/home/runner/work/ruff/ruff'
+2026-10-14T20:32:22.2133740Z [command]/usr/bin/git version
+2026-10-14T20:32:22.2426547Z git version 2.55.0
+2026-10-14T20:32:22.2440604Z ##[endgroup]
+2026-10-14T20:32:22.2456899Z Temporarily overriding HOME='/home/runner/work/_temp/f5461f20-8602-4194-87e1-f73869b773cd' before making global git config changes
+2026-10-14T20:32:22.2460411Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T20:32:22.2462484Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ruff/ruff
+2026-10-14T20:32:22.2530717Z Deleting the contents of '/home/runner/work/ruff/ruff'
+2026-10-14T20:32:22.2542922Z ##[group]Determining repository object format
+2026-10-14T20:32:22.2545059Z ##[endgroup]
+2026-10-14T20:32:22.2551990Z ##[group]Initializing the repository
+2026-10-14T20:32:22.2553630Z [command]/usr/bin/git init /home/runner/work/ruff/ruff
+2026-10-14T20:32:22.2796311Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-14T20:32:22.2798064Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-14T20:32:22.2799174Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-14T20:32:22.2800036Z hint: call:
+2026-10-14T20:32:22.2801279Z hint:
+2026-10-14T20:32:22.2802415Z hint: 	git config --global init.defaultBranch <name>
+2026-10-14T20:32:22.2805529Z hint:
+2026-10-14T20:32:22.2807041Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-14T20:32:22.2808697Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-14T20:32:22.2809911Z hint:
+2026-10-14T20:32:22.2810934Z hint: 	git branch -m <name>
+2026-10-14T20:32:22.2811784Z hint:
+2026-10-14T20:32:22.2812866Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-14T20:32:22.2814099Z Initialized empty Git repository in /home/runner/work/ruff/ruff/.git/
+2026-10-14T20:32:22.2821110Z [command]/usr/bin/git remote add origin https://github.com/astral-sh/ruff
+2026-10-14T20:32:22.2886289Z ##[endgroup]
+2026-10-14T20:32:22.2888184Z ##[group]Disabling automatic garbage collection
+2026-10-14T20:32:22.2890424Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-14T20:32:22.2912939Z ##[endgroup]
+2026-10-14T20:32:22.2916861Z ##[group]Setting up auth
+2026-10-14T20:32:22.2918940Z Removing SSH command configuration
+2026-10-14T20:32:22.2920603Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T20:32:22.2941993Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T20:32:22.8186991Z Removing HTTP extra header
+2026-10-14T20:32:22.8195062Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T20:32:22.8228635Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T20:32:22.8369811Z Removing includeIf entries pointing to credentials config files
+2026-10-14T20:32:22.8373444Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T20:32:22.8396357Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T20:32:22.8536685Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-14T20:32:22.8560879Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ruff/ruff/.git.path /home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:22.8580657Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ruff/ruff/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:22.8972137Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:22.8998686Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:22.9022963Z ##[endgroup]
+2026-10-14T20:32:22.9024471Z ##[group]Fetching the repository
+2026-10-14T20:32:22.9033598Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ef71bb9f998ac592ef624a3298c4803fe8dcf3f8:refs/remotes/pull/29389/merge
+2026-10-14T20:32:27.4897392Z From https://github.com/astral-sh/ruff
+2026-10-14T20:32:27.4899383Z  * [new ref]         ef71bb9f998ac592ef624a3298c4803fe8dcf3f8 -> pull/29389/merge
+2026-10-14T20:32:27.4901350Z ##[endgroup]
+2026-10-14T20:32:27.4902062Z ##[group]Determining the checkout info
+2026-10-14T20:32:27.4902759Z ##[endgroup]
+2026-10-14T20:32:27.4903200Z [command]/usr/bin/git sparse-checkout disable
+2026-10-14T20:32:27.4961534Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-14T20:32:27.4984161Z ##[group]Checking out the ref
+2026-10-14T20:32:27.4987960Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/29389/merge
+2026-10-14T20:32:27.8872124Z Note: switching to 'refs/remotes/pull/29389/merge'.
+2026-10-14T20:32:27.8885885Z 
+2026-10-14T20:32:27.8894583Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-14T20:32:27.8904821Z changes and commit them, and you can discard any commits you make in this
+2026-10-14T20:32:27.8911739Z state without impacting any branches by switching back to a branch.
+2026-10-14T20:32:27.8912723Z 
+2026-10-14T20:32:27.8913201Z If you want to create a new branch to retain commits you create, you may
+2026-10-14T20:32:27.8913968Z do so (now or later) by using -c with the switch command. Example:
+2026-10-14T20:32:27.8914465Z 
+2026-10-14T20:32:27.8914819Z   git switch -c <new-branch-name>
+2026-10-14T20:32:27.8915494Z 
+2026-10-14T20:32:27.8915924Z Or undo this operation with:
+2026-10-14T20:32:27.8916461Z 
+2026-10-14T20:32:27.8926219Z   git switch -
+2026-10-14T20:32:27.8929517Z 
+2026-10-14T20:32:27.8930340Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-14T20:32:27.8930988Z 
+2026-10-14T20:32:27.8931822Z HEAD is now at ef71bb9 Merge ed8fcd6e09351bf511f293a4bf56fd0e5da2308e into a76286dd34cf44a0a35e21c3ecaddcc360c53796
+2026-10-14T20:32:27.8933849Z ##[endgroup]
+2026-10-14T20:32:27.8976119Z [command]/usr/bin/git log -1 --format=%H
+2026-10-14T20:32:27.8984359Z ef71bb9f998ac592ef624a3298c4803fe8dcf3f8
+2026-10-14T20:32:27.8986985Z ##[group]Removing auth
+2026-10-14T20:32:27.8987739Z Removing SSH command configuration
+2026-10-14T20:32:27.8989723Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T20:32:27.9012390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T20:32:27.9175778Z Removing HTTP extra header
+2026-10-14T20:32:27.9178960Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T20:32:27.9204397Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T20:32:27.9360531Z Removing includeIf entries pointing to credentials config files
+2026-10-14T20:32:27.9361404Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T20:32:27.9386908Z includeif.gitdir:/home/runner/work/ruff/ruff/.git.path
+2026-10-14T20:32:27.9387918Z includeif.gitdir:/home/runner/work/ruff/ruff/.git/worktrees/*.path
+2026-10-14T20:32:27.9388411Z includeif.gitdir:/github/workspace/.git.path
+2026-10-14T20:32:27.9388806Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T20:32:27.9396049Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ruff/ruff/.git.path
+2026-10-14T20:32:27.9419771Z /home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:27.9430587Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ruff/ruff/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-1862f3a9\-cbd6\-4333\-8dc8\-341e3a75745a\.config
+2026-10-14T20:32:27.9451665Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ruff/ruff/.git/worktrees/*.path
+2026-10-14T20:32:27.9462459Z /home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:27.9470111Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ruff/ruff/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-1862f3a9\-cbd6\-4333\-8dc8\-341e3a75745a\.config
+2026-10-14T20:32:27.9492765Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-14T20:32:27.9507210Z /github/runner_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:27.9521111Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-1862f3a9\-cbd6\-4333\-8dc8\-341e3a75745a\.config
+2026-10-14T20:32:27.9543495Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-14T20:32:27.9559358Z /github/runner_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config
+2026-10-14T20:32:27.9574221Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-1862f3a9\-cbd6\-4333\-8dc8\-341e3a75745a\.config
+2026-10-14T20:32:27.9595066Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T20:32:27.9742679Z Removing credentials config '/home/runner/work/_temp/git-credentials-1862f3a9-cbd6-4333-8dc8-341e3a75745a.config'
+2026-10-14T20:32:27.9748677Z ##[endgroup]
+2026-10-14T20:32:28.0026244Z ##[group]Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
+2026-10-14T20:32:28.0026888Z with:
+2026-10-14T20:32:28.0027182Z   version: 0.13.1
+2026-10-14T20:32:28.0027611Z   checksum: eadd9d27c134ab5ac1ffd4473b97a741407f3ea238288f03121fc4deddf90220
+2026-10-14T20:32:28.0028035Z   activate-environment: false
+2026-10-14T20:32:28.0028361Z   no-project: false
+2026-10-14T20:32:28.0028684Z   working-directory: /home/runner/work/ruff/ruff
+2026-10-14T20:32:28.0030823Z   github-token: ***
+2026-10-14T20:32:28.0031121Z   enable-cache: auto
+2026-10-14T20:32:28.0031654Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-14T20:32:28.0032235Z   restore-cache: true
+2026-10-14T20:32:28.0032534Z   save-cache: auto
+2026-10-14T20:32:28.0032803Z   prune-cache: false
+2026-10-14T20:32:28.0033085Z   cache-python: false
+2026-10-14T20:32:28.0033412Z   ignore-nothing-to-cache: false
+2026-10-14T20:32:28.0033868Z   ignore-empty-workdir: false
+2026-10-14T20:32:28.0034174Z   download-from-astral-mirror: true
+2026-10-14T20:32:28.0034553Z   add-problem-matchers: true
+2026-10-14T20:32:28.0034858Z   quiet: false
+2026-10-14T20:32:28.0035333Z   resolution-strategy: highest
+2026-10-14T20:32:28.0035681Z env:
+2026-10-14T20:32:28.0035987Z   UV_LOCKED: 1
+2026-10-14T20:32:28.0036238Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:28.0036526Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:28.0036820Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:28.0037148Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:28.0037479Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:28.0037776Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:28.0038042Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:28.0038342Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:28.0038641Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:28.0038899Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:28.0039183Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:28.0039454Z ##[endgroup]
+2026-10-14T20:32:28.2198265Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-14T20:32:28.2923832Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.1/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-14T20:32:28.4444506Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/867b9c0c-0ec9-4f64-8f55-cf44b5b3c7f7 -f /home/runner/work/_temp/85a83da7-bd9f-42da-96e9-85632c52d54e
+2026-10-14T20:32:28.7944484Z Added /home/runner/.local/bin to the path
+2026-10-14T20:32:28.7947101Z Added /opt/hostedtoolcache/uv/0.13.1/x86_64 to the path
+2026-10-14T20:32:28.7948283Z Set UV_PYTHON_INSTALL_DIR to /home/runner/.local/share/uv/python
+2026-10-14T20:32:28.7949028Z Added /home/runner/.local/share/uv/python to the path
+2026-10-14T20:32:28.7965919Z Successfully installed uv version 0.13.1
+2026-10-14T20:32:28.9528392Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-10-14T20:32:28.9529321Z with:
+2026-10-14T20:32:28.9529682Z   name: benchmarks-instrumented-ty-binary
+2026-10-14T20:32:28.9530497Z   path: target/codspeed
+2026-10-14T20:32:28.9530850Z   merge-multiple: false
+2026-10-14T20:32:28.9531174Z   repository: astral-sh/ruff
+2026-10-14T20:32:28.9531503Z   run-id: 38632017529
+2026-10-14T20:32:28.9531791Z   skip-decompress: false
+2026-10-14T20:32:28.9532114Z   digest-mismatch: error
+2026-10-14T20:32:28.9532369Z env:
+2026-10-14T20:32:28.9532630Z   UV_LOCKED: 1
+2026-10-14T20:32:28.9532915Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:28.9533214Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:28.9533506Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:28.9533811Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:28.9534103Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:28.9534396Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:28.9534690Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:28.9535045Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:28.9535536Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:28.9535873Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:28.9536160Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:28.9536499Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:28.9536878Z ##[endgroup]
+2026-10-14T20:32:29.0617206Z Downloading single artifact
+2026-10-14T20:32:29.1678177Z Preparing to download the following artifacts:
+2026-10-14T20:32:29.1683252Z - benchmarks-instrumented-ty-binary (ID: 11927970087, Size: 361522594, Expected Digest: sha256:c2265a965ac1fa8e508bc6b716121e6bb1d6849d27f9ff83525d661eb0e424f7)
+2026-10-14T20:32:29.2803687Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/156d0c57-81a2-8b0e-970a-29e006d5b58d/workflow-job-run-8ec84b2f-29af-523b-b1e3-5b5924be095b/artifacts/9eba03a5664f51d683234b440d1567bc11eabe6f4696886f838449fe5e4a70b1.zip
+2026-10-14T20:32:29.2806311Z Starting download of artifact to: /home/runner/work/ruff/ruff/target/codspeed
+2026-10-14T20:32:29.4008907Z (node:2319) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-14T20:32:29.4013498Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-14T20:32:36.3645910Z SHA256 digest of downloaded artifact is c2265a965ac1fa8e508bc6b716121e6bb1d6849d27f9ff83525d661eb0e424f7
+2026-10-14T20:32:36.3648109Z Artifact download completed successfully.
+2026-10-14T20:32:36.3648967Z Total of 1 artifact(s) downloaded
+2026-10-14T20:32:36.3652127Z Download artifact has finished successfully
+2026-10-14T20:32:36.3753157Z ##[group]Run find target/codspeed -type f -exec chmod +x {} +
+2026-10-14T20:32:36.3754103Z [36;1mfind target/codspeed -type f -exec chmod +x {} +[0m
+2026-10-14T20:32:36.3779971Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T20:32:36.3780837Z env:
+2026-10-14T20:32:36.3781178Z   UV_LOCKED: 1
+2026-10-14T20:32:36.3781487Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:36.3781794Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:36.3782103Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:36.3782449Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:36.3782771Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:36.3783071Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:36.3783469Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:36.3783781Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:36.3784096Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:36.3784379Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:36.3784632Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:36.3785060Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:36.3785701Z ##[endgroup]
+2026-10-14T20:32:36.3933617Z ##[group]Run # Let CodSpeed's dependency installation move past unhealthy mirrors quickly.
+2026-10-14T20:32:36.3934457Z [36;1m# Let CodSpeed's dependency installation move past unhealthy mirrors quickly.[0m
+2026-10-14T20:32:36.3934977Z [36;1mcat /etc/apt/apt-mirrors.txt[0m
+2026-10-14T20:32:36.3935555Z [36;1mprintf '%s\n' \[0m
+2026-10-14T20:32:36.3935975Z [36;1m  'Acquire::Retries "0";' \[0m
+2026-10-14T20:32:36.3936360Z [36;1m  'Acquire::http::Timeout "10";' \[0m
+2026-10-14T20:32:36.3936745Z [36;1m  'Acquire::https::Timeout "10";' \[0m
+2026-10-14T20:32:36.3937312Z [36;1m  | sudo tee /etc/apt/apt.conf.d/80-retries > /dev/null[0m
+2026-10-14T20:32:36.3953492Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T20:32:36.3954179Z env:
+2026-10-14T20:32:36.3954516Z   UV_LOCKED: 1
+2026-10-14T20:32:36.3954827Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:36.3955150Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:36.3955894Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:36.3956307Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:36.3956674Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:36.3956982Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:36.3957294Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:36.3957584Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:36.3957906Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:36.3958203Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:36.3958507Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:36.3958838Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:36.3959245Z ##[endgroup]
+2026-10-14T20:32:36.4016251Z https://depot-ubuntu-mirror-us-east-1.s3.us-east-1.amazonaws.com/ubuntu/	arch:amd64 arch:all
+2026-10-14T20:32:36.4303381Z ##[group]Run CodSpeedHQ/action@373d6868929f444bc08d901fd0eb0ad52a8875ea
+2026-10-14T20:32:36.4304040Z with:
+2026-10-14T20:32:36.4304343Z   mode: simulation
+2026-10-14T20:32:36.4304731Z   run: uv run --only-dev cargo codspeed run --bench "ty" "ty_micro\[[^a-l]"
+2026-10-14T20:32:36.4305464Z   cache-instruments: true
+2026-10-14T20:32:36.4305891Z   instruments-cache-dir: ~/.cache/codspeed-action
+2026-10-14T20:32:36.4306252Z   allow-empty: false
+2026-10-14T20:32:36.4306571Z   skip-hash-check-warning: false
+2026-10-14T20:32:36.4306876Z env:
+2026-10-14T20:32:36.4307156Z   UV_LOCKED: 1
+2026-10-14T20:32:36.4307451Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:36.4307758Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:36.4308070Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:36.4308394Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:36.4308712Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:36.4309039Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:36.4309354Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:36.4309740Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:36.4310094Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:36.4310443Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:36.4310767Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:36.4311140Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:36.4311495Z ##[endgroup]
+2026-10-14T20:32:36.4387876Z ##[start-action display=Determine runner and kernel version;id=__CodSpeedHQ_action.versions]
+2026-10-14T20:32:36.4410288Z ##[group]Run RUNNER_VERSION=""
+2026-10-14T20:32:36.4410911Z [36;1mRUNNER_VERSION=""[0m
+2026-10-14T20:32:36.4411315Z [36;1mif [ -z "$RUNNER_VERSION" ]; then[0m
+2026-10-14T20:32:36.4411787Z [36;1m  RUNNER_VERSION=$(cat $GITHUB_ACTION_PATH/.codspeed-runner-version)[0m
+2026-10-14T20:32:36.4412218Z [36;1mfi[0m
+2026-10-14T20:32:36.4412584Z [36;1m# Strip 'v' prefix if present to normalize version format[0m
+2026-10-14T20:32:36.4413023Z [36;1mRUNNER_VERSION="${RUNNER_VERSION#v}"[0m
+2026-10-14T20:32:36.4413439Z [36;1m[0m
+2026-10-14T20:32:36.4413861Z [36;1m# Detect version type (priority: latest > version number > branch/rev prefixes)[0m
+2026-10-14T20:32:36.4414308Z [36;1mif [ "$RUNNER_VERSION" = "latest" ]; then[0m
+2026-10-14T20:32:36.4414736Z [36;1m  VERSION_TYPE="latest"[0m
+2026-10-14T20:32:36.4415531Z [36;1melif echo "$RUNNER_VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+-'; then[0m
+2026-10-14T20:32:36.4416071Z [36;1m  VERSION_TYPE="prerelease"[0m
+2026-10-14T20:32:36.4416460Z [36;1melif echo "$RUNNER_VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+'; then[0m
+2026-10-14T20:32:36.4416914Z [36;1m  VERSION_TYPE="release"[0m
+2026-10-14T20:32:36.4417287Z [36;1melif echo "$RUNNER_VERSION" | grep -q '^branch:'; then[0m
+2026-10-14T20:32:36.4417689Z [36;1m  VERSION_TYPE="branch"[0m
+2026-10-14T20:32:36.4418096Z [36;1m  RUNNER_VERSION=$(echo "$RUNNER_VERSION" | sed 's/^branch://')[0m
+2026-10-14T20:32:36.4418560Z [36;1melif echo "$RUNNER_VERSION" | grep -q '^rev:'; then[0m
+2026-10-14T20:32:36.4418925Z [36;1m  VERSION_TYPE="rev"[0m
+2026-10-14T20:32:36.4419334Z [36;1m  RUNNER_VERSION=$(echo "$RUNNER_VERSION" | sed 's/^rev://')[0m
+2026-10-14T20:32:36.4419697Z [36;1melse[0m
+2026-10-14T20:32:36.4420001Z [36;1m  # Default to release version[0m
+2026-10-14T20:32:36.4420335Z [36;1m  VERSION_TYPE="release"[0m
+2026-10-14T20:32:36.4420658Z [36;1mfi[0m
+2026-10-14T20:32:36.4420953Z [36;1m[0m
+2026-10-14T20:32:36.4421294Z [36;1mecho "runner-version=$RUNNER_VERSION" >> $GITHUB_OUTPUT[0m
+2026-10-14T20:32:36.4421723Z [36;1mecho "version-type=$VERSION_TYPE" >> $GITHUB_OUTPUT[0m
+2026-10-14T20:32:36.4422083Z [36;1m[0m
+2026-10-14T20:32:36.4422374Z [36;1m# Get kernel version for cache key[0m
+2026-10-14T20:32:36.4422738Z [36;1mKERNEL_VERSION=$(uname -r)[0m
+2026-10-14T20:32:36.4423105Z [36;1mecho "kernel-version=$KERNEL_VERSION" >> $GITHUB_OUTPUT[0m
+2026-10-14T20:32:36.4423460Z [36;1m[0m
+2026-10-14T20:32:36.4423854Z [36;1m# Get the distribution for the cache key: instrument installations are built against a[0m
+2026-10-14T20:32:36.4424431Z [36;1m# specific release, and `runner.os` only says `Linux`[0m
+2026-10-14T20:32:36.4424801Z [36;1mif [ -r /etc/os-release ]; then[0m
+2026-10-14T20:32:36.4425145Z [36;1m  . /etc/os-release[0m
+2026-10-14T20:32:36.4425697Z [36;1m  DISTRO="$ID-$VERSION_ID"[0m
+2026-10-14T20:32:36.4426071Z [36;1melse[0m
+2026-10-14T20:32:36.4426343Z [36;1m  DISTRO="Linux"[0m
+2026-10-14T20:32:36.4426672Z [36;1mfi[0m
+2026-10-14T20:32:36.4426949Z [36;1mecho "distro=$DISTRO" >> $GITHUB_OUTPUT[0m
+2026-10-14T20:32:36.4427297Z [36;1m[0m
+2026-10-14T20:32:36.4427644Z [36;1m# Normalize mode for cache key (commas are not allowed in cache keys)[0m
+2026-10-14T20:32:36.4428118Z [36;1mMODE_CACHE_KEY=$(echo "simulation" | tr ',' '-')[0m
+2026-10-14T20:32:36.4428540Z [36;1mecho "mode-cache-key=$MODE_CACHE_KEY" >> $GITHUB_OUTPUT[0m
+2026-10-14T20:32:36.4443218Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T20:32:36.4443823Z env:
+2026-10-14T20:32:36.4444112Z   UV_LOCKED: 1
+2026-10-14T20:32:36.4444429Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:36.4444758Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:36.4445089Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:36.4445671Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:36.4446019Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:36.4446341Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:36.4446647Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:36.4447009Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:36.4447307Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:36.4447611Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:36.4447871Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:36.4448221Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:36.4448598Z ##[endgroup]
+2026-10-14T20:32:36.4565730Z ##[end-action id=__CodSpeedHQ_action.versions;outcome=success;conclusion=success;duration_ms=17]
+2026-10-14T20:32:36.4569715Z ##[start-action display=Cache CodSpeed instruments;id=__CodSpeedHQ_action.__actions_cache]
+2026-10-14T20:32:36.4604867Z ##[group]Run actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7
+2026-10-14T20:32:36.4605975Z with:
+2026-10-14T20:32:36.4606334Z   path: ~/.cache/codspeed-action
+2026-10-14T20:32:36.4606812Z   key: codspeed-instruments-simulation-ubuntu-24.04-X64-6.17.0-1019-aws-5.2.1
+2026-10-14T20:32:36.4607393Z   restore-keys: codspeed-instruments-simulation-ubuntu-24.04-X64-6.17.0-1019-aws-
+
+2026-10-14T20:32:36.4607885Z   enableCrossOsArchive: false
+2026-10-14T20:32:36.4608225Z   fail-on-cache-miss: false
+2026-10-14T20:32:36.4608568Z   lookup-only: false
+2026-10-14T20:32:36.4608864Z   save-always: false
+2026-10-14T20:32:36.4609161Z env:
+2026-10-14T20:32:36.4609570Z   UV_LOCKED: 1
+2026-10-14T20:32:36.4609930Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:36.4610243Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:36.4610563Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:36.4610899Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:36.4611275Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:36.4611598Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:36.4611906Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:36.4612192Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:36.4612511Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:36.4612815Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:36.4613127Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:36.4613502Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:36.4613878Z ##[endgroup]
+2026-10-14T20:32:36.6704262Z Cache hit for: codspeed-instruments-simulation-ubuntu-24.04-X64-6.17.0-1019-aws-5.2.1
+2026-10-14T20:32:36.9917997Z Cache Size: ~23 MB (24479922 B)
+2026-10-14T20:32:36.9945607Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2e07afb1-1a80-47ea-946f-9ad0b030a4fa/cache.tzst -P -C /home/runner/work/ruff/ruff --use-compress-program unzstd
+2026-10-14T20:32:37.1334606Z Cache restored successfully
+2026-10-14T20:32:37.4048762Z Cache restored from key: codspeed-instruments-simulation-ubuntu-24.04-X64-6.17.0-1019-aws-5.2.1
+2026-10-14T20:32:37.4097226Z ##[end-action id=__CodSpeedHQ_action.__actions_cache;outcome=success;conclusion=success;duration_ms=952]
+2026-10-14T20:32:37.4101477Z ##[start-action display=Lookup installer hash;id=__CodSpeedHQ_action.installer-hash]
+2026-10-14T20:32:37.4143892Z ##[group]Run actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+2026-10-14T20:32:37.4144608Z with:
+2026-10-14T20:32:37.4145551Z   script: const hashes = require(`${process.env.GITHUB_ACTION_PATH}/.codspeed-runner-installer-hashes.json`)
+const version = process.env.RUNNER_VERSION
+core.setOutput('hash', hashes[version] || '')
+
+2026-10-14T20:32:37.4148146Z   github-token: ***
+2026-10-14T20:32:37.4148503Z   debug: false
+2026-10-14T20:32:37.4148811Z   user-agent: actions/github-script
+2026-10-14T20:32:37.4149175Z   result-encoding: json
+2026-10-14T20:32:37.4149476Z   retries: 0
+2026-10-14T20:32:37.4149801Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-10-14T20:32:37.4150204Z env:
+2026-10-14T20:32:37.4150502Z   UV_LOCKED: 1
+2026-10-14T20:32:37.4150788Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:37.4151087Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:37.4151390Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:37.4151752Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:37.4152069Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:37.4152380Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:37.4152672Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:37.4152986Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:37.4153279Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:37.4153582Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:37.4153868Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:37.4154238Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:37.4154619Z   RUNNER_VERSION: 5.2.1
+2026-10-14T20:32:37.4154931Z ##[endgroup]
+2026-10-14T20:32:37.4809721Z ##[end-action id=__CodSpeedHQ_action.installer-hash;outcome=success;conclusion=success;duration_ms=70]
+2026-10-14T20:32:37.4812247Z ##[start-action display=Install CodSpeed runner;id=__CodSpeedHQ_action.__run]
+2026-10-14T20:32:37.4829233Z ##[group]Run RUNNER_VERSION="5.2.1"
+2026-10-14T20:32:37.4830009Z [36;1mRUNNER_VERSION="5.2.1"[0m
+2026-10-14T20:32:37.4830509Z [36;1mVERSION_TYPE="release"[0m
+2026-10-14T20:32:37.4830816Z [36;1m[0m
+2026-10-14T20:32:37.4831160Z [36;1mSKIP_HASH_CHECK_WARNING="false"[0m
+2026-10-14T20:32:37.4831533Z [36;1m[0m
+2026-10-14T20:32:37.4831894Z [36;1mif [ "$VERSION_TYPE" = "latest" ]; then[0m
+2026-10-14T20:32:37.4832276Z [36;1m  if [ "$SKIP_HASH_CHECK_WARNING" != "true" ]; then[0m
+2026-10-14T20:32:37.4832946Z [36;1m    echo "::warning::Hash verification is not available when using 'latest' version. Consider pinning a specific version for supply chain security."[0m
+2026-10-14T20:32:37.4833495Z [36;1m  fi[0m
+2026-10-14T20:32:37.4833889Z [36;1m  curl -fsSL https://codspeed.io/install.sh | bash -s -- --quiet[0m
+2026-10-14T20:32:37.4834347Z [36;1melif [ "$VERSION_TYPE" = "prerelease" ]; then[0m
+2026-10-14T20:32:37.4834863Z [36;1m  # Prereleases are not pinned, so install from the versioned installer without hash verification.[0m
+2026-10-14T20:32:37.4835557Z [36;1m  if [ "$SKIP_HASH_CHECK_WARNING" != "true" ]; then[0m
+2026-10-14T20:32:37.4836130Z [36;1m    echo "::warning::Hash verification is not available for prerelease version $RUNNER_VERSION."[0m
+2026-10-14T20:32:37.4836593Z [36;1m  fi[0m
+2026-10-14T20:32:37.4837029Z [36;1m  curl -fsSL "https://codspeed.io/v$RUNNER_VERSION/install.sh" | bash -s -- --quiet[0m
+2026-10-14T20:32:37.4837483Z [36;1melif [ "$VERSION_TYPE" = "branch" ]; then[0m
+2026-10-14T20:32:37.4837874Z [36;1m  # Install from specific branch using cargo[0m
+2026-10-14T20:32:37.4838296Z [36;1m  if [ "$SKIP_HASH_CHECK_WARNING" != "true" ]; then[0m
+2026-10-14T20:32:37.4838799Z [36;1m    echo "::warning::Hash verification is not available when installing from a branch."[0m
+2026-10-14T20:32:37.4839236Z [36;1m  fi[0m
+2026-10-14T20:32:37.4839550Z [36;1m  source $HOME/.cargo/env[0m
+2026-10-14T20:32:37.4840069Z [36;1m  cargo install --locked --git https://github.com/CodSpeedHQ/codspeed --branch "$RUNNER_VERSION" codspeed-runner[0m
+2026-10-14T20:32:37.4840626Z [36;1melif [ "$VERSION_TYPE" = "rev" ]; then[0m
+2026-10-14T20:32:37.4841062Z [36;1m  # Install from specific commit/rev using cargo[0m
+2026-10-14T20:32:37.4841504Z [36;1m  if [ "$SKIP_HASH_CHECK_WARNING" != "true" ]; then[0m
+2026-10-14T20:32:37.4841967Z [36;1m    echo "::warning::Hash verification is not available when installing from a revision."[0m
+2026-10-14T20:32:37.4842418Z [36;1m  fi[0m
+2026-10-14T20:32:37.4842696Z [36;1m  source $HOME/.cargo/env[0m
+2026-10-14T20:32:37.4843228Z [36;1m  cargo install --locked --git https://github.com/CodSpeedHQ/codspeed --rev "$RUNNER_VERSION" codspeed-runner[0m
+2026-10-14T20:32:37.4843723Z [36;1melse[0m
+2026-10-14T20:32:37.4844069Z [36;1m  # Release version - download to temp file and verify hash[0m
+2026-10-14T20:32:37.4844513Z [36;1m  INSTALLER_URL="https://codspeed.io/v$RUNNER_VERSION/install.sh"[0m
+2026-10-14T20:32:37.4844961Z [36;1m  INSTALLER_TMP=$(mktemp)[0m
+2026-10-14T20:32:37.4845787Z [36;1m  trap "rm -f $INSTALLER_TMP" EXIT[0m
+2026-10-14T20:32:37.4846193Z [36;1m[0m
+2026-10-14T20:32:37.4846477Z [36;1m  CURL_ERR=$(mktemp)[0m
+2026-10-14T20:32:37.4846949Z [36;1m  if ! HTTP_CODE=$(curl -sSL -o "$INSTALLER_TMP" -w "%{http_code}" "$INSTALLER_URL" 2>"$CURL_ERR"); then[0m
+2026-10-14T20:32:37.4847669Z [36;1m    echo "::error title=Failed to install CodSpeed CLI::Installation of CodSpeed CLI with version $RUNNER_VERSION failed.%0AReason: $(cat "$CURL_ERR")"[0m
+2026-10-14T20:32:37.4848259Z [36;1m    exit 1[0m
+2026-10-14T20:32:37.4848537Z [36;1m  fi[0m
+2026-10-14T20:32:37.4848853Z [36;1m  if [ "$HTTP_CODE" -ge 400 ]; then[0m
+2026-10-14T20:32:37.4849354Z [36;1m    error_body=$(cat "$INSTALLER_TMP")[0m
+2026-10-14T20:32:37.4850118Z [36;1m    echo "::error title=Failed to install CodSpeed CLI::Installation of CodSpeed CLI with version $RUNNER_VERSION failed.%0AReason: HTTP $HTTP_CODE - ${error_body:-no response body}"[0m
+2026-10-14T20:32:37.4850808Z [36;1m    exit 1[0m
+2026-10-14T20:32:37.4851108Z [36;1m  fi[0m
+2026-10-14T20:32:37.4851387Z [36;1m[0m
+2026-10-14T20:32:37.4851876Z [36;1m  EXPECTED_HASH="86d8419d378b6d9bef644fbde26cdf954526a30331ff1e2f91d7570765d7fd99"[0m
+2026-10-14T20:32:37.4852373Z [36;1m  if [ -z "$EXPECTED_HASH" ]; then[0m
+2026-10-14T20:32:37.4852945Z [36;1m    echo "::error::No pinned hash found for installer version $RUNNER_VERSION. Update .codspeed-runner-installer-hashes.json."[0m
+2026-10-14T20:32:37.4853463Z [36;1m    exit 1[0m
+2026-10-14T20:32:37.4853748Z [36;1m  fi[0m
+2026-10-14T20:32:37.4854047Z [36;1m[0m
+2026-10-14T20:32:37.4854386Z [36;1m  ACTUAL_HASH=$(sha256sum "$INSTALLER_TMP" | awk '{print $1}')[0m
+2026-10-14T20:32:37.4854817Z [36;1m  if [ "$ACTUAL_HASH" != "$EXPECTED_HASH" ]; then[0m
+2026-10-14T20:32:37.4855550Z [36;1m    echo "::error::Installer hash mismatch for version $RUNNER_VERSION. Expected: $EXPECTED_HASH, Got: $ACTUAL_HASH"[0m
+2026-10-14T20:32:37.4856089Z [36;1m    exit 1[0m
+2026-10-14T20:32:37.4856383Z [36;1m  fi[0m
+2026-10-14T20:32:37.4856719Z [36;1m  echo "Installer hash verified for version $RUNNER_VERSION"[0m
+2026-10-14T20:32:37.4857129Z [36;1m[0m
+2026-10-14T20:32:37.4857411Z [36;1m  bash "$INSTALLER_TMP" --quiet[0m
+2026-10-14T20:32:37.4857736Z [36;1mfi[0m
+2026-10-14T20:32:37.4876324Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T20:32:37.4876946Z env:
+2026-10-14T20:32:37.4877269Z   UV_LOCKED: 1
+2026-10-14T20:32:37.4877580Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:37.4877885Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:37.4878149Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:37.4878475Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:37.4878812Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:37.4879130Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:37.4879415Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:37.4879711Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:37.4880010Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:37.4880303Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:37.4880585Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:37.4880916Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:37.4881286Z ##[endgroup]
+2026-10-14T20:32:37.7141587Z Installer hash verified for version 5.2.1
+2026-10-14T20:32:38.0483744Z ##[end-action id=__CodSpeedHQ_action.__run;outcome=success;conclusion=success;duration_ms=567]
+2026-10-14T20:32:38.0515594Z ##[start-action display=Run the benchmarks;id=__CodSpeedHQ_action.__run_2]
+2026-10-14T20:32:38.0534102Z ##[group]Run # Validate required inputs
+2026-10-14T20:32:38.0535131Z [36;1m# Validate required inputs[0m
+2026-10-14T20:32:38.0535754Z [36;1m# (custom message for smoother v4 migration)[0m
+2026-10-14T20:32:38.0536170Z [36;1mif [ -z "simulation" ]; then[0m
+2026-10-14T20:32:38.0537330Z [36;1m  echo "::error title=Missing required input 'mode'::The 'mode' input is required as of CodSpeed Action v4. Please explicitly set 'mode' to 'simulation' or 'walltime'. Before, this variable was automatically set to instrumentation on every runner except for CodSpeed macro runners where it was set to walltime by default. See https://codspeed.io/docs/instruments for details."[0m
+2026-10-14T20:32:38.0538446Z [36;1m  exit 1[0m
+2026-10-14T20:32:38.0538750Z [36;1mfi[0m
+2026-10-14T20:32:38.0539034Z [36;1m[0m
+2026-10-14T20:32:38.0539316Z [36;1m# Build the runner arguments array[0m
+2026-10-14T20:32:38.0539688Z [36;1mRUNNER_ARGS=()[0m
+2026-10-14T20:32:38.0540015Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0540346Z [36;1m  RUNNER_ARGS+=(--token "")[0m
+2026-10-14T20:32:38.0540663Z [36;1mfi[0m
+2026-10-14T20:32:38.0540949Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0541312Z [36;1m  RUNNER_ARGS+=(--working-directory="")[0m
+2026-10-14T20:32:38.0541635Z [36;1mfi[0m
+2026-10-14T20:32:38.0541902Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0542238Z [36;1m  RUNNER_ARGS+=(--upload-url="")[0m
+2026-10-14T20:32:38.0542573Z [36;1mfi[0m
+2026-10-14T20:32:38.0542892Z [36;1mif [ -n "simulation" ]; then[0m
+2026-10-14T20:32:38.0543232Z [36;1m  RUNNER_ARGS+=(--mode="simulation")[0m
+2026-10-14T20:32:38.0543585Z [36;1mfi[0m
+2026-10-14T20:32:38.0543969Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0544332Z [36;1m  RUNNER_ARGS+=(--instruments="")[0m
+2026-10-14T20:32:38.0544661Z [36;1mfi[0m
+2026-10-14T20:32:38.0544974Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0545461Z [36;1m  RUNNER_ARGS+=(--mongo-uri-env-name="")[0m
+2026-10-14T20:32:38.0545870Z [36;1mfi[0m
+2026-10-14T20:32:38.0546204Z [36;1mif [ "true" = "true" ] && [ -n "~/.cache/codspeed-action" ]; then[0m
+2026-10-14T20:32:38.0546716Z [36;1m  RUNNER_ARGS+=(--setup-cache-dir="~/.cache/codspeed-action")[0m
+2026-10-14T20:32:38.0547091Z [36;1mfi[0m
+2026-10-14T20:32:38.0547406Z [36;1mif [ "false" = "true" ]; then[0m
+2026-10-14T20:32:38.0547714Z [36;1m  RUNNER_ARGS+=(--allow-empty)[0m
+2026-10-14T20:32:38.0548057Z [36;1mfi[0m
+2026-10-14T20:32:38.0548348Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0548686Z [36;1m  RUNNER_ARGS+=(--go-runner-version="")[0m
+2026-10-14T20:32:38.0549019Z [36;1mfi[0m
+2026-10-14T20:32:38.0549322Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0549649Z [36;1m  RUNNER_ARGS+=(--config="")[0m
+2026-10-14T20:32:38.0549986Z [36;1mfi[0m
+2026-10-14T20:32:38.0550259Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0550658Z [36;1m  RUNNER_ARGS+=(--cycle-estimation="")[0m
+2026-10-14T20:32:38.0550994Z [36;1mfi[0m
+2026-10-14T20:32:38.0551282Z [36;1mif [ -n "" ]; then[0m
+2026-10-14T20:32:38.0551637Z [36;1m  RUNNER_ARGS+=(--exclude-allocations="")[0m
+2026-10-14T20:32:38.0551982Z [36;1mfi[0m
+2026-10-14T20:32:38.0552264Z [36;1mif [ "" = "true" ]; then[0m
+2026-10-14T20:32:38.0552634Z [36;1m  RUNNER_ARGS+=(--simulation-track-subprocess)[0m
+2026-10-14T20:32:38.0552978Z [36;1mfi[0m
+2026-10-14T20:32:38.0553268Z [36;1m[0m
+2026-10-14T20:32:38.0553560Z [36;1mif [ -n "$CODSPEED_INPUT_RUN" ]; then[0m
+2026-10-14T20:32:38.0554005Z [36;1m  RUNNER_ARGS+=(-- "$CODSPEED_INPUT_RUN")[0m
+2026-10-14T20:32:38.0554362Z [36;1mfi[0m
+2026-10-14T20:32:38.0554641Z [36;1m[0m
+2026-10-14T20:32:38.0554929Z [36;1m# Run the benchmarks[0m
+2026-10-14T20:32:38.0555547Z [36;1mcodspeed run "${RUNNER_ARGS[@]}"[0m
+2026-10-14T20:32:38.0574843Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-14T20:32:38.0575629Z env:
+2026-10-14T20:32:38.0575976Z   UV_LOCKED: 1
+2026-10-14T20:32:38.0576292Z   CARGO_INCREMENTAL: 0
+2026-10-14T20:32:38.0576622Z   CARGO_NET_RETRY: 10
+2026-10-14T20:32:38.0576922Z   CARGO_PROFILE_DEV_LTO: false
+2026-10-14T20:32:38.0577269Z   CARGO_PROFILE_DEV_OPT_LEVEL: 0
+2026-10-14T20:32:38.0577584Z   CARGO_TERM_COLOR: always
+2026-10-14T20:32:38.0577899Z   HAWK_VERSION: 0.1.15
+2026-10-14T20:32:38.0578205Z   RUSTUP_MAX_RETRIES: 10
+2026-10-14T20:32:38.0578496Z   PACKAGE_NAME: ruff
+2026-10-14T20:32:38.0578802Z   PYTHON_VERSION: 3.14
+2026-10-14T20:32:38.0579094Z   NEXTEST_PROFILE: ci
+2026-10-14T20:32:38.0579397Z   MDTEST_EXTERNAL: 1
+2026-10-14T20:32:38.0579773Z   UV_PYTHON_INSTALL_DIR: /home/runner/.local/share/uv/python
+2026-10-14T20:32:38.0580290Z   GH_MATRIX: {
+  "name": "micro-m-z",
+  "target": "ty",
+  "filter": "ty_micro\\[[^a-l]",
+  "mode": "simulation"
+}
+2026-10-14T20:32:38.0580893Z   GH_STRATEGY: {
+  "fail-fast": false,
+  "job-index": 1,
+  "job-total": 9,
+  "max-parallel": 9
+}
+2026-10-14T20:32:38.0581447Z   CODSPEED_INPUT_RUN: uv run --only-dev cargo codspeed run --bench "ty" "ty_micro\[[^a-l]"
+2026-10-14T20:32:38.0581904Z ##[endgroup]
+2026-10-14T20:32:38.1294528Z 
+2026-10-14T20:32:38.1302186Z    ______            __ _____                         __
+2026-10-14T20:32:38.1303341Z   / ____/____   ____/ // ___/ ____   ___   ___   ____/ /
+2026-10-14T20:32:38.1304009Z  / /    / __ \ / __  / \__ \ / __ \ / _ \ / _ \ / __  /
+2026-10-14T20:32:38.1304680Z / /___ / /_/ // /_/ / ___/ // /_/ //  __//  __// /_/ /
+2026-10-14T20:32:38.1305667Z \____/ \____/ \__,_/ /____// .___/ \___/ \___/ \__,_/
+2026-10-14T20:32:38.1306456Z   https://codspeed.io     /_/          runner v5.2.1
+2026-10-14T20:32:38.1306993Z 
+2026-10-14T20:32:38.1307897Z ##[group]Running the benchmarks
+2026-10-14T20:32:38.1308535Z Packages restored from cache: valgrind, libc6-dbg
+2026-10-14T20:32:38.5167067Z Tool has been successfully restored from cache
+2026-10-14T20:32:40.4502466Z Using CPython 3.12.3 interpreter at: /usr/bin/python3
+2026-10-14T20:32:40.4560629Z Creating virtual environment at: .venv
+2026-10-14T20:32:41.3702188Z Downloading astral-dev-toolchain-cargo-shear (1.5MiB)
+2026-10-14T20:32:41.3877009Z Downloading astral-dev-toolchain-cargo-nextest (9.6MiB)
+2026-10-14T20:32:41.3916934Z Downloading astral-dev-toolchain-cargo-deny (4.7MiB)
+2026-10-14T20:32:41.3920567Z Downloading prek (5.9MiB)
+2026-10-14T20:32:41.3926235Z Downloading astral-dev-toolchain-cargo-insta (2.0MiB)
+2026-10-14T20:32:42.5394309Z  Downloaded astral-dev-toolchain-cargo-shear
+2026-10-14T20:32:42.8979895Z  Downloaded astral-dev-toolchain-cargo-insta
+2026-10-14T20:32:43.4790278Z  Downloaded astral-dev-toolchain-cargo-deny
+2026-10-14T20:32:43.6672524Z  Downloaded prek
+2026-10-14T20:32:43.8814994Z  Downloaded astral-dev-toolchain-cargo-nextest
+2026-10-14T20:32:43.9536034Z Installed 8 packages in 65ms
+2026-10-14T20:33:26.5227075Z [cargo-codspeed] Measurement mode: Simulation
+2026-10-14T20:33:26.5228675Z 
+2026-10-14T20:33:26.5289337Z Collected 1 benchmark suite(s) to run
+2026-10-14T20:33:26.5291199Z Running ruff_benchmark ty
+2026-10-14T20:33:26.8559639Z Harness: codspeed-criterion-compat v5.0.1
+2026-10-14T20:33:36.6025850Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_many_string_assignments::ty_micro[many_string_assignments]
+2026-10-14T20:33:42.7943903Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_many_tuple_assignments::ty_micro[many_tuple_assignments]
+2026-10-14T20:33:48.6777669Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_tuple_implicit_instance_attributes::ty_micro[many_tuple_assignments]
+2026-10-14T20:33:54.3814251Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_collection_use_constraints::ty_micro[recursive_collection_use_constraints]
+2026-10-14T20:34:02.4013772Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_many_enum_members::ty_micro[many_enum_members]
+2026-10-14T20:34:10.2847690Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_narrowed_str_enum_comparison::ty_micro[narrowed_str_enum_comparison]
+2026-10-14T20:34:20.8853587Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_optional_str_enum_comparison::ty_micro[optional_str_enum_comparison]
+2026-10-14T20:34:32.6963812Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_str_enum_comparisons::ty_micro[repeated_str_enum_comparisons]
+2026-10-14T20:34:41.8590212Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_mixed_str_enum_comparison::ty_micro[mixed_str_enum_comparison]
+2026-10-14T20:34:49.2651458Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_many_enum_members_2::ty_micro[many_enum_members_2]
+2026-10-14T20:35:14.9065505Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_many_protocol_members_mismatch::ty_micro[many_protocol_members_mismatch]
+2026-10-14T20:35:22.3654750Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_nested_recursive_protocol_receiver::ty_micro[nested_recursive_protocol_receiver]
+2026-10-14T20:35:29.9169667Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_materialized_recursive_protocol_overload::ty_micro[materialized_recursive_protocol_overload]
+2026-10-14T20:35:37.0425947Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_materialized_recursive_protocol_subtyping::ty_micro[materialized_recursive_protocol_subtyping]
+2026-10-14T20:35:43.5227427Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_materialization_scaling::ty_micro[recursive_protocol_materialization_24]
+2026-10-14T20:35:50.2284692Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_materialization_scaling::ty_micro[recursive_protocol_materialization_48]
+2026-10-14T20:35:57.2900266Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_materialization_scaling::ty_micro[recursive_protocol_materialization_96]
+2026-10-14T20:36:05.1199341Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_materialization_scaling::ty_micro[recursive_protocol_materialization_192]
+2026-10-14T20:36:11.9938759Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_growing_specialization::ty_micro[recursive_protocol_growing_specialization]
+2026-10-14T20:36:18.6974085Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_recursive_protocol_specialized_receiver::ty_micro[recursive_protocol_specialized_receiver]
+2026-10-14T20:36:23.7699060Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_vararg_parameter_type_accumulation::ty_micro[vararg_parameter_type_accumulation]
+2026-10-14T20:36:32.1904719Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_typed_dict_get_large_literal_union::ty_micro[typed_dict_get_large_literal_union]
+2026-10-14T20:36:37.8186149Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_very_large_tuple::ty_micro[very_large_tuple]
+2026-10-14T20:37:30.3555433Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_tuple_class_pattern_captures::ty_micro[tuple_class_pattern_captures_8]
+2026-10-14T20:47:53.6577105Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_tuple_class_pattern_captures::ty_micro[tuple_class_pattern_captures]
+2026-10-14T20:48:01.2947316Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_nested_class_pattern_capture::ty_micro[nested_class_pattern_capture]
+2026-10-14T20:48:08.0048734Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_nested_class_pattern_exhaustiveness::ty_micro[nested_class_pattern_exhaustiveness]
+2026-10-14T20:48:15.3935718Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_nested_mapping_pattern_exhaustiveness::ty_micro[nested_mapping_pattern_exhaustiveness]
+2026-10-14T20:48:26.6132983Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_typeis_narrowing::ty_micro[typeis_narrowing]
+2026-10-14T20:48:38.5250948Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_statement_calls::ty_micro[repeated_statement_calls]
+2026-10-14T20:48:51.0233289Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_statement_calls::ty_micro[repeated_statement_calls_pre_narrowed]
+2026-10-14T20:49:02.4272958Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_statement_calls::ty_micro[repeated_statement_calls_fixed_reachability]
+2026-10-14T20:49:15.2086034Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_statement_calls::ty_micro[repeated_statement_calls_in_try]
+2026-10-14T20:49:39.6191577Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_statement_calls::ty_micro[repeated_statement_calls_in_try_with_if_branches]
+2026-10-14T20:50:04.3096775Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_suppressing_context_managers::ty_micro[repeated_suppressing_context_managers]
+2026-10-14T20:50:25.8610864Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_suppressing_context_managers::ty_micro[repeated_suppressing_context_managers_interleaved_calls]
+2026-10-14T20:51:40.1720617Z Measured: crates/ruff_benchmark/benches/ty.rs::micro::benchmark_repeated_narrowed_assignments::ty_micro[repeated_narrowed_assignments]
+2026-10-14T20:52:41.4196600Z ##[error]Step canceled by GitHub (see: https://depot.dev/docs/github-actions/troubleshooting#error-step-canceled-by-github)
+2026-10-14T20:52:41.4203796Z ##[end-action id=__CodSpeedHQ_action.__run_2;outcome=cancelled;conclusion=cancelled;duration_ms=1203368]
+2026-10-14T20:52:41.4481291Z Post job cleanup.
+2026-10-14T20:52:41.4486652Z ##[start-action display=Cache CodSpeed instruments;id=__ce9cb59a-2644-4063-b3c1-3876e586d662.__actions_cache]
+2026-10-14T20:52:41.4490159Z ##[end-action id=__ce9cb59a-2644-4063-b3c1-3876e586d662.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-14T20:52:41.4559844Z Post job cleanup.
+2026-10-14T20:52:41.5566073Z [command]/usr/bin/git version
+2026-10-14T20:52:41.5606086Z git version 2.55.0
+2026-10-14T20:52:41.5682831Z Temporarily overriding HOME='/home/runner/work/_temp/83960d17-edec-4cd3-9d25-6eab957bd0f0' before making global git config changes
+2026-10-14T20:52:41.5708396Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-14T20:52:41.5726156Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ruff/ruff
+2026-10-14T20:52:41.5765950Z Removing SSH command configuration
+2026-10-14T20:52:41.5766671Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-14T20:52:41.5767654Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-14T20:52:41.6055852Z Removing HTTP extra header
+2026-10-14T20:52:41.6598948Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-14T20:52:41.8414648Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-14T20:52:41.8417182Z Removing includeIf entries pointing to credentials config files
+2026-10-14T20:52:41.8417906Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-14T20:52:41.8419199Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-14T20:52:41.8488726Z Cleaning up orphan processes
+2026-10-14T20:52:41.9012643Z Terminate orphan process: pid (2510) (codspeed)
+2026-10-14T20:52:41.9335006Z Terminate orphan process: pid (2587) (callgrind-amd64)
+2026-10-14T20:52:41.9670282Z Terminate orphan process: pid (2592) (callgrind-amd64)
+2026-10-14T20:52:42.0039548Z Terminate orphan process: pid (2636) (callgrind-amd64)
+2026-10-14T20:52:42.0385156Z Terminate orphan process: pid (2885) (callgrind-amd64)

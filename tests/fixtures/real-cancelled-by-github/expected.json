@@ -1,0 +1,13 @@
+{
+ "mode": "cancelled",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Step canceled by GitHub"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

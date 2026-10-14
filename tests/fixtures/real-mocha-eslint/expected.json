@@ -1,0 +1,17 @@
+{
+ "mode": "test_assertion",
+ "parser": "js_tests",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Cannot assign to read only property"
+ ],
+ "tests_contain": [
+  "Linter with FlatConfigArray"
+ ],
+ "files_contain": [
+  "lib/linter/file-context.js"
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "id": 112283860185,
+ "run_id": 37465844384,
+ "workflow_name": "test",
+ "head_branch": "main",
+ "run_url": "https://api.github.com/repos/pytest-dev/pytest/actions/runs/37465844384",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOAjwLdc8AAAAaJKO82Q",
+ "head_sha": "2950bc2392f521fc0fd5e889a6a9857bc9d3ffe8",
+ "url": "https://api.github.com/repos/pytest-dev/pytest/actions/jobs/112283860185",
+ "html_url": "https://github.com/pytest-dev/pytest/actions/runs/37465844384/job/112283860185",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-06T13:04:53Z",
+ "started_at": "2026-10-06T13:04:55Z",
+ "completed_at": "2026-10-06T13:04:57Z",
+ "name": "check",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-06T13:04:56Z",
+   "completed_at": "2026-10-06T13:04:56Z"
+  },
+  {
+   "name": "Decide whether the needed jobs succeeded or failed",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 2,
+   "started_at": "2026-10-06T13:04:56Z",
+   "completed_at": "2026-10-06T13:04:56Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-06T13:04:56Z",
+   "completed_at": "2026-10-06T13:04:56Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/pytest-dev/pytest/check-runs/112283860185",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000404570,
+ "runner_name": "GitHub Actions 1000404570",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

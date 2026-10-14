@@ -1,0 +1,17 @@
+{
+ "mode": "test_assertion",
+ "parser": "js_tests",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Unhandled Errors"
+ ],
+ "tests_contain": [
+  "tests are actually running"
+ ],
+ "files_contain": [
+  "specs/runner.test.ts"
+ ]
+}

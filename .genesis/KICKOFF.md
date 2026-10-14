@@ -15,9 +15,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: b9a94ea98c4fa4db39eebbeae66f4fb46d42c5d134a97d85a13addb3bf7cafba. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: fc01d2e08bd7de3c6f4007ad263de5b49ea9fca1e08f42638738f2e201e03433. Use --since only after receiving that full packet; kickoff is not the packet.
+- DECISION-721d5e89: T8: relabel real-eslint-problem-matcher files_contain (FR-20 cap)
 - DECISION-c2aff99f: T5/T6 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
 - DECISION-5964325b: Smoke-test findings: matrix evidence scoped to job family; logs analysed one at a time
-- DECISION-7535647c: T4 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

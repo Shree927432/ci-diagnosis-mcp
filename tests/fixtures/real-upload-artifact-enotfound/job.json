@@ -1,0 +1,124 @@
+{
+ "id": 116013681622,
+ "run_id": 38610907908,
+ "workflow_name": "CI",
+ "head_branch": "main",
+ "run_url": "https://api.github.com/repos/pydantic/pydantic/actions/runs/38610907908",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOBWBCuM8AAAAbAvRL1g",
+ "head_sha": "e0fb2cead13b1f604505ecb3621c5d6781e9307a",
+ "url": "https://api.github.com/repos/pydantic/pydantic/actions/jobs/116013681622",
+ "html_url": "https://github.com/pydantic/pydantic/actions/runs/38610907908/job/116013681622",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-14T17:56:24Z",
+ "started_at": "2026-10-14T17:56:33Z",
+ "completed_at": "2026-10-14T18:03:06Z",
+ "name": "core / Build PGO-optimized on linux / 3.15",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T17:56:34Z",
+   "completed_at": "2026-10-14T17:56:37Z"
+  },
+  {
+   "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T17:56:37Z",
+   "completed_at": "2026-10-14T17:56:38Z"
+  },
+  {
+   "name": "Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T17:56:38Z",
+   "completed_at": "2026-10-14T17:56:40Z"
+  },
+  {
+   "name": "Run uv python install",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-14T17:56:40Z",
+   "completed_at": "2026-10-14T17:56:41Z"
+  },
+  {
+   "name": "Install rust stable",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-14T17:56:41Z",
+   "completed_at": "2026-10-14T17:56:47Z"
+  },
+  {
+   "name": "Build PGO wheel",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-14T17:56:47Z",
+   "completed_at": "2026-10-14T18:02:58Z"
+  },
+  {
+   "name": "Run ls -lh dist/",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 7,
+   "started_at": "2026-10-14T18:02:58Z",
+   "completed_at": "2026-10-14T18:02:58Z"
+  },
+  {
+   "name": "Run actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 8,
+   "started_at": "2026-10-14T18:02:58Z",
+   "completed_at": "2026-10-14T18:02:58Z"
+  },
+  {
+   "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 9,
+   "started_at": "2026-10-14T18:02:58Z",
+   "completed_at": "2026-10-14T18:03:03Z"
+  },
+  {
+   "name": "Post Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 17,
+   "started_at": "2026-10-14T18:03:03Z",
+   "completed_at": "2026-10-14T18:03:03Z"
+  },
+  {
+   "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 18,
+   "started_at": "2026-10-14T18:03:03Z",
+   "completed_at": "2026-10-14T18:03:04Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 19,
+   "started_at": "2026-10-14T18:03:04Z",
+   "completed_at": "2026-10-14T18:03:04Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/pydantic/pydantic/check-runs/116013681622",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1002830621,
+ "runner_name": "GitHub Actions 1002830621",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

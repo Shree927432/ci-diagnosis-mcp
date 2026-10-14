@@ -7,7 +7,7 @@ from ..types import ExtractedError, LogLine
 from ._util import ParseContext, find_all, find_first, find_last, obs, trunc
 
 NAME = "gha"
-GATE = re.compile(r"""lost communication|shutdown signal|maximum execution time|has timed out after|was canceled|operation was canceled|heap out of memory|FATAL ERROR|OOMKilled|Out of memory|Cannot allocate memory|OutOfMemoryError|MemoryError|exit code 137|^Killed$|No space left|ENOSPC|toomanyrequests|rate limit|Too Many Requests|Unable to resolve action|Input required|Resource not accessible|could not read Username|Authentication failed|Repository not found|Unable to locate executable|command not found|: not found$|lock file is not found|not found for platform|Unable to find (?:Node|Python|Go|Java)|template is not valid|Unrecognized named-value|ENOTFOUND|EAI_AGAIN|ECONNRESET|ETIMEDOUT|ECONNREFUSED|Could not resolve host|name resolution|TLS handshake|Connection (?:timed out|reset)""", re.M)
+GATE = re.compile(r"""lost communication|shutdown signal|maximum execution time|has timed out after|was canceled|operation was canceled|Step canceled by GitHub|heap out of memory|FATAL ERROR|OOMKilled|Out of memory|Cannot allocate memory|OutOfMemoryError|MemoryError|exit code 137|^Killed$|No space left|ENOSPC|toomanyrequests|rate limit|Too Many Requests|Unable to resolve action|Input required|Resource not accessible|could not read Username|Authentication failed|Repository not found|Unable to locate executable|command not found|: not found$|lock file is not found|not found for platform|Unable to find (?:Node|Python|Go|Java)|template is not valid|Unrecognized named-value|ENOTFOUND|EAI_AGAIN|ECONNRESET|ETIMEDOUT|ECONNREFUSED|Could not resolve host|name resolution|TLS handshake|Connection (?:timed out|reset)|Unexpected input\(s\)|" length must be|no matching workflow run found|EBUSY|ECANCELED""", re.M)
 
 # (pattern, mode, weight, summary, hint). Summary may use {0} for group 1.
 RULES = [
@@ -32,9 +32,14 @@ RULES = [
     (r"Dependencies lock file is not found in", "config", "decisive", "setup-* cache requires a lockfile that is not in the repo", "Commit the lockfile or remove the cache: option."),
     (r"Version (\S+) with arch \S+ not found for platform|Unable to find (?:Node|Python|Go|Java) version '?([^'\s]+)'?", "config", "decisive", "Requested toolchain version is not available", "Pick a version that exists for the runner platform."),
     (r"The template is not valid|Unrecognized named-value", "config", "decisive", "Workflow YAML is invalid", "Fix the expression or key reported in the workflow file."),
+    (r"Step canceled by GitHub", "cancelled", "decisive", "Step cancelled by GitHub", "The runner provider reports GitHub cancelled the step; check the run page for a newer push, a sibling failure or a manual cancel, then re-run."),
+    (r"Unexpected input\(s\) ('[^']+'(?:, '[^']+')*)", "config", "decisive", "Workflow passes inputs the action does not accept: {0}", "Rename or remove those keys under with:; the warning lists the valid input names."),
+    (r'^(?:##\[error\])?"([\w-]+)" (?:length must|must be|is required|is not allowed)', "config", "decisive", "Action input \"{0}\" failed validation", "Fix the value passed to that input under with:."),
+    (r"no matching workflow run found with any artifacts", "config", "decisive", "Artifact download found no matching workflow run", "The producing workflow uploaded nothing for this commit (often a skipped fork run); check the workflow_run wiring and allow-forks settings."),
+    (r"EBUSY: resource busy or locked", "infra", "strong", "A file on the runner was busy or locked (EBUSY)", "Another process held the file; re-run, or avoid parallel writers to the same path."),
 ]
 _COMPILED = [(re.compile(p, re.M), m, w, s, h) for p, m, w, s, h in RULES]
-_NET = re.compile(r"\b(?:ENOTFOUND|EAI_AGAIN|ECONNRESET|ETIMEDOUT|ECONNREFUSED)\b|Could not resolve host|Temporary failure in name resolution|TLS handshake timeout|Connection (?:timed out|reset by peer)")
+_NET = re.compile(r"\b(?:ENOTFOUND|EAI_AGAIN|ECONNRESET|ETIMEDOUT|ECONNREFUSED|ECANCELED)\b|Could not resolve host|Temporary failure in name resolution|TLS handshake timeout|Connection (?:timed out|reset by peer)")
 
 
 def parse(lines: list[LogLine], ctx: ParseContext) -> list:

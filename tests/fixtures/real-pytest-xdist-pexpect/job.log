@@ -1,0 +1,859 @@
+﻿2026-10-11T09:17:12.8295492Z Current runner version: '2.337.0'
+2026-10-11T09:17:12.8320392Z ##[group]Runner Image Provisioner
+2026-10-11T09:17:12.8321867Z Hosted Compute Agent
+2026-10-11T09:17:12.8322524Z Version: 20261002.596
+2026-10-11T09:17:12.8323209Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-11T09:17:12.8324102Z Build Date: 2026-10-02T22:28:27Z
+2026-10-11T09:17:12.8324842Z Worker ID: {013d7b8a-5873-490a-8107-25a6ae52cd13}
+2026-10-11T09:17:12.8325747Z Region: eastus
+2026-10-11T09:17:12.8326362Z Cloud: Azure
+2026-10-11T09:17:12.8326939Z ##[endgroup]
+2026-10-11T09:17:12.8328649Z ##[group]Operating System
+2026-10-11T09:17:12.8329318Z Ubuntu
+2026-10-11T09:17:12.8329996Z 24.04.5
+2026-10-11T09:17:12.8330535Z LTS
+2026-10-11T09:17:12.8331292Z ##[endgroup]
+2026-10-11T09:17:12.8332004Z ##[group]Runner Image
+2026-10-11T09:17:12.8332626Z Image: ubuntu-24.04
+2026-10-11T09:17:12.8333301Z Version: 20261004.327.1
+2026-10-11T09:17:12.8334549Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-11T09:17:12.8336187Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-11T09:17:12.8337200Z ##[endgroup]
+2026-10-11T09:17:12.8338343Z ##[group]GITHUB_TOKEN Permissions
+2026-10-11T09:17:12.8340582Z Contents: read
+2026-10-11T09:17:12.8341480Z Metadata: read
+2026-10-11T09:17:12.8342062Z ##[endgroup]
+2026-10-11T09:17:12.8344322Z Secret source: None
+2026-10-11T09:17:12.8345305Z Cache mode: write
+2026-10-11T09:17:12.8346502Z Prepare workflow directory
+2026-10-11T09:17:12.8744590Z Prepare all required actions
+2026-10-11T09:17:12.8795937Z Getting action download info
+2026-10-11T09:17:13.0582311Z Download action repository 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0' (SHA:9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0)
+2026-10-11T09:17:13.1597602Z Download action repository 'actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c' (SHA:3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c)
+2026-10-11T09:17:13.3205080Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-11T09:17:13.3977156Z Download action repository 'pytest-dev/pytest@0f2affe0a4d0b50151d771060379f24f7fc9863e' (SHA:0f2affe0a4d0b50151d771060379f24f7fc9863e)
+2026-10-11T09:17:13.7391248Z Download action repository 'codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5' (SHA:303a32d7a59b442fa8d48b6a1cc6825c09c847a5)
+2026-10-11T09:17:13.9271385Z Getting action download info
+2026-10-11T09:17:13.9892178Z Download action repository 'astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990' (SHA:11f9893b081a58869d3b5fccaea48c9e9e46f990)
+2026-10-11T09:17:14.1978811Z Getting action download info
+2026-10-11T09:17:14.2496514Z Download action repository 'actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd' (SHA:ed597411d8f924073f98dfc5c65a23a2325f34cd)
+2026-10-11T09:17:14.4224103Z Getting action download info
+2026-10-11T09:17:14.5325047Z Complete job name: build (ubuntu-py310-xdist)
+2026-10-11T09:17:14.6055546Z ##[group]Run actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+2026-10-11T09:17:14.6056661Z with:
+2026-10-11T09:17:14.6057128Z   fetch-depth: 0
+2026-10-11T09:17:14.6057652Z   persist-credentials: false
+2026-10-11T09:17:14.6058224Z   repository: pytest-dev/pytest
+2026-10-11T09:17:14.6062100Z   token: ***
+2026-10-11T09:17:14.6062597Z   ssh-strict: true
+2026-10-11T09:17:14.6063081Z   ssh-user: git
+2026-10-11T09:17:14.6063544Z   clean: true
+2026-10-11T09:17:14.6064032Z   sparse-checkout-cone-mode: true
+2026-10-11T09:17:14.6064606Z   fetch-tags: false
+2026-10-11T09:17:14.6065078Z   show-progress: true
+2026-10-11T09:17:14.6065559Z   lfs: false
+2026-10-11T09:17:14.6066004Z   submodules: false
+2026-10-11T09:17:14.6066491Z   set-safe-directory: true
+2026-10-11T09:17:14.6067034Z   allow-unsafe-pr-checkout: false
+2026-10-11T09:17:14.6067832Z env:
+2026-10-11T09:17:14.6068313Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:14.6068851Z ##[endgroup]
+2026-10-11T09:17:14.7052955Z Syncing repository: pytest-dev/pytest
+2026-10-11T09:17:14.7055075Z ##[group]Getting Git version info
+2026-10-11T09:17:14.7055838Z Working directory is '/home/runner/work/pytest/pytest'
+2026-10-11T09:17:14.7057018Z [command]/usr/bin/git version
+2026-10-11T09:17:14.7139076Z git version 2.55.0
+2026-10-11T09:17:14.7160512Z ##[endgroup]
+2026-10-11T09:17:14.7172453Z Temporarily overriding HOME='/home/runner/work/_temp/12621ad2-b440-4e53-af43-d727cb6a3536' before making global git config changes
+2026-10-11T09:17:14.7174964Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T09:17:14.7178753Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pytest/pytest
+2026-10-11T09:17:14.7228523Z Deleting the contents of '/home/runner/work/pytest/pytest'
+2026-10-11T09:17:14.7232102Z ##[group]Determining repository object format
+2026-10-11T09:17:14.7233699Z ##[endgroup]
+2026-10-11T09:17:14.7234520Z ##[group]Initializing the repository
+2026-10-11T09:17:14.7238221Z [command]/usr/bin/git init /home/runner/work/pytest/pytest
+2026-10-11T09:17:14.7374592Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-11T09:17:14.7376441Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-11T09:17:14.7378571Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-11T09:17:14.7380185Z hint: call:
+2026-10-11T09:17:14.7381421Z hint:
+2026-10-11T09:17:14.7382598Z hint: 	git config --global init.defaultBranch <name>
+2026-10-11T09:17:14.7383874Z hint:
+2026-10-11T09:17:14.7385083Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-11T09:17:14.7387073Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-11T09:17:14.7388641Z hint:
+2026-10-11T09:17:14.7389502Z hint: 	git branch -m <name>
+2026-10-11T09:17:14.7390480Z hint:
+2026-10-11T09:17:14.7392105Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-11T09:17:14.7394215Z Initialized empty Git repository in /home/runner/work/pytest/pytest/.git/
+2026-10-11T09:17:14.7397294Z [command]/usr/bin/git remote add origin https://github.com/pytest-dev/pytest
+2026-10-11T09:17:14.7502448Z ##[endgroup]
+2026-10-11T09:17:14.7503850Z ##[group]Disabling automatic garbage collection
+2026-10-11T09:17:14.7537916Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-11T09:17:14.7541113Z ##[endgroup]
+2026-10-11T09:17:14.7542505Z ##[group]Setting up auth
+2026-10-11T09:17:14.7543480Z Removing SSH command configuration
+2026-10-11T09:17:14.7545878Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T09:17:14.7578599Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T09:17:14.7939023Z Removing HTTP extra header
+2026-10-11T09:17:14.7945541Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T09:17:14.7983256Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T09:17:14.8224825Z Removing includeIf entries pointing to credentials config files
+2026-10-11T09:17:14.8227008Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T09:17:14.8258420Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T09:17:14.8507095Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-11T09:17:14.8552283Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pytest/pytest/.git.path /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:14.8587590Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pytest/pytest/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:14.8623261Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:14.8656845Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:14.8698947Z ##[endgroup]
+2026-10-11T09:17:14.8701086Z ##[group]Fetching the repository
+2026-10-11T09:17:14.8704197Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +0f2affe0a4d0b50151d771060379f24f7fc9863e:refs/remotes/pull/14850/merge
+2026-10-11T09:17:18.7658301Z From https://github.com/pytest-dev/pytest
+2026-10-11T09:17:18.7661970Z  * [new branch]          4.6.x             -> origin/4.6.x
+2026-10-11T09:17:18.7663771Z  * [new branch]          5.3.x             -> origin/5.3.x
+2026-10-11T09:17:18.7665381Z  * [new branch]          5.4.x             -> origin/5.4.x
+2026-10-11T09:17:18.7667698Z  * [new branch]          6.0.x             -> origin/6.0.x
+2026-10-11T09:17:18.7669919Z  * [new branch]          6.1.x             -> origin/6.1.x
+2026-10-11T09:17:18.7672401Z  * [new branch]          6.2.x             -> origin/6.2.x
+2026-10-11T09:17:18.7674689Z  * [new branch]          7.0.x             -> origin/7.0.x
+2026-10-11T09:17:18.7676785Z  * [new branch]          7.1.x             -> origin/7.1.x
+2026-10-11T09:17:18.7678951Z  * [new branch]          7.2.x             -> origin/7.2.x
+2026-10-11T09:17:18.7681536Z  * [new branch]          7.3.x             -> origin/7.3.x
+2026-10-11T09:17:18.7683682Z  * [new branch]          7.4.x             -> origin/7.4.x
+2026-10-11T09:17:18.7684989Z  * [new branch]          8.0.x             -> origin/8.0.x
+2026-10-11T09:17:18.7686307Z  * [new branch]          8.1.x             -> origin/8.1.x
+2026-10-11T09:17:18.7687938Z  * [new branch]          8.2.x             -> origin/8.2.x
+2026-10-11T09:17:18.7689375Z  * [new branch]          8.3.x             -> origin/8.3.x
+2026-10-11T09:17:18.7691005Z  * [new branch]          8.4.x             -> origin/8.4.x
+2026-10-11T09:17:18.7692424Z  * [new branch]          9.0.x             -> origin/9.0.x
+2026-10-11T09:17:18.7693779Z  * [new branch]          9.1.x             -> origin/9.1.x
+2026-10-11T09:17:18.7695491Z  * [new branch]          claude/project-thread-bvvq6z -> origin/claude/project-thread-bvvq6z
+2026-10-11T09:17:18.7697575Z  * [new branch]          claude/project-thread-pe7mtw -> origin/claude/project-thread-pe7mtw
+2026-10-11T09:17:18.7699880Z  * [new branch]          claude/project-thread-rxvgna -> origin/claude/project-thread-rxvgna
+2026-10-11T09:17:18.7703107Z  * [new branch]          claude/project-thread-zeq5mi -> origin/claude/project-thread-zeq5mi
+2026-10-11T09:17:18.7706268Z  * [new branch]          copilot/fix-pytest-with-python-lazy-imports -> origin/copilot/fix-pytest-with-python-lazy-imports
+2026-10-11T09:17:18.7709334Z  * [new branch]          expose-fixturedef -> origin/expose-fixturedef
+2026-10-11T09:17:18.7712245Z  * [new branch]          feat/13617-deselected-reason -> origin/feat/13617-deselected-reason
+2026-10-11T09:17:18.7714822Z  * [new branch]          fix/ellipsis      -> origin/fix/ellipsis
+2026-10-11T09:17:18.7716907Z  * [new branch]          fix/runners       -> origin/fix/runners
+2026-10-11T09:17:18.7719120Z  * [new branch]          graingert-patch-1 -> origin/graingert-patch-1
+2026-10-11T09:17:18.7721571Z  * [new branch]          main              -> origin/main
+2026-10-11T09:17:18.7723787Z  * [new branch]          module-pytest     -> origin/module-pytest
+2026-10-11T09:17:18.7728296Z  * [new branch]          patchback/backports/9.1.x/c7f9e75c5d3b04bf96e8389a9eac6d98da2be8f4/pr-14284 -> origin/patchback/backports/9.1.x/c7f9e75c5d3b04bf96e8389a9eac6d98da2be8f4/pr-14284
+2026-10-11T09:17:18.7733057Z  * [new branch]          report_xfails     -> origin/report_xfails
+2026-10-11T09:17:18.7735319Z  * [new branch]          stop-iteration    -> origin/stop-iteration
+2026-10-11T09:17:18.7738299Z  * [new branch]          update-plugin-list/patch-df87db7b0 -> origin/update-plugin-list/patch-df87db7b0
+2026-10-11T09:17:18.7741965Z  * [new branch]          update-plugin-list/patch-efc013416 -> origin/update-plugin-list/patch-efc013416
+2026-10-11T09:17:18.7745010Z  * [new branch]          wip_fix_capfd     -> origin/wip_fix_capfd
+2026-10-11T09:17:18.7746893Z  * [new tag]             1.0.0             -> 1.0.0
+2026-10-11T09:17:18.7748617Z  * [new tag]             1.0.0b3           -> 1.0.0b3
+2026-10-11T09:17:18.7751053Z  * [new tag]             1.0.0b6           -> 1.0.0b6
+2026-10-11T09:17:18.7752859Z  * [new tag]             1.0.0b8           -> 1.0.0b8
+2026-10-11T09:17:18.7754890Z  * [new tag]             1.0.0b9           -> 1.0.0b9
+2026-10-11T09:17:18.7756674Z  * [new tag]             1.0.1             -> 1.0.1
+2026-10-11T09:17:18.7758339Z  * [new tag]             1.0.2             -> 1.0.2
+2026-10-11T09:17:18.7759968Z  * [new tag]             1.1.0             -> 1.1.0
+2026-10-11T09:17:18.7762007Z  * [new tag]             1.1.1             -> 1.1.1
+2026-10-11T09:17:18.7763641Z  * [new tag]             1.2.0             -> 1.2.0
+2026-10-11T09:17:18.7765251Z  * [new tag]             1.2.1             -> 1.2.1
+2026-10-11T09:17:18.7766869Z  * [new tag]             1.3.0             -> 1.3.0
+2026-10-11T09:17:18.7768483Z  * [new tag]             1.3.1             -> 1.3.1
+2026-10-11T09:17:18.7770072Z  * [new tag]             1.3.2             -> 1.3.2
+2026-10-11T09:17:18.7771948Z  * [new tag]             1.3.3             -> 1.3.3
+2026-10-11T09:17:18.7773578Z  * [new tag]             1.3.4             -> 1.3.4
+2026-10-11T09:17:18.7775208Z  * [new tag]             2.0.0             -> 2.0.0
+2026-10-11T09:17:18.7776812Z  * [new tag]             2.0.1             -> 2.0.1
+2026-10-11T09:17:18.7778510Z  * [new tag]             2.0.2             -> 2.0.2
+2026-10-11T09:17:18.7780333Z  * [new tag]             2.0.3             -> 2.0.3
+2026-10-11T09:17:18.7783010Z  * [new tag]             2.1.0             -> 2.1.0
+2026-10-11T09:17:18.7785471Z  * [new tag]             2.1.2             -> 2.1.2
+2026-10-11T09:17:18.7787855Z  * [new tag]             2.1.3             -> 2.1.3
+2026-10-11T09:17:18.7790310Z  * [new tag]             2.2.0             -> 2.2.0
+2026-10-11T09:17:18.7793002Z  * [new tag]             2.2.1             -> 2.2.1
+2026-10-11T09:17:18.7795301Z  * [new tag]             2.2.2             -> 2.2.2
+2026-10-11T09:17:18.7797835Z  * [new tag]             2.2.3             -> 2.2.3
+2026-10-11T09:17:18.7799465Z  * [new tag]             2.2.4             -> 2.2.4
+2026-10-11T09:17:18.7801488Z  * [new tag]             2.3.0             -> 2.3.0
+2026-10-11T09:17:18.7803518Z  * [new tag]             2.3.1             -> 2.3.1
+2026-10-11T09:17:18.7806133Z  * [new tag]             2.3.2             -> 2.3.2
+2026-10-11T09:17:18.7807867Z  * [new tag]             2.3.3             -> 2.3.3
+2026-10-11T09:17:18.7809534Z  * [new tag]             2.3.4             -> 2.3.4
+2026-10-11T09:17:18.7811471Z  * [new tag]             2.3.5             -> 2.3.5
+2026-10-11T09:17:18.7813466Z  * [new tag]             2.4.0             -> 2.4.0
+2026-10-11T09:17:18.7815140Z  * [new tag]             2.4.1             -> 2.4.1
+2026-10-11T09:17:18.7816811Z  * [new tag]             2.4.2             -> 2.4.2
+2026-10-11T09:17:18.7818478Z  * [new tag]             2.5.0             -> 2.5.0
+2026-10-11T09:17:18.7820256Z  * [new tag]             2.5.1             -> 2.5.1
+2026-10-11T09:17:18.7822168Z  * [new tag]             2.5.2             -> 2.5.2
+2026-10-11T09:17:18.7823925Z  * [new tag]             2.6.0             -> 2.6.0
+2026-10-11T09:17:18.7825561Z  * [new tag]             2.6.1             -> 2.6.1
+2026-10-11T09:17:18.7827392Z  * [new tag]             2.6.2             -> 2.6.2
+2026-10-11T09:17:18.7829046Z  * [new tag]             2.6.3             -> 2.6.3
+2026-10-11T09:17:18.7830909Z  * [new tag]             2.6.4             -> 2.6.4
+2026-10-11T09:17:18.7832571Z  * [new tag]             2.7.0             -> 2.7.0
+2026-10-11T09:17:18.7834310Z  * [new tag]             2.7.1             -> 2.7.1
+2026-10-11T09:17:18.7835941Z  * [new tag]             2.7.2             -> 2.7.2
+2026-10-11T09:17:18.7837524Z  * [new tag]             2.7.3             -> 2.7.3
+2026-10-11T09:17:18.7839107Z  * [new tag]             2.8.0             -> 2.8.0
+2026-10-11T09:17:18.7840931Z  * [new tag]             2.8.1             -> 2.8.1
+2026-10-11T09:17:18.7842502Z  * [new tag]             2.8.2             -> 2.8.2
+2026-10-11T09:17:18.7844053Z  * [new tag]             2.8.3             -> 2.8.3
+2026-10-11T09:17:18.7845612Z  * [new tag]             2.8.4             -> 2.8.4
+2026-10-11T09:17:18.7847245Z  * [new tag]             2.8.5             -> 2.8.5
+2026-10-11T09:17:18.7848794Z  * [new tag]             2.8.6             -> 2.8.6
+2026-10-11T09:17:18.7850444Z  * [new tag]             2.8.7             -> 2.8.7
+2026-10-11T09:17:18.7852243Z  * [new tag]             2.9.0             -> 2.9.0
+2026-10-11T09:17:18.7853795Z  * [new tag]             2.9.1             -> 2.9.1
+2026-10-11T09:17:18.7855344Z  * [new tag]             2.9.2             -> 2.9.2
+2026-10-11T09:17:18.7856901Z  * [new tag]             3.0.0             -> 3.0.0
+2026-10-11T09:17:18.7858450Z  * [new tag]             3.0.1             -> 3.0.1
+2026-10-11T09:17:18.7859975Z  * [new tag]             3.0.2             -> 3.0.2
+2026-10-11T09:17:18.7861721Z  * [new tag]             3.0.3             -> 3.0.3
+2026-10-11T09:17:18.7863296Z  * [new tag]             3.0.4             -> 3.0.4
+2026-10-11T09:17:18.7864861Z  * [new tag]             3.0.5             -> 3.0.5
+2026-10-11T09:17:18.7866439Z  * [new tag]             3.0.6             -> 3.0.6
+2026-10-11T09:17:18.7868004Z  * [new tag]             3.0.7             -> 3.0.7
+2026-10-11T09:17:18.7869551Z  * [new tag]             3.1.0             -> 3.1.0
+2026-10-11T09:17:18.7871298Z  * [new tag]             3.1.1             -> 3.1.1
+2026-10-11T09:17:18.7872873Z  * [new tag]             3.1.2             -> 3.1.2
+2026-10-11T09:17:18.7874434Z  * [new tag]             3.1.3             -> 3.1.3
+2026-10-11T09:17:18.7875991Z  * [new tag]             3.10.0            -> 3.10.0
+2026-10-11T09:17:18.7877536Z  * [new tag]             3.10.1            -> 3.10.1
+2026-10-11T09:17:18.7879080Z  * [new tag]             3.2.0             -> 3.2.0
+2026-10-11T09:17:18.7880870Z  * [new tag]             3.2.1             -> 3.2.1
+2026-10-11T09:17:18.7882456Z  * [new tag]             3.2.2             -> 3.2.2
+2026-10-11T09:17:18.7883980Z  * [new tag]             3.2.3             -> 3.2.3
+2026-10-11T09:17:18.7885510Z  * [new tag]             3.2.4             -> 3.2.4
+2026-10-11T09:17:18.7887238Z  * [new tag]             3.2.5             -> 3.2.5
+2026-10-11T09:17:18.7888821Z  * [new tag]             3.3.0             -> 3.3.0
+2026-10-11T09:17:18.7890378Z  * [new tag]             3.3.1             -> 3.3.1
+2026-10-11T09:17:18.7892201Z  * [new tag]             3.3.2             -> 3.3.2
+2026-10-11T09:17:18.7893758Z  * [new tag]             3.4.0             -> 3.4.0
+2026-10-11T09:17:18.7895309Z  * [new tag]             3.4.1             -> 3.4.1
+2026-10-11T09:17:18.7896868Z  * [new tag]             3.4.2             -> 3.4.2
+2026-10-11T09:17:18.7898407Z  * [new tag]             3.5.0             -> 3.5.0
+2026-10-11T09:17:18.7899963Z  * [new tag]             3.5.1             -> 3.5.1
+2026-10-11T09:17:18.7901720Z  * [new tag]             3.6.0             -> 3.6.0
+2026-10-11T09:17:18.7903281Z  * [new tag]             3.6.1             -> 3.6.1
+2026-10-11T09:17:18.7904817Z  * [new tag]             3.6.2             -> 3.6.2
+2026-10-11T09:17:18.7906344Z  * [new tag]             3.6.3             -> 3.6.3
+2026-10-11T09:17:18.7908024Z  * [new tag]             3.6.4             -> 3.6.4
+2026-10-11T09:17:18.7909566Z  * [new tag]             3.7.0             -> 3.7.0
+2026-10-11T09:17:18.7911313Z  * [new tag]             3.7.1             -> 3.7.1
+2026-10-11T09:17:18.7912846Z  * [new tag]             3.7.2             -> 3.7.2
+2026-10-11T09:17:18.7914379Z  * [new tag]             3.7.3             -> 3.7.3
+2026-10-11T09:17:18.7915918Z  * [new tag]             3.7.4             -> 3.7.4
+2026-10-11T09:17:18.7917446Z  * [new tag]             3.8.0             -> 3.8.0
+2026-10-11T09:17:18.7918961Z  * [new tag]             3.8.1             -> 3.8.1
+2026-10-11T09:17:18.7920490Z  * [new tag]             3.8.2             -> 3.8.2
+2026-10-11T09:17:18.7922391Z  * [new tag]             3.9.0             -> 3.9.0
+2026-10-11T09:17:18.7923926Z  * [new tag]             3.9.1             -> 3.9.1
+2026-10-11T09:17:18.7925465Z  * [new tag]             3.9.2             -> 3.9.2
+2026-10-11T09:17:18.7927012Z  * [new tag]             3.9.3             -> 3.9.3
+2026-10-11T09:17:18.7928564Z  * [new tag]             4.0.0             -> 4.0.0
+2026-10-11T09:17:18.7930088Z  * [new tag]             4.0.1             -> 4.0.1
+2026-10-11T09:17:18.7931795Z  * [new tag]             4.0.2             -> 4.0.2
+2026-10-11T09:17:18.7933339Z  * [new tag]             4.1.0             -> 4.1.0
+2026-10-11T09:17:18.7934877Z  * [new tag]             4.1.1             -> 4.1.1
+2026-10-11T09:17:18.7936434Z  * [new tag]             4.2.0             -> 4.2.0
+2026-10-11T09:17:18.7937950Z  * [new tag]             4.2.1             -> 4.2.1
+2026-10-11T09:17:18.7939490Z  * [new tag]             4.3.0             -> 4.3.0
+2026-10-11T09:17:18.7941229Z  * [new tag]             4.3.1             -> 4.3.1
+2026-10-11T09:17:18.7942766Z  * [new tag]             4.4.0             -> 4.4.0
+2026-10-11T09:17:18.7944289Z  * [new tag]             4.4.1             -> 4.4.1
+2026-10-11T09:17:18.7945804Z  * [new tag]             4.4.2             -> 4.4.2
+2026-10-11T09:17:18.7947348Z  * [new tag]             4.5.0             -> 4.5.0
+2026-10-11T09:17:18.7948881Z  * [new tag]             4.6.0             -> 4.6.0
+2026-10-11T09:17:18.7950416Z  * [new tag]             4.6.1             -> 4.6.1
+2026-10-11T09:17:18.7952178Z  * [new tag]             4.6.10            -> 4.6.10
+2026-10-11T09:17:18.7953720Z  * [new tag]             4.6.11            -> 4.6.11
+2026-10-11T09:17:18.7955258Z  * [new tag]             4.6.2             -> 4.6.2
+2026-10-11T09:17:18.7956785Z  * [new tag]             4.6.3             -> 4.6.3
+2026-10-11T09:17:18.7958313Z  * [new tag]             4.6.4             -> 4.6.4
+2026-10-11T09:17:18.7959825Z  * [new tag]             4.6.5             -> 4.6.5
+2026-10-11T09:17:18.7961584Z  * [new tag]             4.6.6             -> 4.6.6
+2026-10-11T09:17:18.7963145Z  * [new tag]             4.6.7             -> 4.6.7
+2026-10-11T09:17:18.7964712Z  * [new tag]             4.6.8             -> 4.6.8
+2026-10-11T09:17:18.7966252Z  * [new tag]             4.6.9             -> 4.6.9
+2026-10-11T09:17:18.7968012Z  * [new tag]             5.0.0             -> 5.0.0
+2026-10-11T09:17:18.7969594Z  * [new tag]             5.0.1             -> 5.0.1
+2026-10-11T09:17:18.7971402Z  * [new tag]             5.1.0             -> 5.1.0
+2026-10-11T09:17:18.7972966Z  * [new tag]             5.1.1             -> 5.1.1
+2026-10-11T09:17:18.7974532Z  * [new tag]             5.1.2             -> 5.1.2
+2026-10-11T09:17:18.7976079Z  * [new tag]             5.1.3             -> 5.1.3
+2026-10-11T09:17:18.7977628Z  * [new tag]             5.2.0             -> 5.2.0
+2026-10-11T09:17:18.7979180Z  * [new tag]             5.2.1             -> 5.2.1
+2026-10-11T09:17:18.7980958Z  * [new tag]             5.2.2             -> 5.2.2
+2026-10-11T09:17:18.7982539Z  * [new tag]             5.2.3             -> 5.2.3
+2026-10-11T09:17:18.7984088Z  * [new tag]             5.2.4             -> 5.2.4
+2026-10-11T09:17:18.7985641Z  * [new tag]             5.3.0             -> 5.3.0
+2026-10-11T09:17:18.7987223Z  * [new tag]             5.3.1             -> 5.3.1
+2026-10-11T09:17:18.7988935Z  * [new tag]             5.3.2             -> 5.3.2
+2026-10-11T09:17:18.7990476Z  * [new tag]             5.3.3             -> 5.3.3
+2026-10-11T09:17:18.7992279Z  * [new tag]             5.3.4             -> 5.3.4
+2026-10-11T09:17:18.7993833Z  * [new tag]             5.3.5             -> 5.3.5
+2026-10-11T09:17:18.7995399Z  * [new tag]             5.4.0             -> 5.4.0
+2026-10-11T09:17:18.7996978Z  * [new tag]             5.4.1             -> 5.4.1
+2026-10-11T09:17:18.7998537Z  * [new tag]             5.4.2             -> 5.4.2
+2026-10-11T09:17:18.8000785Z  * [new tag]             5.4.3             -> 5.4.3
+2026-10-11T09:17:18.8002515Z  * [new tag]             6.0.0             -> 6.0.0
+2026-10-11T09:17:18.8004123Z  * [new tag]             6.0.0rc1          -> 6.0.0rc1
+2026-10-11T09:17:18.8005709Z  * [new tag]             6.0.1             -> 6.0.1
+2026-10-11T09:17:18.8007262Z  * [new tag]             6.0.2             -> 6.0.2
+2026-10-11T09:17:18.8008840Z  * [new tag]             6.1.0             -> 6.1.0
+2026-10-11T09:17:18.8010434Z  * [new tag]             6.1.1             -> 6.1.1
+2026-10-11T09:17:18.8012232Z  * [new tag]             6.1.2             -> 6.1.2
+2026-10-11T09:17:18.8013827Z  * [new tag]             6.2.0             -> 6.2.0
+2026-10-11T09:17:18.8015426Z  * [new tag]             6.2.0.dev0        -> 6.2.0.dev0
+2026-10-11T09:17:18.8017020Z  * [new tag]             6.2.1             -> 6.2.1
+2026-10-11T09:17:18.8018582Z  * [new tag]             6.2.2             -> 6.2.2
+2026-10-11T09:17:18.8020133Z  * [new tag]             6.2.3             -> 6.2.3
+2026-10-11T09:17:18.8021847Z  * [new tag]             6.2.4             -> 6.2.4
+2026-10-11T09:17:18.8023387Z  * [new tag]             6.2.5             -> 6.2.5
+2026-10-11T09:17:18.8024977Z  * [new tag]             6.3.0.dev0        -> 6.3.0.dev0
+2026-10-11T09:17:18.8026546Z  * [new tag]             7.0.0             -> 7.0.0
+2026-10-11T09:17:18.8028125Z  * [new tag]             7.0.0.dev0        -> 7.0.0.dev0
+2026-10-11T09:17:18.8029766Z  * [new tag]             7.0.0.post1       -> 7.0.0.post1
+2026-10-11T09:17:18.8031582Z  * [new tag]             7.0.0rc1          -> 7.0.0rc1
+2026-10-11T09:17:18.8033134Z  * [new tag]             7.0.1             -> 7.0.1
+2026-10-11T09:17:18.8034672Z  * [new tag]             7.1.0             -> 7.1.0
+2026-10-11T09:17:18.8036259Z  * [new tag]             7.1.0.dev0        -> 7.1.0.dev0
+2026-10-11T09:17:18.8037833Z  * [new tag]             7.1.1             -> 7.1.1
+2026-10-11T09:17:18.8039363Z  * [new tag]             7.1.2             -> 7.1.2
+2026-10-11T09:17:18.8041235Z  * [new tag]             7.1.3             -> 7.1.3
+2026-10-11T09:17:18.8042803Z  * [new tag]             7.2.0             -> 7.2.0
+2026-10-11T09:17:18.8044376Z  * [new tag]             7.2.0.dev0        -> 7.2.0.dev0
+2026-10-11T09:17:18.8045952Z  * [new tag]             7.2.1             -> 7.2.1
+2026-10-11T09:17:18.8047475Z  * [new tag]             7.2.2             -> 7.2.2
+2026-10-11T09:17:18.8049175Z  * [new tag]             7.3.0             -> 7.3.0
+2026-10-11T09:17:18.8050967Z  * [new tag]             7.3.1             -> 7.3.1
+2026-10-11T09:17:18.8052541Z  * [new tag]             7.3.2             -> 7.3.2
+2026-10-11T09:17:18.8054072Z  * [new tag]             7.4.0             -> 7.4.0
+2026-10-11T09:17:18.8055636Z  * [new tag]             7.4.0.dev0        -> 7.4.0.dev0
+2026-10-11T09:17:18.8057196Z  * [new tag]             7.4.1             -> 7.4.1
+2026-10-11T09:17:18.8058711Z  * [new tag]             7.4.2             -> 7.4.2
+2026-10-11T09:17:18.8060223Z  * [new tag]             7.4.3             -> 7.4.3
+2026-10-11T09:17:18.8061956Z  * [new tag]             7.4.4             -> 7.4.4
+2026-10-11T09:17:18.8063489Z  * [new tag]             8.0.0             -> 8.0.0
+2026-10-11T09:17:18.8065074Z  * [new tag]             8.0.0.dev0        -> 8.0.0.dev0
+2026-10-11T09:17:18.8066647Z  * [new tag]             8.0.0rc1          -> 8.0.0rc1
+2026-10-11T09:17:18.8068207Z  * [new tag]             8.0.0rc2          -> 8.0.0rc2
+2026-10-11T09:17:18.8069896Z  * [new tag]             8.0.1             -> 8.0.1
+2026-10-11T09:17:18.8071587Z  * [new tag]             8.0.2             -> 8.0.2
+2026-10-11T09:17:18.8073122Z  * [new tag]             8.1.0             -> 8.1.0
+2026-10-11T09:17:18.8074671Z  * [new tag]             8.1.0.dev0        -> 8.1.0.dev0
+2026-10-11T09:17:18.8076204Z  * [new tag]             8.1.1             -> 8.1.1
+2026-10-11T09:17:18.8077758Z  * [new tag]             8.1.2             -> 8.1.2
+2026-10-11T09:17:18.8079285Z  * [new tag]             8.2.0             -> 8.2.0
+2026-10-11T09:17:18.8081109Z  * [new tag]             8.2.0.dev0        -> 8.2.0.dev0
+2026-10-11T09:17:18.8082703Z  * [new tag]             8.2.1             -> 8.2.1
+2026-10-11T09:17:18.8084236Z  * [new tag]             8.2.2             -> 8.2.2
+2026-10-11T09:17:18.8085753Z  * [new tag]             8.3.0             -> 8.3.0
+2026-10-11T09:17:18.8087334Z  * [new tag]             8.3.0.dev0        -> 8.3.0.dev0
+2026-10-11T09:17:18.8088901Z  * [new tag]             8.3.1             -> 8.3.1
+2026-10-11T09:17:18.8090431Z  * [new tag]             8.3.2             -> 8.3.2
+2026-10-11T09:17:18.8092260Z  * [new tag]             8.3.3             -> 8.3.3
+2026-10-11T09:17:18.8093776Z  * [new tag]             8.3.4             -> 8.3.4
+2026-10-11T09:17:18.8095292Z  * [new tag]             8.3.5             -> 8.3.5
+2026-10-11T09:17:18.8096807Z  * [new tag]             8.4.0             -> 8.4.0
+2026-10-11T09:17:18.8098355Z  * [new tag]             8.4.0.dev0        -> 8.4.0.dev0
+2026-10-11T09:17:18.8099905Z  * [new tag]             8.4.1             -> 8.4.1
+2026-10-11T09:17:18.8101604Z  * [new tag]             8.4.2             -> 8.4.2
+2026-10-11T09:17:18.8103164Z  * [new tag]             8.5.0.dev0        -> 8.5.0.dev0
+2026-10-11T09:17:18.8104731Z  * [new tag]             9.0.0             -> 9.0.0
+2026-10-11T09:17:18.8106358Z  * [new tag]             9.0.1             -> 9.0.1
+2026-10-11T09:17:18.8107885Z  * [new tag]             9.0.2             -> 9.0.2
+2026-10-11T09:17:18.8109399Z  * [new tag]             9.0.3             -> 9.0.3
+2026-10-11T09:17:18.8111122Z  * [new tag]             9.1.0             -> 9.1.0
+2026-10-11T09:17:18.8112716Z  * [new tag]             9.1.0.dev0        -> 9.1.0.dev0
+2026-10-11T09:17:18.8114262Z  * [new tag]             9.1.1             -> 9.1.1
+2026-10-11T09:17:18.8115808Z  * [new tag]             9.2.0.dev0        -> 9.2.0.dev0
+2026-10-11T09:17:18.8117372Z  * [new tag]             v7.4.3            -> v7.4.3
+2026-10-11T09:17:18.8119286Z  * [new ref]             0f2affe0a4d0b50151d771060379f24f7fc9863e -> pull/14850/merge
+2026-10-11T09:17:18.8124120Z ##[endgroup]
+2026-10-11T09:17:18.8125831Z ##[group]Determining the checkout info
+2026-10-11T09:17:18.8127729Z ##[endgroup]
+2026-10-11T09:17:18.8128758Z [command]/usr/bin/git sparse-checkout disable
+2026-10-11T09:17:18.8132489Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-11T09:17:18.8136588Z ##[group]Checking out the ref
+2026-10-11T09:17:18.8138423Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/14850/merge
+2026-10-11T09:17:18.8432864Z Note: switching to 'refs/remotes/pull/14850/merge'.
+2026-10-11T09:17:18.8434080Z 
+2026-10-11T09:17:18.8434940Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-11T09:17:18.8437226Z changes and commit them, and you can discard any commits you make in this
+2026-10-11T09:17:18.8439463Z state without impacting any branches by switching back to a branch.
+2026-10-11T09:17:18.8441019Z 
+2026-10-11T09:17:18.8441854Z If you want to create a new branch to retain commits you create, you may
+2026-10-11T09:17:18.8444329Z do so (now or later) by using -c with the switch command. Example:
+2026-10-11T09:17:18.8446202Z 
+2026-10-11T09:17:18.8446984Z   git switch -c <new-branch-name>
+2026-10-11T09:17:18.8448210Z 
+2026-10-11T09:17:18.8448888Z Or undo this operation with:
+2026-10-11T09:17:18.8450078Z 
+2026-10-11T09:17:18.8450949Z   git switch -
+2026-10-11T09:17:18.8452216Z 
+2026-10-11T09:17:18.8453642Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-11T09:17:18.8455908Z 
+2026-10-11T09:17:18.8458404Z HEAD is now at 0f2affe0a Merge aa69b908edfda6b6bf56e496b1200756779b6a17 into 587ebc501ba292539202a1aac3a7f5b0112a08ec
+2026-10-11T09:17:18.8465434Z ##[endgroup]
+2026-10-11T09:17:18.8500443Z [command]/usr/bin/git log -1 --format=%H
+2026-10-11T09:17:18.8526167Z 0f2affe0a4d0b50151d771060379f24f7fc9863e
+2026-10-11T09:17:18.8537248Z ##[group]Removing auth
+2026-10-11T09:17:18.8539023Z Removing SSH command configuration
+2026-10-11T09:17:18.8542202Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T09:17:18.8575305Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T09:17:18.8792328Z Removing HTTP extra header
+2026-10-11T09:17:18.8796437Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T09:17:18.8835087Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T09:17:18.9044777Z Removing includeIf entries pointing to credentials config files
+2026-10-11T09:17:18.9047375Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T09:17:18.9074650Z includeif.gitdir:/home/runner/work/pytest/pytest/.git.path
+2026-10-11T09:17:18.9076624Z includeif.gitdir:/home/runner/work/pytest/pytest/.git/worktrees/*.path
+2026-10-11T09:17:18.9078384Z includeif.gitdir:/github/workspace/.git.path
+2026-10-11T09:17:18.9079876Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-11T09:17:18.9085232Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pytest/pytest/.git.path
+2026-10-11T09:17:18.9108039Z /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9119373Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pytest/pytest/.git.path /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9154146Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pytest/pytest/.git/worktrees/*.path
+2026-10-11T09:17:18.9175741Z /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9187846Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pytest/pytest/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9219166Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-11T09:17:18.9249201Z /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9258029Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9289695Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-11T09:17:18.9313721Z /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9324645Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config
+2026-10-11T09:17:18.9357764Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T09:17:18.9572899Z Removing credentials config '/home/runner/work/_temp/git-credentials-39718bb6-d516-4ae8-b50f-22c7827bb0cc.config'
+2026-10-11T09:17:18.9582087Z ##[endgroup]
+2026-10-11T09:17:18.9903741Z ##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+2026-10-11T09:17:18.9905357Z with:
+2026-10-11T09:17:18.9906124Z   name: Packages
+2026-10-11T09:17:18.9906943Z   path: dist
+2026-10-11T09:17:18.9907761Z   merge-multiple: false
+2026-10-11T09:17:18.9908711Z   repository: pytest-dev/pytest
+2026-10-11T09:17:18.9909692Z   run-id: 38121360274
+2026-10-11T09:17:18.9910575Z   skip-decompress: false
+2026-10-11T09:17:18.9911737Z   digest-mismatch: error
+2026-10-11T09:17:18.9912628Z env:
+2026-10-11T09:17:18.9913422Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:18.9914382Z ##[endgroup]
+2026-10-11T09:17:19.1287418Z Downloading single artifact
+2026-10-11T09:17:19.2280864Z Preparing to download the following artifacts:
+2026-10-11T09:17:19.2292626Z - Packages (ID: 11695158247, Size: 2205330, Expected Digest: sha256:553910018db9425f59098249f08c4433c1f9ace55d0ef77f9f9031789eb7ce3e)
+2026-10-11T09:17:19.3717999Z Redirecting to blob download url: https://productionresultssa9.blob.core.windows.net/actions-results/2c97d7db-0c37-83b4-8370-a6937a2a5e86/workflow-job-run-85c7a555-7519-5d94-90cf-3857ca585d71/artifacts/40a2085371b8effbae526101c0fd639a2ed6604c16513802a0e05bd3d9b8e1b0.zip
+2026-10-11T09:17:19.3720516Z Starting download of artifact to: /home/runner/work/pytest/pytest/dist
+2026-10-11T09:17:19.4608830Z (node:2429) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-11T09:17:19.4610934Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-11T09:17:19.5160111Z SHA256 digest of downloaded artifact is 553910018db9425f59098249f08c4433c1f9ace55d0ef77f9f9031789eb7ce3e
+2026-10-11T09:17:19.5161519Z Artifact download completed successfully.
+2026-10-11T09:17:19.5162094Z Total of 1 artifact(s) downloaded
+2026-10-11T09:17:19.5165790Z Download artifact has finished successfully
+2026-10-11T09:17:19.5355422Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-11T09:17:19.5355888Z with:
+2026-10-11T09:17:19.5356151Z   python-version: 3.10
+2026-10-11T09:17:19.5356414Z   check-latest: true
+2026-10-11T09:17:19.5356670Z   allow-prereleases: true
+2026-10-11T09:17:19.5359199Z   token: ***
+2026-10-11T09:17:19.5359450Z   update-environment: true
+2026-10-11T09:17:19.5359726Z   freethreaded: false
+2026-10-11T09:17:19.5359963Z env:
+2026-10-11T09:17:19.5360207Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:19.5360502Z ##[endgroup]
+2026-10-11T09:17:19.6507858Z ##[group]Installed versions
+2026-10-11T09:17:20.2519133Z Resolved as '3.10.22'
+2026-10-11T09:17:20.2549689Z Successfully set up CPython (3.10.22)
+2026-10-11T09:17:20.2550491Z ##[endgroup]
+2026-10-11T09:17:20.2771723Z ##[group]Run pytest-dev/pytest/.github/actions/setup-tox@0f2affe0a4d0b50151d771060379f24f7fc9863e
+2026-10-11T09:17:20.2772246Z with:
+2026-10-11T09:17:20.2772453Z   python-version: 3.10
+2026-10-11T09:17:20.2772681Z   enable-cache: true
+2026-10-11T09:17:20.2772903Z env:
+2026-10-11T09:17:20.2773111Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:20.2773437Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2773904Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-11T09:17:20.2774348Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2774742Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2775130Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2775522Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-11T09:17:20.2775851Z ##[endgroup]
+2026-10-11T09:17:20.2836782Z ##[start-action display=Install uv;id=__self.__astral-sh_setup-uv]
+2026-10-11T09:17:20.2917277Z ##[group]Run astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+2026-10-11T09:17:20.2917648Z with:
+2026-10-11T09:17:20.2917845Z   enable-cache: true
+2026-10-11T09:17:20.2918080Z   activate-environment: false
+2026-10-11T09:17:20.2918508Z   no-project: false
+2026-10-11T09:17:20.2918782Z   working-directory: /home/runner/work/pytest/pytest
+2026-10-11T09:17:20.2921716Z   github-token: ***
+2026-10-11T09:17:20.2922319Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-11T09:17:20.2922949Z   restore-cache: true
+2026-10-11T09:17:20.2923167Z   save-cache: true
+2026-10-11T09:17:20.2923382Z   prune-cache: true
+2026-10-11T09:17:20.2923594Z   cache-python: false
+2026-10-11T09:17:20.2923838Z   ignore-nothing-to-cache: false
+2026-10-11T09:17:20.2924123Z   ignore-empty-workdir: false
+2026-10-11T09:17:20.2924389Z   download-from-astral-mirror: true
+2026-10-11T09:17:20.2924679Z   add-problem-matchers: true
+2026-10-11T09:17:20.2924917Z   quiet: false
+2026-10-11T09:17:20.2925125Z   resolution-strategy: highest
+2026-10-11T09:17:20.2925361Z env:
+2026-10-11T09:17:20.2925564Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:20.2925887Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2926326Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-11T09:17:20.2926764Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2927152Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2927533Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:20.2927923Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-11T09:17:20.2928255Z ##[endgroup]
+2026-10-11T09:17:20.4706284Z Trying to find version for uv in: /home/runner/work/pytest/pytest/uv.toml
+2026-10-11T09:17:20.4707114Z Could not find file: /home/runner/work/pytest/pytest/uv.toml
+2026-10-11T09:17:20.4707905Z Trying to find version for uv in: /home/runner/work/pytest/pytest/pyproject.toml
+2026-10-11T09:17:20.4722911Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2026-10-11T09:17:20.4725365Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-11T09:17:20.5434631Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.13.0/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-11T09:17:20.6905700Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/eb9dbb07-fea3-4bf3-916e-2ea362c8b8ec -f /home/runner/work/_temp/62262822-669c-4627-8614-2da782419a3c
+2026-10-11T09:17:21.0028910Z Added /home/runner/.local/bin to the path
+2026-10-11T09:17:21.0033022Z Added /opt/hostedtoolcache/uv/0.13.0/x86_64 to the path
+2026-10-11T09:17:21.0034892Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-11T09:17:21.0035985Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-11T09:17:21.0045391Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-11T09:17:21.0046254Z Successfully installed uv version 0.13.0
+2026-10-11T09:17:21.1903976Z Searching files using cache dependency glob: /home/runner/work/pytest/pytest/**/*requirements*.txt,/home/runner/work/pytest/pytest/**/*requirements*.in,/home/runner/work/pytest/pytest/**/*constraints*.txt,/home/runner/work/pytest/pytest/**/*constraints*.in,/home/runner/work/pytest/pytest/**/pyproject.toml,/home/runner/work/pytest/pytest/**/uv.lock,/home/runner/work/pytest/pytest/**/*.py.lock
+2026-10-11T09:17:21.2915867Z /home/runner/work/pytest/pytest/doc/en/broken-dep-constraints.txt
+2026-10-11T09:17:21.3083728Z /home/runner/work/pytest/pytest/doc/en/requirements.txt
+2026-10-11T09:17:21.3100975Z /home/runner/work/pytest/pytest/pyproject.toml
+2026-10-11T09:17:21.3479476Z /home/runner/work/pytest/pytest/testing/plugins_integration/requirements.txt
+2026-10-11T09:17:21.3555325Z /home/runner/work/pytest/pytest/uv.lock
+2026-10-11T09:17:21.3570687Z Found 5 files to hash.
+2026-10-11T09:17:21.3648934Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.10.22-pruned-5de108dcd8e106c30c9824bf28fa38a04decb9f9de47c261676d948d060e90e4
+2026-10-11T09:17:21.4148821Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.10.22-pruned-5de108dcd8e106c30c9824bf28fa38a04decb9f9de47c261676d948d060e90e4
+2026-10-11T09:17:21.5369639Z Received 4164778 of 4164778 (100.0%), 44.1 MBs/sec
+2026-10-11T09:17:21.5370318Z Cache Size: ~4 MB (4164778 B)
+2026-10-11T09:17:21.5401054Z [command]/usr/bin/tar -xf /home/runner/work/_temp/52d5e384-01e8-43e7-b16d-16dab2ed47df/cache.tzst -P -C /home/runner/work/pytest/pytest --use-compress-program unzstd
+2026-10-11T09:17:21.5654064Z Cache restored successfully
+2026-10-11T09:17:21.5661169Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.10.22-pruned-5de108dcd8e106c30c9824bf28fa38a04decb9f9de47c261676d948d060e90e4
+2026-10-11T09:17:21.6774413Z ##[end-action id=__self.__astral-sh_setup-uv;outcome=success;conclusion=success;duration_ms=1393]
+2026-10-11T09:17:21.6778313Z ##[start-action display=Install tox;id=__self.__run]
+2026-10-11T09:17:21.6828131Z ##[group]Run if [ -n "$PYTHON_VERSION" ]; then
+2026-10-11T09:17:21.6828559Z [36;1mif [ -n "$PYTHON_VERSION" ]; then[0m
+2026-10-11T09:17:21.6828988Z [36;1m  uv tool install --python "$PYTHON_VERSION" tox --with tox-uv[0m
+2026-10-11T09:17:21.6829369Z [36;1melse[0m
+2026-10-11T09:17:21.6829605Z [36;1m  uv tool install tox --with tox-uv[0m
+2026-10-11T09:17:21.6829907Z [36;1mfi[0m
+2026-10-11T09:17:21.7125663Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T09:17:21.7126102Z env:
+2026-10-11T09:17:21.7126361Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:21.7126769Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:21.7127407Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-11T09:17:21.7127957Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:21.7128441Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:21.7128936Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:21.7129436Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-11T09:17:21.7129949Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-11T09:17:21.7130417Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-11T09:17:21.7130993Z   PYTHON_VERSION: 3.10
+2026-10-11T09:17:21.7131272Z ##[endgroup]
+2026-10-11T09:17:21.9411382Z Resolved 17 packages in 120ms
+2026-10-11T09:17:21.9615374Z Downloading uv (17.1MiB)
+2026-10-11T09:17:21.9615955Z Downloading virtualenv (5.2MiB)
+2026-10-11T09:17:22.0347049Z  Downloaded virtualenv
+2026-10-11T09:17:22.1100012Z  Downloaded uv
+2026-10-11T09:17:22.1103035Z Prepared 17 packages in 167ms
+2026-10-11T09:17:22.1189587Z Installed 17 packages in 8ms
+2026-10-11T09:17:22.1190139Z  + cachetools==7.2.1
+2026-10-11T09:17:22.1190555Z  + colorama==0.4.6
+2026-10-11T09:17:22.1191246Z  + distlib==0.4.3
+2026-10-11T09:17:22.1191625Z  + filelock==4.1.0
+2026-10-11T09:17:22.1192017Z  + packaging==26.3
+2026-10-11T09:17:22.1192445Z  + platformdirs==4.12.4
+2026-10-11T09:17:22.1192880Z  + pluggy==1.6.0
+2026-10-11T09:17:22.1193276Z  + pyproject-api==1.11.4
+2026-10-11T09:17:22.1193782Z  + python-discovery==1.6.2
+2026-10-11T09:17:22.1194227Z  + tomli==2.5.0
+2026-10-11T09:17:22.1195073Z  + tomli-w==1.2.0
+2026-10-11T09:17:22.1195487Z  + tox==4.65.0
+2026-10-11T09:17:22.1195843Z  + tox-uv==1.36.1
+2026-10-11T09:17:22.1196108Z  + tox-uv-bare==1.36.1
+2026-10-11T09:17:22.1196362Z  + typing-extensions==4.16.0
+2026-10-11T09:17:22.1196608Z  + uv==0.13.0
+2026-10-11T09:17:22.1196813Z  + virtualenv==21.14.6
+2026-10-11T09:17:22.1203276Z Installed 1 executable: tox
+2026-10-11T09:17:22.1247682Z ##[end-action id=__self.__run;outcome=success;conclusion=success;duration_ms=446]
+2026-10-11T09:17:22.1313944Z ##[group]Run tox run -e py310-xdist --installpkg `find dist/*.tar.gz`
+2026-10-11T09:17:22.1314492Z [36;1mtox run -e py310-xdist --installpkg `find dist/*.tar.gz`[0m
+2026-10-11T09:17:22.1377700Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-11T09:17:22.1378245Z env:
+2026-10-11T09:17:22.1378470Z   PYTEST_ADDOPTS: --color=yes
+2026-10-11T09:17:22.1378811Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:22.1379266Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib/pkgconfig
+2026-10-11T09:17:22.1379723Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:22.1380116Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:22.1380516Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.22/x64
+2026-10-11T09:17:22.1381180Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.22/x64/lib
+2026-10-11T09:17:22.1381595Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-11T09:17:22.1382023Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-11T09:17:22.1382382Z   _PYTEST_TOX_POSARGS_JUNIT: --junitxml=junit.xml
+2026-10-11T09:17:22.1382685Z ##[endgroup]
+2026-10-11T09:17:23.4723936Z py310-xdist: venv> /home/runner/.local/share/uv/tools/tox/bin/uv venv -p cpython3.10 --allow-existing '--prompt=pytest[py310-xdist]' --python-preference system /home/runner/work/pytest/pytest/.tox/py310-xdist
+2026-10-11T09:17:23.4879120Z py310-xdist: install_dependency-groups> /home/runner/.local/share/uv/tools/tox/bin/uv pip install argcomplete 'asynctest; python_version < "3.11"' 'attrs>=23.1' 'coverage>=7.5' 'hypothesis>=6.75' mock 'numpy>=1.26' 'pexpect>=4.9' 'pytest-xdist>=3.5' pyyaml requests setuptools xmlschema
+2026-10-11T09:17:24.0111385Z .pkg_external: venv> /home/runner/.local/share/uv/tools/tox/bin/uv venv -p /home/runner/.local/share/uv/tools/tox/bin/python --allow-existing '--prompt=pytest[.pkg_external]' --python-preference system /home/runner/work/pytest/pytest/.tox/.pkg_external
+2026-10-11T09:17:24.3682172Z .pkg_external: freeze> /home/runner/.local/share/uv/tools/tox/bin/uv --color never pip freeze
+2026-10-11T09:17:24.3825824Z .pkg_external: 
+2026-10-11T09:17:26.7876624Z .pkg_external_sdist_meta: install_requires> python -I -m pip install 'setuptools-scm[toml]>=10.1' 'setuptools>=77'
+2026-10-11T09:17:28.4036379Z .pkg_external_sdist_meta: _optional_hooks /home/runner/work/pytest/pytest/.tox/.pkg_external/tmp/sdist-extract/pytest-9.2.0.dev382+g0f2affe0a> python /home/runner/.local/share/uv/tools/tox/lib/python3.10/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2026-10-11T09:17:28.7417328Z .pkg_external_sdist_meta: get_requires_for_build_sdist /home/runner/work/pytest/pytest/.tox/.pkg_external/tmp/sdist-extract/pytest-9.2.0.dev382+g0f2affe0a> python /home/runner/.local/share/uv/tools/tox/lib/python3.10/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2026-10-11T09:17:29.8394868Z .pkg_external_sdist_meta: get_requires_for_build_wheel /home/runner/work/pytest/pytest/.tox/.pkg_external/tmp/sdist-extract/pytest-9.2.0.dev382+g0f2affe0a> python /home/runner/.local/share/uv/tools/tox/lib/python3.10/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2026-10-11T09:17:30.3234626Z .pkg_external_sdist_meta: freeze> python -m pip freeze --all
+2026-10-11T09:17:30.5501241Z .pkg_external_sdist_meta: packaging==26.3,pip==26.2.1,setuptools==84.0.0,setuptools-scm==10.3.4,tomli==2.5.0,typing_extensions==4.16.0,vcs-versioning==2.6.0
+2026-10-11T09:17:30.5506812Z .pkg_external_sdist_meta: prepare_metadata_for_build_wheel /home/runner/work/pytest/pytest/.tox/.pkg_external/tmp/sdist-extract/pytest-9.2.0.dev382+g0f2affe0a> python /home/runner/.local/share/uv/tools/tox/lib/python3.10/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2026-10-11T09:17:31.0298096Z py310-xdist: install_package_deps> /home/runner/.local/share/uv/tools/tox/bin/uv pip install 'colorama>=0.4; sys_platform == "win32"' 'exceptiongroup>=1; python_version < "3.11"' 'iniconfig>=2' 'packaging>=24' 'pluggy<2,>=1.5' 'pygments>=2.15' 'tomli>=2; python_version < "3.11"'
+2026-10-11T09:17:31.0389028Z py310-xdist: install_package> /home/runner/.local/share/uv/tools/tox/bin/uv pip install --reinstall --no-deps pytest@/home/runner/work/pytest/pytest/dist/pytest-9.2.0.dev382+g0f2affe0a.tar.gz
+2026-10-11T09:17:32.5032761Z py310-xdist: freeze> /home/runner/.local/share/uv/tools/tox/bin/uv --color never pip freeze
+2026-10-11T09:17:32.5117890Z py310-xdist: argcomplete==3.7.2,asynctest==0.13.0,attrs==26.1.0,certifi==2026.7.22,charset-normalizer==3.5.2,coverage==7.16.2,elementpath==5.1.4,exceptiongroup==1.3.1,execnet==2.1.2,hypothesis==6.168.5,idna==3.20,iniconfig==2.3.1,mock==5.2.0,numpy==2.2.6,packaging==26.3,pexpect==4.9.0,pluggy==1.6.0,ptyprocess==0.7.0,pygments==2.21.0,pytest @ file:///home/runner/work/pytest/pytest/dist/pytest-9.2.0.dev382+g0f2affe0a.tar.gz,pytest-xdist==3.8.0,pyyaml==6.0.3,requests==2.34.2,setuptools==84.0.0,sortedcontainers==2.4.0,tomli==2.5.0,typing-extensions==4.16.0,urllib3==2.8.0,xmlschema==4.3.2
+2026-10-11T09:17:32.5124592Z py310-xdist: commands[0]> pytest --junitxml=junit.xml -n auto
+2026-10-11T09:17:44.7953408Z [1m============================= test session starts ==============================[0m
+2026-10-11T09:17:44.7981568Z platform linux -- Python 3.10.22, pytest-9.2.0.dev382+g0f2affe0a, pluggy-1.6.0
+2026-10-11T09:17:44.8051402Z cachedir: .tox/py310-xdist/.pytest_cache
+2026-10-11T09:17:44.8071310Z rootdir: /home/runner/work/pytest/pytest
+2026-10-11T09:17:44.8081266Z configfile: pyproject.toml
+2026-10-11T09:17:44.8081764Z testpaths: testing
+2026-10-11T09:17:44.8082221Z plugins: hypothesis-6.168.5, xdist-3.8.0
+2026-10-11T09:17:44.8082757Z created: 4/4 workers
+2026-10-11T09:17:44.8083174Z 4 workers [4765 items]
+2026-10-11T09:17:44.8083430Z 
+2026-10-11T09:17:45.0134570Z [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  1%]
+2026-10-11T09:17:45.0611181Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  3%]
+2026-10-11T09:17:45.2263134Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  4%]
+2026-10-11T09:17:45.4495468Z [0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  6%]
+2026-10-11T09:17:45.7848631Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  7%]
+2026-10-11T09:17:46.0225723Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [  9%]
+2026-10-11T09:17:46.3514866Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 10%]
+2026-10-11T09:17:46.7900158Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 12%]
+2026-10-11T09:17:47.0427135Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 13%]
+2026-10-11T09:17:47.2445584Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 15%]
+2026-10-11T09:17:47.5015595Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 16%]
+2026-10-11T09:17:47.9304639Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 18%]
+2026-10-11T09:17:48.1700137Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 19%]
+2026-10-11T09:17:48.3755699Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 21%]
+2026-10-11T09:17:48.5608951Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 22%]
+2026-10-11T09:17:48.8335405Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 24%]
+2026-10-11T09:17:49.6420405Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 25%]
+2026-10-11T09:17:49.8388536Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 27%]
+2026-10-11T09:17:50.0685740Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 28%]
+2026-10-11T09:17:50.3064625Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 30%]
+2026-10-11T09:17:50.5397552Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 31%]
+2026-10-11T09:17:51.2207042Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 33%]
+2026-10-11T09:17:51.4045542Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 34%]
+2026-10-11T09:17:51.5825626Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 36%]
+2026-10-11T09:17:52.0181271Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 37%]
+2026-10-11T09:17:53.1922128Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 39%]
+2026-10-11T09:17:54.9933317Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 40%]
+2026-10-11T09:17:55.3681594Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 42%]
+2026-10-11T09:17:56.1316208Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 43%]
+2026-10-11T09:17:58.0033293Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 45%]
+2026-10-11T09:17:59.8125859Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 46%]
+2026-10-11T09:18:01.8565437Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[32m.[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 48%]
+2026-10-11T09:18:03.6183140Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 49%]
+2026-10-11T09:18:05.3012078Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 51%]
+2026-10-11T09:18:06.8335583Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 52%]
+2026-10-11T09:18:08.3415100Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 54%]
+2026-10-11T09:18:10.2695248Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 55%]
+2026-10-11T09:18:11.4628505Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 57%]
+2026-10-11T09:18:13.4755473Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 58%]
+2026-10-11T09:18:15.5735412Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 60%]
+2026-10-11T09:18:18.8445057Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 61%]
+2026-10-11T09:18:20.9894639Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 63%]
+2026-10-11T09:18:23.1475463Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 64%]
+2026-10-11T09:18:24.9684354Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[33m [ 66%]
+2026-10-11T09:18:26.2803326Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 67%]
+2026-10-11T09:18:27.8615448Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 69%]
+2026-10-11T09:18:30.1375823Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 71%]
+2026-10-11T09:18:32.5305111Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 72%]
+2026-10-11T09:18:34.0885405Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 74%]
+2026-10-11T09:18:35.7066612Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 75%]
+2026-10-11T09:18:36.6385464Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 77%]
+2026-10-11T09:18:37.5575760Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 78%]
+2026-10-11T09:18:38.8596078Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 80%]
+2026-10-11T09:18:40.8016379Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 81%]
+2026-10-11T09:18:42.3863492Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 83%]
+2026-10-11T09:18:44.6796590Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 84%]
+2026-10-11T09:18:47.4413186Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 86%]
+2026-10-11T09:18:51.0452542Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 87%]
+2026-10-11T09:18:54.5221787Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 89%]
+2026-10-11T09:18:57.4203844Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 90%]
+2026-10-11T09:19:00.0209215Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 92%]
+2026-10-11T09:19:01.7836210Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 93%]
+2026-10-11T09:19:05.3945780Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[33ms[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mx[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m [ 95%]
+2026-10-11T09:19:13.7222163Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[33m [ 96%]
+2026-10-11T09:19:20.8361110Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33mX[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[33mX[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31mF[0m[32m.[0m[32m.[0m[31m [ 98%]
+2026-10-11T09:19:25.3495821Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31m [ 99%]
+2026-10-11T09:19:27.7889265Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31m                                                            [100%][0m
+2026-10-11T09:19:27.7890403Z =================================== FAILURES ===================================
+2026-10-11T09:19:27.7892077Z [31m[1m_____________________ TestPDB.test_pdb_unittest_postmortem _____________________[0m
+2026-10-11T09:19:27.7893371Z [gw2] linux -- Python 3.10.22 /home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python
+2026-10-11T09:19:27.7893903Z 
+2026-10-11T09:19:27.7894131Z self = <test_debugging.TestPDB object at 0x7f4443e3a1a0>
+2026-10-11T09:19:27.7894969Z pytester = <Pytester PosixPath('/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0')>
+2026-10-11T09:19:27.7895942Z 
+2026-10-11T09:19:27.7896838Z     [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_pdb_unittest_postmortem[39;49;00m([96mself[39;49;00m, pytester: Pytester) -> [94mNone[39;49;00m:[90m[39;49;00m
+2026-10-11T09:19:27.7897897Z         p1 = pytester.makepyfile([90m[39;49;00m
+2026-10-11T09:19:27.7898478Z     [90m        [39;49;00m[33m"""[39;49;00m
+2026-10-11T09:19:27.7898852Z     [33m        import unittest[39;49;00m
+2026-10-11T09:19:27.7899246Z     [33m        class Blub(unittest.TestCase):[39;49;00m
+2026-10-11T09:19:27.7899651Z     [33m            def tearDown(self):[39;49;00m
+2026-10-11T09:19:27.7900044Z     [33m                self.filename = None[39;49;00m
+2026-10-11T09:19:27.7900432Z     [33m            def test_false(self):[39;49;00m
+2026-10-11T09:19:27.7901016Z     [33m                self.filename = 'debug' + '.me'[39;49;00m
+2026-10-11T09:19:27.7901424Z     [33m                assert 0[39;49;00m
+2026-10-11T09:19:27.7901766Z     [33m    """[39;49;00m[90m[39;49;00m
+2026-10-11T09:19:27.7902083Z         )[90m[39;49;00m
+2026-10-11T09:19:27.7902795Z         child = pytester.spawn_pytest([33mf[39;49;00m[33m"[39;49;00m[33m--pdb [39;49;00m[33m{[39;49;00mp1[33m}[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+2026-10-11T09:19:27.7903632Z         child.expect([33m"[39;49;00m[33mPdb[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+2026-10-11T09:19:27.7904321Z         child.sendline([33m"[39;49;00m[33mp self.filename[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+2026-10-11T09:19:27.7904850Z         child.sendeof()[90m[39;49;00m
+2026-10-11T09:19:27.7905385Z >       rest = child.read().decode([33m"[39;49;00m[33mutf8[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+2026-10-11T09:19:27.7905762Z 
+2026-10-11T09:19:27.7906051Z [1m[31m/home/runner/work/pytest/pytest/testing/test_debugging.py[0m:219: 
+2026-10-11T09:19:27.7906543Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-10-11T09:19:27.7907310Z [1m[31m/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/spawnbase.py[0m:455: in read
+2026-10-11T09:19:27.7908111Z     [0m[96mself[39;49;00m.expect([96mself[39;49;00m.delimiter)[90m[39;49;00m
+2026-10-11T09:19:27.7908895Z [1m[31m/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/spawnbase.py[0m:354: in expect
+2026-10-11T09:19:27.7909707Z     [0m[94mreturn[39;49;00m [96mself[39;49;00m.expect_list(compiled_pattern_list,[90m[39;49;00m
+2026-10-11T09:19:27.7910550Z [1m[31m/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/spawnbase.py[0m:383: in expect_list
+2026-10-11T09:19:27.7911430Z     [0m[94mreturn[39;49;00m exp.expect_loop(timeout)[90m[39;49;00m
+2026-10-11T09:19:27.7912171Z [1m[31m/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/expect.py[0m:181: in expect_loop
+2026-10-11T09:19:27.7912889Z     [0m[94mreturn[39;49;00m [96mself[39;49;00m.timeout(e)[90m[39;49;00m
+2026-10-11T09:19:27.7913316Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-10-11T09:19:27.7913562Z 
+2026-10-11T09:19:27.7913718Z self = <pexpect.expect.Expecter object at 0x7f4433c67dc0>
+2026-10-11T09:19:27.7914073Z err = TIMEOUT('Timeout exceeded.')
+2026-10-11T09:19:27.7914254Z 
+2026-10-11T09:19:27.7914665Z     [0m[94mdef[39;49;00m[90m [39;49;00m[92mtimeout[39;49;00m([96mself[39;49;00m, err=[94mNone[39;49;00m):[90m[39;49;00m
+2026-10-11T09:19:27.7915249Z         spawn = [96mself[39;49;00m.spawn[90m[39;49;00m
+2026-10-11T09:19:27.7915578Z     [90m[39;49;00m
+2026-10-11T09:19:27.7915908Z         spawn.before = spawn._before.getvalue()[90m[39;49;00m
+2026-10-11T09:19:27.7916307Z         spawn.after = TIMEOUT[90m[39;49;00m
+2026-10-11T09:19:27.7916735Z         index = [96mself[39;49;00m.searcher.timeout_index[90m[39;49;00m
+2026-10-11T09:19:27.7917228Z         [94mif[39;49;00m index >= [94m0[39;49;00m:[90m[39;49;00m
+2026-10-11T09:19:27.7917766Z             spawn.match = TIMEOUT[90m[39;49;00m
+2026-10-11T09:19:27.7918148Z             spawn.match_index = index[90m[39;49;00m
+2026-10-11T09:19:27.7918525Z             [94mreturn[39;49;00m index[90m[39;49;00m
+2026-10-11T09:19:27.7918868Z         [94melse[39;49;00m:[90m[39;49;00m
+2026-10-11T09:19:27.7919350Z             spawn.match = [94mNone[39;49;00m[90m[39;49;00m
+2026-10-11T09:19:27.7919784Z             spawn.match_index = [94mNone[39;49;00m[90m[39;49;00m
+2026-10-11T09:19:27.7920207Z             msg = [96mstr[39;49;00m(spawn)[90m[39;49;00m
+2026-10-11T09:19:27.7921028Z             msg += [33m'[39;49;00m[33m\n[39;49;00m[33msearcher: [39;49;00m[33m%s[39;49;00m[33m'[39;49;00m % [96mself[39;49;00m.searcher[90m[39;49;00m
+2026-10-11T09:19:27.7921831Z             [94mif[39;49;00m err [95mis[39;49;00m [95mnot[39;49;00m [94mNone[39;49;00m:[90m[39;49;00m
+2026-10-11T09:19:27.7922537Z                 msg = [96mstr[39;49;00m(err) + [33m'[39;49;00m[33m\n[39;49;00m[33m'[39;49;00m + msg[90m[39;49;00m
+2026-10-11T09:19:27.7923007Z     [90m[39;49;00m
+2026-10-11T09:19:27.7923285Z             exc = TIMEOUT(msg)[90m[39;49;00m
+2026-10-11T09:19:27.7923905Z             exc.__cause__ = [94mNone[39;49;00m    [90m# in Python 3.x we can use "raise exc from None"[39;49;00m[90m[39;49;00m
+2026-10-11T09:19:27.7924495Z >           [94mraise[39;49;00m exc[90m[39;49;00m
+2026-10-11T09:19:27.7924934Z [1m[31mE           pexpect.exceptions.TIMEOUT: Timeout exceeded.[0m
+2026-10-11T09:19:27.7925434Z [1m[31mE           <pexpect.pty_spawn.spawn object at 0x7f4433c67e50>[0m
+2026-10-11T09:19:27.7926007Z [1m[31mE           command: /home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python[0m
+2026-10-11T09:19:27.7927585Z [1m[31mE           args: ['/home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python', '-mpytest', '--basetemp=/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/temp-pexpect', '--pdb', '/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/test_pdb_unittest_postmortem.py'][0m
+2026-10-11T09:19:27.7929010Z [1m[31mE           buffer (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "[0m
+2026-10-11T09:19:27.7929623Z [1m[31mE           before (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "[0m
+2026-10-11T09:19:27.7930157Z [1m[31mE           after: <class 'pexpect.exceptions.TIMEOUT'>[0m
+2026-10-11T09:19:27.7930546Z [1m[31mE           match: None[0m
+2026-10-11T09:19:27.7931161Z [1m[31mE           match_index: None[0m
+2026-10-11T09:19:27.7931502Z [1m[31mE           exitstatus: None[0m
+2026-10-11T09:19:27.7931823Z [1m[31mE           flag_eof: False[0m
+2026-10-11T09:19:27.7932126Z [1m[31mE           pid: 7419[0m
+2026-10-11T09:19:27.7932424Z [1m[31mE           child_fd: 16[0m
+2026-10-11T09:19:27.7932721Z [1m[31mE           closed: False[0m
+2026-10-11T09:19:27.7933016Z [1m[31mE           timeout: 10.0[0m
+2026-10-11T09:19:27.7933403Z [1m[31mE           delimiter: <class 'pexpect.exceptions.EOF'>[0m
+2026-10-11T09:19:27.7934179Z [1m[31mE           logfile: <_io.BufferedWriter name='/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/spawn.out'>[0m
+2026-10-11T09:19:27.7934832Z [1m[31mE           logfile_read: None[0m
+2026-10-11T09:19:27.7935162Z [1m[31mE           logfile_send: None[0m
+2026-10-11T09:19:27.7935481Z [1m[31mE           maxread: 2000[0m
+2026-10-11T09:19:27.7935801Z [1m[31mE           ignorecase: False[0m
+2026-10-11T09:19:27.7936148Z [1m[31mE           searchwindowsize: None[0m
+2026-10-11T09:19:27.7936505Z [1m[31mE           delaybeforesend: 0.05[0m
+2026-10-11T09:19:27.7936855Z [1m[31mE           delayafterclose: 0.1[0m
+2026-10-11T09:19:27.7937210Z [1m[31mE           delayafterterminate: 0.1[0m
+2026-10-11T09:19:27.7937582Z [1m[31mE           searcher: searcher_re:[0m
+2026-10-11T09:19:27.7937900Z [1m[31mE               0: EOF[0m
+2026-10-11T09:19:27.7938070Z 
+2026-10-11T09:19:27.7938664Z [1m[31m/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/expect.py[0m:144: TIMEOUT
+2026-10-11T09:19:27.7939389Z [33m=============================== warnings summary ===============================[0m
+2026-10-11T09:19:27.7939961Z testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_deprecated_nodeid_fixture
+2026-10-11T09:19:27.7941379Z   /tmp/pytest-of-runner/pytest-0/popen-gw0/test_show_fixtures_deprecated_nodeid_fixture0/conftest.py:4: PytestRemovedIn10Warning: Passing nodeid to _register_fixture is deprecated. Pass node instead for fixture scoping.
+2026-10-11T09:19:27.7942336Z     session._fixturemanager._register_fixture(
+2026-10-11T09:19:27.7942552Z 
+2026-10-11T09:19:27.7942829Z testing/python/fixtures.py::TestShowFixtures::test_show_fixtures_deprecated_nodeid_fixture
+2026-10-11T09:19:27.7943912Z   /home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/_pytest/fixtures.py:2095: PytestRemovedIn10Warning: Passing baseid to FixtureDef is deprecated. Pass node instead for fixture scoping.
+2026-10-11T09:19:27.7944822Z     fixture_def = FixtureDef(
+2026-10-11T09:19:27.7944983Z 
+2026-10-11T09:19:27.7945207Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-10-11T09:19:27.7945673Z =================================== XPASSES ====================================
+2026-10-11T09:19:27.7946153Z -------- generated xml file: /home/runner/work/pytest/pytest/junit.xml ---------
+2026-10-11T09:19:27.7946732Z [36m[1m=========================== short test summary info ============================[0m
+2026-10-11T09:19:27.8605955Z [31mFAILED[0m testing/test_debugging.py::[1mTestPDB::test_pdb_unittest_postmortem[0m - pexpect.exceptions.TIMEOUT: Timeout exceeded.
+2026-10-11T09:19:27.8607502Z <pexpect.pty_spawn.spawn object at 0x7f4433c67e50>
+2026-10-11T09:19:27.8608618Z command: /home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python
+2026-10-11T09:19:27.8610525Z args: ['/home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python', '-mpytest', '--basetemp=/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/temp-pexpect', '--pdb', '/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/test_pdb_unittest_postmortem.py']
+2026-10-11T09:19:27.8612238Z buffer (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "
+2026-10-11T09:19:27.8612778Z before (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "
+2026-10-11T09:19:27.8613224Z after: <class 'pexpect.exceptions.TIMEOUT'>
+2026-10-11T09:19:27.8613558Z match: None
+2026-10-11T09:19:27.8613772Z match_index: None
+2026-10-11T09:19:27.8614003Z exitstatus: None
+2026-10-11T09:19:27.8614233Z flag_eof: False
+2026-10-11T09:19:27.8614451Z pid: 7419
+2026-10-11T09:19:27.8614660Z child_fd: 16
+2026-10-11T09:19:27.8614872Z closed: False
+2026-10-11T09:19:27.8615102Z timeout: 10.0
+2026-10-11T09:19:27.8615358Z delimiter: <class 'pexpect.exceptions.EOF'>
+2026-10-11T09:19:27.8616038Z logfile: <_io.BufferedWriter name='/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/spawn.out'>
+2026-10-11T09:19:27.8616680Z logfile_read: None
+2026-10-11T09:19:27.8616919Z logfile_send: None
+2026-10-11T09:19:27.8617147Z maxread: 2000
+2026-10-11T09:19:27.8617374Z ignorecase: False
+2026-10-11T09:19:27.8617618Z searchwindowsize: None
+2026-10-11T09:19:27.8617874Z delaybeforesend: 0.05
+2026-10-11T09:19:27.8618132Z delayafterclose: 0.1
+2026-10-11T09:19:27.8618381Z delayafterterminate: 0.1
+2026-10-11T09:19:27.8618644Z searcher: searcher_re:
+2026-10-11T09:19:27.8618889Z     0: EOF
+2026-10-11T09:19:27.8619589Z [33mXPASS[0m testing/_py/test_local.py::[1mTestLocalPath::test_make_numbered_dir_multiprocess_safe[0m - #11603
+2026-10-11T09:19:27.8620427Z [33mXPASS[0m testing/test_debugging.py::[1mTestPDB::test_pdb_interaction_capturing_twice[0m - #10042
+2026-10-11T09:19:27.8621322Z [33mXPASS[0m testing/test_debugging.py::[1mTestPDB::test_pdb_with_injected_do_debug[0m - #10042
+2026-10-11T09:19:27.8622098Z [33mXPASS[0m testing/test_debugging.py::[1mTestDebuggingBreakpoints::test_pdb_not_altered[0m - #10042
+2026-10-11T09:19:27.8623172Z [33mXPASS[0m testing/test_debugging.py::[1mTestPDB::test_pdb_interaction_capturing_simple[0m - #10042
+2026-10-11T09:19:27.8623952Z [33mXPASS[0m testing/test_debugging.py::[1mtest_pdb_suspends_fixture_capturing[capfd][0m - #10042
+2026-10-11T09:19:27.8624853Z [33mXPASS[0m testing/test_debugging.py::[1mtest_pdb_suspends_fixture_capturing[capsys][0m - #10042
+2026-10-11T09:19:27.8625804Z [31m= [31m[1m1 failed[0m, [32m4694 passed[0m, [33m50 skipped[0m, [33m13 xfailed[0m, [33m7 xpassed[0m, [33m2 warnings[0m[31m in 114.41s (0:01:54)[0m[31m =[0m
+2026-10-11T09:19:28.0253120Z py310-xdist: exit 1 (115.51 seconds) /home/runner/work/pytest/pytest> pytest --junitxml=junit.xml -n auto pid=2679
+2026-10-11T09:19:28.0278462Z   py310-xdist: FAIL code 1 (124.56=setup[9.05]+cmd[115.51] seconds)
+2026-10-11T09:19:28.0278911Z   evaluation failed :( (124.71 seconds)
+2026-10-11T09:19:28.0633789Z ##[error]Process completed with exit code 1.
+2026-10-11T09:19:28.0746202Z Post job cleanup.
+2026-10-11T09:19:28.0749730Z ##[start-action display=Install uv;id=__fc544ee8-6314-47e3-b6c5-01b0b6df8a19.__astral-sh_setup-uv]
+2026-10-11T09:19:28.0753659Z ##[end-action id=__fc544ee8-6314-47e3-b6c5-01b0b6df8a19.__astral-sh_setup-uv;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-11T09:19:28.0845196Z Post job cleanup.
+2026-10-11T09:19:28.1677633Z [command]/usr/bin/git version
+2026-10-11T09:19:28.1713271Z git version 2.55.0
+2026-10-11T09:19:28.1748876Z Temporarily overriding HOME='/home/runner/work/_temp/711a2b0c-ed16-41fe-a276-b1532ae2ebb0' before making global git config changes
+2026-10-11T09:19:28.1750901Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-11T09:19:28.1755051Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pytest/pytest
+2026-10-11T09:19:28.1784235Z Removing SSH command configuration
+2026-10-11T09:19:28.1790471Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-11T09:19:28.1823586Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-11T09:19:28.2042571Z Removing HTTP extra header
+2026-10-11T09:19:28.2047012Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-11T09:19:28.2079259Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-11T09:19:28.2305602Z Removing includeIf entries pointing to credentials config files
+2026-10-11T09:19:28.2312123Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-11T09:19:28.2345039Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-11T09:19:28.2705139Z Cleaning up orphan processes

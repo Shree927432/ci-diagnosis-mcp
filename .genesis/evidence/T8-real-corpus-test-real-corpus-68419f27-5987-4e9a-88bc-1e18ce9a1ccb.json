@@ -1,0 +1,30 @@
+{
+  "task": "T8-real-corpus",
+  "gate": "test-real-corpus",
+  "kind": "command",
+  "attempt": "68419f27-5987-4e9a-88bc-1e18ce9a1ccb",
+  "command": ".venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q",
+  "started_at": "2026-10-14T21:15:56.642Z",
+  "observed_at": "2026-10-14T21:15:59.341Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "....................................................                     [100%]\n52 passed in 1.81s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "fda3da9346bbd2a54abd314eb01425148a89d2e5",
+    "dirty": true
+  },
+  "source_hash": "6adb417328d62865e9ede7e339d3fd744430bc9bd156fedbcb7cd56075b54a98",
+  "before_hash": "6adb417328d62865e9ede7e339d3fd744430bc9bd156fedbcb7cd56075b54a98",
+  "config_hash": "66def81fd958d081713ce8a941a1d02dc39f2b7b33ef169a8d89c81f5e11de71",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "3b5a5e2e20a288eece8a2bbb2d92cc2dd831922b1088e1450f0536be42544a6e"
+}

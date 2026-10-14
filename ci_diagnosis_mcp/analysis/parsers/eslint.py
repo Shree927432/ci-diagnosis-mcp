@@ -18,11 +18,12 @@ _BIOME_SUMMARY = re.compile(r"^Found (\d+) errors?\.?$")
 def parse(lines: list[LogLine], ctx: ParseContext) -> list:
     errors, hits, warnings, current, biome = [], [], 0, None, False
     for l in lines:
-        f = _FILE.match(l.text)
+        text = l.text[9:] if l.text.startswith("##[error]") else l.text  # GitHub problem matchers prefix each row with ##[error]
+        f = _FILE.match(text)
         if f:
             current = f.group(1)
             continue
-        r = _ROW.match(l.text)
+        r = _ROW.match(text)
         if r and current:
             if r.group(3) == "warning":
                 warnings += 1
@@ -30,7 +31,7 @@ def parse(lines: list[LogLine], ctx: ParseContext) -> list:
             errors.append(ExtractedError(trunc(r.group(4)), l.index + 1, current, int(r.group(1)), int(r.group(2)), rule=r.group(5)))
             hits.append(l)
             continue
-        b = _BIOME.match(l.text)
+        b = _BIOME.match(text)
         if b:
             biome = True
             errors.append(ExtractedError(f"biome {b.group(4)}", l.index + 1, b.group(1), int(b.group(2)), int(b.group(3)), rule=b.group(4)))

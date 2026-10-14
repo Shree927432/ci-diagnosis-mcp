@@ -1,0 +1,456 @@
+﻿2026-10-07T20:06:24.6189808Z Current runner version: '2.337.0'
+2026-10-07T20:06:24.6215529Z ##[group]Runner Image Provisioner
+2026-10-07T20:06:24.6216517Z Hosted Compute Agent
+2026-10-07T20:06:24.6217097Z Version: 20260901.588
+2026-10-07T20:06:24.6217759Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-07T20:06:24.6218508Z Build Date: 2026-09-01T19:56:44Z
+2026-10-07T20:06:24.6219185Z Worker ID: {e873227a-b45f-4177-8f2a-c3c9deb17b6e}
+2026-10-07T20:06:24.6220020Z Azure Region: westus2
+2026-10-07T20:06:24.6220630Z ##[endgroup]
+2026-10-07T20:06:24.6222260Z ##[group]Operating System
+2026-10-07T20:06:24.6223354Z Ubuntu
+2026-10-07T20:06:24.6223880Z 24.04.5
+2026-10-07T20:06:24.6224668Z LTS
+2026-10-07T20:06:24.6225192Z ##[endgroup]
+2026-10-07T20:06:24.6225728Z ##[group]Runner Image
+2026-10-07T20:06:24.6226397Z Image: ubuntu-24.04
+2026-10-07T20:06:24.6226965Z Version: 20260927.320.1
+2026-10-07T20:06:24.6228277Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-07T20:06:24.6230204Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-07T20:06:24.6231279Z ##[endgroup]
+2026-10-07T20:06:24.6232786Z ##[group]GITHUB_TOKEN Permissions
+2026-10-07T20:06:24.6234781Z Contents: read
+2026-10-07T20:06:24.6235421Z Metadata: read
+2026-10-07T20:06:24.6236129Z ##[endgroup]
+2026-10-07T20:06:24.6238245Z Secret source: Actions
+2026-10-07T20:06:24.6239270Z Cache mode: write
+2026-10-07T20:06:24.6240416Z Prepare workflow directory
+2026-10-07T20:06:24.6652306Z Prepare all required actions
+2026-10-07T20:06:24.6704264Z Getting action download info
+2026-10-07T20:06:25.0217314Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-07T20:06:25.2902683Z Download action repository 'astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7' (SHA:c18668ad3cf93ea998bef934396af7bb5c839dc7)
+2026-10-07T20:06:25.6971357Z Complete job name: test
+2026-10-07T20:06:25.7748165Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-07T20:06:25.7749243Z with:
+2026-10-07T20:06:25.7749680Z   persist-credentials: false
+2026-10-07T20:06:25.7750226Z   repository: pydantic/pydantic
+2026-10-07T20:06:25.7754093Z   token: ***
+2026-10-07T20:06:25.7754529Z   ssh-strict: true
+2026-10-07T20:06:25.7754974Z   ssh-user: git
+2026-10-07T20:06:25.7755393Z   clean: true
+2026-10-07T20:06:25.7755837Z   sparse-checkout-cone-mode: true
+2026-10-07T20:06:25.7756359Z   fetch-depth: 1
+2026-10-07T20:06:25.7756776Z   fetch-tags: false
+2026-10-07T20:06:25.7757211Z   show-progress: true
+2026-10-07T20:06:25.7757645Z   lfs: false
+2026-10-07T20:06:25.7758050Z   submodules: false
+2026-10-07T20:06:25.7758488Z   set-safe-directory: true
+2026-10-07T20:06:25.7758989Z   allow-unsafe-pr-checkout: false
+2026-10-07T20:06:25.7759752Z env:
+2026-10-07T20:06:25.7760152Z   COLUMNS: 150
+2026-10-07T20:06:25.7760571Z   UV_FROZEN: true
+2026-10-07T20:06:25.7761015Z ##[endgroup]
+2026-10-07T20:06:25.8725515Z Syncing repository: pydantic/pydantic
+2026-10-07T20:06:25.8727371Z ##[group]Getting Git version info
+2026-10-07T20:06:25.8728119Z Working directory is '/home/runner/work/pydantic/pydantic'
+2026-10-07T20:06:25.8729122Z [command]/usr/bin/git version
+2026-10-07T20:06:25.8797450Z git version 2.55.0
+2026-10-07T20:06:25.8819130Z ##[endgroup]
+2026-10-07T20:06:25.8832742Z Temporarily overriding HOME='/home/runner/work/_temp/8d3df209-a751-40a4-a1f7-a665b8205778' before making global git config changes
+2026-10-07T20:06:25.8835163Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-07T20:06:25.8839828Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pydantic/pydantic
+2026-10-07T20:06:25.8892226Z Deleting the contents of '/home/runner/work/pydantic/pydantic'
+2026-10-07T20:06:25.8896042Z ##[group]Determining repository object format
+2026-10-07T20:06:25.8897390Z ##[endgroup]
+2026-10-07T20:06:25.8898613Z ##[group]Initializing the repository
+2026-10-07T20:06:25.8901949Z [command]/usr/bin/git init /home/runner/work/pydantic/pydantic
+2026-10-07T20:06:25.9005989Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-07T20:06:25.9007655Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-07T20:06:25.9008829Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-07T20:06:25.9010116Z hint: call:
+2026-10-07T20:06:25.9010757Z hint:
+2026-10-07T20:06:25.9011575Z hint: 	git config --global init.defaultBranch <name>
+2026-10-07T20:06:25.9012776Z hint:
+2026-10-07T20:06:25.9013815Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-07T20:06:25.9015307Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-07T20:06:25.9016091Z hint:
+2026-10-07T20:06:25.9016510Z hint: 	git branch -m <name>
+2026-10-07T20:06:25.9016991Z hint:
+2026-10-07T20:06:25.9017649Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-07T20:06:25.9019472Z Initialized empty Git repository in /home/runner/work/pydantic/pydantic/.git/
+2026-10-07T20:06:25.9021161Z [command]/usr/bin/git remote add origin https://github.com/pydantic/pydantic
+2026-10-07T20:06:25.9066301Z ##[endgroup]
+2026-10-07T20:06:25.9067601Z ##[group]Disabling automatic garbage collection
+2026-10-07T20:06:25.9069053Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-07T20:06:25.9097884Z ##[endgroup]
+2026-10-07T20:06:25.9098666Z ##[group]Setting up auth
+2026-10-07T20:06:25.9099525Z Removing SSH command configuration
+2026-10-07T20:06:25.9103412Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-07T20:06:25.9133304Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-07T20:06:25.9468616Z Removing HTTP extra header
+2026-10-07T20:06:25.9474422Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-07T20:06:25.9505813Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-07T20:06:25.9717902Z Removing includeIf entries pointing to credentials config files
+2026-10-07T20:06:25.9724685Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-07T20:06:25.9754450Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-07T20:06:25.9978974Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-07T20:06:26.0014275Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pydantic/pydantic/.git.path /home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.0042073Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.0075423Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.0106633Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.0132734Z ##[endgroup]
+2026-10-07T20:06:26.0133636Z ##[group]Fetching the repository
+2026-10-07T20:06:26.0139482Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +69ed168e9ad465eef4c8d81efb152a93b604daf5:refs/remotes/origin/main
+2026-10-07T20:06:26.6446084Z From https://github.com/pydantic/pydantic
+2026-10-07T20:06:26.6447527Z  * [new ref]         69ed168e9ad465eef4c8d81efb152a93b604daf5 -> origin/main
+2026-10-07T20:06:26.6455508Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-07T20:06:26.6479758Z   origin/main
+2026-10-07T20:06:26.6487924Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-07T20:06:26.6508997Z 69ed168e9ad465eef4c8d81efb152a93b604daf5
+2026-10-07T20:06:26.6514718Z ##[endgroup]
+2026-10-07T20:06:26.6516125Z ##[group]Determining the checkout info
+2026-10-07T20:06:26.6518311Z ##[endgroup]
+2026-10-07T20:06:26.6519359Z [command]/usr/bin/git sparse-checkout disable
+2026-10-07T20:06:26.6576216Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-07T20:06:26.6604454Z ##[group]Checking out the ref
+2026-10-07T20:06:26.6607294Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-07T20:06:26.7408415Z Switched to a new branch 'main'
+2026-10-07T20:06:26.7413802Z branch 'main' set up to track 'origin/main'.
+2026-10-07T20:06:26.7425508Z ##[endgroup]
+2026-10-07T20:06:26.7467553Z [command]/usr/bin/git log -1 --format=%H
+2026-10-07T20:06:26.7491561Z 69ed168e9ad465eef4c8d81efb152a93b604daf5
+2026-10-07T20:06:26.7500633Z ##[group]Removing auth
+2026-10-07T20:06:26.7501999Z Removing SSH command configuration
+2026-10-07T20:06:26.7504693Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-07T20:06:26.7537707Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-07T20:06:26.7766718Z Removing HTTP extra header
+2026-10-07T20:06:26.7769830Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-07T20:06:26.7803490Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-07T20:06:26.8020640Z Removing includeIf entries pointing to credentials config files
+2026-10-07T20:06:26.8023734Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-07T20:06:26.8048688Z includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path
+2026-10-07T20:06:26.8051149Z includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path
+2026-10-07T20:06:26.8053708Z includeif.gitdir:/github/workspace/.git.path
+2026-10-07T20:06:26.8055431Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-07T20:06:26.8061218Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path
+2026-10-07T20:06:26.8082736Z /home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.8096068Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pydantic/pydantic/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-3564dbb5\-fd9b\-4d2f\-b656\-779e126e061b\.config
+2026-10-07T20:06:26.8129174Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path
+2026-10-07T20:06:26.8160377Z /home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.8172944Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/pydantic/pydantic/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-3564dbb5\-fd9b\-4d2f\-b656\-779e126e061b\.config
+2026-10-07T20:06:26.8204184Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-07T20:06:26.8263178Z /github/runner_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.8283616Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-3564dbb5\-fd9b\-4d2f\-b656\-779e126e061b\.config
+2026-10-07T20:06:26.8316570Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-07T20:06:26.8337585Z /github/runner_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config
+2026-10-07T20:06:26.8346328Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-3564dbb5\-fd9b\-4d2f\-b656\-779e126e061b\.config
+2026-10-07T20:06:26.8379704Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-07T20:06:26.8595420Z Removing credentials config '/home/runner/work/_temp/git-credentials-3564dbb5-fd9b-4d2f-b656-779e126e061b.config'
+2026-10-07T20:06:26.8603585Z ##[endgroup]
+2026-10-07T20:06:26.9090877Z ##[group]Run astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7
+2026-10-07T20:06:26.9092683Z with:
+2026-10-07T20:06:26.9093475Z   python-version: 3.13
+2026-10-07T20:06:26.9094434Z   enable-cache: true
+2026-10-07T20:06:26.9095347Z   activate-environment: false
+2026-10-07T20:06:26.9096353Z   no-project: false
+2026-10-07T20:06:26.9097452Z   working-directory: /home/runner/work/pydantic/pydantic
+2026-10-07T20:06:26.9106878Z   github-token: ***
+2026-10-07T20:06:26.9109175Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-10-07T20:06:26.9111608Z   restore-cache: true
+2026-10-07T20:06:26.9112626Z   save-cache: auto
+2026-10-07T20:06:26.9113445Z   prune-cache: false
+2026-10-07T20:06:26.9114293Z   cache-python: false
+2026-10-07T20:06:26.9115189Z   ignore-nothing-to-cache: false
+2026-10-07T20:06:26.9116205Z   ignore-empty-workdir: false
+2026-10-07T20:06:26.9117264Z   download-from-astral-mirror: true
+2026-10-07T20:06:26.9118329Z   add-problem-matchers: true
+2026-10-07T20:06:26.9119261Z   quiet: false
+2026-10-07T20:06:26.9120080Z   resolution-strategy: highest
+2026-10-07T20:06:26.9121025Z env:
+2026-10-07T20:06:26.9121731Z   COLUMNS: 150
+2026-10-07T20:06:26.9122633Z   UV_FROZEN: true
+2026-10-07T20:06:26.9123447Z ##[endgroup]
+2026-10-07T20:06:27.1080025Z Trying to find version for uv in: /home/runner/work/pydantic/pydantic/uv.toml
+2026-10-07T20:06:27.1082994Z Could not find file: /home/runner/work/pydantic/pydantic/uv.toml
+2026-10-07T20:06:27.1086161Z Trying to find version for uv in: /home/runner/work/pydantic/pydantic/pyproject.toml
+2026-10-07T20:06:27.1089713Z Found version for uv in /home/runner/work/pydantic/pydantic/pyproject.toml: >=0.8.4
+2026-10-07T20:06:27.1095464Z Found minimum version specifier, using latest version
+2026-10-07T20:06:27.1098490Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-10-07T20:06:27.2186936Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.23/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-10-07T20:06:27.6411802Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e3cc2876-0d2c-429c-8f83-6d49ca71a535 -f /home/runner/work/_temp/6722638e-2615-4d11-9ee8-8391fc6439e9
+2026-10-07T20:06:28.0239983Z Added /home/runner/.local/bin to the path
+2026-10-07T20:06:28.0243170Z Added /opt/hostedtoolcache/uv/0.12.23/x86_64 to the path
+2026-10-07T20:06:28.0244988Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-10-07T20:06:28.0246138Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-10-07T20:06:28.0246921Z Set UV_PYTHON to 3.13
+2026-10-07T20:06:28.0269086Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-10-07T20:06:28.0269572Z Successfully installed uv version 0.12.23
+2026-10-07T20:06:28.0271399Z Searching files using cache dependency glob: /home/runner/work/pydantic/pydantic/**/*requirements*.txt,/home/runner/work/pydantic/pydantic/**/*requirements*.in,/home/runner/work/pydantic/pydantic/**/*constraints*.txt,/home/runner/work/pydantic/pydantic/**/*constraints*.in,/home/runner/work/pydantic/pydantic/**/pyproject.toml,/home/runner/work/pydantic/pydantic/**/uv.lock,/home/runner/work/pydantic/pydantic/**/*.py.lock
+2026-10-07T20:06:28.0466117Z /home/runner/work/pydantic/pydantic/.github/actions/people/requirements.in
+2026-10-07T20:06:28.0485394Z /home/runner/work/pydantic/pydantic/.github/pyodide/requirements.in
+2026-10-07T20:06:28.0897921Z /home/runner/work/pydantic/pydantic/pydantic-core/pyproject.toml
+2026-10-07T20:06:28.1200775Z /home/runner/work/pydantic/pydantic/pydantic-core/uv.lock
+2026-10-07T20:06:28.1218110Z /home/runner/work/pydantic/pydantic/pyproject.toml
+2026-10-07T20:06:28.1344779Z /home/runner/work/pydantic/pydantic/tests/plugin/pyproject.toml
+2026-10-07T20:06:28.1563859Z /home/runner/work/pydantic/pydantic/tests/typechecking/pyproject.toml
+2026-10-07T20:06:28.1577584Z /home/runner/work/pydantic/pydantic/tests/typechecking/uv.lock
+2026-10-07T20:06:28.1626944Z /home/runner/work/pydantic/pydantic/uv.lock
+2026-10-07T20:06:28.1647211Z Found 9 files to hash.
+2026-10-07T20:06:28.1719502Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-acea482f59149ab3ba8cab5260039674b3fde027b8bb79c79550e80c06cb504e
+2026-10-07T20:06:28.4054555Z No GitHub Actions cache found for key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.13-acea482f59149ab3ba8cab5260039674b3fde027b8bb79c79550e80c06cb504e
+2026-10-07T20:06:28.5225525Z ##[group]Run uv sync --all-packages --group testing-extra --all-extras
+2026-10-07T20:06:28.5226194Z [36;1muv sync --all-packages --group testing-extra --all-extras[0m
+2026-10-07T20:06:28.5494019Z shell: /usr/bin/bash -e {0}
+2026-10-07T20:06:28.5494417Z env:
+2026-10-07T20:06:28.5494721Z   COLUMNS: 150
+2026-10-07T20:06:28.5495032Z   UV_FROZEN: true
+2026-10-07T20:06:28.5495471Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-07T20:06:28.5495976Z   UV_PYTHON: 3.13
+2026-10-07T20:06:28.5496352Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-07T20:06:28.5496860Z ##[endgroup]
+2026-10-07T20:06:28.7668284Z Downloading cpython-3.13.16-linux-x86_64-gnu (download) (33.5MiB)
+2026-10-07T20:06:29.7335586Z  Downloaded cpython-3.13.16-linux-x86_64-gnu (download)
+2026-10-07T20:06:29.8866579Z Using CPython 3.13.16
+2026-10-07T20:06:29.8867087Z Creating virtual environment at: .venv
+2026-10-07T20:06:29.9048781Z    Building pydantic-core @ file:///home/runner/work/pydantic/pydantic/pydantic-core
+2026-10-07T20:06:29.9056946Z    Building pydantic @ file:///home/runner/work/pydantic/pydantic
+2026-10-07T20:06:29.9427251Z Downloading ruff (10.7MiB)
+2026-10-07T20:06:29.9439906Z Downloading maturin (10.1MiB)
+2026-10-07T20:06:29.9455599Z Downloading sqlalchemy (3.0MiB)
+2026-10-07T20:06:29.9459615Z Downloading pygments (1.2MiB)
+2026-10-07T20:06:29.9473520Z Downloading black (1.8MiB)
+2026-10-07T20:06:29.9492123Z Downloading memray (9.5MiB)
+2026-10-07T20:06:29.9817202Z Downloading faker (1.8MiB)
+2026-10-07T20:06:30.1623572Z  Downloaded pygments
+2026-10-07T20:06:30.1704416Z  Downloaded black
+2026-10-07T20:06:30.1854376Z  Downloaded sqlalchemy
+2026-10-07T20:06:30.2333623Z  Downloaded faker
+2026-10-07T20:06:30.2697609Z  Downloaded ruff
+2026-10-07T20:06:30.2723211Z  Downloaded maturin
+2026-10-07T20:06:30.2830641Z  Downloaded memray
+2026-10-07T20:06:30.8067632Z       Built pydantic @ file:///home/runner/work/pydantic/pydantic
+2026-10-07T20:07:07.6515314Z       Built pydantic-core @ file:///home/runner/work/pydantic/pydantic/pydantic-core
+2026-10-07T20:07:07.6529553Z Prepared 65 packages in 37.76s
+2026-10-07T20:07:07.7352164Z Installed 65 packages in 82ms
+2026-10-07T20:07:07.7355504Z  + annotated-types==0.7.0
+2026-10-07T20:07:07.7356158Z  + ansi2html==1.9.2
+2026-10-07T20:07:07.7356611Z  + asttokens==2.4.1
+2026-10-07T20:07:07.7357032Z  + attrs==24.3.0
+2026-10-07T20:07:07.7357429Z  + black==26.5.1
+2026-10-07T20:07:07.7357989Z  + cffi==2.1.0
+2026-10-07T20:07:07.7358385Z  + click==8.4.2
+2026-10-07T20:07:07.7358794Z  + cloudpickle==3.1.2
+2026-10-07T20:07:07.7359231Z  + coverage==7.13.5
+2026-10-07T20:07:07.7359966Z  + devtools==0.12.2
+2026-10-07T20:07:07.7360396Z  + dirty-equals==0.9.0
+2026-10-07T20:07:07.7360832Z  + dnspython==2.7.0
+2026-10-07T20:07:07.7361271Z  + email-validator==2.2.0
+2026-10-07T20:07:07.7361727Z  + executing==2.2.0
+2026-10-07T20:07:07.7362132Z  + faker==35.0.0
+2026-10-07T20:07:07.7362743Z  + greenlet==3.1.1
+2026-10-07T20:07:07.7363181Z  + hypothesis==6.147.0
+2026-10-07T20:07:07.7363615Z  + idna==3.15
+2026-10-07T20:07:07.7363977Z  + iniconfig==2.0.0
+2026-10-07T20:07:07.7364343Z  + inline-snapshot==0.32.2
+2026-10-07T20:07:07.7364739Z  + jinja2==3.1.6
+2026-10-07T20:07:07.7365082Z  + jsonschema==4.26.0
+2026-10-07T20:07:07.7365487Z  + jsonschema-specifications==2024.10.1
+2026-10-07T20:07:07.7365996Z  + linkify-it-py==2.0.3
+2026-10-07T20:07:07.7366393Z  + markdown-it-py==3.0.0
+2026-10-07T20:07:07.7366776Z  + markupsafe==3.0.3
+2026-10-07T20:07:07.7367139Z  + maturin==1.15.0
+2026-10-07T20:07:07.7367498Z  + mdit-py-plugins==0.4.2
+2026-10-07T20:07:07.7367877Z  + mdurl==0.1.2
+2026-10-07T20:07:07.7368225Z  + memray==1.19.3
+2026-10-07T20:07:07.7368572Z  + mypy-extensions==1.0.0
+2026-10-07T20:07:07.7368952Z  + packaging==26.3
+2026-10-07T20:07:07.7369294Z  + pathspec==1.1.1
+2026-10-07T20:07:07.7369648Z  + platformdirs==4.3.6
+2026-10-07T20:07:07.7370014Z  + pluggy==1.5.0
+2026-10-07T20:07:07.7370352Z  + py-cpuinfo==9.0.0
+2026-10-07T20:07:07.7370709Z  + pycparser==2.22
+2026-10-07T20:07:07.7371476Z  + pydantic==2.14.0b2 (from file:///home/runner/work/pydantic/pydantic)
+2026-10-07T20:07:07.7372588Z  + pydantic-core==2.49.0 (from file:///home/runner/work/pydantic/pydantic/pydantic-core)
+2026-10-07T20:07:07.7373337Z  + pygments==2.20.0
+2026-10-07T20:07:07.7373712Z  + pytest==9.1.1
+2026-10-07T20:07:07.7374074Z  + pytest-benchmark==5.1.0
+2026-10-07T20:07:07.7374491Z  + pytest-codspeed==4.5.0
+2026-10-07T20:07:07.7374891Z  + pytest-examples==0.0.15
+2026-10-07T20:07:07.7375288Z  + pytest-memray==1.7.0
+2026-10-07T20:07:07.7375671Z  + pytest-mock==3.14.0
+2026-10-07T20:07:07.7376042Z  + pytest-pretty==1.2.0
+2026-10-07T20:07:07.7376453Z  + pytest-run-parallel==0.7.1
+2026-10-07T20:07:07.7376897Z  + pytest-timeout==2.4.0
+2026-10-07T20:07:07.7377303Z  + python-dateutil==2.9.0.post0
+2026-10-07T20:07:07.7377720Z  + pytokens==0.4.1
+2026-10-07T20:07:07.7378056Z  + pytz==2024.2
+2026-10-07T20:07:07.7378348Z  + referencing==0.36.1
+2026-10-07T20:07:07.7378674Z  + rich==15.0.0
+2026-10-07T20:07:07.7378986Z  + rpds-py==2026.6.3
+2026-10-07T20:07:07.7379304Z  + ruff==0.15.10
+2026-10-07T20:07:07.7379596Z  + six==1.17.0
+2026-10-07T20:07:07.7379911Z  + sortedcontainers==2.4.0
+2026-10-07T20:07:07.7380285Z  + sqlalchemy==2.0.37
+2026-10-07T20:07:07.7380591Z  + textual==1.0.0
+2026-10-07T20:07:07.7380908Z  + time-machine==3.3.0
+2026-10-07T20:07:07.7381265Z  + typing-extensions==4.16.0
+2026-10-07T20:07:07.7381686Z  + typing-inspection==0.4.4
+2026-10-07T20:07:07.7382175Z  + tzdata==2025.1
+2026-10-07T20:07:07.7382761Z  + uc-micro-py==1.0.3
+2026-10-07T20:07:07.7624396Z ##[group]Run uv run python -c "import pydantic.version; print(pydantic.version.version_info())"
+2026-10-07T20:07:07.7625174Z [36;1muv run python -c "import pydantic.version; print(pydantic.version.version_info())"[0m
+2026-10-07T20:07:07.7687476Z shell: /usr/bin/bash -e {0}
+2026-10-07T20:07:07.7687723Z env:
+2026-10-07T20:07:07.7687906Z   COLUMNS: 150
+2026-10-07T20:07:07.7688101Z   UV_FROZEN: true
+2026-10-07T20:07:07.7688397Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-07T20:07:07.7688732Z   UV_PYTHON: 3.13
+2026-10-07T20:07:07.7688983Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-07T20:07:07.7689285Z ##[endgroup]
+2026-10-07T20:07:07.9926901Z              pydantic version: 2.14.0b2
+2026-10-07T20:07:07.9927789Z         pydantic-core version: 2.49.0
+2026-10-07T20:07:07.9928591Z           pydantic-core build: profile=debug pgo=false
+2026-10-07T20:07:07.9929149Z                python version: 3.13.16 (main, Oct  3 2026, 01:06:22) [Clang 22.1.3 ]
+2026-10-07T20:07:07.9929630Z                      platform: Linux-6.17.0-1022-azure-x86_64-with-glibc2.39
+2026-10-07T20:07:07.9930338Z              related packages: typing_extensions-4.16.0
+2026-10-07T20:07:07.9930650Z                        commit: 69ed168
+2026-10-07T20:07:08.0114831Z ##[group]Run make test
+2026-10-07T20:07:08.0115104Z [36;1mmake test[0m
+2026-10-07T20:07:08.0176794Z shell: /usr/bin/bash -e {0}
+2026-10-07T20:07:08.0177056Z env:
+2026-10-07T20:07:08.0177266Z   COLUMNS: 150
+2026-10-07T20:07:08.0177475Z   UV_FROZEN: true
+2026-10-07T20:07:08.0177778Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-10-07T20:07:08.0178143Z   UV_PYTHON: 3.13
+2026-10-07T20:07:08.0178432Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-10-07T20:07:08.0178783Z ##[endgroup]
+2026-10-07T20:07:08.0512705Z uv 0.12.23 (x86_64-unknown-linux-gnu)
+2026-10-07T20:07:08.0517127Z uv run coverage run -m pytest --durations=10 --parallel-threads 1
+2026-10-07T20:07:29.6929695Z ================================================================ test session starts =================================================================
+2026-10-07T20:07:29.6931152Z platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.5.0
+2026-10-07T20:07:29.6932803Z codspeed: 4.5.0 (disabled, mode: walltime, callgraph: enabled, timer_resolution: 1.0ns)
+2026-10-07T20:07:29.6935069Z benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=True warmup_iterations=100000)
+2026-10-07T20:07:29.6937084Z rootdir: /home/runner/work/pydantic/pydantic
+2026-10-07T20:07:29.6937963Z configfile: pyproject.toml
+2026-10-07T20:07:29.6938417Z testpaths: tests
+2026-10-07T20:07:29.6939896Z plugins: hypothesis-6.147.0, codspeed-4.5.0, benchmark-5.1.0, timeout-2.4.0, pretty-1.2.0, run-parallel-0.7.1, inline-snapshot-0.32.2, memray-1.7.0, examples-0.0.15, time-machine-3.3.0, Faker-35.0.0, mock-3.14.0, devtools-0.12.2
+2026-10-07T20:07:29.6941583Z collected 13505 items / 3 skipped
+2026-10-07T20:07:29.6942042Z Collected 0 items to run in parallel
+2026-10-07T20:07:29.6942604Z 
+2026-10-07T20:07:29.8306278Z tests/benchmarks/test_attribute_access.py ..                                                                                                   [  0%]
+2026-10-07T20:07:29.8399908Z tests/benchmarks/test_discriminated_unions.py ..                                                                                               [  0%]
+2026-10-07T20:07:30.0603621Z tests/benchmarks/test_fastapi_startup_generics.py .                                                                                            [  0%]
+2026-10-07T20:07:30.0809218Z tests/benchmarks/test_fastapi_startup_simple.py .                                                                                              [  0%]
+2026-10-07T20:07:30.0856442Z tests/benchmarks/test_imports.py ..                                                                                                            [  0%]
+2026-10-07T20:07:30.0893810Z tests/benchmarks/test_isinstance.py .                                                                                                          [  0%]
+2026-10-07T20:07:30.0965390Z tests/benchmarks/test_model_eq.py ...                                                                                                          [  0%]
+2026-10-07T20:07:32.4345360Z tests/benchmarks/test_model_schema_generation.py ..............sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [  0%]
+2026-10-07T20:07:32.4628069Z sssssssssssssssssssssssssssss                                                                                                                  [  0%]
+2026-10-07T20:07:32.4928989Z tests/benchmarks/test_model_schema_generation_recursive.py ......                                                                              [  1%]
+2026-10-07T20:07:32.5058787Z tests/benchmarks/test_model_serialization.py .....                                                                                             [  1%]
+2026-10-07T20:07:32.5265073Z tests/benchmarks/test_model_validation.py ........                                                                                             [  1%]
+2026-10-07T20:07:35.1366413Z tests/benchmarks/test_north_star.py ........                                                                                                   [  1%]
+2026-10-07T20:07:35.2270288Z tests/benchmarks/test_regex.py .                                                                                                               [  1%]
+2026-10-07T20:07:35.2335211Z tests/benchmarks/test_validators_build.py .                                                                                                    [  1%]
+2026-10-07T20:07:35.2842280Z tests/mypy/test_mypy.py ssssssssssssssssssssssssssssssssssssssssssssssssssssss                                                                 [  1%]
+2026-10-07T20:07:35.2854608Z tests/plugin/test_plugin.py s                                                                                                                  [  1%]
+2026-10-07T20:07:35.3419888Z tests/pydantic_core/benchmarks/test_complete_benchmark.py ............                                                                         [  1%]
+2026-10-07T20:07:35.5784492Z tests/pydantic_core/benchmarks/test_micro_benchmarks.py ...................................................................................... [  2%]
+2026-10-07T20:07:35.6779739Z ...............................                                                                                                                [  2%]
+2026-10-07T20:07:35.9266194Z tests/pydantic_core/benchmarks/test_nested_benchmark.py ..                                                                                     [  2%]
+2026-10-07T20:07:36.0324300Z tests/pydantic_core/benchmarks/test_serialization_micro.py ..................................                                                  [  2%]
+2026-10-07T20:07:36.2670142Z tests/pydantic_core/serializers/test_any.py ...............................s.......................................................s.......... [  3%]
+2026-10-07T20:07:36.2975530Z .............                                                                                                                                  [  3%]
+2026-10-07T20:07:36.3351087Z tests/pydantic_core/serializers/test_bytes.py ................                                                                                 [  3%]
+2026-10-07T20:07:36.3627573Z tests/pydantic_core/serializers/test_complex.py ............                                                                                   [  3%]
+2026-10-07T20:07:36.3899663Z tests/pydantic_core/serializers/test_core_schema_as_ser_schema.py ...........                                                                  [  3%]
+2026-10-07T20:07:36.4079269Z tests/pydantic_core/serializers/test_counter.py ........                                                                                       [  4%]
+2026-10-07T20:07:36.5224634Z tests/pydantic_core/serializers/test_dataclasses.py .....x..........                                                                           [  4%]
+2026-10-07T20:07:36.6246220Z tests/pydantic_core/serializers/test_datetime.py .......................................                                                       [  4%]
+2026-10-07T20:07:36.6411088Z tests/pydantic_core/serializers/test_decimal.py .......                                                                                        [  4%]
+2026-10-07T20:07:36.6573203Z tests/pydantic_core/serializers/test_definitions.py .......                                                                                    [  4%]
+2026-10-07T20:07:36.6689077Z tests/pydantic_core/serializers/test_definitions_recursive.py .....                                                                            [  4%]
+2026-10-07T20:07:36.6951814Z tests/pydantic_core/serializers/test_deque.py ...........                                                                                      [  4%]
+2026-10-07T20:07:36.7589718Z tests/pydantic_core/serializers/test_dict.py ............................                                                                      [  4%]
+2026-10-07T20:07:36.7724532Z tests/pydantic_core/serializers/test_enum.py .....                                                                                             [  4%]
+2026-10-07T20:07:36.8082157Z tests/pydantic_core/serializers/test_format.py ...............                                                                                 [  4%]
+2026-10-07T20:07:36.9096299Z tests/pydantic_core/serializers/test_functions.py ................................                                                             [  5%]
+2026-10-07T20:07:36.9267100Z tests/pydantic_core/serializers/test_generator.py ......                                                                                       [  5%]
+2026-10-07T20:07:36.9337971Z tests/pydantic_core/serializers/test_infer.py ...                                                                                              [  5%]
+2026-10-07T20:07:36.9429142Z tests/pydantic_core/serializers/test_json.py ....                                                                                              [  5%]
+2026-10-07T20:07:36.9478416Z tests/pydantic_core/serializers/test_json_or_python.py ..                                                                                      [  5%]
+2026-10-07T20:07:37.0997354Z tests/pydantic_core/serializers/test_list_tuple.py ...............................................................                             [  5%]
+2026-10-07T20:07:37.1152552Z tests/pydantic_core/serializers/test_literal.py ......                                                                                         [  5%]
+2026-10-07T20:07:37.1274068Z tests/pydantic_core/serializers/test_missing_sentinel.py .....                                                                                 [  5%]
+2026-10-07T20:07:37.3034719Z tests/pydantic_core/serializers/test_model.py ...................................................................                              [  6%]
+2026-10-07T20:07:37.3227868Z tests/pydantic_core/serializers/test_model_root.py ........                                                                                    [  6%]
+2026-10-07T20:07:37.3838506Z tests/pydantic_core/serializers/test_none.py ............................                                                                      [  6%]
+2026-10-07T20:07:37.3866861Z tests/pydantic_core/serializers/test_nullable.py .                                                                                             [  6%]
+2026-10-07T20:07:37.4044548Z tests/pydantic_core/serializers/test_ordered_dict.py ........                                                                                  [  6%]
+2026-10-07T20:07:37.4198158Z tests/pydantic_core/serializers/test_other.py .......                                                                                          [  6%]
+2026-10-07T20:07:37.4341331Z tests/pydantic_core/serializers/test_pickling.py ......                                                                                        [  6%]
+2026-10-07T20:07:37.4649880Z tests/pydantic_core/serializers/test_serialize_as_any.py ............                                                                          [  6%]
+2026-10-07T20:07:37.4830717Z tests/pydantic_core/serializers/test_set_frozenset.py .......                                                                                  [  6%]
+2026-10-07T20:07:37.5820704Z tests/pydantic_core/serializers/test_simple.py ..........................s.............                                                        [  7%]
+2026-10-07T20:07:37.6306540Z tests/pydantic_core/serializers/test_string.py .....................                                                                           [  7%]
+2026-10-07T20:07:37.8755748Z tests/pydantic_core/serializers/test_timedelta.py ...s...............................................................................          [  8%]
+2026-10-07T20:07:37.9665650Z tests/pydantic_core/serializers/test_typed_dict.py .....................................                                                       [  8%]
+2026-10-07T20:07:38.2205766Z tests/pydantic_core/serializers/test_union.py ................................................................................................ [  9%]
+2026-10-07T20:07:38.2457469Z ..........                                                                                                                                     [  9%]
+2026-10-07T20:07:38.2689888Z tests/pydantic_core/serializers/test_url.py ..........                                                                                         [  9%]
+2026-10-07T20:07:38.2853631Z tests/pydantic_core/serializers/test_uuid.py .......                                                                                           [  9%]
+2026-10-07T20:07:38.3090230Z tests/pydantic_core/test_build.py ..........                                                                                                   [  9%]
+2026-10-07T20:07:38.3439694Z tests/pydantic_core/test_config.py ..............                                                                                              [  9%]
+2026-10-07T20:07:38.3530549Z tests/pydantic_core/test_custom_errors.py ....                                                                                                 [  9%]
+2026-10-07T20:07:39.2376915Z tests/pydantic_core/test_docstrings.py .............................s......................................                                    [  9%]
+2026-10-07T20:07:39.4835269Z tests/pydantic_core/test_errors.py ........................................................................................................... [ 10%]
+2026-10-07T20:07:40.1224724Z ...............................................................s.......................s.......                                                [ 11%]
+2026-10-07T20:07:47.2564032Z tests/pydantic_core/test_garbage_collection.py ......                                                                                          [ 11%]
+2026-10-07T20:07:50.1814812Z tests/pydantic_core/test_hypothesis.py ...........                                                                                             [ 11%]
+2026-10-07T20:07:50.1887429Z tests/pydantic_core/test_isinstance.py ...                                                                                                     [ 11%]
+2026-10-07T20:07:50.2319347Z tests/pydantic_core/test_json.py ...............                                                                                               [ 11%]
+2026-10-07T20:07:50.2821708Z tests/pydantic_core/test_misc.py .................                                                                                             [ 11%]
+2026-10-07T20:07:50.3038139Z tests/pydantic_core/test_prebuilt.py .........                                                                                                 [ 11%]
+2026-10-07T20:07:50.5396260Z tests/pydantic_core/test_schema_functions.py .............................................................................................     [ 12%]
+2026-10-07T20:07:50.5644138Z tests/pydantic_core/test_typing.py ...........                                                                                                 [ 12%]
+2026-10-07T20:07:50.6603762Z tests/pydantic_core/test_tzinfo.py ..........................................                                                                  [ 12%]
+2026-10-07T20:07:50.8753618Z tests/pydantic_core/validators/arguments_v3/test_alias.py .....sss.........sssss...s.s........................................................ [ 13%]
+2026-10-07T20:07:50.9395697Z ........................s                                                                                                                      [ 13%]
+2026-10-07T20:07:50.9544695Z tests/pydantic_core/validators/arguments_v3/test_build_errors.py ......                                                                        [ 13%]
+2026-10-07T20:07:51.0184625Z tests/pydantic_core/validators/arguments_v3/test_extra.py ........ssss........ss..                                                             [ 13%]
+2026-10-07T20:07:51.0864378Z tests/pydantic_core/validators/arguments_v3/test_general.py ....s.ss......ssss...s...s.                                                        [ 14%]
+2026-10-07T20:07:51.1257559Z tests/pydantic_core/validators/arguments_v3/test_keyword_only.py ....ss....s...s.                                                              [ 14%]
+2026-10-07T20:07:51.1552761Z tests/pydantic_core/validators/arguments_v3/test_positional_only.py ....ss...s.s                                                               [ 14%]
+2026-10-07T20:07:51.2108184Z tests/pydantic_core/validators/arguments_v3/test_positional_or_keyword.py ......ssss.....ss...s.                                               [ 14%]
+2026-10-07T20:07:51.2611387Z tests/pydantic_core/validators/arguments_v3/test_var_args.py .....ss.......ss....                                                              [ 14%]
+2026-10-07T20:07:51.3068160Z tests/pydantic_core/validators/arguments_v3/test_var_kwargs_uniform.py ....ss......ss....                                                      [ 14%]
+2026-10-07T20:07:51.3714353Z tests/pydantic_core/validators/arguments_v3/test_var_kwargs_unpacked_typed_dict.py ...........sssss........                                    [ 15%]
+2026-10-07T20:07:51.5971382Z tests/pydantic_core/validators/test_allow_partial.py ..............                                                                            [ 15%]
+2026-10-07T20:07:51.8335109Z tests/pydantic_core/validators/test_arguments.py ..............s..s....s........s.ssssss........ssssss................ss......s..s............ [ 15%]
+2026-10-07T20:07:51.9686774Z ##[error]The operation was canceled.
+2026-10-07T20:07:51.9821397Z Post job cleanup.
+2026-10-07T20:07:52.0697580Z [command]/usr/bin/git version
+2026-10-07T20:07:52.0746481Z git version 2.55.0
+2026-10-07T20:07:52.0781789Z Temporarily overriding HOME='/home/runner/work/_temp/ae607d28-ca9e-45d0-9646-a47e2f196f89' before making global git config changes
+2026-10-07T20:07:52.0783791Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-07T20:07:52.0787209Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pydantic/pydantic
+2026-10-07T20:07:52.0818019Z Removing SSH command configuration
+2026-10-07T20:07:52.0824317Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-07T20:07:52.0858540Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-07T20:07:52.1104139Z Removing HTTP extra header
+2026-10-07T20:07:52.1105129Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-07T20:07:52.1139696Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-07T20:07:52.1372294Z Removing includeIf entries pointing to credentials config files
+2026-10-07T20:07:52.1379743Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-07T20:07:52.1413383Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-07T20:07:52.1796063Z Cleaning up orphan processes
+2026-10-07T20:07:52.2122154Z Terminate orphan process: pid (4205) (make)
+2026-10-07T20:07:52.2144100Z Terminate orphan process: pid (4208) (uv)
+2026-10-07T20:07:52.2165446Z Terminate orphan process: pid (4211) (coverage)

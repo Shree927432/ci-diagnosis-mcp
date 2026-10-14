@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Shrikant Pawade at 2026-10-14T20:34:49.565Z
+- plan approval: Shrikant Pawade at 2026-10-14T20:51:43.551Z
 
 ## Tasks
 
@@ -70,5 +70,13 @@
 - requirements: NFR-1, NFR-2, AC-7, AC-10
 - scope: not bounded
 - gates: test-all: .venv/bin/python -m pytest -q
+- next: Run the task pre-flight.
+
+### T8-real-corpus — Real-log fixture corpus: at least 30 failed GitHub Actions jobs from public repositories, labelled by reading the logs, covering every parsed mode and parser module where a real case exists; corpus test passes with mode accuracy >= 90% and unknown rate <= 15%; synthetic cases kept only for modes without a real example
+
+- state/risk: done / low
+- requirements: AC-2, NFR-9, AC-1
+- scope: not bounded
+- gates: test-real-corpus: .venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q
 - next: Run the task pre-flight.
 

@@ -1,0 +1,180 @@
+{
+ "id": 114564306189,
+ "run_id": 38171304253,
+ "workflow_name": "CI",
+ "head_branch": "patch-3",
+ "run_url": "https://api.github.com/repos/eslint/eslint/actions/runs/38171304253",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOAKjKDc8AAAAarJCVDQ",
+ "head_sha": "d05f5a7162a8c1f79f0d9f7ee5997f95a60f2995",
+ "url": "https://api.github.com/repos/eslint/eslint/actions/jobs/114564306189",
+ "html_url": "https://github.com/eslint/eslint/actions/runs/38171304253/job/114564306189",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-11T20:13:39Z",
+ "started_at": "2026-10-11T20:13:42Z",
+ "completed_at": "2026-10-11T20:16:02Z",
+ "name": "Verify Files",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-11T20:13:43Z",
+   "completed_at": "2026-10-11T20:13:46Z"
+  },
+  {
+   "name": "Run actions/checkout@v7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-11T20:13:46Z",
+   "completed_at": "2026-10-11T20:13:48Z"
+  },
+  {
+   "name": "Run actions/setup-go@v7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-11T20:13:48Z",
+   "completed_at": "2026-10-11T20:14:02Z"
+  },
+  {
+   "name": "Run actions/setup-node@v7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-11T20:14:02Z",
+   "completed_at": "2026-10-11T20:14:06Z"
+  },
+  {
+   "name": "Lint GitHub Actions workflows",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-11T20:14:06Z",
+   "completed_at": "2026-10-11T20:14:13Z"
+  },
+  {
+   "name": "Install Packages",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-11T20:14:13Z",
+   "completed_at": "2026-10-11T20:14:50Z"
+  },
+  {
+   "name": "Install Docs Packages",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 7,
+   "started_at": "2026-10-11T20:14:50Z",
+   "completed_at": "2026-10-11T20:15:11Z"
+  },
+  {
+   "name": "Lint Files",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 8,
+   "started_at": "2026-10-11T20:15:11Z",
+   "completed_at": "2026-10-11T20:15:36Z"
+  },
+  {
+   "name": "Check Rule Files",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 9,
+   "started_at": "2026-10-11T20:15:36Z",
+   "completed_at": "2026-10-11T20:15:36Z"
+  },
+  {
+   "name": "Check Licenses",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 10,
+   "started_at": "2026-10-11T20:15:36Z",
+   "completed_at": "2026-10-11T20:15:37Z"
+  },
+  {
+   "name": "Lint Docs JS Files",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 11,
+   "started_at": "2026-10-11T20:15:37Z",
+   "completed_at": "2026-10-11T20:15:38Z"
+  },
+  {
+   "name": "Check Rule Examples",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 12,
+   "started_at": "2026-10-11T20:15:38Z",
+   "completed_at": "2026-10-11T20:15:41Z"
+  },
+  {
+   "name": "Check Rule Types",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 13,
+   "started_at": "2026-10-11T20:15:41Z",
+   "completed_at": "2026-10-11T20:15:41Z"
+  },
+  {
+   "name": "Lint Files, Dependencies, & Exports",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 14,
+   "started_at": "2026-10-11T20:15:41Z",
+   "completed_at": "2026-10-11T20:15:43Z"
+  },
+  {
+   "name": "Check Formatting",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 15,
+   "started_at": "2026-10-11T20:15:43Z",
+   "completed_at": "2026-10-11T20:15:59Z"
+  },
+  {
+   "name": "Post Run actions/setup-node@v7",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 28,
+   "started_at": "2026-10-11T20:15:59Z",
+   "completed_at": "2026-10-11T20:15:59Z"
+  },
+  {
+   "name": "Post Run actions/setup-go@v7",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 29,
+   "started_at": "2026-10-11T20:15:59Z",
+   "completed_at": "2026-10-11T20:15:59Z"
+  },
+  {
+   "name": "Post Run actions/checkout@v7",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 30,
+   "started_at": "2026-10-11T20:15:59Z",
+   "completed_at": "2026-10-11T20:15:59Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 31,
+   "started_at": "2026-10-11T20:15:59Z",
+   "completed_at": "2026-10-11T20:15:59Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/eslint/eslint/check-runs/114564306189",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000268436,
+ "runner_name": "GitHub Actions 1000268436",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

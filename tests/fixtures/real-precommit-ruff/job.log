@@ -1,0 +1,364 @@
+﻿2026-09-13T00:08:42.8778892Z Current runner version: '2.337.0'
+2026-09-13T00:08:42.8798928Z ##[group]Runner Image Provisioner
+2026-09-13T00:08:42.8799632Z Hosted Compute Agent
+2026-09-13T00:08:42.8800112Z Version: 20260828.587
+2026-09-13T00:08:42.8800786Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-13T00:08:42.8801383Z Build Date: 2026-08-28T16:44:25Z
+2026-09-13T00:08:42.8801952Z Worker ID: {40b5ea14-647a-439f-808c-fc87311689c8}
+2026-09-13T00:08:42.8802600Z Azure Region: westcentralus
+2026-09-13T00:08:42.8803098Z ##[endgroup]
+2026-09-13T00:08:42.8804572Z ##[group]Operating System
+2026-09-13T00:08:42.8805107Z Ubuntu
+2026-09-13T00:08:42.8805523Z 24.04.5
+2026-09-13T00:08:42.8806003Z LTS
+2026-09-13T00:08:42.8806458Z ##[endgroup]
+2026-09-13T00:08:42.8806932Z ##[group]Runner Image
+2026-09-13T00:08:42.8807429Z Image: ubuntu-24.04
+2026-09-13T00:08:42.8807890Z Version: 20260907.300.1
+2026-09-13T00:08:42.8809059Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-13T00:08:42.8810355Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+2026-09-13T00:08:42.8811159Z ##[endgroup]
+2026-09-13T00:08:42.8812012Z ##[group]GITHUB_TOKEN Permissions
+2026-09-13T00:08:42.8813733Z Metadata: read
+2026-09-13T00:08:42.8814264Z ##[endgroup]
+2026-09-13T00:08:42.8816004Z Secret source: None
+2026-09-13T00:08:42.8816732Z Cache mode: write
+2026-09-13T00:08:42.8817541Z Prepare workflow directory
+2026-09-13T00:08:43.0338062Z Prepare all required actions
+2026-09-13T00:08:43.0392657Z Getting action download info
+2026-09-13T00:08:43.3363314Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-09-13T00:08:43.4519797Z Download action repository 'astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9' (SHA:c771a70e6277c0a99b617c7a806ffedaca235ff9)
+2026-09-13T00:08:44.2284820Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-09-13T00:08:44.3500260Z Download action repository 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9' (SHA:55cc8345863c7cc4c66a329aec7e433d2d1c52a9)
+2026-09-13T00:08:44.7905573Z Complete job name: main
+2026-09-13T00:08:45.1590120Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-09-13T00:08:45.1591501Z with:
+2026-09-13T00:08:45.1592198Z   persist-credentials: false
+2026-09-13T00:08:45.1593028Z   repository: pallets/flask
+2026-09-13T00:08:45.1599550Z   token: ***
+2026-09-13T00:08:45.1600264Z   ssh-strict: true
+2026-09-13T00:08:45.1600983Z   ssh-user: git
+2026-09-13T00:08:45.1601661Z   clean: true
+2026-09-13T00:08:45.1602395Z   sparse-checkout-cone-mode: true
+2026-09-13T00:08:45.1603241Z   fetch-depth: 1
+2026-09-13T00:08:45.1603940Z   fetch-tags: false
+2026-09-13T00:08:45.1604656Z   show-progress: true
+2026-09-13T00:08:45.1605392Z   lfs: false
+2026-09-13T00:08:45.1606058Z   submodules: false
+2026-09-13T00:08:45.1606785Z   set-safe-directory: true
+2026-09-13T00:08:45.1607622Z   allow-unsafe-pr-checkout: false
+2026-09-13T00:08:45.1608829Z ##[endgroup]
+2026-09-13T00:08:45.2408879Z Syncing repository: pallets/flask
+2026-09-13T00:08:45.2411014Z ##[group]Getting Git version info
+2026-09-13T00:08:45.2412096Z Working directory is '/home/runner/work/flask/flask'
+2026-09-13T00:08:45.2413587Z [command]/usr/bin/git version
+2026-09-13T00:08:45.2449396Z git version 2.55.0
+2026-09-13T00:08:45.2464711Z ##[endgroup]
+2026-09-13T00:08:45.2472156Z Temporarily overriding HOME='/home/runner/work/_temp/325d13b1-edba-4b82-9ff9-f02fdd7b1cce' before making global git config changes
+2026-09-13T00:08:45.2475071Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-13T00:08:45.2477147Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask/flask
+2026-09-13T00:08:45.2511974Z Deleting the contents of '/home/runner/work/flask/flask'
+2026-09-13T00:08:45.2515127Z ##[group]Determining repository object format
+2026-09-13T00:08:45.2517622Z ##[endgroup]
+2026-09-13T00:08:45.2519578Z ##[group]Initializing the repository
+2026-09-13T00:08:45.2521196Z [command]/usr/bin/git init /home/runner/work/flask/flask
+2026-09-13T00:08:45.2596278Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-13T00:08:45.2597999Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-13T00:08:45.2600025Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-13T00:08:45.2601262Z hint: call:
+2026-09-13T00:08:45.2602025Z hint:
+2026-09-13T00:08:45.2603064Z hint: 	git config --global init.defaultBranch <name>
+2026-09-13T00:08:45.2604064Z hint:
+2026-09-13T00:08:45.2605259Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-13T00:08:45.2607055Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-13T00:08:45.2608346Z hint:
+2026-09-13T00:08:45.2609090Z hint: 	git branch -m <name>
+2026-09-13T00:08:45.2609924Z hint:
+2026-09-13T00:08:45.2610989Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-13T00:08:45.2612504Z Initialized empty Git repository in /home/runner/work/flask/flask/.git/
+2026-09-13T00:08:45.2614885Z [command]/usr/bin/git remote add origin https://github.com/pallets/flask
+2026-09-13T00:08:45.2641841Z ##[endgroup]
+2026-09-13T00:08:45.2643076Z ##[group]Disabling automatic garbage collection
+2026-09-13T00:08:45.2644375Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-13T00:08:45.2667980Z ##[endgroup]
+2026-09-13T00:08:45.2669617Z ##[group]Setting up auth
+2026-09-13T00:08:45.2670638Z Removing SSH command configuration
+2026-09-13T00:08:45.2672111Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-13T00:08:45.2696549Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-13T00:08:45.2951808Z Removing HTTP extra header
+2026-09-13T00:08:45.2956289Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-13T00:08:45.2983040Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-13T00:08:45.3156214Z Removing includeIf entries pointing to credentials config files
+2026-09-13T00:08:45.3165158Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-13T00:08:45.3189814Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-13T00:08:45.3371915Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-13T00:08:45.3397947Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask/flask/.git.path /home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:45.3421969Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/flask/flask/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:45.3448639Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:45.3473977Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:45.3495752Z ##[endgroup]
+2026-09-13T00:08:45.3497583Z ##[group]Fetching the repository
+2026-09-13T00:08:45.3502485Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cfb71a548383ed5d6bdc8ed726f040a5fe9c7e44:refs/remotes/pull/6162/merge
+2026-09-13T00:08:46.2207693Z From https://github.com/pallets/flask
+2026-09-13T00:08:46.2209379Z  * [new ref]         cfb71a548383ed5d6bdc8ed726f040a5fe9c7e44 -> pull/6162/merge
+2026-09-13T00:08:46.2211652Z ##[endgroup]
+2026-09-13T00:08:46.2212238Z ##[group]Determining the checkout info
+2026-09-13T00:08:46.2212863Z ##[endgroup]
+2026-09-13T00:08:46.2217132Z [command]/usr/bin/git sparse-checkout disable
+2026-09-13T00:08:46.2254107Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-13T00:08:46.2276477Z ##[group]Checking out the ref
+2026-09-13T00:08:46.2279810Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/6162/merge
+2026-09-13T00:08:46.2444184Z Note: switching to 'refs/remotes/pull/6162/merge'.
+2026-09-13T00:08:46.2444612Z 
+2026-09-13T00:08:46.2444911Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-13T00:08:46.2445573Z changes and commit them, and you can discard any commits you make in this
+2026-09-13T00:08:46.2446050Z state without impacting any branches by switching back to a branch.
+2026-09-13T00:08:46.2446320Z 
+2026-09-13T00:08:46.2446579Z If you want to create a new branch to retain commits you create, you may
+2026-09-13T00:08:46.2446995Z do so (now or later) by using -c with the switch command. Example:
+2026-09-13T00:08:46.2447226Z 
+2026-09-13T00:08:46.2447341Z   git switch -c <new-branch-name>
+2026-09-13T00:08:46.2447507Z 
+2026-09-13T00:08:46.2447618Z Or undo this operation with:
+2026-09-13T00:08:46.2447779Z 
+2026-09-13T00:08:46.2447880Z   git switch -
+2026-09-13T00:08:46.2448049Z 
+2026-09-13T00:08:46.2448419Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-13T00:08:46.2448831Z 
+2026-09-13T00:08:46.2449211Z HEAD is now at cfb71a5 Merge afe8961b7cb16262aec39d141452918147ec3af7 into d73fa1cdcbd8b1465c151db8924ba58b1dd14e35
+2026-09-13T00:08:46.2451950Z ##[endgroup]
+2026-09-13T00:08:46.2483808Z [command]/usr/bin/git log -1 --format=%H
+2026-09-13T00:08:46.2503507Z cfb71a548383ed5d6bdc8ed726f040a5fe9c7e44
+2026-09-13T00:08:46.2513988Z ##[group]Removing auth
+2026-09-13T00:08:46.2514404Z Removing SSH command configuration
+2026-09-13T00:08:46.2515121Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-13T00:08:46.2540979Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-13T00:08:46.2718599Z Removing HTTP extra header
+2026-09-13T00:08:46.2721923Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-13T00:08:46.2747890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-13T00:08:46.2925800Z Removing includeIf entries pointing to credentials config files
+2026-09-13T00:08:46.2928527Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-13T00:08:46.2949792Z includeif.gitdir:/home/runner/work/flask/flask/.git.path
+2026-09-13T00:08:46.2950476Z includeif.gitdir:/home/runner/work/flask/flask/.git/worktrees/*.path
+2026-09-13T00:08:46.2951086Z includeif.gitdir:/github/workspace/.git.path
+2026-09-13T00:08:46.2951620Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-13T00:08:46.2957233Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask/flask/.git.path
+2026-09-13T00:08:46.2975808Z /home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:46.2984966Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask/flask/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-fcf3b208\-b3a4\-40dc\-b49a\-ade47b264c15\.config
+2026-09-13T00:08:46.3010528Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/flask/flask/.git/worktrees/*.path
+2026-09-13T00:08:46.3027777Z /home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:46.3034000Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/flask/flask/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-fcf3b208\-b3a4\-40dc\-b49a\-ade47b264c15\.config
+2026-09-13T00:08:46.3063998Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-09-13T00:08:46.3081071Z /github/runner_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:46.3087571Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-fcf3b208\-b3a4\-40dc\-b49a\-ade47b264c15\.config
+2026-09-13T00:08:46.3113126Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-09-13T00:08:46.3131095Z /github/runner_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config
+2026-09-13T00:08:46.3140356Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-fcf3b208\-b3a4\-40dc\-b49a\-ade47b264c15\.config
+2026-09-13T00:08:46.3166076Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-13T00:08:46.3339995Z Removing credentials config '/home/runner/work/_temp/git-credentials-fcf3b208-b3a4-40dc-b49a-ade47b264c15.config'
+2026-09-13T00:08:46.3345923Z ##[endgroup]
+2026-09-13T00:08:46.8357465Z ##[group]Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+2026-09-13T00:08:46.8357829Z with:
+2026-09-13T00:08:46.8358038Z   enable-cache: true
+2026-09-13T00:08:46.8358396Z   prune-cache: false
+2026-09-13T00:08:46.8358625Z   activate-environment: false
+2026-09-13T00:08:46.8358869Z   no-project: false
+2026-09-13T00:08:46.8359145Z   working-directory: /home/runner/work/flask/flask
+2026-09-13T00:08:46.8361200Z   github-token: ***
+2026-09-13T00:08:46.8361706Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2026-09-13T00:08:46.8362225Z   restore-cache: true
+2026-09-13T00:08:46.8362449Z   save-cache: true
+2026-09-13T00:08:46.8362665Z   cache-python: false
+2026-09-13T00:08:46.8362896Z   ignore-nothing-to-cache: false
+2026-09-13T00:08:46.8363155Z   ignore-empty-workdir: false
+2026-09-13T00:08:46.8363412Z   download-from-astral-mirror: true
+2026-09-13T00:08:46.8363713Z   add-problem-matchers: true
+2026-09-13T00:08:46.8363950Z   quiet: false
+2026-09-13T00:08:46.8364170Z   resolution-strategy: highest
+2026-09-13T00:08:46.8364408Z ##[endgroup]
+2026-09-13T00:08:46.9674289Z Trying to find version for uv in: /home/runner/work/flask/flask/uv.toml
+2026-09-13T00:08:46.9674744Z Could not find file: /home/runner/work/flask/flask/uv.toml
+2026-09-13T00:08:46.9675328Z Trying to find version for uv in: /home/runner/work/flask/flask/pyproject.toml
+2026-09-13T00:08:46.9681077Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2026-09-13T00:08:46.9684177Z Fetching manifest data from https://raw.githubusercontent.com/astral-sh/versions/main/v1/uv.ndjson ...
+2026-09-13T00:08:47.0669324Z Downloading uv from "https://releases.astral.sh/github/uv/releases/download/0.12.13/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2026-09-13T00:08:47.5045914Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/434073d7-496d-42a2-831d-7cdf4a855830 -f /home/runner/work/_temp/4ebcd71e-096f-45d0-8ff6-21de9fbcb672
+2026-09-13T00:08:48.0488960Z Added /home/runner/.local/bin to the path
+2026-09-13T00:08:48.0491792Z Added /opt/hostedtoolcache/uv/0.12.13/x86_64 to the path
+2026-09-13T00:08:48.0493136Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/_temp/uv-python-dir
+2026-09-13T00:08:48.0493964Z Added /home/runner/work/_temp/uv-python-dir to the path
+2026-09-13T00:08:48.0514643Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2026-09-13T00:08:48.0515075Z Successfully installed uv version 0.12.13
+2026-09-13T00:08:48.0973878Z Searching files using cache dependency glob: /home/runner/work/flask/flask/**/*requirements*.txt,/home/runner/work/flask/flask/**/*requirements*.in,/home/runner/work/flask/flask/**/*constraints*.txt,/home/runner/work/flask/flask/**/*constraints*.in,/home/runner/work/flask/flask/**/pyproject.toml,/home/runner/work/flask/flask/**/uv.lock,/home/runner/work/flask/flask/**/*.py.lock
+2026-09-13T00:08:48.1146273Z /home/runner/work/flask/flask/examples/celery/pyproject.toml
+2026-09-13T00:08:48.1160059Z /home/runner/work/flask/flask/examples/celery/requirements.txt
+2026-09-13T00:08:48.1189779Z /home/runner/work/flask/flask/examples/javascript/pyproject.toml
+2026-09-13T00:08:48.1231546Z /home/runner/work/flask/flask/examples/tutorial/pyproject.toml
+2026-09-13T00:08:48.1242820Z /home/runner/work/flask/flask/pyproject.toml
+2026-09-13T00:08:48.1352783Z /home/runner/work/flask/flask/uv.lock
+2026-09-13T00:08:48.1362086Z Found 6 files to hash.
+2026-09-13T00:08:48.1411269Z Trying to restore cache from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.3-d58c2332f44e96e8c53f57e4d5195329edc2a97af7596c0e22ee1913996e9507
+2026-09-13T00:08:48.2953366Z Cache hit for: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.3-d58c2332f44e96e8c53f57e4d5195329edc2a97af7596c0e22ee1913996e9507
+2026-09-13T00:08:49.4071286Z Received 37783671 of 37783671 (100.0%), 39.8 MBs/sec
+2026-09-13T00:08:49.4072146Z Cache Size: ~36 MB (37783671 B)
+2026-09-13T00:08:49.4124149Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d607653e-bd58-495b-91e1-b6a27fc256ca/cache.tzst -P -C /home/runner/work/flask/flask --use-compress-program unzstd
+2026-09-13T00:08:49.5796606Z Cache restored successfully
+2026-09-13T00:08:49.5815717Z cache restored from GitHub Actions cache with key: setup-uv-2-x86_64-unknown-linux-gnu-ubuntu-24.04-3.12.3-d58c2332f44e96e8c53f57e4d5195329edc2a97af7596c0e22ee1913996e9507
+2026-09-13T00:08:49.7483297Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-09-13T00:08:49.7483608Z with:
+2026-09-13T00:08:49.7483787Z   python-version-file: pyproject.toml
+2026-09-13T00:08:49.7484000Z   check-latest: false
+2026-09-13T00:08:49.7485953Z   token: ***
+2026-09-13T00:08:49.7486132Z   update-environment: true
+2026-09-13T00:08:49.7486333Z   allow-prereleases: false
+2026-09-13T00:08:49.7486517Z   freethreaded: false
+2026-09-13T00:08:49.7486687Z env:
+2026-09-13T00:08:49.7486907Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-09-13T00:08:49.7487205Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-09-13T00:08:49.7487442Z ##[endgroup]
+2026-09-13T00:08:49.8471462Z Extracted >=3.10 from pyproject.toml
+2026-09-13T00:08:49.8487645Z ##[group]Installed versions
+2026-09-13T00:08:49.8537302Z Successfully set up CPython (3.14.7)
+2026-09-13T00:08:49.8537906Z ##[endgroup]
+2026-09-13T00:08:49.9901401Z ##[group]Run actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+2026-09-13T00:08:49.9901697Z with:
+2026-09-13T00:08:49.9901871Z   path: ~/.cache/pre-commit
+2026-09-13T00:08:49.9902181Z   key: pre-commit|435e87596c1688c32c58314f236e0065d0d37a8dab4db3b07e1c6ab08f359486
+2026-09-13T00:08:49.9902519Z   enableCrossOsArchive: false
+2026-09-13T00:08:49.9902727Z   fail-on-cache-miss: false
+2026-09-13T00:08:49.9902917Z   lookup-only: false
+2026-09-13T00:08:49.9903091Z   save-always: false
+2026-09-13T00:08:49.9903259Z env:
+2026-09-13T00:08:49.9903483Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-09-13T00:08:49.9903945Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-09-13T00:08:49.9904252Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:49.9904595Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.7/x64/lib/pkgconfig
+2026-09-13T00:08:49.9904929Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:49.9905421Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:49.9905715Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:49.9906005Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.7/x64/lib
+2026-09-13T00:08:49.9906267Z ##[endgroup]
+2026-09-13T00:08:50.2750634Z Cache hit for: pre-commit|435e87596c1688c32c58314f236e0065d0d37a8dab4db3b07e1c6ab08f359486
+2026-09-13T00:08:51.4697742Z Received 34884937 of 34884937 (100.0%), 33.9 MBs/sec
+2026-09-13T00:08:51.4699166Z Cache Size: ~33 MB (34884937 B)
+2026-09-13T00:08:51.4732234Z [command]/usr/bin/tar -xf /home/runner/work/_temp/be5a1559-4522-43ee-b201-14a8a89e6109/cache.tzst -P -C /home/runner/work/flask/flask --use-compress-program unzstd
+2026-09-13T00:08:51.6553785Z Cache restored successfully
+2026-09-13T00:08:51.6629536Z Cache restored from key: pre-commit|435e87596c1688c32c58314f236e0065d0d37a8dab4db3b07e1c6ab08f359486
+2026-09-13T00:08:51.6895047Z ##[group]Run uv run --locked --no-default-groups --group pre-commit pre-commit run --show-diff-on-failure --color=always --all-files
+2026-09-13T00:08:51.6895875Z [36;1muv run --locked --no-default-groups --group pre-commit pre-commit run --show-diff-on-failure --color=always --all-files[0m
+2026-09-13T00:08:51.6932311Z shell: /usr/bin/bash -e {0}
+2026-09-13T00:08:51.6932524Z env:
+2026-09-13T00:08:51.6932768Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+2026-09-13T00:08:51.6933099Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2026-09-13T00:08:51.6933403Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:51.6933734Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.7/x64/lib/pkgconfig
+2026-09-13T00:08:51.6934067Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:51.6934370Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:51.6934704Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.7/x64
+2026-09-13T00:08:51.6935010Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.7/x64/lib
+2026-09-13T00:08:51.6935274Z ##[endgroup]
+2026-09-13T00:08:51.7847214Z Using CPython 3.14.7 interpreter at: /opt/hostedtoolcache/Python/3.14.7/x64/bin/python3
+2026-09-13T00:08:51.7847621Z Creating virtual environment at: .venv
+2026-09-13T00:08:51.7895666Z    Building flask @ file:///home/runner/work/flask/flask
+2026-09-13T00:08:52.1362760Z       Built flask @ file:///home/runner/work/flask/flask
+2026-09-13T00:08:52.1429740Z Installed 19 packages in 5ms
+2026-09-13T00:08:52.4140415Z [INFO][m Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2026-09-13T00:08:52.4141136Z [INFO][m Once installed this environment will be reused.
+2026-09-13T00:08:52.4141619Z [INFO][m This may take a few minutes...
+2026-09-13T00:08:52.4275451Z [INFO][m Using pre-commit with uv 0.12.0 via pre-commit-uv 4.3.0
+2026-09-13T00:08:53.9439279Z [INFO][m Installing environment for https://github.com/astral-sh/uv-pre-commit.
+2026-09-13T00:08:53.9439782Z [INFO][m Once installed this environment will be reused.
+2026-09-13T00:08:53.9440115Z [INFO][m This may take a few minutes...
+2026-09-13T00:08:53.9608784Z [INFO][m Using pre-commit with uv 0.12.0 via pre-commit-uv 4.3.0
+2026-09-13T00:08:54.9251607Z [INFO][m Installing environment for https://github.com/codespell-project/codespell.
+2026-09-13T00:08:54.9252112Z [INFO][m Once installed this environment will be reused.
+2026-09-13T00:08:54.9252436Z [INFO][m This may take a few minutes...
+2026-09-13T00:08:54.9349699Z [INFO][m Using pre-commit with uv 0.12.0 via pre-commit-uv 4.3.0
+2026-09-13T00:08:57.3398920Z [INFO][m Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2026-09-13T00:08:57.3399649Z [INFO][m Once installed this environment will be reused.
+2026-09-13T00:08:57.3400119Z [INFO][m This may take a few minutes...
+2026-09-13T00:08:57.3545327Z [INFO][m Using pre-commit with uv 0.12.0 via pre-commit-uv 4.3.0
+2026-09-13T00:08:58.3838843Z ruff check...............................................................[41mFailed[m
+2026-09-13T00:08:58.3839707Z [2m- hook id: ruff-check[m
+2026-09-13T00:08:58.3840129Z [2m- files were modified by this hook[m
+2026-09-13T00:08:58.3840359Z 
+2026-09-13T00:08:58.3840525Z [1;32mFixed 4 errors:[0m
+2026-09-13T00:08:58.3841018Z [36m-[0m [1mtests/test_json_response_headers_suite.py[0m[36m:[0m
+2026-09-13T00:08:58.3841604Z     2 × [1;31mW293[0m (blank-line-with-whitespace)
+2026-09-13T00:08:58.3842065Z     1 × [1;31mI001[0m (unsorted-imports)
+2026-09-13T00:08:58.3842451Z     1 × [1;31mF401[0m (unused-import)
+2026-09-13T00:08:58.3842668Z 
+2026-09-13T00:08:58.3842814Z Found 4 errors (4 fixed, 0 remaining).
+2026-09-13T00:08:58.3843050Z 
+2026-09-13T00:08:58.4091017Z ruff format..............................................................[41mFailed[m
+2026-09-13T00:08:58.4091428Z [2m- hook id: ruff-format[m
+2026-09-13T00:08:58.4091700Z [2m- files were modified by this hook[m
+2026-09-13T00:08:58.4092136Z 
+2026-09-13T00:08:58.4092243Z 1 file reformatted, 83 files left unchanged
+2026-09-13T00:08:58.4092434Z 
+2026-09-13T00:08:58.4784403Z uv-lock..................................................................[42mPassed[m
+2026-09-13T00:08:58.7302809Z codespell................................................................[42mPassed[m
+2026-09-13T00:08:58.8086860Z check for merge conflicts................................................[42mPassed[m
+2026-09-13T00:08:58.9843928Z debug statements (python)................................................[42mPassed[m
+2026-09-13T00:08:59.0601520Z fix utf-8 byte order marker..............................................[42mPassed[m
+2026-09-13T00:08:59.1459171Z trim trailing whitespace.................................................[42mPassed[m
+2026-09-13T00:08:59.2339952Z fix end of files.........................................................[42mPassed[m
+2026-09-13T00:08:59.2340325Z pre-commit hook(s) made changes.
+2026-09-13T00:08:59.2340713Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2026-09-13T00:08:59.2341156Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2026-09-13T00:08:59.2341453Z All changes made by hooks:
+2026-09-13T00:08:59.2409361Z [1mdiff --git a/tests/test_json_response_headers_suite.py b/tests/test_json_response_headers_suite.py[m
+2026-09-13T00:08:59.2410012Z [1mindex 1350dc2..29f2de6 100644[m
+2026-09-13T00:08:59.2410321Z [1m--- a/tests/test_json_response_headers_suite.py[m
+2026-09-13T00:08:59.2410642Z [1m+++ b/tests/test_json_response_headers_suite.py[m
+2026-09-13T00:08:59.2410946Z [36m@@ -1,10 +1,11 @@[m
+2026-09-13T00:08:59.2411174Z [31m-import pytest[m
+2026-09-13T00:08:59.2411411Z [31m-from flask import Flask, jsonify[m
+2026-09-13T00:08:59.2411682Z [32m+[m[32mfrom flask import Flask[m
+2026-09-13T00:08:59.2411942Z [32m+[m[32mfrom flask import jsonify[m
+2026-09-13T00:08:59.2412171Z [32m+[m
+2026-09-13T00:08:59.2412346Z  [m
+2026-09-13T00:08:59.2412613Z  def test_jsonify_mimetype_and_content_type_invariance():[m
+2026-09-13T00:08:59.2413046Z      """Verify jsonify sets application/json mimetype and content-type header."""[m
+2026-09-13T00:08:59.2413408Z      app = Flask(__name__)[m
+2026-09-13T00:08:59.2413628Z [31m-    [m
+2026-09-13T00:08:59.2413811Z [32m+[m
+2026-09-13T00:08:59.2414013Z      @app.route("/api/ping")[m
+2026-09-13T00:08:59.2414233Z      def ping():[m
+2026-09-13T00:08:59.2414483Z          return jsonify(status="ok", code=200)[m
+2026-09-13T00:08:59.2414881Z [36m@@ -16,9 +17,10 @@[m [mdef test_jsonify_mimetype_and_content_type_invariance():[m
+2026-09-13T00:08:59.2415336Z          assert "application/json" in response.headers.get("Content-Type", "")[m
+2026-09-13T00:08:59.2415751Z          assert response.json == {"status": "ok", "code": 200}[m
+2026-09-13T00:08:59.2416035Z  [m
+2026-09-13T00:08:59.2416207Z [32m+[m
+2026-09-13T00:08:59.2416418Z  def test_jsonify_empty_dictionary():[m
+2026-09-13T00:08:59.2416688Z      app = Flask(__name__)[m
+2026-09-13T00:08:59.2416900Z [31m-    [m
+2026-09-13T00:08:59.2417312Z [32m+[m
+2026-09-13T00:08:59.2417514Z      @app.route("/api/empty")[m
+2026-09-13T00:08:59.2417743Z      def empty():[m
+2026-09-13T00:08:59.2417961Z          return jsonify({})[m
+2026-09-13T00:08:59.2690042Z ##[error]Process completed with exit code 1.
+2026-09-13T00:08:59.3800429Z Post job cleanup.
+2026-09-13T00:08:59.4462650Z [command]/usr/bin/git version
+2026-09-13T00:08:59.4492513Z git version 2.55.0
+2026-09-13T00:08:59.4519558Z Temporarily overriding HOME='/home/runner/work/_temp/676aa7bd-396c-452c-8446-45d4c30fb9b1' before making global git config changes
+2026-09-13T00:08:59.4520581Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-13T00:08:59.4522758Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flask/flask
+2026-09-13T00:08:59.4546042Z Removing SSH command configuration
+2026-09-13T00:08:59.4550892Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-13T00:08:59.4577935Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-13T00:08:59.4763507Z Removing HTTP extra header
+2026-09-13T00:08:59.4767381Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-13T00:08:59.4792485Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-13T00:08:59.4972187Z Removing includeIf entries pointing to credentials config files
+2026-09-13T00:08:59.4976763Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-13T00:08:59.5001322Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-13T00:08:59.5298882Z Cleaning up orphan processes

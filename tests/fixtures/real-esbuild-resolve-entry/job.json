@@ -1,0 +1,108 @@
+{
+ "id": 115727836722,
+ "run_id": 38526415008,
+ "workflow_name": "CI",
+ "head_branch": "test/1752-old-typescript-ci",
+ "run_url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/actions/runs/38526415008",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOCd3hms8AAAAa8eqmMg",
+ "head_sha": "be4a3d90a9a3e1f498224fb0c1b15739f14284c0",
+ "url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/actions/jobs/115727836722",
+ "html_url": "https://github.com/typescript-eslint/typescript-eslint/actions/runs/38526415008/job/115727836722",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-14T07:08:46Z",
+ "started_at": "2026-10-14T07:08:48Z",
+ "completed_at": "2026-10-14T07:09:10Z",
+ "name": "Build All Packages",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-14T07:08:49Z",
+   "completed_at": "2026-10-14T07:08:50Z"
+  },
+  {
+   "name": "Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-14T07:08:50Z",
+   "completed_at": "2026-10-14T07:08:53Z"
+  },
+  {
+   "name": "Install",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-14T07:08:53Z",
+   "completed_at": "2026-10-14T07:09:03Z"
+  },
+  {
+   "name": "Derive appropriate SHAs for base and head for `nx affected` commands",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-14T07:09:03Z",
+   "completed_at": "2026-10-14T07:09:03Z"
+  },
+  {
+   "name": "Get affected projects for tests",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 5,
+   "started_at": "2026-10-14T07:09:03Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  },
+  {
+   "name": "Create test matrices from affected projects",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 6,
+   "started_at": "2026-10-14T07:09:08Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  },
+  {
+   "name": "Build",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 7,
+   "started_at": "2026-10-14T07:09:08Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  },
+  {
+   "name": "Post Install",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 13,
+   "started_at": "2026-10-14T07:09:08Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  },
+  {
+   "name": "Post Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 14,
+   "started_at": "2026-10-14T07:09:08Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 15,
+   "started_at": "2026-10-14T07:09:08Z",
+   "completed_at": "2026-10-14T07:09:08Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/typescript-eslint/typescript-eslint/check-runs/115727836722",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000314840,
+ "runner_name": "GitHub Actions 1000314840",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}

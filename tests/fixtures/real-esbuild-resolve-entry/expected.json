@@ -1,0 +1,15 @@
+{
+ "mode": "dependency",
+ "parser": "node",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Failed to resolve entry for package"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "packages/eslint-plugin/vitest.config.mts"
+ ]
+}

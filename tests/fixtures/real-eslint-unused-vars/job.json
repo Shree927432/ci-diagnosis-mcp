@@ -1,0 +1,228 @@
+{
+ "id": 115267761895,
+ "run_id": 38388990867,
+ "workflow_name": "Lint",
+ "head_branch": "fix/issue-19968-unstable-parameters",
+ "run_url": "https://api.github.com/repos/prettier/prettier/actions/runs/38388990867",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOBHn_e88AAAAa1n525w",
+ "head_sha": "ef35cdca546ae826ed74d3aee383ce28870c4ac7",
+ "url": "https://api.github.com/repos/prettier/prettier/actions/jobs/115267761895",
+ "html_url": "https://github.com/prettier/prettier/actions/runs/38388990867/job/115267761895",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-13T11:15:43Z",
+ "started_at": "2026-10-13T11:15:45Z",
+ "completed_at": "2026-10-13T11:16:38Z",
+ "name": "Lint",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-13T11:15:46Z",
+   "completed_at": "2026-10-13T11:15:48Z"
+  },
+  {
+   "name": "Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-13T11:15:48Z",
+   "completed_at": "2026-10-13T11:15:50Z"
+  },
+  {
+   "name": "Setup Node.js",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-13T11:15:50Z",
+   "completed_at": "2026-10-13T11:15:57Z"
+  },
+  {
+   "name": "Install Dependencies",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-13T11:15:57Z",
+   "completed_at": "2026-10-13T11:16:07Z"
+  },
+  {
+   "name": "Check Dependencies",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 5,
+   "started_at": "2026-10-13T11:16:07Z",
+   "completed_at": "2026-10-13T11:16:07Z"
+  },
+  {
+   "name": "Check JSDoc Types",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-13T11:16:07Z",
+   "completed_at": "2026-10-13T11:16:23Z"
+  },
+  {
+   "name": "Lint ESLint",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 7,
+   "started_at": "2026-10-13T11:16:23Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Lint Prettier",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 8,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Spellcheck",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 9,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Lint Changelog",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 10,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Lint \"format test\"",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 11,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Lint docs code block",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 12,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Lint workflow files",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 13,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Dependency Review",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 14,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Validate renovate config",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 15,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Run yarn (/)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 16,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Run yarn (/website)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 17,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Run yarn (/scripts/release)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 18,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Run yarn (/scripts/tools/bundle-test)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 19,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Run yarn (/scripts/tools/eslint-plugin-prettier-internal-rules)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 20,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Knip",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 21,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Ensure no files changed",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 22,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Post Setup Node.js",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 43,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Post Checkout",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 44,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 45,
+   "started_at": "2026-10-13T11:16:36Z",
+   "completed_at": "2026-10-13T11:16:36Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/prettier/prettier/check-runs/115267761895",
+ "labels": [
+  "ubuntu-latest"
+ ],
+ "runner_id": 1000280072,
+ "runner_name": "GitHub Actions 1000280072",
+ "runner_group_id": 0,
+ "runner_group_name": "GitHub Actions"
+}
