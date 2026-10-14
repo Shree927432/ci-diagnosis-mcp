@@ -10,7 +10,7 @@
 
 ### T1-analysis-core — Log normalisation with 2000-char line cap, step slicing with verification, widening and whole-log cross-check exposing slice{window,mismatch}, repo-relative file references, excerpt rendering with original line numbers inside an unclosable labelled fence, generic fallback parser.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: FR-3, FR-4, NFR-8, NFR-10, AC-3, AC-13
 - scope: not bounded
 - gates: test-core: .venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q
@@ -18,7 +18,7 @@
 
 ### T2a-fixtures — Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: AC-1
 - scope: not bounded
 - gates: test-fixtures: .venv/bin/python -m pytest tests/test_fixture_layout.py -q

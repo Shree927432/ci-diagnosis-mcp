@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T19:29:16.868Z"
+    "updated_at": "2026-10-14T19:34:40.440Z"
   },
   "policy": {
     "ponytail": "full",
@@ -25,7 +25,7 @@
   "lifecycle": {
     "phase": "build",
     "status": "active",
-    "active_task": "T1-analysis-core",
+    "active_task": "T2a-fixtures",
     "blocker": null,
     "next_action": "Run the task pre-flight."
   },
@@ -235,6 +235,16 @@
       "recorded_at": "2026-10-14T19:24:32.612Z",
       "paths": [],
       "tags": []
+    },
+    {
+      "id": "DECISION-902d3096",
+      "title": "Plan review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition",
+      "text": "Reviewer: Claude Sonnet 5.5, fresh context, read-only, given PLAN.md, SPEC.md and DESIGN.md s8/10/11/13/16. Disposition: MUST_FIX 1 accepted: T1 ships no parser (generic fallback moved to the start of T2b); git repo and baseline commit exist (d5f60a5); a test asserts the first commit touching tests/fixtures precedes the first touching analysis/parsers. MUST_FIX 2 accepted: T1 proves slicing mechanics (window values) on inline logs; AC-3's fixture assertions are delivered by test_corpus in T2b; T7's full-suite gate binds it; task requirement lists are not re-plumbed because the plan is approved and a reopen would cost a human approval the owner declined. MUST_FIX 3 accepted: analysis/pipeline.py in T2b. MUST_FIX 4 partly moot: pyproject and venv already exist; a dependency-set test is added to T4; __main__.py and the scripts entry go in T6. MUST_FIX 5 rejected as a plan change for the same reason as item 2; T5 is instead implemented as three modules (resolve/download, cluster/channels, gather/outcome) with tests per module; the token-order half of AC-16 is tested under T4's gate. MUST_FIX 6 accepted: tests/test_perf.py for NFR-2/3; AC-12 tool-output half in T6; tests/test_mode.py in T2b; fence and files tests inside test_normalize.py so T1's gate runs them; NFR-10 discovery test in T2b. MUST_FIX 7 accepted: T6 forwards progress to ctx.report_progress with an assertion. SHOULD_FIX: scopes skipped (plan change); fixture-tree hash committed in T2a and asserted by test_corpus so corpus failures cannot be fixed by editing fixtures; AC-7 timing test added to T2b's suite; test_fixes.py asserts every (mode, origin) cell; public failed run for the smoke test chosen during T4.",
+      "status": "accepted",
+      "source": "reviewer: claude-sonnet-5-5 subagent, 2026-10-15",
+      "recorded_at": "2026-10-14T19:31:49.525Z",
+      "paths": [],
+      "tags": []
     }
   ],
   "knowledge": [
@@ -286,7 +296,7 @@
     {
       "id": "T1-analysis-core",
       "outcome": "Log normalisation with 2000-char line cap, step slicing with verification, widening and whole-log cross-check exposing slice{window,mismatch}, repo-relative file references, excerpt rendering with original line numbers inside an unclosable labelled fence, generic fallback parser.",
-      "state": "active",
+      "state": "done",
       "risk": "low",
       "owner": null,
       "scope": [],
@@ -308,8 +318,14 @@
           "kind": "command",
           "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T1-analysis-core-test-core-347496ff-ce0b-4b44-b3c2-acf69d6e5b5f.json",
+            "hash": "d8d1af6930782589a30ee43ef09e383eb34755aeb4ce1a4efc437685a8f2a93c",
+            "source_hash": "43e2629d7af5044dc687e5b3ab1aef4f0797f0df58bd5331ff9e754b5b23a416",
+            "config_hash": "5fe663a52b6a3fac86215d3af7cc49a3a51d45f20ed0d84e3a8ecf8914e993c3",
+            "observed_at": "2026-10-14T19:32:12.277Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -318,7 +334,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-14T19:27:37.675Z",
-      "updated_at": "2026-10-14T19:27:37.675Z",
+      "updated_at": "2026-10-14T19:34:40.423Z",
       "base_manifest": {
         ".gitignore": "b9029a775f47e2cf97fba9ace0d01f94b7adacc07cd9d3e7cdd799790d77a545",
         "DESIGN.md": "3dc0d8434d6a87eec7a6b34e7e6c73247fd6b4ab121d11bc67033ed87c3be0d7",
@@ -330,7 +346,7 @@
     {
       "id": "T2a-fixtures",
       "outcome": "Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.",
-      "state": "queued",
+      "state": "active",
       "risk": "low",
       "owner": null,
       "scope": [],
@@ -357,7 +373,23 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-14T19:27:37.771Z",
-      "updated_at": "2026-10-14T19:27:37.772Z"
+      "updated_at": "2026-10-14T19:27:37.772Z",
+      "base_manifest": {
+        ".gitignore": "3cc18789745204720dcad9a9d844b7dfb07afa7d8edc95a93ee567b4eac9071a",
+        "DESIGN.md": "3dc0d8434d6a87eec7a6b34e7e6c73247fd6b4ab121d11bc67033ed87c3be0d7",
+        "README.md": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "SPEC.md": "588f23cc635cf3fc2f516a09b0d5944efdf683821224139c4390c03b1e1047d7",
+        "ci_diagnosis_mcp/__init__.py": "4b0d37d5c994d337c79e9b86270e1f9aab850d5735a3084d7a6c57f6982f442e",
+        "ci_diagnosis_mcp/analysis/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "ci_diagnosis_mcp/analysis/files.py": "3fe2e27994c30c12bde8d13880a6b319325e8464a14d3a21d81eccecd3a320b8",
+        "ci_diagnosis_mcp/analysis/normalize.py": "bd586d1c6d0bd0e2510ebac0dd448cd17a710d8221a3dc785fe2d2b432ad8595",
+        "ci_diagnosis_mcp/analysis/slicing.py": "6320763a80ec0c7333b7c57fdca96a7ae977e0945f050dda3b0ed1c414765c2c",
+        "ci_diagnosis_mcp/analysis/types.py": "b8aff6c2fdaf470766d36b098c7d99385e5fd3096f1f1e766f538b529c1eea25",
+        "pyproject.toml": "4b620eafc93ebd6c0c87337405e4d6840cb49fd37bca55672284a6d9a3484b72",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_normalize.py": "b41f093be45877496b56e19a845167a2d325440381cd0c97fed9e37754dbf65f",
+        "tests/test_slicing.py": "11704df58fcec2a9bafcea993e054842694098b0cd777bd537daef9e17d987e4"
+      }
     },
     {
       "id": "T2b-parsers",
@@ -593,7 +625,56 @@
   "learning_proposals": [],
   "cleanup_proposals": [],
   "controls": [],
-  "attempts": [],
+  "attempts": [
+    {
+      "id": "6ed31dd0-4820-412c-bfa5-6d567b5e14f3",
+      "task": "T1-analysis-core",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 17923,
+      "child_pid": 18005,
+      "started_at": "2026-10-14T19:31:49.758Z",
+      "status": "failed",
+      "before_hash": "ef72996d0e332efa30ffa391266193b67171a9e0e285d5b6d98721de86a0747a",
+      "config_hash": "5fe663a52b6a3fac86215d3af7cc49a3a51d45f20ed0d84e3a8ecf8914e993c3",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": "command-failed",
+      "ended_at": "2026-10-14T19:31:50.484Z"
+    },
+    {
+      "id": "347496ff-ce0b-4b44-b3c2-acf69d6e5b5f",
+      "task": "T1-analysis-core",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 18241,
+      "child_pid": 18323,
+      "started_at": "2026-10-14T19:32:11.594Z",
+      "status": "passed",
+      "before_hash": "43e2629d7af5044dc687e5b3ab1aef4f0797f0df58bd5331ff9e754b5b23a416",
+      "config_hash": "5fe663a52b6a3fac86215d3af7cc49a3a51d45f20ed0d84e3a8ecf8914e993c3",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T19:32:12.277Z"
+    }
+  ],
   "authorizations": [],
   "experiments": [],
   "incidents": [],

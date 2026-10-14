@@ -4,11 +4,11 @@
 
 - objective: Build a Python MCP server (mcp SDK 2.x, stdio) that diagnoses failed GitHub Actions runs for coding agents: it collects log and metadata evidence, keeps a mode and origin belief, ranks the next evidence to gather, and returns structured, agent-native diagnoses as specified in DESIGN.md v2.
 - phase/status: build/active
-- active task: T1-analysis-core — Log normalisation with 2000-char line cap, step slicing with verification, widening and whole-log cross-check exposing slice{window,mismatch}, repo-relative file references, excerpt rendering with original line numbers inside an unclosable labelled fence, generic fallback parser.
+- active task: T2a-fixtures — Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: test-core:pending
+- gates: test-fixtures:pending
 - recent failures: none
 
 ## Resume
@@ -17,9 +17,9 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: f03ed9c753cb9e30f633788ab2da56549fc691de73759698c783aa9e5682346d. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: 529f76548c95dd297a98210393080daefa229187431a10771a06d63a21091317. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-6af94eab: Spec review (Opus 5.5): APPROVE_WITH_CHANGES; disposition of each item
-- DECISION-861bc9de: Process: Genesis with minimal human gates and model reviewers
-- DECISION-7fa1af0a: No model call inside the server
+- DECISION-902d3096: Plan review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
+- DECISION-bc861978: Belief is two variables: mode and origin
 Applicable invariants, active rules, authorization and proof references are in the packet. Truncated summaries are retrieval pointers, not the full evidence.
 Reuse fresh gates with --reuse. Reconcile interrupted attempts before replaying commands. Report state → evidence → blocker → next action; checkpoint before stopping.

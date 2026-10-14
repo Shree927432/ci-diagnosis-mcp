@@ -1,0 +1,30 @@
+{
+  "task": "T1-analysis-core",
+  "gate": "test-core",
+  "kind": "command",
+  "attempt": "6ed31dd0-4820-412c-bfa5-6d567b5e14f3",
+  "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
+  "started_at": "2026-10-14T19:31:49.758Z",
+  "observed_at": "2026-10-14T19:31:50.484Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "F..F...F.......                                                          [100%]\n=================================== FAILURES ===================================\n____________ test_parse_lines_strips_timestamp_ansi_and_handles_cr _____________\n\n    def test_parse_lines_strips_timestamp_ansi_and_handles_cr():\n        raw = TS.format(1) + \"\\x1b[31mred\\x1b[0m\\n\" + TS.format(2) + \"progress 10%\\rprogress 100%\\n\"\n        lines = parse_lines(raw)\n>       assert [l.text for l in lines] == [\"red\", \"progress 100%\"]\nE       AssertionError: assert ['red', 'progress 100%', ''] == ['red', 'progress 100%']\nE         \nE         Left contains one more item: ''\nE         Use -v to get more diff\n\ntests/test_normalize.py:24: AssertionError\n_________________________ test_render_marks_and_noise __________________________\n\n    def test_render_marks_and_noise():\n        lines = parse_lines(\"##[group]Run npm test\\n##[debug]hidden\\n\\n\\n\\nFAIL src/a.test.ts\\n##[endgroup]\")\n        out = render(lines, flagged={3})\n>       assert \"── Run npm test\" in out and \"hidden\" not in out and \">> L4: FAIL src/a.test.ts\" in out\nE       AssertionError: assert ('── Run npm test' in 'L1: ── Run npm test\\n\\n   L6: FAIL src/a.test.ts' and 'hidden' not in 'L1: ── Run ...rc/a.test.ts'\nE         \nE         'hidden' is contained here:\nE           c/a.test.ts and '>> L4: FAIL src/a.test.ts' in 'L1: ── Run npm test\\n\\n   L6: FAIL src/a.test.ts')\n\ntests/test_normalize.py:46: AssertionError\n_________ test_paths_become_repo_relative_and_system_paths_are_ignored _________\n\n    def test_paths_become_repo_relative_and_system_paths_are_ignored():\n        for p in (\"/home/runner/work/repo/repo/src/a.py\", \"/__w/repo/repo/src/a.py\", r\"D:\\a\\repo\\repo\\src\\a.py\", \"./src/a.py\"):\n            assert normalize_path(p) == \"src/a.py\"\n        lines = parse_lines(\"src/b.ts:12:5 - error\\nnode_modules/x/index.js:1:1 bad\\n/usr/lib/python3/site.py:3 no\\nsrc/b.ts:12:5 again\")\n        refs = collect_file_refs(lines, [ExtractedError(\"m\", 1, file=\"/home/runner/work/r/r/src/c.py\", line=7)])\n        paths = {r.path: r for r in refs}\n>       assert set(paths) == {\"src/b.ts\", \"src/c.py\"}\nE       AssertionError: assert {'src/b.ts', ...hon3/site.py'} == {'src/b.ts', 'src/c.py'}\nE         \nE         Extra items in the left set:\nE         'usr/lib/python3/site.py'\nE         Use -v to get more diff\n\ntests/test_normalize.py:78: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_normalize.py::test_parse_lines_strips_timestamp_ansi_and_handles_cr\nFAILED tests/test_normalize.py::test_render_marks_and_noise - AssertionError:...\nFAILED tests/test_normalize.py::test_paths_become_repo_relative_and_system_paths_are_ignored\n3 failed, 12 passed in 0.05s\n",
+  "stderr": "",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "d5f60a51100efe126c5082d4af11bb816c14a6fb",
+    "dirty": true
+  },
+  "source_hash": "ef72996d0e332efa30ffa391266193b67171a9e0e285d5b6d98721de86a0747a",
+  "before_hash": "ef72996d0e332efa30ffa391266193b67171a9e0e285d5b6d98721de86a0747a",
+  "config_hash": "5fe663a52b6a3fac86215d3af7cc49a3a51d45f20ed0d84e3a8ecf8914e993c3",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "77b85a67adfd6cf0a981241a5009de22a2cc8761b943e34d229d40495c7780e6"
+}

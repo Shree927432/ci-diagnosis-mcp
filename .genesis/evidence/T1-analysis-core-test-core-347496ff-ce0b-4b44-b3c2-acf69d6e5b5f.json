@@ -1,0 +1,30 @@
+{
+  "task": "T1-analysis-core",
+  "gate": "test-core",
+  "kind": "command",
+  "attempt": "347496ff-ce0b-4b44-b3c2-acf69d6e5b5f",
+  "command": ".venv/bin/python -m pytest tests/test_normalize.py tests/test_slicing.py -q",
+  "started_at": "2026-10-14T19:32:11.594Z",
+  "observed_at": "2026-10-14T19:32:12.277Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "...............                                                          [100%]\n15 passed in 0.03s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "d5f60a51100efe126c5082d4af11bb816c14a6fb",
+    "dirty": true
+  },
+  "source_hash": "43e2629d7af5044dc687e5b3ab1aef4f0797f0df58bd5331ff9e754b5b23a416",
+  "before_hash": "43e2629d7af5044dc687e5b3ab1aef4f0797f0df58bd5331ff9e754b5b23a416",
+  "config_hash": "5fe663a52b6a3fac86215d3af7cc49a3a51d45f20ed0d84e3a8ecf8914e993c3",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "d8d1af6930782589a30ee43ef09e383eb34755aeb4ce1a4efc437685a8f2a93c"
+}
