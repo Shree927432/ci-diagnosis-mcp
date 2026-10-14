@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "project": "CI_Daignosis_MCP_Server",
-  "revision": "23121351dcc93fd06c167ea6c99358ba02fb24ea",
-  "sourceHash": "7aadb1e1debdf537c907d5d14234b59abfc53735c4aba42cf5354c01a2051351",
+  "revision": "02c0d34a7dd051c7f8d77de2efbd713e2943b8d8",
+  "sourceHash": "606a4cdd67c601ed9e373f6aa79de5e542fc6c558ddb56442d5f8423f6edbf87",
   "provenance": {
     "tool": "genesis-graphizer",
     "method": "static-analysis",
@@ -427,7 +427,7 @@
       "language": "python",
       "confidence": 1,
       "extractor": "filesystem",
-      "contentHash": "25a59373d01d642eb814f7a9fab3d639b97ff69a77d910644d6be109e8d554dc"
+      "contentHash": "1858cd2dbdff5ecc67fbb03d5d0499803426987ad3af27341b86863490138d58"
     },
     {
       "id": "file:tests/test_mode.py",
@@ -3603,7 +3603,7 @@
       "name": "matrix_run",
       "label": "matrix_run",
       "path": "tests/test_investigation.py",
-      "line": 18,
+      "line": 17,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "02bf170cfdef857a4a281f0fdfa0e6478882550fba02f368631bf4764c9b88d1"
@@ -3615,7 +3615,7 @@
       "name": "state",
       "label": "state",
       "path": "tests/test_investigation.py",
-      "line": 12,
+      "line": 11,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "805334784c310cf6207d761dd458965e82b2f8f47fe00c82b6d774ba47c1fe5c"
@@ -3627,7 +3627,7 @@
       "name": "test_api_budget_with_8_failed_jobs_attempt_2",
       "label": "test_api_budget_with_8_failed_jobs_attempt_2",
       "path": "tests/test_investigation.py",
-      "line": 61,
+      "line": 60,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "b8bd721cb03b313154c0982da0fa1d6ef5a2fbb129301fcd5167caf5d3af814b"
@@ -3639,7 +3639,7 @@
       "name": "test_attempt_with_skipped_job_counts_as_passed_and_partial_download_failure_is_listed",
       "label": "test_attempt_with_skipped_job_counts_as_passed_and_partial_download_failure_is_listed",
       "path": "tests/test_investigation.py",
-      "line": 170,
+      "line": 169,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "4767bc49eb85d589ff4a0e2ced942efed901d69f2cdc299f348fa464a7c758a2"
@@ -3651,7 +3651,7 @@
       "name": "test_branch_target_uses_only_the_head_commit",
       "label": "test_branch_target_uses_only_the_head_commit",
       "path": "tests/test_investigation.py",
-      "line": 152,
+      "line": 151,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9073dee8f449dfe8a1db49b39f18bf42c7703e26d0427cf8e18d4775410ff78e"
@@ -3663,7 +3663,7 @@
       "name": "test_budget_12_failed_jobs",
       "label": "test_budget_12_failed_jobs",
       "path": "tests/test_investigation.py",
-      "line": 51,
+      "line": 50,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "4e297693bef064c8675dcfda939287dc2d8c4cfd88713b60f0bc882023893b2e"
@@ -3675,7 +3675,7 @@
       "name": "test_candidate_runs_and_single_run_resolution",
       "label": "test_candidate_runs_and_single_run_resolution",
       "path": "tests/test_investigation.py",
-      "line": 71,
+      "line": 70,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "d78882fc4d9b094fbcd9d794e74debef785452754ba7bedcf18b973dac1d2ee5"
@@ -3687,7 +3687,7 @@
       "name": "test_fork_pr_without_pr_number_has_no_pr_actions",
       "label": "test_fork_pr_without_pr_number_has_no_pr_actions",
       "path": "tests/test_investigation.py",
-      "line": 162,
+      "line": 161,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "8aba23575806f2bb340f70dd9f907679e27fb8944fc0688e6b73e2f2ef66f0c7"
@@ -3699,7 +3699,7 @@
       "name": "test_full_step_log_without_clusters_asks_for_job_id",
       "label": "test_full_step_log_without_clusters_asks_for_job_id",
       "path": "tests/test_investigation.py",
-      "line": 199,
+      "line": 198,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ded7e2f5d2ffd0af428ff29a63f64491218528cbb22ddfd78afeb4e663de0459"
@@ -3711,7 +3711,7 @@
       "name": "test_gather_base_history_and_full_log",
       "label": "test_gather_base_history_and_full_log",
       "path": "tests/test_investigation.py",
-      "line": 106,
+      "line": 105,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "ad01a653a0a39daa3dd0c92d03c943f67cfb774da246eee36c60802f8431e992"
@@ -3723,7 +3723,7 @@
       "name": "test_gather_pr_diff_then_stop",
       "label": "test_gather_pr_diff_then_stop",
       "path": "tests/test_investigation.py",
-      "line": 92,
+      "line": 91,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "99d34becf1e230c84ce105a8f921e2479f86a94eea0df7fa9ab97c6f7571714f"
@@ -3735,7 +3735,7 @@
       "name": "test_job_view_reports_remainders_and_truncation",
       "label": "test_job_view_reports_remainders_and_truncation",
       "path": "tests/test_investigation.py",
-      "line": 206,
+      "line": 205,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "398f1085a740c333e5d1599b9ab45860af4b8aa2a75df5cc7698f6acc166cc21"
@@ -3747,7 +3747,7 @@
       "name": "test_matrix_evidence_only_within_the_failed_jobs_family",
       "label": "test_matrix_evidence_only_within_the_failed_jobs_family",
       "path": "tests/test_investigation.py",
-      "line": 137,
+      "line": 136,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "28fe3f54dfdb2c830638ed6709c39398d71439070a93fe7be6b545d5d2093595"
@@ -3759,7 +3759,7 @@
       "name": "test_pr_history_ignores_newer_runs_and_checks_signatures",
       "label": "test_pr_history_ignores_newer_runs_and_checks_signatures",
       "path": "tests/test_investigation.py",
-      "line": 184,
+      "line": 183,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "a0d7b6ca8a4ae3537a073f76fb337dee28dfddbe859888bd5f3d469c6a1ac6a4"
@@ -3771,7 +3771,7 @@
       "name": "test_record_outcome_rules",
       "label": "test_record_outcome_rules",
       "path": "tests/test_investigation.py",
-      "line": 122,
+      "line": 121,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "9a17a8df4dbe39773b47aba20ae4aa82a1f5c6df43119e92e221b1776ac2276a"
@@ -3783,7 +3783,7 @@
       "name": "test_start_by_run_id_clusters_by_signature_and_gathers_free_channels",
       "label": "test_start_by_run_id_clusters_by_signature_and_gathers_free_channels",
       "path": "tests/test_investigation.py",
-      "line": 33,
+      "line": 32,
       "confidence": 1,
       "extractor": "python-stdlib-ast",
       "contentHash": "afe76124ef7f7eea5d20259aa912e72328a7a52d476ffa17b948d51143e6c23c"
@@ -6740,8 +6740,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.job_log",
-        "symbol:tests/fixtures/generate_fixtures.py#function:job_log",
-        "symbol:tests/fake_github.py#function:FakeGitHub.job_log"
+        "symbol:tests/fake_github.py#function:FakeGitHub.job_log",
+        "symbol:tests/fixtures/generate_fixtures.py#function:job_log"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6848,8 +6848,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.job_log",
-        "symbol:tests/fixtures/generate_fixtures.py#function:job_log",
-        "symbol:tests/fake_github.py#function:FakeGitHub.job_log"
+        "symbol:tests/fake_github.py#function:FakeGitHub.job_log",
+        "symbol:tests/fixtures/generate_fixtures.py#function:job_log"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -6914,8 +6914,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -7253,8 +7253,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -7849,8 +7849,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8549,8 +8549,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8597,8 +8597,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.job_log",
-        "symbol:tests/fixtures/generate_fixtures.py#function:job_log",
-        "symbol:tests/fake_github.py#function:FakeGitHub.job_log"
+        "symbol:tests/fake_github.py#function:FakeGitHub.job_log",
+        "symbol:tests/fixtures/generate_fixtures.py#function:job_log"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8611,8 +8611,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8659,8 +8659,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.job_log",
-        "symbol:tests/fixtures/generate_fixtures.py#function:job_log",
-        "symbol:tests/fake_github.py#function:FakeGitHub.job_log"
+        "symbol:tests/fake_github.py#function:FakeGitHub.job_log",
+        "symbol:tests/fixtures/generate_fixtures.py#function:job_log"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8729,8 +8729,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.job_log",
-        "symbol:tests/fixtures/generate_fixtures.py#function:job_log",
-        "symbol:tests/fake_github.py#function:FakeGitHub.job_log"
+        "symbol:tests/fake_github.py#function:FakeGitHub.job_log",
+        "symbol:tests/fixtures/generate_fixtures.py#function:job_log"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8743,8 +8743,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -8856,8 +8856,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -9445,11 +9445,12 @@
     {
       "type": "calls",
       "source": "symbol:tests/test_investigation.py#function:test_record_outcome_rules",
-      "target": "symbol:ci_diagnosis_mcp/investigation.py#function:start",
+      "target": "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:ci_diagnosis_mcp/investigation.py#function:start",
-        "symbol:ci_diagnosis_mcp/render.py#function:start"
+        "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
+        "symbol:ci_diagnosis_mcp/server.py#function:record_outcome",
+        "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -9458,12 +9459,11 @@
     {
       "type": "calls",
       "source": "symbol:tests/test_investigation.py#function:test_record_outcome_rules",
-      "target": "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome",
+      "target": "symbol:ci_diagnosis_mcp/investigation.py#function:start",
       "tier": "ambiguous",
       "candidates": [
-        "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome",
-        "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
-        "symbol:ci_diagnosis_mcp/server.py#function:record_outcome"
+        "symbol:ci_diagnosis_mcp/investigation.py#function:start",
+        "symbol:ci_diagnosis_mcp/render.py#function:start"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -10074,8 +10074,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -10280,8 +10280,8 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.run",
-        "symbol:tests/test_corpus.py#function:run",
-        "symbol:tests/fake_github.py#function:FakeGitHub.run"
+        "symbol:tests/fake_github.py#function:FakeGitHub.run",
+        "symbol:tests/test_corpus.py#function:run"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -10704,6 +10704,20 @@
     {
       "type": "calls",
       "source": "symbol:tests/test_state.py#function:test_round_trip_and_trail",
+      "target": "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
+      "tier": "ambiguous",
+      "candidates": [
+        "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
+        "symbol:ci_diagnosis_mcp/server.py#function:record_outcome",
+        "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome"
+      ],
+      "resolved": false,
+      "confidence": 0.3,
+      "extractor": "python-stdlib-ast-calls"
+    },
+    {
+      "type": "calls",
+      "source": "symbol:tests/test_state.py#function:test_round_trip_and_trail",
       "target": "symbol:ci_diagnosis_mcp/state.py#class:State",
       "tier": "proven",
       "resolved": true,
@@ -10777,20 +10791,6 @@
       "tier": "ambiguous",
       "candidates": [
         "symbol:ci_diagnosis_mcp/state.py#function:State.outcome_count"
-      ],
-      "resolved": false,
-      "confidence": 0.3,
-      "extractor": "python-stdlib-ast-calls"
-    },
-    {
-      "type": "calls",
-      "source": "symbol:tests/test_state.py#function:test_round_trip_and_trail",
-      "target": "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome",
-      "tier": "ambiguous",
-      "candidates": [
-        "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome",
-        "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome",
-        "symbol:ci_diagnosis_mcp/server.py#function:record_outcome"
       ],
       "resolved": false,
       "confidence": 0.3,
@@ -12903,7 +12903,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:matrix_run",
-      "line": 18,
+      "line": 17,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12912,7 +12912,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:state",
-      "line": 12,
+      "line": 11,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12921,7 +12921,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_api_budget_with_8_failed_jobs_attempt_2",
-      "line": 61,
+      "line": 60,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12930,7 +12930,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_attempt_with_skipped_job_counts_as_passed_and_partial_download_failure_is_listed",
-      "line": 170,
+      "line": 169,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12939,7 +12939,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_branch_target_uses_only_the_head_commit",
-      "line": 152,
+      "line": 151,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12948,7 +12948,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_budget_12_failed_jobs",
-      "line": 51,
+      "line": 50,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12957,7 +12957,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_candidate_runs_and_single_run_resolution",
-      "line": 71,
+      "line": 70,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12966,7 +12966,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_fork_pr_without_pr_number_has_no_pr_actions",
-      "line": 162,
+      "line": 161,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12975,7 +12975,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_full_step_log_without_clusters_asks_for_job_id",
-      "line": 199,
+      "line": 198,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12984,7 +12984,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_gather_base_history_and_full_log",
-      "line": 106,
+      "line": 105,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -12993,7 +12993,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_gather_pr_diff_then_stop",
-      "line": 92,
+      "line": 91,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13002,7 +13002,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_job_view_reports_remainders_and_truncation",
-      "line": 206,
+      "line": 205,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13011,7 +13011,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_matrix_evidence_only_within_the_failed_jobs_family",
-      "line": 137,
+      "line": 136,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13020,7 +13020,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_pr_history_ignores_newer_runs_and_checks_signatures",
-      "line": 184,
+      "line": 183,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13029,7 +13029,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_record_outcome_rules",
-      "line": 122,
+      "line": 121,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -13038,7 +13038,7 @@
       "type": "defines",
       "source": "file:tests/test_investigation.py",
       "target": "symbol:tests/test_investigation.py#function:test_start_by_run_id_clusters_by_signature_and_gathers_free_channels",
-      "line": 33,
+      "line": 32,
       "resolved": true,
       "confidence": 1,
       "extractor": "python-stdlib-ast"
@@ -15307,7 +15307,7 @@
       "source": "file:tests/test_investigation.py",
       "target": "file:ci_diagnosis_mcp/analysis/pipeline.py",
       "specifier": "ci_diagnosis_mcp.analysis.pipeline",
-      "line": 207,
+      "line": 206,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"
@@ -15327,7 +15327,7 @@
       "source": "file:tests/test_investigation.py",
       "target": "file:ci_diagnosis_mcp/investigation.py",
       "specifier": "ci_diagnosis_mcp.investigation",
-      "line": 208,
+      "line": 207,
       "resolved": true,
       "confidence": 0.85,
       "extractor": "python-imports"

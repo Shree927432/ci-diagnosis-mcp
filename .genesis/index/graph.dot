@@ -889,8 +889,8 @@ digraph genesis {
   "symbol:tests/test_investigation.py#function:test_pr_history_ignores_newer_runs_and_checks_signatures" -> "symbol:tests/fake_github.py#class:FakeGitHub" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_pr_history_ignores_newer_runs_and_checks_signatures" -> "symbol:tests/test_investigation.py#function:matrix_run" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:ci_diagnosis_mcp/github/client.py#function:GitHub.get" [label="calls"];
+  "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:ci_diagnosis_mcp/investigation.py#function:start" [label="calls"];
-  "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:tests/fake_github.py#class:FakeGitHub" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_record_outcome_rules" -> "symbol:tests/test_investigation.py#function:matrix_run" [label="calls"];
   "symbol:tests/test_investigation.py#function:test_start_by_run_id_clusters_by_signature_and_gathers_free_channels" -> "symbol:ci_diagnosis_mcp/investigation.py#function:start" [label="calls"];
@@ -1018,6 +1018,7 @@ digraph genesis {
   "symbol:tests/test_state.py#function:test_log_cache_ttl_purges_old_files" -> "symbol:ci_diagnosis_mcp/state.py#function:State.close" [label="calls"];
   "symbol:tests/test_state.py#function:test_log_cache_ttl_purges_old_files" -> "symbol:ci_diagnosis_mcp/state.py#function:State.purge_logs" [label="calls"];
   "symbol:tests/test_state.py#function:test_repo_validation" -> "symbol:ci_diagnosis_mcp/state.py#function:validate_repo" [label="calls"];
+  "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/investigation.py#function:record_outcome" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#class:State" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.add_evidence" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.channels" [label="calls"];
@@ -1025,7 +1026,6 @@ digraph genesis {
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.evidence" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.load" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.outcome_count" [label="calls"];
-  "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.record_outcome" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.save" [label="calls"];
   "symbol:tests/test_state.py#function:test_round_trip_and_trail" -> "symbol:ci_diagnosis_mcp/state.py#function:State.siblings" [label="calls"];
   "file:ci_diagnosis_mcp/analysis/files.py" -> "symbol:ci_diagnosis_mcp/analysis/files.py#function:collect_file_refs" [label="defines"];

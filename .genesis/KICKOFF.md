@@ -15,7 +15,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 3125412fdf42a27327a4e82a9610e781af6cb7da8f63c5c3964c17c01e0914a9. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: b9a94ea98c4fa4db39eebbeae66f4fb46d42c5d134a97d85a13addb3bf7cafba. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-c2aff99f: T5/T6 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
 - DECISION-5964325b: Smoke-test findings: matrix evidence scoped to job family; logs analysed one at a time
 - DECISION-7535647c: T4 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
