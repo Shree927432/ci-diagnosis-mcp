@@ -10,3 +10,4 @@ build/
 .DS_Store
 .genesis/local/
 .claude/worktrees/
+.claude/scheduled_tasks.lock
