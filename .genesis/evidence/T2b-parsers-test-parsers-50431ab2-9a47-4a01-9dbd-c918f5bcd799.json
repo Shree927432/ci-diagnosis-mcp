@@ -1,0 +1,30 @@
+{
+  "task": "T2b-parsers",
+  "gate": "test-parsers",
+  "kind": "command",
+  "attempt": "50431ab2-9a47-4a01-9dbd-c918f5bcd799",
+  "command": ".venv/bin/python -m pytest tests/test_parsers.py tests/test_corpus.py -q",
+  "started_at": "2026-10-14T19:44:08.335Z",
+  "observed_at": "2026-10-14T19:44:09.221Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "................................................                         [100%]\n48 passed in 0.21s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "5317ee9620e4e258d2786adf909ceabbc8f20464",
+    "dirty": true
+  },
+  "source_hash": "7a04493dabf9506a87b71a1a27f1ed75854cadcc77e6974e4253245f8d2c8759",
+  "before_hash": "7a04493dabf9506a87b71a1a27f1ed75854cadcc77e6974e4253245f8d2c8759",
+  "config_hash": "5c193c2c8f8b00119f89b90bd4bf0adfe485cc01db3d8d5ee9303a7c09d84d3b",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "3128246000cd60b761a2a5ec1eef0d714e2f4cddd0dda7fe66e70b64914a8e98"
+}

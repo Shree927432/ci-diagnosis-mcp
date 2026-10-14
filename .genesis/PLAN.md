@@ -18,7 +18,7 @@
 
 ### T2a-fixtures — Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.
 
-- state/risk: active / low
+- state/risk: done / low
 - requirements: AC-1
 - scope: not bounded
 - gates: test-fixtures: .venv/bin/python -m pytest tests/test_fixture_layout.py -q
@@ -26,7 +26,7 @@
 
 ### T2b-parsers — Parser modules per FR-5 with weight classes, claimed ranges, errors, failed tests, anchors; mode aggregation with line ownership, step_context prior, bands, runner-up and margin; corpus accuracy test.
 
-- state/risk: queued / low
+- state/risk: active / low
 - requirements: FR-5, FR-6, NFR-9, AC-2
 - scope: not bounded
 - gates: test-parsers: .venv/bin/python -m pytest tests/test_parsers.py tests/test_corpus.py -q

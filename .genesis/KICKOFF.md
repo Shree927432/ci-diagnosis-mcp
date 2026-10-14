@@ -4,11 +4,11 @@
 
 - objective: Build a Python MCP server (mcp SDK 2.x, stdio) that diagnoses failed GitHub Actions runs for coding agents: it collects log and metadata evidence, keeps a mode and origin belief, ranks the next evidence to gather, and returns structured, agent-native diagnoses as specified in DESIGN.md v2.
 - phase/status: build/active
-- active task: T2a-fixtures — Synthetic fixture corpus committed BEFORE any parser module: at least two cases per v0.1 mode, one per parser, three adversarial unknown cases, three wrong-timestamp cases; each with job.log, job.json, expected.json; layout test; ledger trace recording the commit.
+- active task: T2b-parsers — Parser modules per FR-5 with weight classes, claimed ranges, errors, failed tests, anchors; mode aggregation with line ownership, step_context prior, bands, runner-up and margin; corpus accuracy test.
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: test-fixtures:pass
+- gates: test-parsers:pass
 - recent failures: none
 
 ## Resume
@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 19f072308fb2ac4fbecaf8e9037c96885ad0ac9566b91073271be2730521518c. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: db4f5fb0f21a04111f25e7a7d16f44b7dc584d8c3512ab88300930ca1bf9fad4. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-6af94eab: Spec review (Opus 5.5): APPROVE_WITH_CHANGES; disposition of each item
 - DECISION-902d3096: Plan review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition
 - DECISION-bc861978: Belief is two variables: mode and origin

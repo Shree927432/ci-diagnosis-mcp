@@ -35,7 +35,7 @@ CANDIDATE = re.compile(
     r"|\b(?:error|Error|ERROR|FAIL|FAILED|Failed|failed|fatal|FATAL|panic|Traceback|Exception|AssertionError"
     r"|warning: unused|undefined|Cannot find|not found|No such file|Killed|timed out|canceled|cancelled"
     r"|ENOENT|ECONN|ETIMEDOUT|ERESOLVE|E\d{3}\b|TS\d{4}|npm (?:ERR!|error)|ERR_PNPM|lost communication"
-    r"|out of memory|heap|No space left|rate limit|Tests?:|Test Suites:|Test Files|passed|failing)\b"
+    r"|out of memory|heap|No space left|rate limit|Tests?:|Test Suites:|Test Files|passed|failing|Expected|Received|expect\()\b"
     r"|^\s*(?:●|✕|✖|×|❯|---\s+FAIL|FAIL\s|=+\s|_{3,}\s|E\s{3}|File \"|\s+at\s|\s+-->\s)"
     r"|^\S+\.(?:[cm]?[jt]sx?|py|go|rs|java|kt)[:(]\d+"
 )
@@ -117,7 +117,7 @@ def is_candidate(text: str) -> bool:
     return bool(CANDIDATE.search(text))
 
 
-def candidate_lines(lines: list[LogLine], window: int = 3) -> list[LogLine]:
+def candidate_lines(lines: list[LogLine], window: int = 6) -> list[LogLine]:
     """Lines that match the pre-filter plus `window` lines around each; order preserved, no duplicates."""
     keep = set()
     n = len(lines)
