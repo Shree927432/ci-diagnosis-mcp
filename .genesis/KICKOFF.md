@@ -8,7 +8,7 @@
 - blocker: none
 - next action: Run the task pre-flight.
 - phase instruction: Implement only the active task and prove it against current sources. Check `genesis query . impact PATH` before editing shared code.
-- gates: test-server:pending
+- gates: test-server:pass
 - recent failures: none
 
 ## Resume
@@ -17,7 +17,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: 6683bda127d3d5c530ec906b1bcb4541d17a5e9eaf7dabcbd6d53e13319dc67b. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: bed7865c519b73fc60ee22c8f77ffe45f0082215f4eb4750da4827364c03938d. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-6af94eab: Spec review (Opus 5.5): APPROVE_WITH_CHANGES; disposition of each item
 - KNOWLEDGE-446d08ec: mcp SDK 2.x API facts
 - DECISION-902d3096: Plan review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition

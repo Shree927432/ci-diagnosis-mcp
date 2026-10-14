@@ -1,0 +1,30 @@
+{
+  "task": "T6-server",
+  "gate": "test-server",
+  "kind": "command",
+  "attempt": "5a5d407f-7e44-4ac5-8362-f5a0bf929314",
+  "command": ".venv/bin/python -m pytest tests/test_server.py -q",
+  "started_at": "2026-10-14T19:58:53.078Z",
+  "observed_at": "2026-10-14T19:58:55.757Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "......                                                                   [100%]\n=============================== warnings summary ===============================\ntests/test_server.py::test_stdio_stdout_contains_only_jsonrpc_frames\n  tests/test_server.py:125: PytestWarning: The test <Function test_stdio_stdout_contains_only_jsonrpc_frames> is marked with '@pytest.mark.asyncio' but it is not an async function. Please remove the asyncio mark. If the test is not marked explicitly, check for global marks applied via 'pytestmark'.\n    def test_stdio_stdout_contains_only_jsonrpc_frames(tmp_path):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n6 passed, 1 warning in 1.60s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "11b091179ebfd70cecc59902b9af4bce803e4b81",
+    "dirty": true
+  },
+  "source_hash": "4b78b9992f4dec99b0fc1395f0b01ad2d54fc6cac1b31d2669291bfad0fd08ea",
+  "before_hash": "4b78b9992f4dec99b0fc1395f0b01ad2d54fc6cac1b31d2669291bfad0fd08ea",
+  "config_hash": "5854d3d31fe045d0849ff251d32a5f56d890cde3d9afb31dff09119a6ce6f5e1",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "b58dea08f0fef8fc77939aa58011c099f6f1b3330a6d7bebd38153337d316e61"
+}

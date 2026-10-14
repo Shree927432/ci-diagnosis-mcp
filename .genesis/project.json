@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T19:56:06.490Z"
+    "updated_at": "2026-10-14T19:58:55.796Z"
   },
   "policy": {
     "ponytail": "full",
@@ -1280,8 +1280,14 @@
           "kind": "command",
           "command": ".venv/bin/python -m pytest tests/test_server.py -q",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T6-server-test-server-5a5d407f-7e44-4ac5-8362-f5a0bf929314.json",
+            "hash": "b58dea08f0fef8fc77939aa58011c099f6f1b3330a6d7bebd38153337d316e61",
+            "source_hash": "4b78b9992f4dec99b0fc1395f0b01ad2d54fc6cac1b31d2669291bfad0fd08ea",
+            "config_hash": "5854d3d31fe045d0849ff251d32a5f56d890cde3d9afb31dff09119a6ce6f5e1",
+            "observed_at": "2026-10-14T19:58:55.757Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -1695,6 +1701,30 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-14T19:54:26.474Z"
+    },
+    {
+      "id": "5a5d407f-7e44-4ac5-8362-f5a0bf929314",
+      "task": "T6-server",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest tests/test_server.py -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 24843,
+      "child_pid": 25021,
+      "started_at": "2026-10-14T19:58:53.078Z",
+      "status": "passed",
+      "before_hash": "4b78b9992f4dec99b0fc1395f0b01ad2d54fc6cac1b31d2669291bfad0fd08ea",
+      "config_hash": "5854d3d31fe045d0849ff251d32a5f56d890cde3d9afb31dff09119a6ce6f5e1",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T19:58:55.757Z"
     }
   ],
   "authorizations": [],
