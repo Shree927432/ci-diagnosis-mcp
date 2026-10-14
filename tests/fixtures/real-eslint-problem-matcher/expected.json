@@ -9,7 +9,5 @@
   "Remove the asterisk prefix"
  ],
  "tests_contain": [],
- "files_contain": [
-  "packages/test-utils/src/normalizeIcons.ts"
- ]
+ "files_contain": []
 }

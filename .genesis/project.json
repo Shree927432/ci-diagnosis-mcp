@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T21:13:53.989Z"
+    "updated_at": "2026-10-14T21:16:00.292Z"
   },
   "policy": {
     "ponytail": "full",
@@ -23,11 +23,11 @@
     }
   },
   "lifecycle": {
-    "phase": "build",
-    "status": "active",
-    "active_task": "T8-real-corpus",
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
     "blocker": null,
-    "next_action": "Run the task pre-flight."
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "commands": {},
   "workflow": {
@@ -273,6 +273,16 @@
       "status": "accepted",
       "source": "reviewer: claude-sonnet-5-5 subagent, 2026-10-15; commits 029c5a8, 11b0911, 0eadebf",
       "recorded_at": "2026-10-14T20:13:00.529Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-721d5e89",
+      "title": "T8: relabel real-eslint-problem-matcher files_contain (FR-20 cap)",
+      "text": "Case real-eslint-problem-matcher: removed the single files_contain entry 'packages/test-utils/src/normalizeIcons.ts' from expected.json; mode (lint_format), parser (eslint), slice, errors_contain and tests_contain unchanged; job.log and job.json byte-identical. Reason: the job has 751 eslint errors across more than 25 files and FR-20 caps files[] at 25 per cluster, so the expectation was a labelling error made before the hash was written, not a parser gap. TREE_SHA256 before: 5a8c66a5691373cf3899cf45229583c5be02969e358d8dad7ff1d7f56477c7dd. TREE_SHA256 after: 6d9141d4fd23f40b84b256b22d3412de2d04b1c873cce007bed307ec0cb7cd8c. This is the only post-hash edit to the corpus.",
+      "status": "accepted",
+      "source": "owner decision relayed by the parent session 2026-10-15; SPEC FR-20; tests/test_corpus.py",
+      "recorded_at": "2026-10-14T21:15:45.866Z",
       "paths": [],
       "tags": []
     }
@@ -1735,7 +1745,7 @@
     {
       "id": "T8-real-corpus",
       "outcome": "Real-log fixture corpus: at least 30 failed GitHub Actions jobs from public repositories, labelled by reading the logs, covering every parsed mode and parser module where a real case exists; corpus test passes with mode accuracy >= 90% and unknown rate <= 15%; synthetic cases kept only for modes without a real example",
-      "state": "active",
+      "state": "done",
       "risk": "low",
       "owner": null,
       "scope": [],
@@ -1754,13 +1764,13 @@
           "kind": "command",
           "command": ".venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q",
           "mandatory": true,
-          "status": "fail",
+          "status": "pass",
           "evidence": {
-            "path": ".genesis/evidence/T8-real-corpus-test-real-corpus-7c3d190d-de39-41c8-bbd0-443dd699eb1a.json",
-            "hash": "cf67f64d9d74e53478f185d76a09787c1e9532e247722a3fec8fcf5727f4f06c",
-            "source_hash": "97b37e074bbc1a2612b74d90d16b72383d515987d1037546a493424ab990dab5",
+            "path": ".genesis/evidence/T8-real-corpus-test-real-corpus-68419f27-5987-4e9a-88bc-1e18ce9a1ccb.json",
+            "hash": "3b5a5e2e20a288eece8a2bbb2d92cc2dd831922b1088e1450f0536be42544a6e",
+            "source_hash": "6adb417328d62865e9ede7e339d3fd744430bc9bd156fedbcb7cd56075b54a98",
             "config_hash": "66def81fd958d081713ce8a941a1d02dc39f2b7b33ef169a8d89c81f5e11de71",
-            "observed_at": "2026-10-14T21:13:53.137Z"
+            "observed_at": "2026-10-14T21:15:59.341Z"
           }
         }
       ],
@@ -1770,7 +1780,7 @@
       "failures": [],
       "limitations": [],
       "created_at": "2026-10-14T20:51:31.051Z",
-      "updated_at": "2026-10-14T20:51:31.052Z",
+      "updated_at": "2026-10-14T21:15:59.865Z",
       "base_manifest": {
         ".gitignore": "3cc18789745204720dcad9a9d844b7dfb07afa7d8edc95a93ee567b4eac9071a",
         "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
@@ -2259,6 +2269,30 @@
       "cost": null,
       "stop_reason": "command-failed",
       "ended_at": "2026-10-14T21:13:53.136Z"
+    },
+    {
+      "id": "68419f27-5987-4e9a-88bc-1e18ce9a1ccb",
+      "task": "T8-real-corpus",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 41751,
+      "child_pid": 41976,
+      "started_at": "2026-10-14T21:15:56.642Z",
+      "status": "passed",
+      "before_hash": "6adb417328d62865e9ede7e339d3fd744430bc9bd156fedbcb7cd56075b54a98",
+      "config_hash": "66def81fd958d081713ce8a941a1d02dc39f2b7b33ef169a8d89c81f5e11de71",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T21:15:59.341Z"
     }
   ],
   "authorizations": [],
@@ -2266,14 +2300,14 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-14T21:13:53.936Z",
+    "at": "2026-10-14T21:16:00.242Z",
     "revision": {
-      "commit": "5dd9a1b47981c42995f78da1fab3f3aae126e392",
+      "commit": "fda3da9346bbd2a54abd314eb01425148a89d2e5",
       "dirty": true,
-      "source_hash": "97b37e074bbc1a2612b74d90d16b72383d515987d1037546a493424ab990dab5"
+      "source_hash": "6adb417328d62865e9ede7e339d3fd744430bc9bd156fedbcb7cd56075b54a98"
     },
-    "active_task": "T8-real-corpus",
-    "next_action": "Run the task pre-flight."
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
   },
   "legacy": null
 }
