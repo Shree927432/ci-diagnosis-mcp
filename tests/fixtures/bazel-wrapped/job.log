@@ -1,0 +1,23 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run bazel build //...
+2026-10-15T10:00:30.0000000Z $ bazel build //...
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z Loading: 
+2026-10-15T10:00:31.0000000Z Loading: 0 packages loaded
+2026-10-15T10:00:31.0000000Z Analyzing: 12 targets (3 packages loaded, 0 targets configured)
+2026-10-15T10:00:31.0000000Z INFO: Analyzed 12 targets (48 packages loaded, 612 targets configured).
+2026-10-15T10:00:32.0000000Z INFO: Found 12 targets...
+2026-10-15T10:00:32.0000000Z [1 / 40] [Prepa] BazelWorkspaceStatusAction stable-status.txt
+2026-10-15T10:00:32.0000000Z ERROR: /home/runner/work/app/app/svc/BUILD:14:11: Compiling svc/main.cc failed: (Exit 1): gcc failed: error executing CppCompile command (from target //svc:main)
+2026-10-15T10:00:32.0000000Z INFO: Elapsed time: 12.345s, Critical Path: 3.21s
+2026-10-15T10:00:33.0000000Z INFO: 7 processes: 7 internal.
+2026-10-15T10:00:33.0000000Z ERROR: Build did NOT complete successfully
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

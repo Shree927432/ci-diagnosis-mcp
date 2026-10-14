@@ -1,0 +1,18 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run ruff check .
+2026-10-15T10:00:30.0000000Z $ ruff check .
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z app/billing.py:3:8: F401 [*] `os` imported but unused
+2026-10-15T10:00:31.0000000Z app/billing.py:19:5: E722 Do not use bare `except`
+2026-10-15T10:00:31.0000000Z tests/test_billing.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+2026-10-15T10:00:31.0000000Z Found 3 errors.
+2026-10-15T10:00:32.0000000Z [*] 2 fixable with the `--fix` option.
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

@@ -1,0 +1,13 @@
+{
+ "mode": "timeout",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "exceeded the maximum execution time"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

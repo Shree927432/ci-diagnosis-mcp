@@ -1,0 +1,13 @@
+{
+ "mode": "timeout",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "has timed out after 15 minutes"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

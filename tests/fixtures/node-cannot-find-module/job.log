@@ -1,0 +1,28 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run node dist/server.js
+2026-10-15T10:00:30.0000000Z $ node dist/server.js
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z node:internal/modules/cjs/loader:1228
+2026-10-15T10:00:31.0000000Z   throw err;
+2026-10-15T10:00:31.0000000Z   ^
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:32.0000000Z Error: Cannot find module 'pino'
+2026-10-15T10:00:32.0000000Z Require stack:
+2026-10-15T10:00:32.0000000Z - /home/runner/work/app/app/dist/logger.js
+2026-10-15T10:00:32.0000000Z - /home/runner/work/app/app/dist/server.js
+2026-10-15T10:00:33.0000000Z     at Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+2026-10-15T10:00:33.0000000Z     at Object.<anonymous> (/home/runner/work/app/app/dist/logger.js:3:14) {
+2026-10-15T10:00:33.0000000Z   code: 'MODULE_NOT_FOUND',
+2026-10-15T10:00:33.0000000Z   requireStack: [ '/home/runner/work/app/app/dist/logger.js' ]
+2026-10-15T10:00:34.0000000Z }
+2026-10-15T10:00:34.0000000Z 
+2026-10-15T10:00:34.0000000Z Node.js v20.17.0
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

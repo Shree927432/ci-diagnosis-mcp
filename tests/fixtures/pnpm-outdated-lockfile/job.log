@@ -1,0 +1,20 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run pnpm install --frozen-lockfile
+2026-10-15T10:00:30.0000000Z $ pnpm install --frozen-lockfile
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z Lockfile is up to date, resolution step is skipped
+2026-10-15T10:00:31.0000000Z  ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with package.json
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:31.0000000Z Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
+2026-10-15T10:00:32.0000000Z 
+2026-10-15T10:00:32.0000000Z     Failure reason:
+2026-10-15T10:00:32.0000000Z     specifiers in the lockfile ({"zod":"^3.22.0"}) don't match specs in package.json ({"zod":"^3.23.0"})
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

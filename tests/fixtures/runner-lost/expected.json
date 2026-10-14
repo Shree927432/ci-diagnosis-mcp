@@ -1,0 +1,13 @@
+{
+ "mode": "infra",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "lost communication with the server"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

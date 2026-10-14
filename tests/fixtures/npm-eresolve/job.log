@@ -1,0 +1,29 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run npm ci
+2026-10-15T10:00:30.0000000Z $ npm ci
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z npm error code ERESOLVE
+2026-10-15T10:00:31.0000000Z npm error ERESOLVE could not resolve
+2026-10-15T10:00:31.0000000Z npm error
+2026-10-15T10:00:31.0000000Z npm error While resolving: app@1.0.0
+2026-10-15T10:00:32.0000000Z npm error Found: react@18.3.1
+2026-10-15T10:00:32.0000000Z npm error node_modules/react
+2026-10-15T10:00:32.0000000Z npm error   react@"^18.0.0" from the root project
+2026-10-15T10:00:32.0000000Z npm error
+2026-10-15T10:00:33.0000000Z npm error Could not resolve dependency:
+2026-10-15T10:00:33.0000000Z npm error peer react@"^17.0.0" from react-widgets@4.6.1
+2026-10-15T10:00:33.0000000Z npm error node_modules/react-widgets
+2026-10-15T10:00:33.0000000Z npm error   react-widgets@"^4.6.1" from the root project
+2026-10-15T10:00:34.0000000Z npm error
+2026-10-15T10:00:34.0000000Z npm error Fix the upstream dependency conflict, or retry
+2026-10-15T10:00:34.0000000Z npm error this command with --force or --legacy-peer-deps
+2026-10-15T10:00:34.0000000Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-15T10_00_31_000Z-debug-0.log
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

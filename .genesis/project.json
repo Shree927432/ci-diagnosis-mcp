@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-14T19:34:40.440Z"
+    "updated_at": "2026-10-14T19:35:01.238Z"
   },
   "policy": {
     "ponytail": "full",
@@ -363,8 +363,14 @@
           "kind": "command",
           "command": ".venv/bin/python -m pytest tests/test_fixture_layout.py -q",
           "mandatory": true,
-          "status": "pending",
-          "evidence": null
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T2a-fixtures-test-fixtures-7b763d0b-9bda-444f-850e-abf51fc38a4a.json",
+            "hash": "b75e19228f0e59f2a78d972aaa15a1dca88c4fad51188235ed9f1c4724c2652e",
+            "source_hash": "d212e7da0c2895bef9a115e2f74c95ac6f5320876262ac2dff2ac4c4ec28e88f",
+            "config_hash": "5be6bbf027524090c5066f2d7f546571e662706176055c2a60650b295220810d",
+            "observed_at": "2026-10-14T19:35:01.207Z"
+          }
         }
       ],
       "next_action": "Run the task pre-flight.",
@@ -673,6 +679,30 @@
       "cost": null,
       "stop_reason": null,
       "ended_at": "2026-10-14T19:32:12.277Z"
+    },
+    {
+      "id": "7b763d0b-9bda-444f-850e-abf51fc38a4a",
+      "task": "T2a-fixtures",
+      "kind": "gate",
+      "command": ".venv/bin/python -m pytest tests/test_fixture_layout.py -q",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 18978,
+      "child_pid": 19083,
+      "started_at": "2026-10-14T19:35:00.442Z",
+      "status": "passed",
+      "before_hash": "d212e7da0c2895bef9a115e2f74c95ac6f5320876262ac2dff2ac4c4ec28e88f",
+      "config_hash": "5be6bbf027524090c5066f2d7f546571e662706176055c2a60650b295220810d",
+      "environment": {
+        "node": "v25.8.1",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-14T19:35:01.207Z"
     }
   ],
   "authorizations": [],

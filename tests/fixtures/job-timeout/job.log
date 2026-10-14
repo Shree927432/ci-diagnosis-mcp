@@ -1,0 +1,17 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run npm run e2e
+2026-10-15T10:00:30.0000000Z $ npm run e2e
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z Running 120 tests using 4 workers
+2026-10-15T10:00:31.0000000Z   ✓  1 login.spec.ts:5 › logs in (2.1s)
+2026-10-15T10:00:31.0000000Z   -  2 checkout.spec.ts:9 › pays with card
+2026-10-15T10:00:31.0000000Z ##[error]The job running on runner GitHub Actions 12 has exceeded the maximum execution time of 60 minutes.
+2026-10-15T10:00:32.0000000Z ##[error]The operation was canceled.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

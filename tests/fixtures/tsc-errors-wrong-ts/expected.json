@@ -1,0 +1,11 @@
+{
+ "mode": "compile",
+ "parser": "tsc",
+ "slice": {
+  "window": "widened",
+  "mismatch": false
+ },
+ "errors_contain": [],
+ "tests_contain": [],
+ "files_contain": []
+}

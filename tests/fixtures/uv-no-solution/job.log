@@ -1,0 +1,17 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run uv sync --locked
+2026-10-15T10:00:30.0000000Z $ uv sync --locked
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z   × No solution found when resolving dependencies:
+2026-10-15T10:00:31.0000000Z   ╰─▶ Because app depends on pydantic>=2.9 and sqlmodel==0.0.14 depends on pydantic<2.0, we can conclude that your requirements are unsatisfiable.
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:31.0000000Z   hint: Pre-releases are available for `pydantic` in the requested range
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

@@ -1,0 +1,15 @@
+{
+ "mode": "test_assertion",
+ "parser": "gotest",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [],
+ "tests_contain": [
+  "TestParse/empty"
+ ],
+ "files_contain": [
+  "parser_test.go"
+ ]
+}

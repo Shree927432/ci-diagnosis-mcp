@@ -1,0 +1,30 @@
+{
+  "task": "T2a-fixtures",
+  "gate": "test-fixtures",
+  "kind": "command",
+  "attempt": "7b763d0b-9bda-444f-850e-abf51fc38a4a",
+  "command": ".venv/bin/python -m pytest tests/test_fixture_layout.py -q",
+  "started_at": "2026-10-14T19:35:00.442Z",
+  "observed_at": "2026-10-14T19:35:01.207Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "...                                                                      [100%]\n3 passed in 0.02s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "86b20cf91c7aaa82d09387b6e44a4bdf785ddaa4",
+    "dirty": true
+  },
+  "source_hash": "d212e7da0c2895bef9a115e2f74c95ac6f5320876262ac2dff2ac4c4ec28e88f",
+  "before_hash": "d212e7da0c2895bef9a115e2f74c95ac6f5320876262ac2dff2ac4c4ec28e88f",
+  "config_hash": "5be6bbf027524090c5066f2d7f546571e662706176055c2a60650b295220810d",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "b75e19228f0e59f2a78d972aaa15a1dca88c4fad51188235ed9f1c4724c2652e"
+}

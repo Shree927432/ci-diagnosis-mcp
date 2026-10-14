@@ -1,0 +1,13 @@
+{
+ "mode": "config",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "golangci-lint: not found"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

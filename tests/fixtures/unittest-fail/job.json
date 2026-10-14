@@ -1,0 +1,40 @@
+{
+ "id": 5466,
+ "name": "test",
+ "conclusion": "failure",
+ "run_attempt": 1,
+ "steps": [
+  {
+   "name": "Run actions/checkout@v4",
+   "number": 1,
+   "status": "completed",
+   "conclusion": "success",
+   "started_at": "2026-10-15T10:00:00Z",
+   "completed_at": "2026-10-15T10:00:02Z"
+  },
+  {
+   "name": "install",
+   "number": 2,
+   "status": "completed",
+   "conclusion": "success",
+   "started_at": "2026-10-15T10:00:05Z",
+   "completed_at": "2026-10-15T10:00:29Z"
+  },
+  {
+   "name": "python -m unittest",
+   "number": 3,
+   "status": "completed",
+   "conclusion": "failure",
+   "started_at": "2026-10-15T10:00:30Z",
+   "completed_at": "2026-10-15T10:00:40Z"
+  },
+  {
+   "name": "Post job cleanup",
+   "number": 4,
+   "status": "completed",
+   "conclusion": "success",
+   "started_at": "2026-10-15T10:00:41Z",
+   "completed_at": "2026-10-15T10:00:42Z"
+  }
+ ]
+}

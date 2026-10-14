@@ -1,0 +1,15 @@
+{
+ "mode": "compile",
+ "parser": "py_lint",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Incompatible return value type"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "app/billing.py"
+ ]
+}

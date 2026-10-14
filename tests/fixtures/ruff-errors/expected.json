@@ -1,0 +1,15 @@
+{
+ "mode": "lint_format",
+ "parser": "py_lint",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "F401"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "app/billing.py"
+ ]
+}

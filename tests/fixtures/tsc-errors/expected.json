@@ -1,0 +1,16 @@
+{
+ "mode": "compile",
+ "parser": "tsc",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "TS2322"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "src/cart.ts",
+  "src/api/client.ts"
+ ]
+}

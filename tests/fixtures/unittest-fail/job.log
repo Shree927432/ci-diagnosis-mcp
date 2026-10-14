@@ -1,0 +1,28 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run python -m unittest
+2026-10-15T10:00:30.0000000Z $ python -m unittest
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z test_add (tests.test_calc.CalcTests.test_add) ... ok
+2026-10-15T10:00:31.0000000Z test_div (tests.test_calc.CalcTests.test_div) ... FAIL
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:31.0000000Z ======================================================================
+2026-10-15T10:00:32.0000000Z FAIL: test_div (tests.test_calc.CalcTests.test_div)
+2026-10-15T10:00:32.0000000Z ----------------------------------------------------------------------
+2026-10-15T10:00:32.0000000Z Traceback (most recent call last):
+2026-10-15T10:00:32.0000000Z   File "/home/runner/work/app/app/tests/test_calc.py", line 11, in test_div
+2026-10-15T10:00:33.0000000Z     self.assertEqual(div(1, 0), None)
+2026-10-15T10:00:33.0000000Z AssertionError: inf != None
+2026-10-15T10:00:33.0000000Z 
+2026-10-15T10:00:33.0000000Z ----------------------------------------------------------------------
+2026-10-15T10:00:34.0000000Z Ran 2 tests in 0.001s
+2026-10-15T10:00:34.0000000Z 
+2026-10-15T10:00:34.0000000Z FAILED (failures=1)
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

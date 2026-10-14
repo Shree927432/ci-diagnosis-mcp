@@ -1,0 +1,15 @@
+{
+ "mode": "dependency",
+ "parser": "node",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "Cannot find module 'pino'"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "dist/logger.js"
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "mode": "dependency",
+ "parser": "node",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "ERR_PNPM_OUTDATED_LOCKFILE"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "pnpm-lock.yaml"
+ ]
+}

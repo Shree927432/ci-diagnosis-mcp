@@ -1,0 +1,16 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run pip install -r requirements.txt
+2026-10-15T10:00:30.0000000Z $ pip install -r requirements.txt
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z Collecting fastapi==0.999.0 (from -r requirements.txt (line 3))
+2026-10-15T10:00:31.0000000Z ERROR: Could not find a version that satisfies the requirement fastapi==0.999.0 (from versions: 0.100.0, 0.110.0, 0.115.0)
+2026-10-15T10:00:31.0000000Z ERROR: No matching distribution found for fastapi==0.999.0
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

@@ -1,0 +1,13 @@
+{
+ "mode": "out_of_memory",
+ "parser": "gha",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "JavaScript heap out of memory"
+ ],
+ "tests_contain": [],
+ "files_contain": []
+}

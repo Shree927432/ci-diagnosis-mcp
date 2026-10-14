@@ -1,0 +1,23 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run node scripts/build.js
+2026-10-15T10:00:30.0000000Z $ node scripts/build.js
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z /home/runner/work/app/app/scripts/build.js:27
+2026-10-15T10:00:31.0000000Z   const out = config.output.path.replace(/\\/g, '/');
+2026-10-15T10:00:31.0000000Z                             ^
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:32.0000000Z TypeError: Cannot read properties of undefined (reading 'path')
+2026-10-15T10:00:32.0000000Z     at build (/home/runner/work/app/app/scripts/build.js:27:29)
+2026-10-15T10:00:32.0000000Z     at Object.<anonymous> (/home/runner/work/app/app/scripts/build.js:60:1)
+2026-10-15T10:00:32.0000000Z     at Module._compile (node:internal/modules/cjs/loader:1364:14)
+2026-10-15T10:00:33.0000000Z 
+2026-10-15T10:00:33.0000000Z Node.js v20.17.0
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 1.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

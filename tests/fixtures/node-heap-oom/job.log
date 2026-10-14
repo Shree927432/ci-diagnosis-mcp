@@ -1,0 +1,26 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run npm run build
+2026-10-15T10:00:30.0000000Z $ npm run build
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:31.0000000Z > app@1.0.0 build
+2026-10-15T10:00:31.0000000Z > next build
+2026-10-15T10:00:31.0000000Z 
+2026-10-15T10:00:32.0000000Z    Creating an optimized production build ...
+2026-10-15T10:00:32.0000000Z 
+2026-10-15T10:00:32.0000000Z <--- Last few GCs --->
+2026-10-15T10:00:32.0000000Z 
+2026-10-15T10:00:33.0000000Z [1234:0x5c4a000]    61234 ms: Mark-Compact 2041.3 (2087.5) -> 2039.9 (2088.0) MB, 1234.5 / 0.0 ms  (average mu = 0.102, current mu = 0.041) allocation failure; scavenge might not succeed
+2026-10-15T10:00:33.0000000Z 
+2026-10-15T10:00:33.0000000Z FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+2026-10-15T10:00:33.0000000Z  1: 0xb8d1a0 node::Abort() [node]
+2026-10-15T10:00:34.0000000Z  2: 0xb0c2e9  [node]
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 134.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

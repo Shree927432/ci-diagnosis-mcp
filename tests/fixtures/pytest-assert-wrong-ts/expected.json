@@ -1,0 +1,13 @@
+{
+ "mode": "test_assertion",
+ "parser": "pytest",
+ "slice": {
+  "window": "whole_log",
+  "mismatch": false
+ },
+ "errors_contain": [],
+ "tests_contain": [
+  "tests/test_billing.py::test_invoice_total"
+ ],
+ "files_contain": []
+}

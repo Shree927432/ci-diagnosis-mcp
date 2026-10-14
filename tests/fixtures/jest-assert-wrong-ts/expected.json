@@ -1,0 +1,13 @@
+{
+ "mode": "test_assertion",
+ "parser": "js_tests",
+ "slice": {
+  "window": "widened",
+  "mismatch": false
+ },
+ "errors_contain": [],
+ "tests_contain": [
+  "Cart \u203a applies discount"
+ ],
+ "files_contain": []
+}
