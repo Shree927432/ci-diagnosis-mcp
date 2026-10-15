@@ -38,7 +38,7 @@ CANDIDATE = re.compile(
     r"|out of memory|heap|No space left|rate limit|Tests?:|Test Suites:|Test Files|passed|failing|Expected|Received|expect\()\b"
     r"|^\s*(?:●|✕|✖|×|❯|---\s+FAIL|FAIL\s|=+\s|_{3,}\s|E\s{3}|File \"|\s+at\s|\s+-->\s)"
     r"|^\S+\.(?:[cm]?[jt]sx?|py|go|rs|java|kt)[:(]\d+"
-    r"|[A-Z][A-Za-z]+(?:Error|Exception)\b|^INTERNALERROR>",
+    r"|[A-Z][A-Za-z]+(?:Error|Exception)\b|^INTERNALERROR>|\b(?:TIMEOUT|SIGSEGV|SIGABRT|SIGKILL|SIGBUS) \[|clippy::|-D warnings",
     re.M,  # the ^-anchored branches must match at every line, not only at the start of the joined blob
 )
 

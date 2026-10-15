@@ -17,7 +17,7 @@ class ParseContext:
             return "install"
         if any(k in s for k in ("test", "pytest", "jest", "vitest", "spec", "e2e")):
             return "test"
-        if any(k in s for k in ("lint", "format", "prettier", "eslint", "ruff", "black", "flake8", "mypy", "pyright", "typecheck", "tsc")):
+        if any(k in s for k in ("lint", "format", "prettier", "eslint", "ruff", "black", "flake8", "mypy", "pyright", "typecheck", "tsc", "clippy")):
             return "lint"
         if any(k in s for k in ("build", "compile", "docker")):
             return "build"

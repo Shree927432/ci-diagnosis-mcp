@@ -87,6 +87,13 @@ def test_temp_and_toolchain_paths_are_not_file_references():
     assert [r.path for r in collect_file_refs(lines, [])] == ["crates/ty/tests/file_watching.rs"]
 
 
+def test_macos_runner_prefix_and_rust_module_paths():
+    assert normalize_path("/Users/runner/work/ruff/ruff/crates/ty/src/lib.rs") == "crates/ty/src/lib.rs"
+    lines = parse_lines("        SLOW [> 37.000s] (─────────) ty_python_semantic::mdtest mdtest::external/sqlmodel.md\n"
+                        "/Users/runner/work/app/app/src/a.py:3: error")
+    assert [r.path for r in collect_file_refs(lines, [])] == ["src/a.py"]
+
+
 def test_huge_line_is_fast():
     raw = ("`" * 10 + " IGNORE\n") + "x" * 100_000 + "\n##[error]boom"
     t = time.perf_counter()

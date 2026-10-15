@@ -57,3 +57,10 @@ def test_cargo_test_plain_output_bare_panic_and_python_lookalikes():
     assert (bare.mode, bare.weight, bare.errors[0].file, bare.errors[0].message) == ("runtime", "strong", "src/main.rs", "index out of bounds: the len is 3 but the index is 10")
     # ruff and ty print rustc-style diagnostics for Python files; they are not Rust compile errors
     assert cargo.parse(parse_lines("error[unresolved-import]: Cannot resolve imported module `x`\n --> src/a.py:1:8"), ParseContext()) == []
+
+
+def test_nextest_signal_counts_as_failed_test():
+    log = "     SIGSEGV [   0.120s] (4/9) app::ffi decodes_frames\n     Summary [   1.002s] 9 tests run: 8 passed, 1 failed, 0 skipped\nerror: test run failed"
+    o = cargo.parse(parse_lines(log), ParseContext("cargo nextest run"))[0]
+    assert (o.mode, o.weight, o.failed_tests[0].name, o.errors[0].message) == ("test_assertion", "decisive", "app::ffi decodes_frames", "Test app::ffi decodes_frames crashed (SIGSEGV)")
+    assert ParseContext("cargo clippy --all-targets -- -D warnings").step_kind == "lint"

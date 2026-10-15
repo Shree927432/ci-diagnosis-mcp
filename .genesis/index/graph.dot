@@ -353,6 +353,7 @@ digraph genesis {
   "symbol:tests/test_normalize.py#function:test_fence_is_longer_than_any_inner_backtick_run_and_labelled" [label="test_fence_is_longer_than_any_inner_backtick_run_and_labelled",class="symbol"];
   "symbol:tests/test_normalize.py#function:test_huge_line_is_fast" [label="test_huge_line_is_fast",class="symbol"];
   "symbol:tests/test_normalize.py#function:test_lines_truncated_before_matching" [label="test_lines_truncated_before_matching",class="symbol"];
+  "symbol:tests/test_normalize.py#function:test_macos_runner_prefix_and_rust_module_paths" [label="test_macos_runner_prefix_and_rust_module_paths",class="symbol"];
   "symbol:tests/test_normalize.py#function:test_parse_lines_strips_timestamp_ansi_and_handles_cr" [label="test_parse_lines_strips_timestamp_ansi_and_handles_cr",class="symbol"];
   "symbol:tests/test_normalize.py#function:test_paths_become_repo_relative_and_system_paths_are_ignored" [label="test_paths_become_repo_relative_and_system_paths_are_ignored",class="symbol"];
   "symbol:tests/test_normalize.py#function:test_render_marks_and_noise" [label="test_render_marks_and_noise",class="symbol"];
@@ -368,6 +369,7 @@ digraph genesis {
   "symbol:tests/test_parsers.py#function:test_jest_reports_each_failed_test_with_file" [label="test_jest_reports_each_failed_test_with_file",class="symbol"];
   "symbol:tests/test_parsers.py#function:test_mypy_pretty_continuation_lines_are_joined" [label="test_mypy_pretty_continuation_lines_are_joined",class="symbol"];
   "symbol:tests/test_parsers.py#function:test_network_error_weight_depends_on_step_kind" [label="test_network_error_weight_depends_on_step_kind",class="symbol"];
+  "symbol:tests/test_parsers.py#function:test_nextest_signal_counts_as_failed_test" [label="test_nextest_signal_counts_as_failed_test",class="symbol"];
   "symbol:tests/test_parsers.py#function:test_pytest_merges_short_summary_and_failure_section" [label="test_pytest_merges_short_summary_and_failure_section",class="symbol"];
   "symbol:tests/test_parsers.py#function:test_timeout_beats_generic_cancel_in_same_log" [label="test_timeout_beats_generic_cancel_in_same_log",class="symbol"];
   "symbol:tests/test_parsers.py#function:test_tsc_extracts_file_line_col_code_and_dedupes" [label="test_tsc_extracts_file_line_col_code_and_dedupes",class="symbol"];
@@ -953,6 +955,9 @@ digraph genesis {
   "symbol:tests/test_normalize.py#function:test_huge_line_is_fast" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:excerpt" [label="calls"];
   "symbol:tests/test_normalize.py#function:test_huge_line_is_fast" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
   "symbol:tests/test_normalize.py#function:test_lines_truncated_before_matching" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
+  "symbol:tests/test_normalize.py#function:test_macos_runner_prefix_and_rust_module_paths" -> "symbol:ci_diagnosis_mcp/analysis/files.py#function:collect_file_refs" [label="calls"];
+  "symbol:tests/test_normalize.py#function:test_macos_runner_prefix_and_rust_module_paths" -> "symbol:ci_diagnosis_mcp/analysis/files.py#function:normalize_path" [label="calls"];
+  "symbol:tests/test_normalize.py#function:test_macos_runner_prefix_and_rust_module_paths" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
   "symbol:tests/test_normalize.py#function:test_parse_lines_strips_timestamp_ansi_and_handles_cr" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
   "symbol:tests/test_normalize.py#function:test_paths_become_repo_relative_and_system_paths_are_ignored" -> "symbol:ci_diagnosis_mcp/analysis/files.py#function:collect_file_refs" [label="calls"];
   "symbol:tests/test_normalize.py#function:test_paths_become_repo_relative_and_system_paths_are_ignored" -> "symbol:ci_diagnosis_mcp/analysis/files.py#function:normalize_path" [label="calls"];
@@ -986,6 +991,8 @@ digraph genesis {
   "symbol:tests/test_parsers.py#function:test_mypy_pretty_continuation_lines_are_joined" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#class:ParseContext" [label="calls"];
   "symbol:tests/test_parsers.py#function:test_network_error_weight_depends_on_step_kind" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
   "symbol:tests/test_parsers.py#function:test_network_error_weight_depends_on_step_kind" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#class:ParseContext" [label="calls"];
+  "symbol:tests/test_parsers.py#function:test_nextest_signal_counts_as_failed_test" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
+  "symbol:tests/test_parsers.py#function:test_nextest_signal_counts_as_failed_test" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#class:ParseContext" [label="calls"];
   "symbol:tests/test_parsers.py#function:test_pytest_merges_short_summary_and_failure_section" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
   "symbol:tests/test_parsers.py#function:test_pytest_merges_short_summary_and_failure_section" -> "symbol:ci_diagnosis_mcp/analysis/parsers/_util.py#class:ParseContext" [label="calls"];
   "symbol:tests/test_parsers.py#function:test_timeout_beats_generic_cancel_in_same_log" -> "symbol:ci_diagnosis_mcp/analysis/normalize.py#function:parse_lines" [label="calls"];
@@ -1333,6 +1340,7 @@ digraph genesis {
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_fence_is_longer_than_any_inner_backtick_run_and_labelled" [label="defines"];
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_huge_line_is_fast" [label="defines"];
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_lines_truncated_before_matching" [label="defines"];
+  "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_macos_runner_prefix_and_rust_module_paths" [label="defines"];
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_parse_lines_strips_timestamp_ansi_and_handles_cr" [label="defines"];
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_paths_become_repo_relative_and_system_paths_are_ignored" [label="defines"];
   "file:tests/test_normalize.py" -> "symbol:tests/test_normalize.py#function:test_render_marks_and_noise" [label="defines"];
@@ -1348,6 +1356,7 @@ digraph genesis {
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_jest_reports_each_failed_test_with_file" [label="defines"];
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_mypy_pretty_continuation_lines_are_joined" [label="defines"];
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_network_error_weight_depends_on_step_kind" [label="defines"];
+  "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_nextest_signal_counts_as_failed_test" [label="defines"];
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_pytest_merges_short_summary_and_failure_section" [label="defines"];
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_timeout_beats_generic_cancel_in_same_log" [label="defines"];
   "file:tests/test_parsers.py" -> "symbol:tests/test_parsers.py#function:test_tsc_extracts_file_line_col_code_and_dedupes" [label="defines"];

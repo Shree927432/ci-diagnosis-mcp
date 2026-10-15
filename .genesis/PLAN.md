@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Shrikant Pawade at 2026-10-15T07:56:32.671Z
+- plan approval: Shrikant Pawade at 2026-10-15T08:08:14.194Z
 
 ## Tasks
 
@@ -81,6 +81,14 @@
 - next: Run the task pre-flight.
 
 ### T9-v02-gaps — Cargo/nextest/rustc parser with real nextest and synthetic rustc fixtures; fork PRs resolved via commits/{sha}/pulls when run.pull_requests is empty; temp paths under /private, /var/folders and /tmp never reported as file references
+
+- state/risk: done / low
+- requirements: FR-5, FR-1, AC-2
+- scope: not bounded
+- gates: test: .venv/bin/python -m pytest -q
+- next: Run the task pre-flight.
+
+### T10-v03-polish — macOS runner prefix stripped; nextest status-line test names not reported as files; clippy failures classified lint_format; nextest TIMEOUT gives timeout and SIGSEGV/SIGABRT count as failed tests
 
 - state/risk: done / low
 - requirements: FR-5, FR-1, AC-2
