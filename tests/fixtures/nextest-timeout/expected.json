@@ -1,0 +1,15 @@
+{
+ "mode": "timeout",
+ "parser": "cargo",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "timed out"
+ ],
+ "tests_contain": [
+  "sync_finishes_before_shutdown"
+ ],
+ "files_contain": []
+}

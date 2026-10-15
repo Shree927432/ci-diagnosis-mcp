@@ -1,0 +1,16 @@
+{
+ "mode": "lint_format",
+ "parser": "cargo",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "identical blocks"
+ ],
+ "tests_contain": [],
+ "files_contain": [
+  "src/billing.rs",
+  "src/tax.rs"
+ ]
+}
