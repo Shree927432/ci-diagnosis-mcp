@@ -1,0 +1,116 @@
+{
+ "id": 116292515080,
+ "run_id": 38695941708,
+ "workflow_name": "CI",
+ "head_branch": "t3/keep-else-line-comment-pylint",
+ "run_url": "https://api.github.com/repos/astral-sh/ruff/actions/runs/38695941708",
+ "run_attempt": 1,
+ "node_id": "CR_kwDOHy0Bzc8AAAAbE5L1CA",
+ "head_sha": "f754448bde1639454accb64c8faafa33bb52d55e",
+ "url": "https://api.github.com/repos/astral-sh/ruff/actions/jobs/116292515080",
+ "html_url": "https://github.com/astral-sh/ruff/actions/runs/38695941708/job/116292515080",
+ "status": "completed",
+ "conclusion": "failure",
+ "created_at": "2026-10-15T07:01:09Z",
+ "started_at": "2026-10-15T07:01:31Z",
+ "completed_at": "2026-10-15T07:04:28Z",
+ "name": "cargo test (namespace-profile-macos-15)",
+ "steps": [
+  {
+   "name": "Set up job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 1,
+   "started_at": "2026-10-15T07:01:31Z",
+   "completed_at": "2026-10-15T07:01:32Z"
+  },
+  {
+   "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 2,
+   "started_at": "2026-10-15T07:01:32Z",
+   "completed_at": "2026-10-15T07:01:34Z"
+  },
+  {
+   "name": "Run Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 3,
+   "started_at": "2026-10-15T07:01:34Z",
+   "completed_at": "2026-10-15T07:01:47Z"
+  },
+  {
+   "name": "Install Rust toolchain",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 4,
+   "started_at": "2026-10-15T07:01:47Z",
+   "completed_at": "2026-10-15T07:01:47Z"
+  },
+  {
+   "name": "Install uv (Windows)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 5,
+   "started_at": "2026-10-15T07:01:47Z",
+   "completed_at": "2026-10-15T07:01:47Z"
+  },
+  {
+   "name": "Install uv (macOS)",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 6,
+   "started_at": "2026-10-15T07:01:47Z",
+   "completed_at": "2026-10-15T07:01:49Z"
+  },
+  {
+   "name": "Run tests",
+   "status": "completed",
+   "conclusion": "failure",
+   "number": 7,
+   "started_at": "2026-10-15T07:01:49Z",
+   "completed_at": "2026-10-15T07:04:26Z"
+  },
+  {
+   "name": "Post Install uv (macOS)",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 12,
+   "started_at": "2026-10-15T07:04:26Z",
+   "completed_at": "2026-10-15T07:04:26Z"
+  },
+  {
+   "name": "Post Run Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6",
+   "status": "completed",
+   "conclusion": "skipped",
+   "number": 13,
+   "started_at": "2026-10-15T07:04:26Z",
+   "completed_at": "2026-10-15T07:04:26Z"
+  },
+  {
+   "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 14,
+   "started_at": "2026-10-15T07:04:26Z",
+   "completed_at": "2026-10-15T07:04:27Z"
+  },
+  {
+   "name": "Complete job",
+   "status": "completed",
+   "conclusion": "success",
+   "number": 15,
+   "started_at": "2026-10-15T07:04:27Z",
+   "completed_at": "2026-10-15T07:04:28Z"
+  }
+ ],
+ "check_run_url": "https://api.github.com/repos/astral-sh/ruff/check-runs/116292515080",
+ "labels": [
+  "namespace-profile-macos-15"
+ ],
+ "runner_id": 18383,
+ "runner_name": "nsc-runner-igkq35f4m6a8c",
+ "runner_group_id": 1,
+ "runner_group_name": "Default"
+}

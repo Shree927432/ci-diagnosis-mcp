@@ -1,0 +1,32 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run cargo build --locked
+2026-10-15T10:00:30.0000000Z $ cargo build --locked
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z    Compiling app v0.1.0 (/home/runner/work/app/app)
+2026-10-15T10:00:31.0000000Z error[E0308]: mismatched types
+2026-10-15T10:00:31.0000000Z   --> src/billing.rs:14:5
+2026-10-15T10:00:31.0000000Z    |
+2026-10-15T10:00:32.0000000Z 12 | fn total(items: &[Item]) -> u64 {
+2026-10-15T10:00:32.0000000Z    |                             --- expected `u64` because of return type
+2026-10-15T10:00:32.0000000Z 13 |     let sum: i64 = items.iter().map(|i| i.price).sum();
+2026-10-15T10:00:32.0000000Z 14 |     sum
+2026-10-15T10:00:33.0000000Z    |     ^^^ expected `u64`, found `i64`
+2026-10-15T10:00:33.0000000Z 
+2026-10-15T10:00:33.0000000Z error[E0425]: cannot find value `rate` in this scope
+2026-10-15T10:00:33.0000000Z  --> src/tax.rs:8:14
+2026-10-15T10:00:34.0000000Z   |
+2026-10-15T10:00:34.0000000Z 8 |     amount * rate
+2026-10-15T10:00:34.0000000Z   |              ^^^^ not found in this scope
+2026-10-15T10:00:34.0000000Z 
+2026-10-15T10:00:35.0000000Z Some errors have detailed explanations: E0308, E0425.
+2026-10-15T10:00:35.0000000Z For more information about an error, try `rustc --explain E0308`.
+2026-10-15T10:00:35.0000000Z error: could not compile `app` (lib) due to 2 previous errors
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 101.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

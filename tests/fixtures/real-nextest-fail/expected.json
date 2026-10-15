@@ -1,0 +1,17 @@
+{
+ "mode": "test_assertion",
+ "parser": "cargo",
+ "slice": {
+  "window": "failed_step",
+  "mismatch": false
+ },
+ "errors_contain": [
+  "assertion `left == right` failed"
+ ],
+ "tests_contain": [
+  "shared_script_search_paths_remain_watched_until_unused"
+ ],
+ "files_contain": [
+  "crates/ty/tests/file_watching.rs"
+ ]
+}
