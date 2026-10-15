@@ -32,7 +32,7 @@ _NOISE = [
 # Pre-filter (NFR-1): parsers only see lines that look relevant plus a window around them.
 CANDIDATE = re.compile(
     r"##\[(?:error|warning|group)\]|^::(?:error|warning)|Process completed with exit code"
-    r"|\b(?:error|Error|ERROR|FAIL|FAILED|Failed|failed|fatal|FATAL|panic|Traceback|Exception|AssertionError"
+    r"|\b(?:error|Error|ERROR|FAIL|FAILED|Failed|failed|fatal|FATAL|panic(?:ked)?|Traceback|Exception|AssertionError"
     r"|warning: unused|undefined|Cannot find|not found|No such file|Killed|timed out|canceled|cancelled"
     r"|ENOENT|ECONN|ETIMEDOUT|ERESOLVE|E\d{3}\b|TS\d{4}|npm (?:ERR!|error)|ERR_PNPM|lost communication"
     r"|out of memory|heap|No space left|rate limit|Tests?:|Test Suites:|Test Files|passed|failing|Expected|Received|expect\()\b"

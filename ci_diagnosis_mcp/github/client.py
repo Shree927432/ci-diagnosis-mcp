@@ -176,6 +176,10 @@ class GitHub:
     async def pull(self, owner: str, repo: str, number: int) -> dict:
         return await self.get(f"/repos/{owner}/{repo}/pulls/{number}")
 
+    async def pulls_for_head(self, owner: str, repo: str, head: str) -> list[dict]:
+        """Open PRs whose head is `user:branch`. Finds fork PRs, which /commits/{sha}/pulls does not list."""
+        return await self.get(f"/repos/{owner}/{repo}/pulls", {"head": head, "state": "open"})
+
     async def pull_files(self, owner: str, repo: str, number: int) -> list[dict]:
         return await self.paginate(f"/repos/{owner}/{repo}/pulls/{number}/files", None, None, 300)
 

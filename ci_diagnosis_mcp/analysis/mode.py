@@ -12,7 +12,7 @@ from .parsers._util import ParseContext
 from .types import WEIGHT_RATIO, LogLine, Observation
 
 # Tie-break order: earlier wins on equal score.
-PRIORITY = ["gha", "tsc", "js_tests", "pytest", "gotest", "eslint", "py_lint", "format", "node", "pip", "traceback", "generic"]
+PRIORITY = ["gha", "tsc", "js_tests", "pytest", "gotest", "cargo", "eslint", "py_lint", "format", "node", "pip", "traceback", "generic"]
 BAND = {"decisive": "high", "strong": "medium", "medium": "low", "weak": "low"}
 STEP_PRIOR = {  # step kind -> mode -> multiplier (DESIGN §8 step_context)
     "test": {"test_assertion": 1.5, "test_load": 1.5},

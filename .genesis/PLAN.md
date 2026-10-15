@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Shrikant Pawade at 2026-10-14T20:51:43.551Z
+- plan approval: Shrikant Pawade at 2026-10-15T07:56:32.671Z
 
 ## Tasks
 
@@ -78,5 +78,13 @@
 - requirements: AC-2, NFR-9, AC-1
 - scope: not bounded
 - gates: test-real-corpus: .venv/bin/python -m pytest tests/test_corpus.py tests/test_fixture_layout.py -q
+- next: Run the task pre-flight.
+
+### T9-v02-gaps — Cargo/nextest/rustc parser with real nextest and synthetic rustc fixtures; fork PRs resolved via commits/{sha}/pulls when run.pull_requests is empty; temp paths under /private, /var/folders and /tmp never reported as file references
+
+- state/risk: done / low
+- requirements: FR-5, FR-1, AC-2
+- scope: not bounded
+- gates: test: .venv/bin/python -m pytest -q
 - next: Run the task pre-flight.
 

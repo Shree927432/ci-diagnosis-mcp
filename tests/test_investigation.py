@@ -166,6 +166,18 @@ async def test_fork_pr_without_pr_number_has_no_pr_actions(state):
     assert all(a["action"] not in ("fetch_pr_diff", "fetch_pr_history") for a in r["next_actions"])
 
 
+async def test_fork_pr_is_resolved_from_the_fork_head_branch(state):
+    run, jobs, logs = matrix_run(121, failed=("jest-assert",), passed=0, prs=(), event="pull_request")
+    run["head_repository"] = {"owner": {"login": "someone"}}
+    pulls = {9: {"number": 9, "head": {"sha": "abc123", "ref": "feature", "label": "someone:feature"}, "base": {"ref": "release"}}}
+    gh = FakeGitHub(runs=[run], jobs={(121, 1): jobs}, logs=logs, pulls=pulls, pull_files={9: [{"filename": "src/cart.ts"}]})
+    r = await inv.start(gh, state, "acme/app", run_id=121)
+    assert r["has_pr"] is True and r["run"]["pull_requests"] == [9] and r["pr_base_ref"] == "release"
+    assert not {u["action"] for u in r["unavailable_actions"]} & {"fetch_pr_diff", "fetch_pr_history"}
+    g = await inv.gather(gh, state, r["investigation_id"], "fetch_pr_diff")
+    assert g["changed_files"][0]["path"] == "src/cart.ts"
+
+
 async def test_attempt_with_skipped_job_counts_as_passed_and_partial_download_failure_is_listed(state):
     run, jobs, logs = matrix_run(130, failed=("jest-assert", "jest-assert"), passed=0, attempt=2)
     prev_ok = [mk_job(1300, "test (node 18)", None, 130, conclusion="success")[0], mk_job(1301, "test (node 20)", None, 130, conclusion="skipped")[0]]

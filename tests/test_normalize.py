@@ -79,6 +79,14 @@ def test_paths_become_repo_relative_and_system_paths_are_ignored():
     assert paths["src/b.ts"].mentions == 2 and paths["src/b.ts"].line == 12 and paths["src/c.py"].line == 7
 
 
+def test_temp_and_toolchain_paths_are_not_file_references():
+    lines = parse_lines('left: Err([Created { path: "/private/var/folders/1m/wsm/T/.tmpx/project/second.py" }])\n'
+                        "wrote /var/folders/1m/wsm/T/out.json and /tmp/build/cfg.toml\n"
+                        "at /rustc/4d91de4e/library/core/src/panicking.rs:75:14\n"
+                        "panicked at crates/ty/tests/file_watching.rs:1718:5:")
+    assert [r.path for r in collect_file_refs(lines, [])] == ["crates/ty/tests/file_watching.rs"]
+
+
 def test_huge_line_is_fast():
     raw = ("`" * 10 + " IGNORE\n") + "x" * 100_000 + "\n##[error]boom"
     t = time.perf_counter()

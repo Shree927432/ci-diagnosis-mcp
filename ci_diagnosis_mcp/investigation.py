@@ -191,6 +191,18 @@ def _add(state: State, inv: dict, evidence: list[Evidence]) -> None:
         inv["evidence_added"].append(asdict(e))
 
 
+async def _fork_pr(gh: GitHub, owner: str, name: str, run: dict) -> dict | None:
+    """The open PR whose head is the fork's branch: one call, best effort (a failure leaves the run without a PR)."""
+    fork_owner = ((run.get("head_repository") or {}).get("owner") or {}).get("login")
+    if not fork_owner or not run.get("head_branch"):
+        return None
+    try:
+        pulls = await gh.pulls_for_head(owner, name, f"{fork_owner}:{run['head_branch']}")
+    except GitHubError:
+        return None
+    return pulls[0] if pulls else None
+
+
 async def start(gh: GitHub, state: State, repo: str, *, run_id=None, job_id=None, pr_number=None, branch=None, sha=None, run_attempt: int | None = None,
                 max_jobs: int = 8, max_excerpt_chars: int = 6000, progress: Progress | None = None) -> dict:
     owner, name = parse_repo(repo)
@@ -206,6 +218,9 @@ async def start(gh: GitHub, state: State, repo: str, *, run_id=None, job_id=None
         return get(state, inv_id)
     jobs = await gh.jobs(owner, name, run["id"], attempt if run_attempt else None)
     pr_numbers = [p.get("number") for p in run.get("pull_requests") or []] or ([pr["number"]] if pr else [])
+    if not pr_numbers and run.get("event") == "pull_request":  # fork PRs: GitHub leaves run.pull_requests empty
+        pr = await _fork_pr(gh, owner, name, run)
+        pr_numbers = [pr["number"]] if pr else []
     run_view = {"id": run["id"], "url": run.get("html_url"), "workflow_path": run.get("path"), "workflow_id": run.get("workflow_id"), "head_sha": run.get("head_sha"), "head_branch": run.get("head_branch"),
                 "attempt": attempt, "event": run.get("event"), "pull_requests": pr_numbers, "conclusion": run.get("conclusion"), "created_at": run.get("created_at")}
     inv: dict[str, Any] = {"investigation_id": inv_id, "repo": f"{owner}/{name}", "run": run_view, "taken": [], "has_pr": bool(pr_numbers), "pr_base_ref": pr["base"]["ref"] if pr else None,
