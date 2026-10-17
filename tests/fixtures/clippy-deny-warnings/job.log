@@ -1,0 +1,37 @@
+2026-10-15T10:00:00.0000000Z ##[group]Run actions/checkout@v4
+2026-10-15T10:00:01.0000000Z Syncing repository: acme/app
+2026-10-15T10:00:02.0000000Z ##[endgroup]
+2026-10-15T10:00:05.0000000Z ##[group]Run install
+2026-10-15T10:00:06.0000000Z $ install deps
+2026-10-15T10:00:07.0000000Z added 400 packages
+2026-10-15T10:00:29.0000000Z ##[endgroup]
+2026-10-15T10:00:30.0000000Z ##[group]Run cargo clippy --all-targets -- -D warnings
+2026-10-15T10:00:30.0000000Z $ cargo clippy --all-targets -- -D warnings
+2026-10-15T10:00:30.0000000Z ##[endgroup]
+2026-10-15T10:00:31.0000000Z     Checking app v0.1.0 (/home/runner/work/app/app)
+2026-10-15T10:00:31.0000000Z error: this `if` has identical blocks
+2026-10-15T10:00:31.0000000Z   --> src/billing.rs:22:20
+2026-10-15T10:00:31.0000000Z    |
+2026-10-15T10:00:32.0000000Z 22 |       if discount {
+2026-10-15T10:00:32.0000000Z    |  ____________________^
+2026-10-15T10:00:32.0000000Z 23 | |         total
+2026-10-15T10:00:32.0000000Z 24 | |     } else {
+2026-10-15T10:00:33.0000000Z    | |_____^
+2026-10-15T10:00:33.0000000Z    |
+2026-10-15T10:00:33.0000000Z    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#if_same_then_else
+2026-10-15T10:00:33.0000000Z    = note: `-D clippy::if-same-then-else` implied by `-D warnings`
+2026-10-15T10:00:34.0000000Z    = help: to override `-D warnings` add `#[allow(clippy::if_same_then_else)]`
+2026-10-15T10:00:34.0000000Z 
+2026-10-15T10:00:34.0000000Z error: unused variable: `rate`
+2026-10-15T10:00:34.0000000Z  --> src/tax.rs:4:9
+2026-10-15T10:00:35.0000000Z   |
+2026-10-15T10:00:35.0000000Z 4 |     let rate = 0.2;
+2026-10-15T10:00:35.0000000Z   |         ^^^^ help: if this is intentional, prefix it with an underscore: `_rate`
+2026-10-15T10:00:35.0000000Z   |
+2026-10-15T10:00:36.0000000Z   = note: `-D unused-variables` implied by `-D warnings`
+2026-10-15T10:00:36.0000000Z   = help: to override `-D warnings` add `#[allow(unused_variables)]`
+2026-10-15T10:00:36.0000000Z 
+2026-10-15T10:00:36.0000000Z error: could not compile `app` (lib) due to 2 previous errors
+2026-10-15T10:00:40.0000000Z ##[error]Process completed with exit code 101.
+2026-10-15T10:00:41.0000000Z Post job cleanup.
+2026-10-15T10:00:42.0000000Z Cleaning up orphan processes

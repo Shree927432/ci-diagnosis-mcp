@@ -78,6 +78,10 @@ class FakeGitHub:
         self.calls += 1
         return self._pulls[number]
 
+    async def pulls_for_head(self, owner, repo, head):
+        self.calls += 1
+        return [p for p in self._pulls.values() if p["head"].get("label") == head]
+
     async def pull_files(self, owner, repo, number):
         self.calls += 1
         return list(self._pull_files.get(number, []))

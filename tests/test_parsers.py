@@ -1,6 +1,6 @@
 """Spot checks of parser extraction beyond the corpus: counts, locations, repetition."""
 from ci_diagnosis_mcp.analysis.normalize import parse_lines
-from ci_diagnosis_mcp.analysis.parsers import gha, js_tests, pytest as pyt, tsc
+from ci_diagnosis_mcp.analysis.parsers import cargo, gha, js_tests, pytest as pyt, tsc
 from ci_diagnosis_mcp.analysis.parsers._util import ParseContext
 
 
@@ -44,3 +44,23 @@ def test_mypy_pretty_continuation_lines_are_joined():
     log = 'src/app.py:206: error: Incompatible types in assignment (expression has\n    type "dict[str, Any]", variable has type "str")  [assignment]\nFound 1 error in 1 file (checked 3 source files)'
     o = py_lint.parse(parse_lines(log), ParseContext())[0]
     assert o.errors[0].message.endswith('variable has type "str")') and o.errors[0].code == "assignment"
+
+
+def test_cargo_test_plain_output_bare_panic_and_python_lookalikes():
+    log = ("running 2 tests\ntest tests::adds ... ok\ntest tests::subtracts ... FAILED\n\nfailures:\n\n---- tests::subtracts stdout ----\n\n"
+           "thread 'tests::subtracts' panicked at src/lib.rs:20:9:\nassertion `left == right` failed\n  left: 1\n right: 2\n\nfailures:\n    tests::subtracts\n\n"
+           "test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\nerror: test failed, to rerun pass `--lib`")
+    o = cargo.parse(parse_lines(log), ParseContext("cargo test"))[0]
+    assert (o.mode, o.weight, o.anchor) == ("test_assertion", "decisive", 6) and [t.name for t in o.failed_tests] == ["tests::subtracts"]
+    assert (o.errors[0].file, o.errors[0].line, o.errors[0].message) == ("src/lib.rs", 20, "assertion `left == right` failed")
+    bare = cargo.parse(parse_lines("thread 'main' panicked at src/main.rs:5:9:\nindex out of bounds: the len is 3 but the index is 10"), ParseContext())[0]
+    assert (bare.mode, bare.weight, bare.errors[0].file, bare.errors[0].message) == ("runtime", "strong", "src/main.rs", "index out of bounds: the len is 3 but the index is 10")
+    # ruff and ty print rustc-style diagnostics for Python files; they are not Rust compile errors
+    assert cargo.parse(parse_lines("error[unresolved-import]: Cannot resolve imported module `x`\n --> src/a.py:1:8"), ParseContext()) == []
+
+
+def test_nextest_signal_counts_as_failed_test():
+    log = "     SIGSEGV [   0.120s] (4/9) app::ffi decodes_frames\n     Summary [   1.002s] 9 tests run: 8 passed, 1 failed, 0 skipped\nerror: test run failed"
+    o = cargo.parse(parse_lines(log), ParseContext("cargo nextest run"))[0]
+    assert (o.mode, o.weight, o.failed_tests[0].name, o.errors[0].message) == ("test_assertion", "decisive", "app::ffi decodes_frames", "Test app::ffi decodes_frames crashed (SIGSEGV)")
+    assert ParseContext("cargo clippy --all-targets -- -D warnings").step_kind == "lint"

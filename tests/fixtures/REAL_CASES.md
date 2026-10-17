@@ -1,6 +1,6 @@
 # Real-log cases (T8)
 
-Raw job logs from public GitHub Actions runs, fetched 2026-10-15 with `gh api .../actions/jobs/<id>/logs`, untouched. Labels were assigned by reading each log's failing lines. Synthetic cases remain only for modes with no real example (timeout, out_of_memory, most dependency), the three wrong-timestamp cases, the three adversarial unknown cases, and go-build-error for the gotest parser floor.
+Raw job logs from public GitHub Actions runs, fetched 2026-10-15 with `gh api .../actions/jobs/<id>/logs`, untouched. Labels were assigned by reading each log's failing lines. Synthetic cases remain only for modes with no real example (timeout, out_of_memory, most dependency), the three wrong-timestamp cases, the three adversarial unknown cases, go-build-error for the gotest parser floor, and rustc-compile-error (T9) for the cargo compile path.
 
 | case | mode | parser | repo | job | url |
 |---|---|---|---|---|---|
@@ -16,6 +16,7 @@ Raw job logs from public GitHub Actions runs, fetched 2026-10-15 with `gh api ..
 | real-jest-worker-sigsegv | test_load | js_tests | jestjs/jest | macOS with shard 3/3 / Node v24.x | https://github.com/jestjs/jest/actions/runs/38417607927/job/115366658576 |
 | real-mocha-eslint | test_assertion | js_tests | eslint/eslint | Test (ubuntu-latest, 24.x) | https://github.com/eslint/eslint/actions/runs/37487000067/job/112349520274 |
 | real-mypy-tox | compile | py_lint | pallets/flask | typing | https://github.com/pallets/flask/actions/runs/37633292268/job/112832844965 |
+| real-nextest-fail | test_assertion | cargo | astral-sh/ruff | cargo test (namespace-profile-macos-15) | https://github.com/astral-sh/ruff/actions/runs/38695941708/job/116292515080 |
 | real-node-enoent-unhandled | runtime | node | vitest-dev/vitest | Merge Reports | https://github.com/vitest-dev/vitest/actions/runs/38574765085/job/115888844770 |
 | real-precommit-ruff | lint_format | format | pallets/flask | main | https://github.com/pallets/flask/actions/runs/34727211038/job/103643345311 |
 | real-precommit-ruff-format | lint_format | format | psf/requests | lint | https://github.com/psf/requests/actions/runs/34145369235/job/101816141171 |

@@ -38,7 +38,7 @@ Then ask the agent to use the `fix_ci_failure` prompt, or just say "diagnose the
 
 | Tool | What it does |
 |---|---|
-| `start_investigation(repo, run_id \| job_id \| pr_number \| branch \| sha)` | Resolves the failed run, downloads up to 8 failed job logs (4 concurrently), slices each to its failed step, runs the parsers, clusters jobs by signature, gathers the free evidence channels, and returns the diagnosis. If several failed runs match it lists `candidate_runs` instead. |
+| `start_investigation(repo, run_id \| job_id \| pr_number \| branch \| sha)` | Resolves the failed run, downloads up to 8 failed job logs (4 concurrently), slices each to its failed step, runs the parsers, clusters jobs by signature, gathers the free evidence channels, and returns the diagnosis. Fork pull-request runs, which GitHub reports with no pull request, are matched to their open PR by head branch. If several failed runs match it lists `candidate_runs` instead. |
 | `gather_evidence(investigation_id, action)` | Performs one evidence action and updates the origin belief: `fetch_sibling_jobs`, `fetch_attempts`, `fetch_annotations`, `fetch_pr_history`, `fetch_pr_diff`, `fetch_base_history`, `fetch_full_step_log`. |
 | `get_investigation(investigation_id)` | Full state with the evidence trail; lets a new session resume. |
 | `record_outcome(investigation_id, actual_mode, actual_origin, fix_summary, …)` | Records what the failure actually was once CI is green; feeds calibration. |
@@ -62,7 +62,7 @@ The belief update, the next-action ranking and the stop rule are specified in [D
 
 ## Adding a parser
 
-One file in `ci_diagnosis_mcp/analysis/parsers/` with `NAME`, a `GATE` regex (the parser only runs when it matches the log), and `parse(lines, ctx) -> list[Observation]`. Add a fixture directory under `tests/fixtures/` with `job.log`, `job.json` and `expected.json`, regenerate `TREE_SHA256` with `python tests/fixtures/generate_fixtures.py` if you used the generator, and run `pytest`. Parsers are discovered automatically; nothing else changes.
+One file in `ci_diagnosis_mcp/analysis/parsers/` with `NAME`, a `GATE` regex (the parser only runs when it matches the log), and `parse(lines, ctx) -> list[Observation]`. Add a fixture directory under `tests/fixtures/` with `job.log`, `job.json` and `expected.json`, commit the fixture before the parser, regenerate `TREE_SHA256` with `tree_hash()` from `tests/fixtures/generate_fixtures.py` (running the script itself rewrites every synthetic case and deletes the real ones), add `NAME` to `PRIORITY` in `analysis/mode.py` and to `PARSERS` in `tests/test_fixture_layout.py`, and run `pytest`. Parsers are discovered automatically.
 
 ## State
 
@@ -78,4 +78,4 @@ The repository is run with the Genesis harness: `.genesis/KICKOFF.md` describes 
 
 ## Status
 
-v0.1. GitHub Actions only, stdio only. Parsers cover jest/vitest/mocha, pytest/unittest (including conftest import errors and INTERNALERROR crashes), go, tsc, eslint/biome (including problem-matcher output), ruff/mypy/pyright/pylint, prettier/black and pre-commit hook output, npm/pnpm/yarn, pip/poetry/uv, Python tracebacks, Node exceptions and GitHub Actions runner messages; everything else falls back to a generic error extractor. The accuracy corpus in `tests/fixtures` holds 32 real failed jobs from public repositories (see `tests/fixtures/REAL_CASES.md`) plus synthetic cases for timeout, out-of-memory and most dependency failures, which no public log in the sample exhibited; mode accuracy on it is 1.00 with an unknown rate of 0.00. Likelihood weights are hand-set and reported as `uncalibrated` until enough outcomes are recorded.
+v0.1. GitHub Actions only, stdio only. Parsers cover jest/vitest/mocha, pytest/unittest (including conftest import errors and INTERNALERROR crashes), go, cargo test/cargo-nextest/rustc/clippy (test failures, timeouts and crashes, compile errors, denied lints, panics), tsc, eslint/biome (including problem-matcher output), ruff/mypy/pyright/pylint, prettier/black and pre-commit hook output, npm/pnpm/yarn, pip/poetry/uv, Python tracebacks, Node exceptions and GitHub Actions runner messages; everything else falls back to a generic error extractor. The accuracy corpus in `tests/fixtures` holds 33 real failed jobs from public repositories (see `tests/fixtures/REAL_CASES.md`) plus synthetic cases for timeout, out-of-memory and most dependency failures, which no public log in the sample exhibited; mode accuracy on it is 1.00 with an unknown rate of 0.00. Likelihood weights are hand-set and reported as `uncalibrated` until enough outcomes are recorded.

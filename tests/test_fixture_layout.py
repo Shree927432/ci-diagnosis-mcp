@@ -8,7 +8,7 @@ sys.path.insert(0, str(ROOT))
 from generate_fixtures import tree_hash  # noqa: E402
 
 V01_MODES = ["test_assertion", "test_load", "compile", "lint_format", "dependency", "runtime", "config", "out_of_memory", "timeout", "cancelled", "infra"]
-PARSERS = ["generic", "gha", "js_tests", "pytest", "gotest", "tsc", "eslint", "py_lint", "format", "node", "pip", "traceback"]
+PARSERS = ["generic", "gha", "js_tests", "pytest", "gotest", "tsc", "eslint", "py_lint", "format", "node", "pip", "traceback", "cargo"]
 
 
 def cases():

@@ -5,13 +5,14 @@ import re
 
 from .types import ExtractedError, FileRef, LogLine
 
-_RUNNER_PREFIX = re.compile(r"^(?:/home/runner/work/[^/]+/[^/]+/|/__w/[^/]+/[^/]+/|[A-Za-z]:[\\/]a[\\/][^\\/]+[\\/][^\\/]+[\\/])")
+_RUNNER_PREFIX = re.compile(r"^(?:/(?:home|Users)/runner/work/[^/]+/[^/]+/|/__w/[^/]+/[^/]+/|[A-Za-z]:[\\/]a[\\/][^\\/]+[\\/][^\\/]+[\\/])")
 _IGNORED = re.compile(
     r"(^|/)(node_modules|site-packages|dist-packages|\.cargo|\.rustup|\.gradle|\.m2|\.nvm|\.pyenv|\.venv|venv|__pycache__|\.cache|\.npm|\.yarn|go/pkg/mod|hostedtoolcache|_actions|_tool)/"
 )
-_ABS_SYSTEM = re.compile(r"^/(usr|opt|etc|lib|proc|sys|tmp|var)/")
+_ABS_SYSTEM = re.compile(r"^/(usr|opt|etc|lib|proc|sys|tmp|var|private|rustc)/")  # /private/var/folders: macOS temp; /rustc/<hash>: Rust std frames
+# (?<!::): a Rust module path such as nextest's `mdtest::external/sqlmodel.md` names a test, not a file
 PATH = re.compile(
-    r"(?<![\w@/])((?:/|\.{1,2}/)?(?:[\w.@-]+/)*[\w.@-]+\.(?:[cm]?[jt]sx?|py|pyi|go|rs|rb|java|kt|kts|scala|swift|c|cc|cpp|h|hpp|cs|php|ex|exs|vue|svelte|json|ya?ml|toml|xml|html?|css|scss|sql|sh|tf|proto|md|lock|cfg|ini))"
+    r"(?<![\w@/])(?<!::)((?:/|\.{1,2}/)?(?:[\w.@-]+/)*[\w.@-]+\.(?:[cm]?[jt]sx?|py|pyi|go|rs|rb|java|kt|kts|scala|swift|c|cc|cpp|h|hpp|cs|php|ex|exs|vue|svelte|json|ya?ml|toml|xml|html?|css|scss|sql|sh|tf|proto|md|lock|cfg|ini))"
     r"(?::(\d+)(?::(\d+))?|\((\d+),(\d+)\)|\",\s*line\s+(\d+))?"
 )
 
