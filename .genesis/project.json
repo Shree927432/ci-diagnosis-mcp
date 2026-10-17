@@ -9,7 +9,7 @@
     "non_goals": [],
     "trust_boundary": "local repository",
     "created_at": "2026-10-14T19:17:11.827Z",
-    "updated_at": "2026-10-17T08:10:45.485Z"
+    "updated_at": "2026-10-17T09:37:45.640Z"
   },
   "policy": {
     "ponytail": "full",
@@ -341,6 +341,15 @@
       "source": "tests/test_corpus.py; tests/test_parsers.py; tests/test_normalize.py",
       "tags": [],
       "recorded_at": "2026-10-15T08:10:50.944Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-b553491e",
+      "title": "Session handoff 2026-10-17",
+      "text": "First build session ended. v0.1, T8 real-log corpus and v0.2 merged and pushed to https://github.com/Shree927432/ci-diagnosis-mcp. 141 tests, 51 fixtures (33 real). A local, git-ignored transcripts/START_HERE.md holds the resume prompt, working agreements, backlog and full exports of all three build sessions. Next work is chosen from SPEC.md Non-goals.",
+      "source": "end of session 2026-10-17",
+      "tags": [],
+      "recorded_at": "2026-10-17T09:37:45.120Z",
       "paths": []
     }
   ],
@@ -2887,11 +2896,11 @@
   "incidents": [],
   "discovery": null,
   "checkpoint": {
-    "at": "2026-10-17T08:10:45.424Z",
+    "at": "2026-10-17T09:37:45.589Z",
     "revision": {
-      "commit": "0ebfbf718738f0c7df6e37ab542f8219164a2a90",
-      "dirty": false,
-      "source_hash": "fe8e755b81bac09d1f4202fe6e45d60e9d8999e7d7327ebf75ddf3a8a8350903"
+      "commit": "fed2385ba4245c9bf744ec387b967295baa62862",
+      "dirty": true,
+      "source_hash": "b84310afd93da4dd9936495e5967b984859bbadd3ba9ab3e8df777c25d304c5b"
     },
     "active_task": null,
     "next_action": "Review completed work and choose the next bounded outcome."
