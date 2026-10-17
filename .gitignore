@@ -11,3 +11,4 @@ build/
 .genesis/local/
 .claude/worktrees/
 .claude/scheduled_tasks.lock
+transcripts/
