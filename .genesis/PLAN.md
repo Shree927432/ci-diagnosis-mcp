@@ -4,7 +4,7 @@
 
 - workflow: new-product
 - phase: verify
-- plan approval: Shrikant Pawade at 2026-10-15T08:08:14.194Z
+- plan approval: Shrikant Pawade at 2026-10-23T20:26:24.313Z
 
 ## Tasks
 
@@ -92,6 +92,14 @@
 
 - state/risk: done / low
 - requirements: FR-5, FR-1, AC-2
+- scope: not bounded
+- gates: test: .venv/bin/python -m pytest -q
+- next: Run the task pre-flight.
+
+### T11-v02-docs — Version 0.2.0 in pyproject.toml and the package; SPEC.md non-goals and risks no longer list the cargo/clippy parser and the real-log corpus, which shipped in v0.2 (T8-T10); README status reads v0.2
+
+- state/risk: done / low
+- requirements: NFR-7
 - scope: not bounded
 - gates: test: .venv/bin/python -m pytest -q
 - next: Run the task pre-flight.

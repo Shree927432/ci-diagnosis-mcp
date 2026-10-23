@@ -1,0 +1,30 @@
+{
+  "task": "T11-v02-docs",
+  "gate": "test",
+  "kind": "command",
+  "attempt": "699b527b-b8e8-411f-8e1b-198451c2a2bb",
+  "command": ".venv/bin/python -m pytest -q",
+  "started_at": "2026-10-23T20:31:23.633Z",
+  "observed_at": "2026-10-23T20:31:40.209Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "........................................................................ [ 51%]\n................................................F....................    [100%]\n=================================== FAILURES ===================================\n__________________________ test_analyze_10mb_under_2s __________________________\n\n    def test_analyze_10mb_under_2s():\n        raw = big_log()\n        assert len(raw) >= 10 * 1024 * 1024\n        t = time.perf_counter()\n        a = analyze(raw)\n        dt = time.perf_counter() - t\n        print(f\"\\n10MB analyze: {dt:.2f}s lines={a.total_lines} mode={a.mode}\")\n>       assert dt < 2.0\nE       assert 2.015929999997752 < 2.0\n\ntests/test_perf.py:28: AssertionError\n----------------------------- Captured stdout call -----------------------------\n\n10MB analyze: 2.02s lines=163988 mode=compile\n=========================== short test summary info ============================\nFAILED tests/test_perf.py::test_analyze_10mb_under_2s - assert 2.015929999997...\n1 failed, 140 passed in 15.50s\n",
+  "stderr": "",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": "fc9257ea575569355d0088e957e010390e3cf765",
+    "dirty": true
+  },
+  "source_hash": "57c845035688d36a32145dbe31eff7d2dbb8fe7979bc9d358447eae0ada18f58",
+  "before_hash": "57c845035688d36a32145dbe31eff7d2dbb8fe7979bc9d358447eae0ada18f58",
+  "config_hash": "9e614039439d3cda7e5f5412597cd13f49c3c520ad1464ce462596a7f3150ffd",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "879d4130046692596c15d247948edd62a4b5c732c796ca3dedfcfc27761e1a28"
+}

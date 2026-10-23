@@ -15,7 +15,7 @@ Load Genesis and official Ponytail full, then run `genesis brief .` for the curr
 Fetch full records with `genesis context . --id ID` only when needed. Do not load project.json or historical proof wholesale.
 Ask the index before reading code: `genesis query . search|scope|callers|callees|impact|path` (`--json` for parsing). Run `genesis query . impact PATH` before editing shared code. Answers are advisory static analysis; `ambiguous` means candidates were not ruled out, so confirm in source.
 Run `genesis serve .` for a live map of the repository when structure is unclear; it reindexes on save and is read-only. Run `genesis index .` if the index is stale and nothing is watching.
-Context fingerprint: e59e9c6f3ba1bdc53550ac5d498373ed8019b21b0c7e9df8b86ec727792b4b3d. Use --since only after receiving that full packet; kickoff is not the packet.
+Context fingerprint: bb55aaac8ea63beb294fedb4cddd678d4aae0bede1eec8fdaea67d649983c9bb. Use --since only after receiving that full packet; kickoff is not the packet.
 - DECISION-dd56633b: T9: fork PRs resolved by head label, not /commits/{sha}/pulls
 - DECISION-721d5e89: T8: relabel real-eslint-problem-matcher files_contain (FR-20 cap)
 - DECISION-c2aff99f: T5/T6 code review (Sonnet 5.5): APPROVE_WITH_CHANGES; disposition

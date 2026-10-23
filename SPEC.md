@@ -1,6 +1,6 @@
 # Product specification — ci-diagnosis-mcp
 
-> Status: draft v2, revised after independent review (DECISION-6af94eab). A coding agent must not implement product code until this specification is approved through Genesis.
+> Status: v2, approved for v0.1 after independent review (DECISION-6af94eab); non-goals and risks revised after v0.2 shipped (T8 real-log corpus, T9/T10 cargo parser). A coding agent must not implement product code until this specification is approved through Genesis.
 > Source design: DESIGN.md v2. This specification is the binding subset for release v0.1; DESIGN.md holds rationale and later phases.
 
 ## Problem
@@ -66,12 +66,11 @@ The desired outcome is an MCP server that returns, in one or two calls, a struct
 - `add_evidence` and `retract_evidence` tools (cut from v0.1 on review; the agent can reason without them).
 - Level-2 signature comparison across runs (extra log downloads); per-repo prior updates from outcomes; rebuilding an investigation from GitHub when state is missing.
 - `status_page`, `duration`, and `compare_with_last_green` channels and actions.
-- Parsers for gradle/maven/junit, docker build, cargo/clippy, rustfmt and gofmt; the generic fallback covers them in v0.1.
+- Parsers for gradle/maven/junit and docker build; the generic fallback covers them. (cargo test/nextest/rustc/clippy shipped in v0.2; rustfmt and gofmt are matched by the format parser but have no real fixture yet.)
 - The replay evaluation of the next-action policy (DESIGN.md §20.2 evidence efficiency); v0.1 unit-tests the ranking formula only.
 - Passive outcome inference, learned likelihoods, isotonic calibration, and the `stats` telemetry command; v0.1 only records the data they need.
 - Streamable HTTP transport, GitLab or other CI providers.
 - The agent end-to-end benchmark (DESIGN.md §20.4).
-- Real-repository fixtures; v0.1's corpus is synthetic but realistic.
 
 ## Acceptance criteria
 
@@ -93,8 +92,8 @@ The desired outcome is an MCP server that returns, in one or two calls, a struct
 ## Risks
 
 - Wrong step slice corrupts every downstream field. Mitigation: FR-4 always parses the whole log too and exposes `slice`; AC-3.
-- Parser coverage on the long tail (Nx, Turbo, Bazel wrappers; Gradle, Docker, Cargo deferred). Mitigation: strong generic fallback; NFR-9 measured on the corpus; one-file parser contract (NFR-10).
-- Synthetic fixtures may flatter the parsers because the same session writes both. Mitigation: fixtures committed first with a ledger trace (AC-2), adversarial unknown cases (AC-1), AC-10 live smoke; a real-log corpus is the first post-release task.
+- Parser coverage on the long tail (Nx, Turbo, Bazel wrappers; Gradle, Docker deferred). Mitigation: strong generic fallback; NFR-9 measured on the corpus; one-file parser contract (NFR-10).
+- Synthetic fixtures may flatter the parsers because the same session writes both. Mitigation: fixtures committed first with a ledger trace (AC-2), adversarial unknown cases (AC-1), AC-10 live smoke; the real-log corpus of 33 public jobs added in T8.
 - Hostile log content relayed to the agent. Mitigation: FR-3 fencing and labelling, AC-13.
 - Hand weights are uncalibrated. Mitigation: `calibration: uncalibrated` in every response; outcomes recorded from day one (FR-15).
 - Agents ignore the belief and read only the excerpt. Mitigation: none in v0.1; measured later by DESIGN.md §20.4.

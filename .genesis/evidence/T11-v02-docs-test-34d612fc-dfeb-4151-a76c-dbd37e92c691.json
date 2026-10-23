@@ -1,0 +1,30 @@
+{
+  "task": "T11-v02-docs",
+  "gate": "test",
+  "kind": "command",
+  "attempt": "34d612fc-dfeb-4151-a76c-dbd37e92c691",
+  "command": ".venv/bin/python -m pytest -q",
+  "started_at": "2026-10-23T20:36:15.506Z",
+  "observed_at": "2026-10-23T20:36:31.191Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "........................................................................ [ 51%]\n.....................................................................    [100%]\n141 passed in 14.59s\n",
+  "stderr": "",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": "fc9257ea575569355d0088e957e010390e3cf765",
+    "dirty": true
+  },
+  "source_hash": "57c845035688d36a32145dbe31eff7d2dbb8fe7979bc9d358447eae0ada18f58",
+  "before_hash": "57c845035688d36a32145dbe31eff7d2dbb8fe7979bc9d358447eae0ada18f58",
+  "config_hash": "9e614039439d3cda7e5f5412597cd13f49c3c520ad1464ce462596a7f3150ffd",
+  "environment": {
+    "node": "v25.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "a1bb8b24b0ff8093ded69709093fcbc76cfbe2fe45abb9b5581ea8c5d10808c3"
+}
